@@ -1,2 +1,2 @@
 # Project-Hope
-my take on a 2d action rpg
+My take on a 2D A-RPG
