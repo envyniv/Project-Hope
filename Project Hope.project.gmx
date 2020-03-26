@@ -5,7 +5,11 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_Kevin</sprite>
+    <sprite>sprites\spr_playertest</sprite>
+    <sprite>sprites\spr_wall</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -16,19 +20,25 @@
     </scripts>
     <scripts name="player">
       <scripts name="atk">
-        <script>scripts\scr_nrmlAtk.gml</script>
-        <script>scripts\sct_atkCombo.gml</script>
+        <script>scripts\state_nrmlAtk.gml</script>
+        <script>scripts\state_atkCombo.gml</script>
         <script>scripts\scr_atkBase.gml</script>
       </scripts>
       <scripts name="mvment">
-        <script>scripts\script5.gml</script>
-        <script>scripts\script7.gml</script>
+        <script>scripts\state_mv.gml</script>
+        <script>scripts\state_run.gml</script>
+        <script>scripts\state_dodge.gml</script>
       </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_Player</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_camera</object>
   </objects>
+  <rooms name="rooms">
+    <room>rooms\rm0</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>

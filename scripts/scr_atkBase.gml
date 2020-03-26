@@ -3,20 +3,20 @@
 //sprites
 image_speed = .5;
 switch (sprite_index) {
-    case p-down:
-        sprite_index = atk-down
+    case playerdown:
+        sprite_index = platkdown
         break;
         
-    case p-left:
-        sprite_index = atk-left
+    case playerleft:
+        sprite_index = platkleft
         break;
 
-    case p-right:
-        sprite_index = atk-right
+    case playerright:
+        sprite_index = platkright
         break;
         
-    case p-up:
-        sprite_index = atk-up
+    case playerup:
+        sprite_index = platkup
         break;
     }
 canattack = false;
