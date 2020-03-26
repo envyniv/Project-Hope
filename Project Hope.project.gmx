@@ -6,9 +6,15 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_Kevin</sprite>
     <sprite>sprites\spr_playertest</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprites name="Player">
+      <sprites name="Party">
+        <sprites name="Kevin">
+          <sprite>sprites\spr_Kevin</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
