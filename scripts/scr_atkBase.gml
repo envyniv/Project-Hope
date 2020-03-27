@@ -1,5 +1,5 @@
 //general script for attacking functions
-
+var platk=plarkdown||platkleft||platkright||platkup
 //sprites
 image_speed = .5;
 switch (sprite_index) {
@@ -22,3 +22,12 @@ switch (sprite_index) {
 canattack = false;
 
 //atk
+if (sprite_index==platk)
+{
+ds_list_clear(enhitbyatk)
+}
+
+//hitbox and check for hits
+mask_index=hb_platk
+
+

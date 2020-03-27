@@ -2,8 +2,8 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>0</depth>
+  <visible>-1</visible>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//g
+            <string>func_dmgRandom();
+knockback = 10;
+creator = noone;
+alarm[0] = 1;
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,44 +52,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///follow the player
-
-
-func_Ginput(); //get input
-
-
-//if the player object exists then follow it smoothly
-if (instance_exists(obj_Player)) {
-    x += (obj_Player.x - x);
-    y += (obj_Player.y - y);
-    // if the player is dodging then follow it w/out smoothening
-    if (obj_Player.state == state_dodge) {
-    x = obj_Player.x;
-    y = obj_Player.y;
-       };
-                    }
-    
-if (downlook) {
-    y += 10;
-}
-
-if (uplook) {
-    y -= 10;
-}
-
-if (leftlook) {
-    x -= 10;
-}
-
-if (rightlook) {
-    x += 10;
-}
+            <string>///dmg kill
+instance_destroy();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="4" ename="obj_parent_lifeform">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -102,13 +76,20 @@ if (rightlook) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//gui
+            <string>///damage all lifes
 
-//draw player cards
+if (other.id != creator) { //if the id of the object that collided with the dmgobj is different to the creator, then damage the object
+    other.hp -= damage;
+    var dir = point_direction(x, y, other.x, other.y)
+    var xforce = lengthdir_x(knockback, dir);
+    var yforce = lengthdir_y(knockback, dir);
+    var force = xforce+yforce/2
+    //if (damage &lt;= 10 &amp;&amp; damage &gt;= 25) {trigger minigame}
+    with (other) {
+        motion_add(dir, force)
+    }
 
-//draw damage number when player attacks and hits
-
-
+}
 </string>
           </argument>
         </arguments>
@@ -116,8 +97,8 @@ if (rightlook) {
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
-  <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectSensor>-1</PhysicsObjectSensor>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>

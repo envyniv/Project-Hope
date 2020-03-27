@@ -11,7 +11,7 @@
     <sprites name="Player">
       <sprites name="Party">
         <sprites name="Kevin">
-          <sprite>sprites\spr_Kevin</sprite>
+          <sprite>sprites\spr_Kevin_standr</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -40,6 +40,8 @@
   <objects name="objects">
     <object>objects\obj_Player</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_dmg</object>
+    <object>objects\obj_parent_lifeform</object>
     <object>objects\obj_camera</object>
   </objects>
   <rooms name="rooms">
