@@ -73,11 +73,4 @@ y += vspd
 //    } else if (hspd < 0 and vspd > 0) {
 //        sprite_index = playerdl
 //    }
-    
-//cols.
-//if (place_meeting(x+hspd,y,obj_wall)) {
-//   if(place_empty(x-hspd,y)) {
-//   x=x-hspd
-//   }
-//}
 

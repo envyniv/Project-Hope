@@ -11,10 +11,13 @@
     <sprites name="Player">
       <sprites name="Party">
         <sprites name="Kevin">
-          <sprite>sprites\spr_Kevin_standr</sprite>
+          <sprites name="walk">
+            <sprite>sprites\spr_Kevin_r</sprite>
+          </sprites>
         </sprites>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_dmg</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -23,6 +26,8 @@
       <script>scripts\func_dialBox.gml</script>
       <script>scripts\func_Ginput.gml</script>
       <script>scripts\func_dmgRandom.gml</script>
+      <script>scripts\func_initplayersprites.gml</script>
+      <script>scripts\func_dmgColl.gml</script>
     </scripts>
     <scripts name="player">
       <scripts name="atk">

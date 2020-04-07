@@ -40,54 +40,8 @@ canattack = true;
 depth = -y; //used for fake z axis i guess
 //team = 1; //used to not damage team members or to not get damaged
 whereisp = room_get_name(room) //used for saving function
-enhitbyatk = ds_list_create();
 
-//set sprites vars
-
-chrName="Kevin";
-
-//standing
-playerRight = draw_sprite(chrName, 0, x, y);
-playerU_R = draw_sprite(chrName, 1, x, y);
-playerUp = draw_sprite(chrName, 2, x, y);
-playerU_L = draw_sprite(chrName, 3, x, y);
-playerLeft = draw_sprite(chrName, 4, x, y);
-playerD_L = draw_sprite(chrName, 5, x, y);
-playerDown = draw_sprite(chrName, 6, x, y);
-playerD_R = draw_sprite(chrName, 7, x, y);
-
-//attacking
-plAtk_Right = draw_sprite(chrName, 8, x, y);
-plAtk_Up = draw_sprite(chrName, 9, x, y);
-plAtk_Left = draw_sprite(chrName, 10, x, y);
-plAtk_Down = draw_sprite(chrName, 11, x, y);
-
-//spin attack
-plAtk_Spin = draw_sprite(chrName, 12, x, y);
-plAtk_Spin_at = draw_sprite(chrName, 13-15, x, y);
-
-//combo attack end
-plAtk_Spin_end = draw_sprite(chrName, 16-19, x, y);
-
-//running pose
-plRunP_Right = draw_sprite(chrName, 20, x, y);
-plRunP_U_R = draw_sprite(chrName, 21, x, y);
-plRunP_Up = draw_sprite(chrName, 22, x, y);
-plRunP_U_L = draw_sprite(chrName, 23, x, y);
-plRunP_Left = draw_sprite(chrName, 24, x, y);
-plRunP_D_L = draw_sprite(chrName, 25, x, y);
-plRunP_Down = draw_sprite(chrName, 26, x, y);
-plRunP_D_R = draw_sprite(chrName, 27, x, y);
-
-//running
-plRun_Right = draw_sprite(chrName, 28-31, x, y);
-plRun_U_R = draw_sprite(chrName, 32-35, x, y);
-plRun_Up = draw_sprite(chrName, 36-39, x, y);
-plRun_U_L = draw_sprite(chrName, 40-43, x, y);
-plRun_Left = draw_sprite(chrName, 44-47, x, y);
-plRun_D_L = draw_sprite(chrName, 48-51, x, y);
-plRun_Down = draw_sprite(chrName, 52-55, x, y);
-plRun_D_R = draw_sprite(chrName, 56-59, x, y);
+func_initplayersprites();
 
 //if hp is less than 1 then trigger death animation and state
 
@@ -113,7 +67,7 @@ plRun_D_R = draw_sprite(chrName, 56-59, x, y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_list_destroy(enhitbyatk)
+            <string>//ds_list_destroy(enhitbyatk)
 </string>
           </argument>
         </arguments>

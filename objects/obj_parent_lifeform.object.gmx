@@ -79,7 +79,10 @@ if (hp &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///k
+            <string>if (!place_meeting(x,y+vspd,obj_parent_lifeform)) {
+}
+if (!place_meeting(x+hspd,y,obj_parent_lifeform)) {
+}
 </string>
           </argument>
         </arguments>
