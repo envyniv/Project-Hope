@@ -47,4 +47,3 @@ var damage = instance_create(xx, yy, obj_dmg);
 damage.creator = id;
 canattack = false;
 }
-

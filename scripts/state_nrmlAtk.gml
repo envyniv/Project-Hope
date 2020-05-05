@@ -11,4 +11,3 @@ atkdiagul = temporary_placeholder
 atkdiagdr = temporary_placeholder
 atkdiagdl = temporary_placeholder
 scr_atkBase()
-

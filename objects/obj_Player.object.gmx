@@ -25,50 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///init
-func_Ginput(); //get input
-hp = 100;
-//event_inherited()
-spd = 4;
-image_speed = 0;
-hspd = 0;
-vspd = 0;
-len = 0;
-dir = 0;
-state = state_mv; //lets the player move (duh)
-canattack = true;
-depth = -y; //used for fake z axis i guess
-//team = 1; //used to not damage team members or to not get damaged
-whereisp = room_get_name(room) //used for saving function
-
-func_initplayersprites();
-
-//if hp is less than 1 then trigger death animation and state
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event enumb="0" eventtype="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <useapplyto>-1</useapplyto>
-        <isquestion>0</isquestion>
-        <exetype>2</exetype>
-        <functionname/>
-        <codestring/>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//ds_list_destroy(enhitbyatk)
-</string>
+            <string>///init&#13;
+if (hp&lt;100){func_Ginput(); //get input&#13;
+}&#13;
+hp = 100;&#13;
+//event_inherited()&#13;
+spd = 4;&#13;
+image_speed = 0;&#13;
+hspd = 0;&#13;
+vspd = 0;&#13;
+len = 0;&#13;
+dir = 0;&#13;
+state = state_mv; //lets the player move (duh)&#13;
+canattack = true;&#13;
+depth = -y;&#13;
+//team = 1; //used to not damage team members&#13;
+whereisp = room_get_name(room) //used for saving function&#13;
+&#13;
+func_initplayersprites();&#13;
+&#13;
+//if hp is less than 1 then trigger death animation and state</string>
           </argument>
         </arguments>
       </action>
@@ -90,10 +66,8 @@ func_initplayersprites();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///dodge
-state = state_mv
-
-</string>
+            <string>///dodge&#13;
+state = state_mv</string>
           </argument>
         </arguments>
       </action>
@@ -115,27 +89,27 @@ state = state_mv
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///state machine
-//event_inherited()
-
-switch (state) {
-    case state_mv:
-         state_mv()
-         break;
-    case state_nrmlAtk: state_nrmlAtk() break;
-    case state_dodge:
-         state_dodge()
-         break;
-    case state_run:
-         state_run()
-         break; 
-    case state_atkCombo:
-         state_atkCombo()
-         break;
-    default:
-         state_mv();}
-
-</string>
+            <string>///state machine&#13;
+//event_inherited()&#13;
+&#13;
+switch (state) {&#13;
+    case state_mv:&#13;
+         state_mv()&#13;
+         break;&#13;
+    case state_nrmlAtk:&#13;
+    	 state_nrmlAtk()&#13;
+    	 break;&#13;
+    case state_dodge:&#13;
+         state_dodge()&#13;
+         break;&#13;
+    case state_run:&#13;
+         state_run()&#13;
+         break; &#13;
+    case state_atkCombo:&#13;
+         state_atkCombo()&#13;
+         break;&#13;
+    default:&#13;
+         state_mv();}</string>
           </argument>
         </arguments>
       </action>
