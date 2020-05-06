@@ -4,18 +4,34 @@
     <Config>Configs\Default</Config>
   </Configs>
   <sprites name="sprites">
-    <sprite>sprites\spr_playertest</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprites name="Player">
+    <sprites name="test">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_dmg</sprite>
+      <sprite>sprites\spr_playertest</sprite>
+    </sprites>
+    <sprites name="main">
       <sprites name="Party">
-        <sprites name="Kevin">
-          <sprites name="walk">
-            <sprite>sprites\spr_Kevin_r</sprite>
+        <sprites name="Kevin (spr_kev)">
+          <sprites name="walk"/>
+          <sprites name="run"/>
+          <sprites name="attack">
+            <sprites name="normal"/>
+            <sprites name="spin"/>
           </sprites>
         </sprites>
+        <sprites name="Quinton (spr_quin)">
+          <sprites name="walk"/>
+          <sprites name="run"/>
+          <sprites name="attack">
+            <sprites name="normal"/>
+            <sprites name="spin"/>
+          </sprites>
+        </sprites>
+        <sprites name="Charlie (spr_char)"/>
+        <sprites name="Bella (spr_bella)"/>
       </sprites>
+      <sprites name="GUI"/>
     </sprites>
-    <sprite>sprites\spr_dmg</sprite>
   </sprites>
   <scripts name="scripts">
     <scripts name="func">

@@ -48,39 +48,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///follow the player
-
-
-func_Ginput(); //get input
-
-
-//if the player object exists then follow it smoothly
-if (instance_exists(obj_Player)) {
-    x += (obj_Player.x - x);
-    y += (obj_Player.y - y);
-    // if the player is dodging then follow it w/out smoothening
-    if (obj_Player.state == state_dodge) {
-    x = obj_Player.x;
-    y = obj_Player.y;
-       };
-                    }
-    
-if (downlook) {
-    y += 10;
-}
-
-if (uplook) {
-    y -= 10;
-}
-
-if (leftlook) {
-    x -= 10;
-}
-
-if (rightlook) {
-    x += 10;
-}
-</string>
+            <string>///follow the player&#13;
+&#13;
+&#13;
+func_Ginput(); //get input&#13;
+&#13;
+&#13;
+//if the player object exists then follow it smoothly&#13;
+if (instance_exists(obj_Player)) {&#13;
+    x += (obj_Player.x - x);&#13;
+    y += (obj_Player.y - y);&#13;
+    // if the player is dodging then follow it w/out smoothening&#13;
+    if (obj_Player.state == state_dodge) {&#13;
+    x = obj_Player.x;&#13;
+    y = obj_Player.y;&#13;
+       };&#13;
+                    }</string>
           </argument>
         </arguments>
       </action>
@@ -102,13 +85,12 @@ if (rightlook) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//gui
-
-//draw player cards
-
-//draw damage number when player attacks and hits
-
-
+            <string>//gui&#13;
+&#13;
+//draw player cards&#13;
+&#13;
+//draw damage number when player attacks and hits&#13;
+&#13;
 </string>
           </argument>
         </arguments>

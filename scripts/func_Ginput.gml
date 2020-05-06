@@ -1,6 +1,6 @@
 ///get_input
 
-//if gamepad is connected use gamepad else use keyboard
+//ADDME: if gamepad is connected use gamepad else use keyboard
     
 //Camera
 downlook = keyboard_check(ord('I'));
