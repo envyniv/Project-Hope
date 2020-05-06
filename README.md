@@ -18,6 +18,7 @@ David (davidkvis99)
 
 Sound Engineer(s):
 Davide Azzaretto (EnvyNival)
+David (davidkvis99)
 
 Coder(s):
 供平　大切王 (.oni_ナ) (?)
