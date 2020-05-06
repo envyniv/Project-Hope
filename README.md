@@ -1,6 +1,7 @@
 # Project Hope
 My take on a 2D A-RPG
 Coded in Enigma+LateralGM(https://enigma-dev.org/).
+Graphics Made in OpenSpuraito(https://github.com/envyniv/OpenSpuraito)
 © Davide Azzaretto/Envy , 2020.
 
 The Design Document:
