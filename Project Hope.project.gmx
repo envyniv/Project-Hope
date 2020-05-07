@@ -12,32 +12,50 @@
     <sprites name="main">
       <sprites name="Party">
         <sprites name="Kevin (spr_kev)">
-          <sprites name="walk"/>
-          <sprites name="run"/>
+          <sprites name="walk">
+            <sprite>sprites\spr_kev_w_a</sprite>
+            <sprite>sprites\spr_kev_w_s</sprite>
+            <sprites name="diag"/>
+          </sprites>
+          <sprites name="run">
+            <sprites name="diag"/>
+          </sprites>
           <sprites name="attack">
             <sprites name="normal"/>
             <sprites name="spin"/>
           </sprites>
         </sprites>
         <sprites name="Quinton (spr_quin)">
-          <sprites name="walk"/>
-          <sprites name="run"/>
+          <sprites name="walk">
+            <sprites name="diag"/>
+          </sprites>
+          <sprites name="run">
+            <sprites name="diag"/>
+          </sprites>
           <sprites name="attack">
             <sprites name="normal"/>
             <sprites name="spin"/>
           </sprites>
         </sprites>
         <sprites name="Charlie (spr_char)">
-          <sprites name="walk"/>
-          <sprites name="run"/>
+          <sprites name="walk">
+            <sprites name="diag"/>
+          </sprites>
+          <sprites name="run">
+            <sprites name="diag"/>
+          </sprites>
           <sprites name="attack">
             <sprites name="normal"/>
             <sprites name="spin"/>
           </sprites>
         </sprites>
         <sprites name="Bella (spr_bella)">
-          <sprites name="walk"/>
-          <sprites name="run"/>
+          <sprites name="walk">
+            <sprites name="diag"/>
+          </sprites>
+          <sprites name="run">
+            <sprites name="diag"/>
+          </sprites>
           <sprites name="attack">
             <sprites name="normal"/>
             <sprites name="spin"/>

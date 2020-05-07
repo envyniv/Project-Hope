@@ -3,7 +3,7 @@
   <Options>
     <option_sync_vertex>1</option_sync_vertex>
     <option_fullscreen>false</option_fullscreen>
-    <option_sizeable>false</option_sizeable>
+    <option_sizeable>true</option_sizeable>
     <option_stayontop>false</option_stayontop>
     <option_aborterrors>false</option_aborterrors>
     <option_noscreensaver>true</option_noscreensaver>
@@ -22,7 +22,7 @@
     <option_interpolate>false</option_interpolate>
     <option_scale>-1</option_scale>
     <option_closeesc>true</option_closeesc>
-    <option_lastchanged>43957.76900462963</option_lastchanged>
+    <option_lastchanged>43958.5132753125</option_lastchanged>
     <option_gameid>77465560</option_gameid>
     <option_gameguid>{531206D6-A927-4E7B-943D-B78FE0EBAE04}</option_gameguid>
     <option_author>Envy</option_author>
