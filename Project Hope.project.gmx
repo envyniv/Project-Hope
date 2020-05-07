@@ -72,6 +72,36 @@
       <sprites name="GUI"/>
     </sprites>
   </sprites>
+  <sounds name="sound">
+    <sounds name="BGM">
+      <sounds name="MAIN">
+        <sounds name="BATTLE">
+          <sound>sound\bgm_battle_of_sounds</sound>
+          <sound>sound\bgm_battle_2_bits</sound>
+          <sound>sound\bgm_from_the_enemy</sound>
+          <sound>sound\bgm_orch_fight</sound>
+          <sound>sound\bonus_what_has_it_come_to</sound>
+        </sounds>
+        <sounds name="OVERWORLD">
+          <sound>sound\bgm_new_world</sound>
+          <sound>sound\bgm_lost_in_the_wild</sound>
+          <sound>sound\bgm_lucky_2_c_u</sound>
+          <sound>sound\bgm_lively_night</sound>
+          <sound>sound\bgm_orch_fight_alt</sound>
+          <sound>sound\bgm_time_2_c_the_east</sound>
+          <sound>sound\bgm_start_of_a_song</sound>
+        </sounds>
+      </sounds>
+      <sounds name="TEST"/>
+    </sounds>
+    <sounds name="FX">
+      <sounds name="MAIN">
+        <sound>sound\snd_bump</sound>
+        <sound>sound\snd_kev_phone</sound>
+      </sounds>
+      <sounds name="TEST"/>
+    </sounds>
+  </sounds>
   <scripts name="scripts">
     <scripts name="func">
       <script>scripts\func_Ginput.gml</script>
