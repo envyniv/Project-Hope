@@ -111,8 +111,9 @@ switch (state) {&#13;
     default:&#13;
          state_mv();}&#13;
          &#13;
-         //If the requirements are respected, when pressing the SWITCH bind:&#13;
-         //switch sprites, pos, and stats with the next member and give back your previous stats, pos and sprites to a bot.</string>
+//If the requirements are respected, when pressing the SWITCH bind:&#13;
+//switch sprites, pos, and stats with the next member and give back your previous stats, pos and sprites to a bot&#13;
+//func_switchChar()</string>
           </argument>
         </arguments>
       </action>

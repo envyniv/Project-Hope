@@ -7,6 +7,7 @@ if (other.id != creator) { //if the id of the object that collided with the dmgo
     var force = xforce+yforce/2
     //if (damage <= 10 && damage >= 25) {trigger minigame}
     with (other) {
+    	//FIXME: add knockback
         motion_add(dir, force)
     }
 

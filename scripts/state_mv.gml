@@ -42,7 +42,7 @@ x += hspd
 if (!place_meeting(x,y+vspd,obj_wall)) {
 y += vspd
 }
-//Sprite controller
+//Sprite manager
 //image_speed = sign(len)*.2;
 //if (len == 0) image_index = 0;
 
@@ -73,4 +73,3 @@ y += vspd
 //    } else if (hspd < 0 and vspd > 0) {
 //        sprite_index = playerdl
 //    }
-

@@ -13,9 +13,13 @@
       <sprites name="Party">
         <sprites name="Kevin (spr_kev)">
           <sprites name="walk">
+            <sprite>sprites\spr_kev_w_w</sprite>
             <sprite>sprites\spr_kev_w_a</sprite>
             <sprite>sprites\spr_kev_w_s</sprite>
-            <sprites name="diag"/>
+            <sprite>sprites\spr_kev_w_d</sprite>
+            <sprites name="diag">
+              <sprite>sprites\spr_kev_w_aw</sprite>
+            </sprites>
           </sprites>
           <sprites name="run">
             <sprites name="diag"/>
@@ -71,6 +75,7 @@
       <script>scripts\func_dmgRandom.gml</script>
       <script>scripts\func_initplayersprites.gml</script>
       <script>scripts\func_dmgColl.gml</script>
+      <script>scripts\func_switchChar.gml</script>
     </scripts>
     <scripts name="player">
       <scripts name="atk">
@@ -86,11 +91,11 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_player</object>
     <object>objects\obj_dmg</object>
     <object>objects\obj_parent_lifeform</object>
     <object>objects\obj_camera</object>
     <objects name="test">
-      <object>objects\obj_Player</object>
       <object>objects\obj_wall</object>
     </objects>
     <objects name="main">
