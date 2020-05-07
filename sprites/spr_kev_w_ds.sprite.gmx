@@ -4,7 +4,7 @@
   <yorigin>14</yorigin>
   <colkind>1</colkind>
   <sepmasks>0</sepmasks>
-  <bbox_left>2</bbox_left>
+  <bbox_left>1</bbox_left>
   <bbox_right>14</bbox_right>
   <bbox_top>22</bbox_top>
   <bbox_bottom>28</bbox_bottom>
@@ -16,9 +16,9 @@
   <width>17</width>
   <height>29</height>
   <frames>
-    <frame index="0">images\spr_kev_w_aw_0.png</frame>
-    <frame index="1">images\spr_kev_w_aw_1.png</frame>
-    <frame index="2">images\spr_kev_w_aw_2.png</frame>
-    <frame index="3">images\spr_kev_w_aw_3.png</frame>
+    <frame index="0">images\spr_kev_w_ds_0.png</frame>
+    <frame index="1">images\spr_kev_w_ds_1.png</frame>
+    <frame index="2">images\spr_kev_w_ds_2.png</frame>
+    <frame index="3">images\spr_kev_w_ds_3.png</frame>
   </frames>
 </sprite>

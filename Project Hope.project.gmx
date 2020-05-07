@@ -19,6 +19,9 @@
             <sprite>sprites\spr_kev_w_d</sprite>
             <sprites name="diag">
               <sprite>sprites\spr_kev_w_aw</sprite>
+              <sprite>sprites\spr_kev_w_as</sprite>
+              <sprite>sprites\spr_kev_w_dw</sprite>
+              <sprite>sprites\spr_kev_w_ds</sprite>
             </sprites>
           </sprites>
           <sprites name="run">
