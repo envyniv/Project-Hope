@@ -2,27 +2,27 @@
 
 
 //walking
-playerRight = spr_Kevin_r;
-playerU_R = spr_Kevin_ur;
-playerUp = spr_Kevin_u;
-playerU_L = spr_Kevin_ul;
-playerLeft = spr_Kevin_l;
-playerD_L = spr_Kevin_dl;
-playerDown = spr_Kevin_d;
-playerD_R = spr_Kevin_dr;
+playerRight = spr_kev_w_d;
+playerU_R = spr_kev_w_dw;
+playerUp = spr_kev_w_w;
+playerU_L = spr_kev_w_aw;
+playerLeft = spr_kev_w_a;
+playerD_L = spr_kev_w_as;
+playerDown = spr_kev_w_s;
+playerD_R = spr_kev_w_ds;
 
 //attacking
-plAtk_Right = spr_Kevin_atkr;
-plAtk_Up = spr_Kevin_atku;
-plAtk_Left = spr_Kevin_atkl;
-plAtk_Down = spr_Kevin_atkd;
+plAtk_Right = spr_kev_atk_d;
+plAtk_Up = spr_kev_atk_w;
+plAtk_Left = spr_kev_atk_a;
+plAtk_Down = spr_kev_atk_s;
 
-//spin attack
-plAtk_Spin = spr_Kevin_atk_s;
-plAtk_at = spr_Kevin_atk_at;
+//spin/special attack
+plAtk_Sp = spr_kev_atck_sp;
+plAtk_at = spr_kev_atck_at;
 
 //combo attack end
-plAtk_Spin_End = spr_Kevin_atk_s_end;
+plAtk_Spin_End = spr_kev_atck_end;
 
 //running pose
 plRunP_Right = spr_Kevin_run_pose_r;
@@ -43,4 +43,6 @@ plRun_Left = spr_Kevin_run_l;
 plRun_D_L = spr_Kevin_run_dl;
 plRun_Down = spr_Kevin_run_d;
 plRun_D_R = spr_Kevin_run_dr;
+
+//win anim
 

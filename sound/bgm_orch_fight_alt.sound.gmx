@@ -2,7 +2,7 @@
 <sound>
   <extension>.mp3</extension>
   <origname>sound\audio\bgm_orch_fight_alt.mp3</origname>
-  <kind>3</kind>
+  <kind>1</kind>
   <volume>
     <volume>1.0</volume>
   </volume>
@@ -13,7 +13,7 @@
     <sampleRate>44100</sampleRate>
   </sampleRates>
   <types>
-    <type>0</type>
+    <type>1</type>
   </types>
   <bitDepths>
     <bitDepth>16</bitDepth>

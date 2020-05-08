@@ -25,6 +25,7 @@
             </sprites>
           </sprites>
           <sprites name="run">
+            <sprites name="still"/>
             <sprites name="diag"/>
           </sprites>
           <sprites name="attack">
@@ -37,6 +38,7 @@
             <sprites name="diag"/>
           </sprites>
           <sprites name="run">
+            <sprites name="still"/>
             <sprites name="diag"/>
           </sprites>
           <sprites name="attack">
@@ -49,6 +51,7 @@
             <sprites name="diag"/>
           </sprites>
           <sprites name="run">
+            <sprites name="still"/>
             <sprites name="diag"/>
           </sprites>
           <sprites name="attack">
@@ -61,6 +64,7 @@
             <sprites name="diag"/>
           </sprites>
           <sprites name="run">
+            <sprites name="still"/>
             <sprites name="diag"/>
           </sprites>
           <sprites name="attack">
