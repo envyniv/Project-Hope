@@ -97,6 +97,7 @@
     <sounds name="FX">
       <sounds name="MAIN">
         <sound>sound\snd_bump</sound>
+        <sound>sound\snd_kev_phone</sound>
       </sounds>
       <sounds name="TEST"/>
     </sounds>
