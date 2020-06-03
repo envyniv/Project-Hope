@@ -21,10 +21,7 @@ Davide Azzaretto (EnvyNival)
 David (davidkvis99)
 
 Coder(s):
-供平　大切王 (.oni_ナ) (?)
 Davide Azzaretto (EnvyNival)
 
 Pixel Artists:
 Davide Azzaretto (EnvyNival)
-Sebastian Buley-Delanty (Gzillion/MyLawn/mrnewbie123/MarNewbz)
-Raphael (Reox320)
