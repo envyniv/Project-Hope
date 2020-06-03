@@ -129,7 +129,6 @@ texture = ExtResource( 3 )
 offset = Vector2( 0, -6.5 )
 vframes = 8
 hframes = 3
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/idle_a = SubResource( 2 )
@@ -139,6 +138,3 @@ anims/idle_w = SubResource( 5 )
 anims/walk_a = SubResource( 6 )
 anims/walk_s = SubResource( 7 )
 anims/walk_w = SubResource( 8 )
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
