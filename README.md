@@ -1,7 +1,11 @@
 # Project Hope
 My take on a 2D A-RPG
 Coded in Godot(https://godotengine.org/).
+
+
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
+
+
 © Davide Azzaretto/Envy , 2020.
 
 The Design Document:
