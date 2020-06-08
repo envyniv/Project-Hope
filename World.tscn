@@ -19,9 +19,6 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/Test Wall"]
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Test Wall"]
 shape = SubResource( 1 )
