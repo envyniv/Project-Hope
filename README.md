@@ -30,7 +30,7 @@ Davide Azzaretto (EnvyNival)
 Pixel Artists:
 Davide Azzaretto (EnvyNival)
 
-# Additional Contributer(s):
+# Additional Contributor(s):
 
 gotimo2 (fixed player movement and animations)
 
