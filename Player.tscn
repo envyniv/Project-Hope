@@ -227,6 +227,8 @@ vframes = 21
 hframes = 21
 frame = 87
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment1"]
+
 [node name="Spin_Attachment2" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 3 )
@@ -234,3 +236,5 @@ offset = Vector2( 11.915, -6.5 )
 vframes = 21
 hframes = 21
 frame = 88
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment2"]
