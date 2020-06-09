@@ -7,6 +7,8 @@ Design Document made in LibreOffice (https://libreoffice.org)
 
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
 
+Design document font: Ubuntu (https://design.ubuntu.com/font/)
+
 © Davide Azzaretto/Envy , 2020.
 
 
