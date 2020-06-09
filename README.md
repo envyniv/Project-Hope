@@ -1,15 +1,13 @@
 # Project Hope
-My take on a 2D A-RPG
+My take on a 2D A-RPG.
+
 Coded in Godot(https://godotengine.org/).
 
+Design Document made in LibreOffice (https://libreoffice.org)
 
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
 
-
 © Davide Azzaretto/Envy , 2020.
-
-The Design Document:
-https://tinyurl.com/yxhat3pl
 
 
 # The Amazing People Who Worked On This
@@ -32,5 +30,5 @@ Davide Azzaretto (EnvyNival)
 
 # Additional Contributor(s):
 
-gotimo2 (fixed player movement and animations)
+gotimo2 (separated Player movement and animation)
 
