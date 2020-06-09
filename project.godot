@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project Hope"
-run/main_scene="res://World.tscn"
+run/main_scene="res://Viewports.tscn"
 config/icon="res://icon.png"
 
 [display]

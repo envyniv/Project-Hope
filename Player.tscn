@@ -5,11 +5,10 @@
 [ext_resource path="res://source_assets/kevinclark0000.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.2934, 3.04215 )
+extents = Vector2( 5.46478, 3.04215 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "stop"
-loop = true
+[sub_resource type="Animation" id=2]
+resource_name = "atk_spin"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -20,11 +19,35 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 86 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 87 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 88 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "walk_s"
+[sub_resource type="Animation" id=3]
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -50,16 +73,23 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4.5 )
+position = Vector2( 0.35, 4.5 )
 shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="Shadow" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 0, -5 )
+vframes = 21
+hframes = 21
+frame = 85
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 offset = Vector2( 0, -6.5 )
 vframes = 21
 hframes = 21
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/stop = SubResource( 3 )
-anims/walk_s = SubResource( 2 )
+anims/atk_spin = SubResource( 2 )
+anims/walk_s = SubResource( 3 )

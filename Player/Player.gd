@@ -3,13 +3,20 @@ extends KinematicBody2D
 var moveSpeed = 5
 var motion = Vector2()
 
+#animation
 func anim_handle(): #sorry for messing with your code and removing a significant bit because i don't know what the anims are for exactly - but you should probably check if the player *is* moving, rather than if they *aren't* 
 	if motion.x == 0 and motion.y == 0:
-		$Sprite/AnimationPlayer.play("stop")
+		$Sprite/AnimationPlayer.play("idle")
 	elif motion.x != 0:
-		$Sprite/AnimationPlayer.play("walk_s")
+		if motion.x < 0:
+			$Sprite/AnimationPlayer.play("walk_a")
+		if motion.x > 0:
+			$Sprite/AnimationPlayer.play("walk_d")
 	elif motion.y != 0:
-		$Sprite/AnimationPlayer.play("walk_s")
+		if motion.y < 0:
+			$Sprite/AnimationPlayer.play("walk_w")
+		if motion.y > 0:
+			$Sprite/AnimationPlayer.play("walk_s")
 		
 
 func get_input():	#get input and store it in a vector - motion
@@ -42,5 +49,3 @@ func _process(delta):
 	anim_handle()
 	var movement = motion * moveSpeed * delta
 	var _movementOutput = move_and_collide(movement)
-
-

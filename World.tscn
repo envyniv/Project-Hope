@@ -8,6 +8,8 @@ extents = Vector2( 32.3357, 32.1521 )
 
 [node name="World" type="Node"]
 
+[node name="GUI" type="Node" parent="."]
+
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 60.9999, 88.9999 )
 
@@ -19,6 +21,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/Test Wall"]
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Test Wall"]
 shape = SubResource( 1 )
@@ -27,5 +32,3 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
