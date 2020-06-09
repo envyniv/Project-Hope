@@ -17,6 +17,7 @@ func anim_handle(): #sorry for messing with your code and removing a significant
 			$Sprite/AnimationPlayer.play("walk_w")
 		if motion.y > 0:
 			$Sprite/AnimationPlayer.play("walk_s")
+	#if the player is attacking for the thrird time in a short amount of time, then make Spin_Attachment1 and 2 visible and play atk_spin.
 		
 
 func get_input():	#get input and store it in a vector - motion

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -9,6 +9,22 @@ extents = Vector2( 5.46478, 3.04215 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "atk_spin"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 86, 86, 86, 86, 86, 86, 86, 86, 86 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle_a"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -19,34 +35,88 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 86 ]
+"values": [ 7 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle_d"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 87 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 88 ]
+"values": [ 19 ]
 }
 
 [sub_resource type="Animation" id=3]
+resource_name = "idle_s"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "idle_w"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "walk_a"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "walk_d"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 19 ]
+}
+
+[sub_resource type="Animation" id=4]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -60,6 +130,52 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 1 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "walk_w"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 13 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "win"
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 31 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
 }
 
 [node name="Player" type="KinematicBody2D"]
@@ -86,10 +202,35 @@ frame = 85
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
-offset = Vector2( 0, -6.5 )
+offset = Vector2( -0.2, -6.5 )
 vframes = 21
 hframes = 21
+frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/atk_spin = SubResource( 2 )
-anims/walk_s = SubResource( 3 )
+anims/idle_a = SubResource( 5 )
+anims/idle_d = SubResource( 6 )
+anims/idle_s = SubResource( 3 )
+anims/idle_w = SubResource( 8 )
+anims/walk_a = SubResource( 9 )
+anims/walk_d = SubResource( 11 )
+anims/walk_s = SubResource( 4 )
+anims/walk_w = SubResource( 10 )
+anims/win = SubResource( 7 )
+
+[node name="Spin_Attachment1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( -11.9, -6.5 )
+vframes = 21
+hframes = 21
+frame = 87
+
+[node name="Spin_Attachment2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 11.915, -6.5 )
+vframes = 21
+hframes = 21
+frame = 88
