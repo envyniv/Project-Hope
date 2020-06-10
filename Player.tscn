@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -6,6 +6,209 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.46478, 3.04215 )
+
+[sub_resource type="Animation" id=15]
+resource_name = "atk_a"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 76 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "atk_a2"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 77 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "atk_airborne"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 75, 78, 81, 84, 75 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "atk_d"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 82 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "atk_d2"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 83 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "atk_s"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 73 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "atk_s2"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 74 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -6.5 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "atk_spin"
@@ -22,9 +225,78 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 86, 86, 86, 86, 86, 86, 86, 86, 86 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "atk_w"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 79 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.7, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "atk_w2"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 80 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.4, -6.5 ) ]
+}
 
 [sub_resource type="Animation" id=5]
-resource_name = "idle_a"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -37,9 +309,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 7 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
 
 [sub_resource type="Animation" id=6]
-resource_name = "idle_d"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -52,9 +335,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 19 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
 
-[sub_resource type="Animation" id=3]
-resource_name = "idle_s"
+[sub_resource type="Animation" id=7]
+length = 0.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -67,9 +363,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
 
 [sub_resource type="Animation" id=8]
-resource_name = "idle_w"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -82,9 +389,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 13 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
 
 [sub_resource type="Animation" id=9]
-resource_name = "walk_a"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -99,10 +417,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 6, 7, 8, 7 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
 
-[sub_resource type="Animation" id=11]
-resource_name = "walk_d"
+[sub_resource type="Animation" id=10]
 length = 0.8
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -115,8 +445,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 18, 19, 20, 19 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, -6.5 ) ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=11]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -132,8 +474,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 1 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "walk_w"
+[sub_resource type="Animation" id=12]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -148,9 +489,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 12, 13, 14, 13 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, -6.5 ) ]
+}
 
-[sub_resource type="Animation" id=7]
-resource_name = "win"
+[sub_resource type="Animation" id=13]
 length = 1.1
 loop = true
 tracks/0/type = "value"
@@ -205,19 +557,28 @@ texture = ExtResource( 3 )
 offset = Vector2( -0.2, -6.5 )
 vframes = 21
 hframes = 21
-frame = 7
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/atk_a = SubResource( 15 )
+anims/atk_a2 = SubResource( 18 )
+anims/atk_airborne = SubResource( 21 )
+anims/atk_d = SubResource( 19 )
+anims/atk_d2 = SubResource( 20 )
+anims/atk_s = SubResource( 16 )
+anims/atk_s2 = SubResource( 17 )
 anims/atk_spin = SubResource( 2 )
+anims/atk_w = SubResource( 3 )
+anims/atk_w2 = SubResource( 14 )
 anims/idle_a = SubResource( 5 )
 anims/idle_d = SubResource( 6 )
-anims/idle_s = SubResource( 3 )
+anims/idle_s = SubResource( 7 )
 anims/idle_w = SubResource( 8 )
 anims/walk_a = SubResource( 9 )
-anims/walk_d = SubResource( 11 )
-anims/walk_s = SubResource( 4 )
-anims/walk_w = SubResource( 10 )
-anims/win = SubResource( 7 )
+anims/walk_d = SubResource( 10 )
+anims/walk_s = SubResource( 11 )
+anims/walk_w = SubResource( 12 )
+anims/win = SubResource( 13 )
 
 [node name="Spin_Attachment1" type="Sprite" parent="."]
 visible = false
@@ -238,3 +599,5 @@ hframes = 21
 frame = 88
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment2"]
+
+[node name="Timer" type="Timer" parent="."]

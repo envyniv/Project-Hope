@@ -1,10 +1,39 @@
 extends KinematicBody2D
 
+#initialize
+
+#state machine
+enum {
+	STILL
+	MOVING
+	RUNNING
+	SPECIAL
+}
+
+var state = STILL
+
 var moveSpeed = 5
 var motion = Vector2()
+var canDo = true #can the player dodge and attack
+
+# movement
+func _process(delta):
+	get_input()
+	anim_handle()
+	var movement = motion * moveSpeed * delta
+	var _movementOutput = move_and_collide(movement)
+	match state:
+		STILL:
+			pass
+		MOVING:
+			pass
+		RUNNING:
+			pass
+		SPECIAL:
+			pass
 
 #animation
-func anim_handle(): #sorry for messing with your code and removing a significant bit because i don't know what the anims are for exactly - but you should probably check if the player *is* moving, rather than if they *aren't* 
+func anim_handle(): #'you should probably check if the player *is* moving, rather than if they *aren't*' -gotimo2
 	if motion.x == 0 and motion.y == 0:
 		$Sprite/AnimationPlayer.play("idle")
 	elif motion.x != 0:
@@ -17,10 +46,12 @@ func anim_handle(): #sorry for messing with your code and removing a significant
 			$Sprite/AnimationPlayer.play("walk_w")
 		if motion.y > 0:
 			$Sprite/AnimationPlayer.play("walk_s")
-	#if the player is attacking for the thrird time in a short amount of time, then make Spin_Attachment1 and 2 visible and play atk_spin.
-		
 
-func get_input():	#get input and store it in a vector - motion
+#if the player is attacking for the thrid time in a short amount of time, then make Spin_Attachment1 and 2 visible and play atk_spin.
+
+
+#get input and store it in a vector - motion
+func get_input():	
 	
 	if Input.is_action_pressed("ui_right"):
 		motion.x += 1 	
@@ -41,12 +72,3 @@ func get_input():	#get input and store it in a vector - motion
 	
 	else:
 		motion.x = 0; motion.y = 0
-	
-
-
-# movement
-func _process(delta):
-	get_input()
-	anim_handle()
-	var movement = motion * moveSpeed * delta
-	var _movementOutput = move_and_collide(movement)
