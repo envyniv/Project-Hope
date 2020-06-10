@@ -22,6 +22,8 @@ __meta__ = {
 [node name="Game" type="ViewportContainer" parent="HBoxContainer"]
 margin_right = 240.0
 margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 stretch = true
 stretch_shrink = 2
 
@@ -40,6 +42,7 @@ script = ExtResource( 3 )
 margin_left = 240.0
 margin_right = 360.0
 margin_bottom = 240.0
+size_flags_horizontal = 3
 stretch = true
 
 [node name="Viewport" type="Viewport" parent="HBoxContainer/GuiMenu"]
