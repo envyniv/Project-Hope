@@ -9,7 +9,7 @@ Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
 
 Design document font: Ubuntu (https://design.ubuntu.com/font/)
 
-© Davide Azzaretto/Envy , 2020.
+© Davide Azzaretto/Envy, 2020.
 
 
 # The Amazing People Who Worked On This
