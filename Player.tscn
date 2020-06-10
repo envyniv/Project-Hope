@@ -580,7 +580,9 @@ anims/walk_s = SubResource( 11 )
 anims/walk_w = SubResource( 12 )
 anims/win = SubResource( 13 )
 
-[node name="Spin_Attachment1" type="Sprite" parent="."]
+[node name="Spin_Attachment" type="Node" parent="."]
+
+[node name="Spin_Attachment1" type="Sprite" parent="Spin_Attachment"]
 visible = false
 texture = ExtResource( 3 )
 offset = Vector2( -11.9, -6.5 )
@@ -588,9 +590,9 @@ vframes = 21
 hframes = 21
 frame = 87
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment/Spin_Attachment1"]
 
-[node name="Spin_Attachment2" type="Sprite" parent="."]
+[node name="Spin_Attachment2" type="Sprite" parent="Spin_Attachment"]
 visible = false
 texture = ExtResource( 3 )
 offset = Vector2( 11.915, -6.5 )
@@ -598,6 +600,6 @@ vframes = 21
 hframes = 21
 frame = 88
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment/Spin_Attachment2"]
 
 [node name="Timer" type="Timer" parent="."]
