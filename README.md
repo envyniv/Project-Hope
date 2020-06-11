@@ -1,5 +1,5 @@
 # Project Hope
-My take on a 2D A-RPG in the style of a Capcom-like fighting game.
+My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like A-RPG in the style of a [Capcom-like fighting game](https://en.wikipedia.org/wiki/Street_Fighter).
 
 Coded in Godot(https://godotengine.org/).
 
