@@ -1,5 +1,5 @@
 # Project Hope
-My take on a 2D A-RPG in the style of a fighting game.
+My take on a 2D A-RPG in the style of a Capcom-like fighting game.
 
 Coded in Godot(https://godotengine.org/).
 
