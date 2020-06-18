@@ -1,13 +1,13 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Player_new.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://source_assets/kevinclark0000.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.46478, 3.04215 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=2]
 resource_name = "atk_a"
 length = 0.2
 loop = true
@@ -36,7 +36,7 @@ tracks/1/keys = {
 "values": [ Vector2( -3, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=3]
 resource_name = "atk_a2"
 length = 0.2
 loop = true
@@ -65,7 +65,7 @@ tracks/1/keys = {
 "values": [ Vector2( -3, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=4]
 resource_name = "atk_airborne"
 length = 0.6
 loop = true
@@ -94,7 +94,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.3, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=5]
 resource_name = "atk_d"
 length = 0.2
 loop = true
@@ -123,7 +123,7 @@ tracks/1/keys = {
 "values": [ Vector2( 4, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=6]
 resource_name = "atk_d2"
 length = 0.2
 loop = true
@@ -152,7 +152,7 @@ tracks/1/keys = {
 "values": [ Vector2( 4, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=7]
 resource_name = "atk_s"
 length = 0.2
 loop = true
@@ -181,7 +181,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=8]
 resource_name = "atk_s2"
 length = 0.2
 loop = true
@@ -210,8 +210,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "atk_spin"
+[sub_resource type="Animation" id=9]
 length = 1.8
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -238,8 +237,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "atk_w"
+[sub_resource type="Animation" id=10]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -267,7 +265,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.7, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=11]
 resource_name = "atk_w2"
 length = 0.2
 loop = true
@@ -296,7 +294,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1.4, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -322,7 +320,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -348,7 +346,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=14]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -376,7 +374,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -402,7 +400,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=16]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -430,7 +428,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=17]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -458,7 +456,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=18]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -474,7 +472,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 1 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=19]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -502,7 +500,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=20]
 length = 1.1
 loop = true
 tracks/0/type = "value"
@@ -560,25 +558,25 @@ hframes = 21
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/atk_a = SubResource( 15 )
-anims/atk_a2 = SubResource( 18 )
-anims/atk_airborne = SubResource( 21 )
-anims/atk_d = SubResource( 19 )
-anims/atk_d2 = SubResource( 20 )
-anims/atk_s = SubResource( 16 )
-anims/atk_s2 = SubResource( 17 )
-anims/atk_spin = SubResource( 2 )
-anims/atk_w = SubResource( 3 )
-anims/atk_w2 = SubResource( 14 )
-anims/idle_a = SubResource( 5 )
-anims/idle_d = SubResource( 6 )
-anims/idle_s = SubResource( 7 )
-anims/idle_w = SubResource( 8 )
-anims/walk_a = SubResource( 9 )
-anims/walk_d = SubResource( 10 )
-anims/walk_s = SubResource( 11 )
-anims/walk_w = SubResource( 12 )
-anims/win = SubResource( 13 )
+anims/atk_a = SubResource( 2 )
+anims/atk_a2 = SubResource( 3 )
+anims/atk_airborne = SubResource( 4 )
+anims/atk_d = SubResource( 5 )
+anims/atk_d2 = SubResource( 6 )
+anims/atk_s = SubResource( 7 )
+anims/atk_s2 = SubResource( 8 )
+anims/atk_spin = SubResource( 9 )
+anims/atk_w = SubResource( 10 )
+anims/atk_w2 = SubResource( 11 )
+anims/idle_a = SubResource( 12 )
+anims/idle_d = SubResource( 13 )
+anims/idle_s = SubResource( 14 )
+anims/idle_w = SubResource( 15 )
+anims/walk_a = SubResource( 16 )
+anims/walk_d = SubResource( 17 )
+anims/walk_s = SubResource( 18 )
+anims/walk_w = SubResource( 19 )
+anims/win = SubResource( 20 )
 
 [node name="Spin_Attachment" type="Node" parent="."]
 
