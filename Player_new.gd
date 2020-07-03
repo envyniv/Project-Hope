@@ -5,20 +5,21 @@ var right = Input.is_action_pressed("ui_right")
 var left = Input.is_action_pressed("ui_left")
 var up = Input.is_action_pressed("ui_up")
 var down = Input.is_action_pressed("ui_down")
-var speed = 100
-var velocity = Vector2()
+var moveSpeed = 100
+var motion = Vector2()
+var canDo = true #used for special actions like attacking and dodging
 
 #get input
 func get_input():
 	if right:
-		velocity.x += 1
+		motion.x += moveSpeed
 	if left:
-		velocity.x -= 1
+		motion.x -= moveSpeed
 	if down:
-		velocity.y += 1
+		motion.y += moveSpeed
 	if up:
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+		motion.y -= moveSpeed
+	motion = motion.normalized() * moveSpeed
 	pass
 	
 #state machine
@@ -34,7 +35,18 @@ var state = STILL
 # movement
 func _process(delta):
 	get_input()
-	move_and_collide(velocity * delta)
+	move_and_collide(motion * delta)
+	anim_handle()
+	motion.x = 0; motion.y = 0
+	match state:
+		STILL:
+			pass
+		MOVING:
+			pass
+		RUNNING:
+			pass
+		SPECIAL:
+			pass
 	pass
 
 func anim_handle(): #'you should probably check if the player *is* moving, rather than if they *aren't*' -gotimo2
