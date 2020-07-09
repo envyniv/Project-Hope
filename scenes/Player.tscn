@@ -1,14 +1,13 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Player_new.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://source_assets/kevinclark0000.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Player/Player_new.gd" type="Script" id=1]
+[ext_resource path="res://source_assets/kevinclark0000.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.46478, 3.04215 )
+extents = Vector2( 5.51691, 3.04215 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "atk_a"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -37,7 +36,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "atk_a2"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -66,7 +64,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "atk_airborne"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -95,7 +92,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "atk_d"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -124,7 +120,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-resource_name = "atk_d2"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -153,7 +148,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "atk_s"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -182,7 +176,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-resource_name = "atk_s2"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -266,7 +259,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=11]
-resource_name = "atk_w2"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -533,25 +525,26 @@ script = ExtResource( 1 )
 
 [node name="TestSprite" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.35, 4.5 )
+position = Vector2( 0.48, 4.5 )
 shape = SubResource( 1 )
 one_way_collision_margin = 0.0
 
 [node name="Shadow" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 offset = Vector2( 0, -5 )
 vframes = 21
 hframes = 21
 frame = 85
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+position = Vector2( 0.210224, 0.50397 )
+texture = ExtResource( 2 )
 offset = Vector2( -0.2, -6.5 )
 vframes = 21
 hframes = 21
@@ -577,27 +570,5 @@ anims/walk_d = SubResource( 17 )
 anims/walk_s = SubResource( 18 )
 anims/walk_w = SubResource( 19 )
 anims/win = SubResource( 20 )
-
-[node name="Spin_Attachment" type="Node" parent="."]
-
-[node name="Spin_Attachment1" type="Sprite" parent="Spin_Attachment"]
-visible = false
-texture = ExtResource( 3 )
-offset = Vector2( -11.9, -6.5 )
-vframes = 21
-hframes = 21
-frame = 87
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment/Spin_Attachment1"]
-
-[node name="Spin_Attachment2" type="Sprite" parent="Spin_Attachment"]
-visible = false
-texture = ExtResource( 3 )
-offset = Vector2( 11.915, -6.5 )
-vframes = 21
-hframes = 21
-frame = 88
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spin_Attachment/Spin_Attachment2"]
 
 [node name="Timer" type="Timer" parent="."]

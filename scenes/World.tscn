@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,13 +8,11 @@ extents = Vector2( 32.3357, 32.1521 )
 
 [node name="World" type="Node"]
 
-[node name="GUI" type="Node" parent="."]
-
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 60.9999, 88.9999 )
 
 [node name="Test Wall" type="StaticBody2D" parent="YSort"]
-position = Vector2( 99.6042, -0.0749283 )
+position = Vector2( 52.7821, -3.44612 )
 __meta__ = {
 "_edit_group_": true
 }
