@@ -18,13 +18,13 @@ enum {
 var state = STILL
 
 func _physics_process(delta):
-	controls_loop();
-	movement_loop();
+	input_check();
+	movement();
 	anim_handler();
 	pass
 
 #input
-func controls_loop():
+func input_check():
 	var UP = Input.is_action_pressed("ui_up")
 	var DOWN = Input.is_action_pressed("ui_down")
 	var RIGHT = Input.is_action_pressed("ui_right")
@@ -35,19 +35,46 @@ func controls_loop():
 
 
 # movement
-func movement_loop():
+func movement():
 	var motion = movedir.normalized() * moveSpeed
 	move_and_slide(motion, Vector2(0,0))
 	pass
 
 func anim_handler(): #'you should probably check if the player *is* moving, rather than if they *aren't*' -gotimo2
+	
+	#facing helper
 	match movedir:
 		Vector2(-1,0):
-			facing = "left"
+			facing = "linearLeft"
 		Vector2(1,0):
-			facing = "right"
+			facing = "linearRight"
 		Vector2(0,-1):
-			facing = "up"
+			facing = "linearUp"
 		Vector2(0,1):
-			facing = "down"
+			facing = "linearDown"
+		Vector2(1,1):
+			facing = "diagRightDown"
+		Vector2(-1,-1):
+			facing = "diagLeftUp"
+		Vector2(1,-1):
+			facing = "diagRightUp"
+		Vector2(-1,1):
+			facing = "diagLeftDown"
+			
+	if motion.x == 0 and motion.y == 0:
+		$Sprite/AnimationPlayer.play("idle")
+		
+		#needs to be expanded
+		
+	elif motion.x != 0:
+		if motion.x < 0:
+			$Sprite/AnimationPlayer.play("walk_a")
+		if motion.x > 0:
+			$Sprite/AnimationPlayer.play("walk_d")
+	elif motion.y != 0:
+		if motion.y < 0:
+			$Sprite/AnimationPlayer.play("walk_w")
+		if motion.y > 0:
+			$Sprite/AnimationPlayer.play("walk_s")
+		
 	pass
