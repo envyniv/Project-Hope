@@ -1,67 +1,65 @@
 extends KinematicBody2D
 
 #initialize
+var moveSpeed = 100
+var movedir = Vector2()
+var canDo = true #used for special actions like attacking and dodging
+var facing = "down"
 
+	
 #state machine
 enum {
 	STILL
 	MOVING
 	RUNNING
 	SPECIAL
+	MINIGM
 }
 
 var state = STILL
 
-var moveSpeed = 5
-var motion = Vector2()
-var canDo = true #can the player dodge and attack? idk can they? hahahahhaha funy joke
+func _physics_process(delta):
+	input_check();
+	movement();
+	anim_handler();
+	pass
+
+#input
+func input_check():
+	var UP = Input.is_action_pressed("ui_up")
+	var DOWN = Input.is_action_pressed("ui_down")
+	var RIGHT = Input.is_action_pressed("ui_right")
+	var LEFT = Input.is_action_pressed("ui_left")
+	movedir.x = -int(LEFT) + int(RIGHT) #made so that when pressing u&d or l&r the player won't have a stroke.
+	movedir.y = -int(UP) + int(DOWN)
+	pass
+
 
 # movement
-func _process(_delta):
-	motion.x = 0; motion.y = 0
-	get_input()
-	anim_handle()
-	match state:
-		STILL:
-			pass
-		MOVING:
-			pass
-		RUNNING:
-			pass
-		SPECIAL:
-			pass
+func movement():
+	var motion = movedir.normalized() * moveSpeed
+	move_and_slide(motion, Vector2(0,0))
 	pass
 
-#animation
-func anim_handle(): #'you should probably check if the player *is* moving, rather than if they *aren't*' -gotimo2
-	if motion.x == 0 and motion.y == 0:
-		$Sprite/AnimationPlayer.play("idle")
-		
-		#needs to be expanded
-		
-	elif motion.x != 0:
-		if motion.x < 0:
-			$Sprite/AnimationPlayer.play("walk_a")
-		if motion.x > 0:
-			$Sprite/AnimationPlayer.play("walk_d")
-	elif motion.y != 0:
-		if motion.y < 0:
-			$Sprite/AnimationPlayer.play("walk_w")
-		if motion.y > 0:
-			$Sprite/AnimationPlayer.play("walk_s")
-	pass
-
-#if the player is attacking for the thrid time in a short amount of time, then make Spin_Attachment1 and 2 visible and play atk_spin.
-
-
-#get input and store it in a vector - motion
-func get_input():	
-	if Input.is_action_pressed("ui_right"):
-		motion.x += moveSpeed 	
-	elif Input.is_action_pressed("ui_left"):
-		motion.x -= moveSpeed
-	elif Input.is_action_pressed("ui_up"):
-		motion.y -= moveSpeed
-	elif Input.is_action_pressed("ui_down"):
-		motion.y += moveSpeed
+func anim_handler(): #'you should probably check if the player *is* moving, rather than if they *aren't*' -gotimo2
+	
+	#facing helper
+	match movedir:
+		Vector2(-1,0):
+			facing = "linearLeft"
+		Vector2(1,0):
+			facing = "linearRight"
+		Vector2(0,-1):
+			facing = "linearUp"
+		Vector2(0,1):
+			facing = "linearDown"
+		Vector2(1,1):
+			facing = "diagRightDown"
+		Vector2(-1,-1):
+			facing = "diagLeftUp"
+		Vector2(1,-1):
+			facing = "diagRightUp"
+		Vector2(-1,1):
+			facing = "diagLeftDown"
+			
 	pass
