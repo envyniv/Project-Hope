@@ -2,9 +2,11 @@ extends KinematicBody2D
 
 #initialize
 var moveSpeed = 100
-var movedir = Vector2()
+var movedir = Vector2.ZERO
 var canDo = true #used for special actions like attacking and dodging
-var facing = "down"
+onready var animPlayer=$Sprite/AnimationPlayer
+onready var animTree=$Sprite/AnimationPlayer/AnimationTree
+onready var animState=animTree.get("parameters/playback")
 
 	
 #state machine
@@ -18,7 +20,7 @@ enum {
 
 var state = STILL
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	input_check();
 	movement();
 	anim_handler();
@@ -42,24 +44,12 @@ func movement():
 	pass
 
 func anim_handler(): #'you should probably check if the player *is* moving, rather than if they *aren't*' -gotimo2
+	if movedir!=Vector2.ZERO:
+		animTree.set("parameters/idle/blend_position", movedir)
+		animTree.set("parameters/atk/blend_position", movedir)
+		animTree.set("parameters/run/blend_position", movedir)
+		animTree.set("parameters/dodg/blend_position", movedir)
+		animState.travel("walk")
+		pass
 	
-	#facing helper
-	match movedir:
-		Vector2(-1,0):
-			facing = "linearLeft"
-		Vector2(1,0):
-			facing = "linearRight"
-		Vector2(0,-1):
-			facing = "linearUp"
-		Vector2(0,1):
-			facing = "linearDown"
-		Vector2(1,1):
-			facing = "diagRightDown"
-		Vector2(-1,-1):
-			facing = "diagLeftUp"
-		Vector2(1,-1):
-			facing = "diagRightUp"
-		Vector2(-1,1):
-			facing = "diagLeftDown"
-			
 	pass

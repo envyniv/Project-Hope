@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://source_assets/kevinclark0000.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.7
@@ -284,6 +283,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=11]
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -333,6 +333,70 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -0.2, -6.5 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "idle_diagAS"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "idle_diagAW"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 10 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "idle_diagDS"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 22 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "idle_diagDW"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 16 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -517,6 +581,94 @@ tracks/1/keys = {
 "values": [ Vector2( -0.2, -6.5 ) ]
 }
 
+[sub_resource type="AnimationNodeBlendSpace2D" id=37]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=38]
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "idle_a"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "idle_d"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "idle_w"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "idle_s"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "idle_diagAS"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "idle_diagDW"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "idle_diagDS"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "idle_diagAW"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=28]
+blend_point_0/node = SubResource( 24 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 25 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 26 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 27 )
+blend_point_3/pos = Vector2( 0, 1 )
+blend_point_4/node = SubResource( 33 )
+blend_point_4/pos = Vector2( -1, 1 )
+blend_point_5/node = SubResource( 34 )
+blend_point_5/pos = Vector2( 1, -1 )
+blend_point_6/node = SubResource( 35 )
+blend_point_6/pos = Vector2( 1, 1 )
+blend_point_7/node = SubResource( 36 )
+blend_point_7/pos = Vector2( -1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=39]
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "walk_w"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "walk_s"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "walk_d"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "walk_a"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=44]
+blend_point_0/node = SubResource( 40 )
+blend_point_0/pos = Vector2( 0, -1 )
+blend_point_1/node = SubResource( 41 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 42 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 43 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/atk/node = SubResource( 37 )
+states/atk/position = Vector2( 369.12, 56.676 )
+states/dodg/node = SubResource( 38 )
+states/dodg/position = Vector2( 369.12, 181.676 )
+states/idle/node = SubResource( 28 )
+states/idle/position = Vector2( 550, 118 )
+states/run/node = SubResource( 39 )
+states/run/position = Vector2( 724.12, 56.676 )
+states/walk/node = SubResource( 44 )
+states/walk/position = Vector2( 724.12, 181.676 )
+start_node = "idle"
+graph_offset = Vector2( 118.12, -6.32402 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 5.51691, 3.04215 )
 
@@ -525,13 +677,6 @@ radius = 7.16684
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-
-[node name="TestSprite" type="Sprite" parent="."]
-visible = false
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Shadow" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -546,7 +691,7 @@ texture = ExtResource( 2 )
 offset = Vector2( -0.2, -6.5 )
 vframes = 21
 hframes = 21
-frame = 1
+frame = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/atk_a = SubResource( 1 )
@@ -561,6 +706,10 @@ anims/atk_w = SubResource( 9 )
 anims/atk_w2 = SubResource( 10 )
 anims/idle_a = SubResource( 11 )
 anims/idle_d = SubResource( 12 )
+anims/idle_diagAS = SubResource( 29 )
+anims/idle_diagAW = SubResource( 31 )
+anims/idle_diagDS = SubResource( 30 )
+anims/idle_diagDW = SubResource( 32 )
 anims/idle_s = SubResource( 13 )
 anims/idle_w = SubResource( 14 )
 anims/walk_a = SubResource( 15 )
@@ -568,6 +717,17 @@ anims/walk_d = SubResource( 16 )
 anims/walk_s = SubResource( 17 )
 anims/walk_w = SubResource( 18 )
 anims/win = SubResource( 19 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite/AnimationPlayer"]
+tree_root = SubResource( 22 )
+anim_player = NodePath("..")
+active = true
+parameters/playback = SubResource( 23 )
+parameters/atk/blend_position = Vector2( 0, 0 )
+parameters/dodg/blend_position = Vector2( 0, 0 )
+parameters/idle/blend_position = Vector2( -0.540984, -0.689655 )
+parameters/run/blend_position = Vector2( 0, 0 )
+parameters/walk/blend_position = Vector2( 0, 0 )
 
 [node name="Timer" type="Timer" parent="."]
 
