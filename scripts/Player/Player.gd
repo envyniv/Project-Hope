@@ -49,6 +49,7 @@ func anim_handler(): #'you should probably check if the player *is* moving, rath
 		animTree.set("parameters/atk/blend_position", movedir)
 		animTree.set("parameters/run/blend_position", movedir)
 		animTree.set("parameters/dodg/blend_position", movedir)
+		animTree.set("parameters/walk/blend_position", movedir)
 		animState.travel("walk")
 		pass
 	
