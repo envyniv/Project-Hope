@@ -49,7 +49,8 @@ func inputChk():
 	var DOWN = Input.is_action_pressed("ui_down")
 	var RIGHT = Input.is_action_pressed("ui_right")
 	var LEFT = Input.is_action_pressed("ui_left")
-	var ATTACK = Input.is_action_just_pressed("ui_attack")
+	var ATTACK = Input.is_action_just_pressed("ui_attack") #so it is only done once
+	var DODGE = Input.is_action_just_pressed("ui_dodge")
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
 	pass
@@ -90,9 +91,10 @@ func dodgeState(): #dodging
 	pass
 	
 func moveState(): #movement
+	inputChk();
 	var motion = movedir.normalized() * moveSpeed
 	move_and_slide(motion, Vector2(0,0))
 	
-	
+	if ATTACK: state=ATK
 	
 	pass
