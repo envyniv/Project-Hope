@@ -1,5 +1,5 @@
 # Project Hope
-My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG in the style of a [Capcom-like fighting game](https://en.wikipedia.org/wiki/Street_Fighter) with some [WarioWare](https://en.wikipedia.org/wiki/Wario_(series)#WarioWare_series)
+My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG in the style of a [Capcom-like fighting game](https://en.wikipedia.org/wiki/Street_Fighter) with some [WarioWare](https://en.wikipedia.org/wiki/Wario_(series)#WarioWare_series) sprinkled on top.
 
 Coded in Godot(https://godotengine.org/).
 
