@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goodsprititssauna.png-a68dd11b0e3540fa8971f5eb0726c54f.stex"
+path="res://.import/Charlie.png-43c8d5feec0e9be40409f506ba8e848d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/goodsprititssauna.png"
-dest_files=[ "res://.import/goodsprititssauna.png-a68dd11b0e3540fa8971f5eb0726c54f.stex" ]
+source_file="res://source_assets/Charlie.png"
+dest_files=[ "res://.import/Charlie.png-43c8d5feec0e9be40409f506ba8e848d.stex" ]
 
 [params]
 

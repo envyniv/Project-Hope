@@ -40,7 +40,7 @@ func _physics_process(_delta):
 			dodgeState();
 			
 	if movedir!=Vector2.ZERO:
-		state=MOVE;
+		state = MOVE;
 	pass
 
 #input
@@ -54,13 +54,6 @@ func inputChk():
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
 	pass
-
-
-
-#func moving():
-#	var motion = movedir.normalized() * moveSpeed
-#	move_and_slide(motion, Vector2(0,0))
-#	pass
 
 #animation
 func animHndlr():
@@ -78,23 +71,28 @@ func animHndlr():
 	
 	pass
 	
+	
+	
 func atkState(): #attacking
 	
 	pass
+
+
 
 func runState(): #running
 	
 	pass
 	
+	
+	
 func dodgeState(): #dodging
 	
 	pass
 	
+	
+
 func moveState(): #movement
-	inputChk();
 	var motion = movedir.normalized() * moveSpeed
-	move_and_slide(motion, Vector2(0,0))
-	
-	if ATTACK: state=ATK
-	
+	motion = move_and_slide(motion, Vector2(0,0))
+	#if ATTACK: state = ATK
 	pass

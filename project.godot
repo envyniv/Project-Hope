@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Project Hope"
 run/main_scene="res://Viewports.tscn"
-config/icon="res://icon.png"
+config/icon="res://source_assets/icon.png"
+config/windows_native_icon="res://source_assets/favicon.ico"
 
 [display]
 

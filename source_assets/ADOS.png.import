@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ADOS0000.png-8f7108745b3f7a792d40caa876e6e915.stex"
+path="res://.import/ADOS.png-314d360b786172b632f8a892ed2e161e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/ADOS0000.png"
-dest_files=[ "res://.import/ADOS0000.png-8f7108745b3f7a792d40caa876e6e915.stex" ]
+source_file="res://source_assets/ADOS.png"
+dest_files=[ "res://.import/ADOS.png-314d360b786172b632f8a892ed2e161e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

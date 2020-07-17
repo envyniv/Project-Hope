@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bella0000.png-6217b0e348e00d0d81e2b8e73cf4553e.stex"
+path="res://.import/baddies.png-3414cf0841161491ffcc1a593ffcf89a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/bella0000.png"
-dest_files=[ "res://.import/bella0000.png-6217b0e348e00d0d81e2b8e73cf4553e.stex" ]
+source_file="res://source_assets/baddies.png"
+dest_files=[ "res://.import/baddies.png-3414cf0841161491ffcc1a593ffcf89a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

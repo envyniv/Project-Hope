@@ -32,10 +32,11 @@ size = Vector2( 120, 120 )
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="World" parent="HBoxContainer/Game/Viewport" instance=ExtResource( 1 )]
-
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/Game/Viewport"]
+current = true
 script = ExtResource( 3 )
+
+[node name="World" parent="HBoxContainer/Game/Viewport" instance=ExtResource( 1 )]
 
 [node name="GuiMenu" type="ViewportContainer" parent="HBoxContainer"]
 margin_left = 240.0

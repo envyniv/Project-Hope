@@ -9,10 +9,9 @@ extents = Vector2( 32.3357, 32.1521 )
 [node name="World" type="Node"]
 
 [node name="YSort" type="YSort" parent="."]
-position = Vector2( 60.9999, 88.9999 )
 
 [node name="Test Wall" type="StaticBody2D" parent="YSort"]
-position = Vector2( 52.7821, -3.44612 )
+position = Vector2( 113.363, 102.571 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -30,3 +29,4 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 35.636, 108.244 )

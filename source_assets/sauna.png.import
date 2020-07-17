@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Charlie0000.png-1498a46751bb02f18119fdbe1afebd43.stex"
+path="res://.import/sauna.png-5f8067a5f3d8328bb94edd81eb3cb687.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/Charlie0000.png"
-dest_files=[ "res://.import/Charlie0000.png-1498a46751bb02f18119fdbe1afebd43.stex" ]
+source_file="res://source_assets/sauna.png"
+dest_files=[ "res://.import/sauna.png-5f8067a5f3d8328bb94edd81eb3cb687.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

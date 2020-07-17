@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Quinton Klokverk0000.png-d4be24ca587ff9e7671e286f4e050207.stex"
+path="res://.import/general.png-7f3ac68772a0e0afb20f8eedd1056d59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/Quinton Klokverk0000.png"
-dest_files=[ "res://.import/Quinton Klokverk0000.png-d4be24ca587ff9e7671e286f4e050207.stex" ]
+source_file="res://source_assets/general.png"
+dest_files=[ "res://.import/general.png-7f3ac68772a0e0afb20f8eedd1056d59.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
