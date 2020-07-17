@@ -1,5 +1,5 @@
 # Project Hope
-My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG in the style of a [Capcom-like fighting game](https://en.wikipedia.org/wiki/Street_Fighter).
+My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG in the style of a [Capcom-like fighting game](https://en.wikipedia.org/wiki/Street_Fighter) with some [WarioWare](https://en.wikipedia.org/wiki/Wario_(series)#WarioWare_series)
 
 Coded in Godot(https://godotengine.org/).
 
@@ -18,11 +18,11 @@ Game Designer(s):
 Davide Azzaretto (EnvyNival)
 
 Composer(s):
-David (davidkvis99)
+David Kvistofer(davidkvis99)
 
 Sound Engineer(s):
 Davide Azzaretto (EnvyNival)
-David (davidkvis99)
+David Kvistofer(davidkvis99)
 
 Coder(s):
 Davide Azzaretto (EnvyNival)
