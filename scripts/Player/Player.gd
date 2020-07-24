@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 #init
-var moveSpeed = 75
 var movedir = Vector2.ZERO
+var speed = 4
+var moveSpeed = speed*20
 var canDo = true #used for special actions like attacking and dodging
 onready var animPlayer=$Sprite/AnimationPlayer
 onready var animTree=$Sprite/AnimationPlayer/AnimationTree
@@ -51,9 +52,18 @@ func inputChk():
 	var LEFT = Input.is_action_pressed("ui_left")
 	var ATTACK = Input.is_action_just_pressed("ui_attack") #so it is only done once
 	var DODGE = Input.is_action_just_pressed("ui_dodge")
+	var RUN = Input.is_action_pressed("ui_sprint")
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
 	pass
+
+
+func moveState(): #movement
+	var motion = movedir.normalized() * moveSpeed
+	motion = move_and_slide(motion, Vector2(0,0))
+	if RUN: state=RUN;
+	pass
+
 
 #animation
 func animHndlr():
@@ -63,36 +73,32 @@ func animHndlr():
 		animTree.set("parameters/run/blend_position", movedir)
 		animTree.set("parameters/dodg/blend_position", movedir)
 		animTree.set("parameters/walk/blend_position", movedir)
-		animState.travel("walk")
-		pass
+		match state:
+			MOVE:
+				animState.travel("walk")
+			RUN:
+				animState.travel("run")
+			ATK:
+				animState.travel("walk")
+			DODGE:
+				animState.travel("dodge")
+		
 	else:
 		animState.travel("idle")
 		pass
 	
 	pass
-	
-	
-	
+
 func atkState(): #attacking
 	
 	pass
-
-
-
+	
 func runState(): #running
-	
+	speed = 6;
 	pass
-	
-	
 	
 func dodgeState(): #dodging
 	
 	pass
-	
-	
 
-func moveState(): #movement
-	var motion = movedir.normalized() * moveSpeed
-	motion = move_and_slide(motion, Vector2(0,0))
-	#if ATTACK: state = ATK
-	pass
+

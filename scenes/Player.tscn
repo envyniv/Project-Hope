@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://source_assets/kevinclark0000.png" type="Texture" id=2]
@@ -459,6 +459,85 @@ tracks/0/keys = {
 "values": [ 16 ]
 }
 
+[sub_resource type="Animation" id=64]
+resource_name = "run_linearDown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 34, 35, 36, 37 ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "run_linearLeft"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 44, 45, 46, 47 ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "run_linearRight"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 64, 65, 66, 67 ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "run_linearRight.Pose"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 63 ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "run_linearUp"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 54, 55, 56, 57 ]
+}
+
 [sub_resource type="Animation" id=20]
 resource_name = "walk_diagLeft.Down"
 length = 0.8
@@ -723,7 +802,29 @@ blend_point_7/node = SubResource( 42 )
 blend_point_7/pos = Vector2( -1, -1 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=60]
+animation = "run_linearRight"
+
+[sub_resource type="AnimationNodeAnimation" id=63]
+animation = "run_linearLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=66]
+animation = "run_linearDown"
+
+[sub_resource type="AnimationNodeAnimation" id=67]
+animation = "run_linearUp"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id=44]
+blend_point_0/node = SubResource( 60 )
+blend_point_0/pos = Vector2( 1, 0 )
+blend_point_1/node = SubResource( 63 )
+blend_point_1/pos = Vector2( -1, 0 )
+blend_point_2/node = SubResource( 66 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 67 )
+blend_point_3/pos = Vector2( 0, -1 )
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=61]
 
 [sub_resource type="AnimationNodeAnimation" id=45]
 animation = "walk_up"
@@ -770,17 +871,19 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=54]
 states/atk/node = SubResource( 33 )
-states/atk/position = Vector2( 369.12, 56.676 )
+states/atk/position = Vector2( 401.12, 118 )
 states/dodg/node = SubResource( 34 )
-states/dodg/position = Vector2( 369.12, 181.676 )
+states/dodg/position = Vector2( 249.12, 118 )
 states/idle/node = SubResource( 43 )
 states/idle/position = Vector2( 550, 118 )
 states/run/node = SubResource( 44 )
-states/run/position = Vector2( 724.12, 56.676 )
+states/run/position = Vector2( 550, 33.676 )
+states/run_Pose/node = SubResource( 61 )
+states/run_Pose/position = Vector2( 720.12, 33.676 )
 states/walk/node = SubResource( 53 )
-states/walk/position = Vector2( 724.12, 181.676 )
+states/walk/position = Vector2( 550, 183.676 )
 start_node = "idle"
-graph_offset = Vector2( 118.12, -6.32402 )
+graph_offset = Vector2( 68.7359, 6.41943 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=55]
 
@@ -816,10 +919,10 @@ frame = 93
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.210224, 0.50397 )
 texture = ExtResource( 2 )
-offset = Vector2( -0.2, -6.5 )
+offset = Vector2( 0.3, -6.5 )
 vframes = 21
 hframes = 21
-frame = 1
+frame = 34
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/atk_airborne = SubResource( 1 )
@@ -841,6 +944,11 @@ anims/idle_diagLeft.Down = SubResource( 16 )
 anims/idle_diagLeft.Up = SubResource( 17 )
 anims/idle_diagRight.Down = SubResource( 18 )
 anims/idle_diagRight.Up = SubResource( 19 )
+anims/run_linearDown = SubResource( 64 )
+anims/run_linearLeft = SubResource( 62 )
+anims/run_linearRight = SubResource( 58 )
+anims/run_linearRight.Pose = SubResource( 59 )
+anims/run_linearUp = SubResource( 65 )
 anims/walk_diagLeft.Down = SubResource( 20 )
 anims/walk_diagLeft.Up = SubResource( 21 )
 anims/walk_diagRight.Down = SubResource( 22 )
@@ -858,7 +966,8 @@ parameters/playback = SubResource( 55 )
 parameters/atk/blend_position = Vector2( 0, 0.732759 )
 parameters/dodg/blend_position = Vector2( 0, 0 )
 parameters/idle/blend_position = Vector2( 0, 0.198276 )
-parameters/run/blend_position = Vector2( 0, 0 )
+parameters/run/blend_position = Vector2( -0.00145346, 0.410405 )
+parameters/run_Pose/blend_position = Vector2( 0, 0 )
 parameters/walk/blend_position = Vector2( -0.00145346, 0.410405 )
 
 [node name="Timer" type="Timer" parent="."]
