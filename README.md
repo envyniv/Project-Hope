@@ -33,7 +33,7 @@ Davide Azzaretto (envyniv)
 gotimo2 (separated player movement and animation)
 
 
-###### Troubleshooting
+###### QnA (Not Applicable Yet)
 
 **Q1: My pc is fairly old and won't run the game, despite its minimum requirements.**
 
