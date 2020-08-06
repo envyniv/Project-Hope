@@ -3,11 +3,7 @@ My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series
 
 Coded in Godot(https://godotengine.org/).
 
-Design Document made in LibreOffice (https://libreoffice.org)
-
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
-
-Design document font: Ubuntu (https://design.ubuntu.com/font/)
 
 Some sections of the Troubleshooting help from [The Mesa Website](https://fdossena.com/?p=mesa/index.frag)
 
@@ -45,7 +41,7 @@ A: Go [here](https://fdossena.com/?p=mesa/index.frag), download the proper versi
 
 **Q1.1: I did that, yet it's still not working.**
 
-A: Make a folder with the same name as the exe of the program you want to run followed by .local. For instance, stvoy.exe.local, Inside this folder, copy opengl32.dll from Mesa and run the program.
+A: Make a folder with the same name as the exe of the program you want to run followed by .local. For instance, hope.exe.local, Inside this folder, copy opengl32.dll from Mesa and run the program.
 
 **Q1.2: why doesn't this work???????**
 
