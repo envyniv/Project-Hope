@@ -90,11 +90,11 @@ func animHndlr():
 	pass
 
 func atkState(): #attacking
-	
+	canDo = false
 	pass
 	
 func runState(): #running
-	speed = 6;
+	speed = 6.5;
 	pass
 	
 func dodgeState(): #dodging
