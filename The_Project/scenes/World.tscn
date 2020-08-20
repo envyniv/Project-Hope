@@ -4,29 +4,21 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.3357, 32.1521 )
+extents = Vector2( 32.3357, 14.2908 )
 
 [node name="World" type="Node"]
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Test Wall" type="StaticBody2D" parent="YSort"]
-position = Vector2( 113.363, 102.571 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 110.026, 98.2328 )
 
 [node name="Sprite" type="Sprite" parent="YSort/Test Wall"]
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Test Wall"]
+position = Vector2( -0.33371, 19.6889 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 35.636, 108.244 )

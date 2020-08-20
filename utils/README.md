@@ -22,5 +22,5 @@ rip_textures = True
 to False.
 
 # convert_audio by envyniv
-it's just a stupid bash script.
+it's just a stupid script.
 
