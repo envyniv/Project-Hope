@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/critDMG-bg.png-368ad8f90882f5bc42c00e893fd627b8.stex"
+path="res://.import/Charlie Dandy.png-c83d94cae4b9ad50db4766b1a9d99472.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/critDMG-bg.png"
-dest_files=[ "res://.import/critDMG-bg.png-368ad8f90882f5bc42c00e893fd627b8.stex" ]
+source_file="res://source_assets/Charlie Dandy.png"
+dest_files=[ "res://.import/Charlie Dandy.png-c83d94cae4b9ad50db4766b1a9d99472.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DMG-NUMBERS.png-da1526e7fbc3d9f4be4ef652dc5950cd.stex"
+path="res://.import/HEAL-NUMBERS.png-73e560bb9f783182c53f16b8554dc7a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/DMG-NUMBERS.png"
-dest_files=[ "res://.import/DMG-NUMBERS.png-da1526e7fbc3d9f4be4ef652dc5950cd.stex" ]
+source_file="res://source_assets/HEAL-NUMBERS.png"
+dest_files=[ "res://.import/HEAL-NUMBERS.png-73e560bb9f783182c53f16b8554dc7a7.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kevinclark0000.png-356b4a52218eb42b449ae1fc88d754f8.stex"
+path="res://.import/NUMBERS.png-dd5d40df1b7cd7b91afa21af3d1728d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/kevinclark0000.png"
-dest_files=[ "res://.import/kevinclark0000.png-356b4a52218eb42b449ae1fc88d754f8.stex" ]
+source_file="res://source_assets/NUMBERS.png"
+dest_files=[ "res://.import/NUMBERS.png-dd5d40df1b7cd7b91afa21af3d1728d4.stex" ]
 
 [params]
 

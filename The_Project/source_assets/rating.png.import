@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Charlie.png-43c8d5feec0e9be40409f506ba8e848d.stex"
+path="res://.import/rating.png-2ee1cdd82dea733de408ef409c31a054.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source_assets/Charlie.png"
-dest_files=[ "res://.import/Charlie.png-43c8d5feec0e9be40409f506ba8e848d.stex" ]
+source_file="res://source_assets/rating.png"
+dest_files=[ "res://.import/rating.png-2ee1cdd82dea733de408ef409c31a054.stex" ]
 
 [params]
 
