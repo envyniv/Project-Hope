@@ -3,7 +3,6 @@
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://source_assets/Kevin Clark.png" type="Texture" id=2]
 
-
 [sub_resource type="Animation" id=1]
 length = 0.6
 tracks/0/type = "value"
@@ -157,6 +156,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, -6.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Area2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -1120,5 +1131,6 @@ one_way_collision_margin = 0.0
 position = Vector2( 0.210224, 0.50397 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -3.704, 3.978 )
+position = Vector2( -4.411, -2.266 )
+scale = Vector2( 0.3, 0.3 )
 shape = SubResource( 71 )
