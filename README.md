@@ -20,7 +20,7 @@ David Kvistofer (davidkvis99)
 
 Sound Engineer(s):
 Davide Azzaretto (envyniv)
-David Kvistofer (davidkvis99)
+David Kvistorf (davidkvis99)
 
 Coder(s):
 Davide Azzaretto (envyniv)
