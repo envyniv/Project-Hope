@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "DialogueAction",
+"language": "GDScript",
+"path": "res://Voicebox/DialogueAction.gd"
+}, {
+"base": "AudioStreamPlayer",
+"class": "VoiceBox",
+"language": "GDScript",
+"path": "res://Voicebox/Voicebox.gd"
+} ]
 _global_script_class_icons={
-
+"DialogueAction": "",
+"VoiceBox": ""
 }
 
 [application]
