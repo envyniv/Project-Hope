@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/u.wav-99b28c34f57f1310bb9ae7b84d928b88.sample"
+
+[deps]
+
+source_file="res://Voicebox/Sounds/Male/1/u.wav"
+dest_files=[ "res://.import/u.wav-99b28c34f57f1310bb9ae7b84d928b88.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -7,6 +7,8 @@ Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
 
 Some sections of the Troubleshooting help from [The Mesa Website](https://fdossena.com/?p=mesa/index.frag)
 
+AppleKid and The Year is 199X fonts by Giegue on [Starmen.net](https://forum.starmen.net/forum/Fan/Forum/Apple-Kid-font/)
+
 © Davide Azzaretto/envyniv, 2020.
 
 
@@ -20,7 +22,7 @@ David Kvistofer (davidkvis99)
 
 Sound Engineer(s):
 Davide Azzaretto (envyniv)
-David Kvistofer (davidkvis99)
+David Kvistorf (davidkvis99)
 
 Coder(s):
 Davide Azzaretto (envyniv)
