@@ -3,6 +3,8 @@ original by [mattmarch](https://github.com/mattmarch), edited by envy
 Male 1 by envy/Davide Azzaretto
 Male 2 by Simone Andolina
 Male 3 by supercatge/Alessandro Ficara
+Male 4 by Davidkvis99/David Kvistorf Larsen
+Male 5 by Svampgurka/Lucas
 Female 1 by 
 Female 2 by 
 Female 3 by 
