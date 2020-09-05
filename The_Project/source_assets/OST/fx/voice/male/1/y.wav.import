@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/y.wav-4e259d45e058a9436c76f0ea7fa6ea96.sample"
+
+[deps]
+
+source_file="res://source_assets/OST/fx/voice/male/1/y.wav"
+dest_files=[ "res://.import/y.wav-4e259d45e058a9436c76f0ea7fa6ea96.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

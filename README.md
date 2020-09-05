@@ -9,6 +9,8 @@ Some sections of the Troubleshooting help from [The Mesa Website](https://fdosse
 
 AppleKid and The Year is 199X fonts by Giegue on [Starmen.net](https://forum.starmen.net/forum/Fan/Forum/Apple-Kid-font/)
 
+ACVoicebox by mattmarch [mattmarch](https://github.com/mattmarch), edited by envy
+
 © Davide Azzaretto/envyniv, 2020.
 
 
@@ -31,6 +33,17 @@ Pixel Artists:
 Davide Azzaretto (envyniv)
 
 ### Additional Contributors
+
+Male 1 by envy/Davide Azzaretto
+Male 2 by Simone Andolina
+Male 3 by supercatge/Alessandro Ficara
+Male 4 by Davidkvis99/David Kvistorf Larsen
+Male 5 by Svampgurka/Lucas
+Female 1 by
+Female 2 by
+Female 3 by
+Female 4 by
+Female 5 by
 
 gotimo2 (separated player movement and animation)
 

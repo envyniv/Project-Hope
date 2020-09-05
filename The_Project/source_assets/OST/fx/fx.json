@@ -1,0 +1,15 @@
+{
+
+
+
+"bump":{"path":"./snd_bump.wav"},
+"noise":{"path":"./noise.wav"},
+"next":{"path":"./next.wav"},
+"longblank":{"path":"./longblank.wav"},
+"blank":{"path":"./blank.wav"},
+"blip":{"path":"./blip.wav"},
+"kevin-phone":{"path":"./phone.wav"},
+
+
+
+}

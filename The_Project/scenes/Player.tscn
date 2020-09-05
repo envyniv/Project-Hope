@@ -1124,7 +1124,6 @@ parameters/walk/blend_position = Vector2( -0.00145346, 0.410405 )
 position = Vector2( 0.497, 5.022 )
 scale = Vector2( 1, 0.979 )
 shape = SubResource( 70 )
-disabled = true
 one_way_collision_margin = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]

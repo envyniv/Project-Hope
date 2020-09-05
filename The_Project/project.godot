@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "DialogueAction",
 "language": "GDScript",
-"path": "res://Voicebox/DialogueAction.gd"
+"path": "res://scripts/dialogue/DialogueAction.gd"
 }, {
 "base": "AudioStreamPlayer",
 "class": "VoiceBox",
 "language": "GDScript",
-"path": "res://Voicebox/Voicebox.gd"
+"path": "res://scripts/dialogue/Voicebox.gd"
 } ]
 _global_script_class_icons={
 "DialogueAction": "",

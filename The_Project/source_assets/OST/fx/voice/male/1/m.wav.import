@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/m.wav-9c49ba030e444d1e9ea33fc608237a07.sample"
+
+[deps]
+
+source_file="res://source_assets/OST/fx/voice/male/1/m.wav"
+dest_files=[ "res://.import/m.wav-9c49ba030e444d1e9ea33fc608237a07.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
