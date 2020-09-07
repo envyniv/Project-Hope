@@ -13,6 +13,8 @@ AppleKid and The Year is 199X fonts by Giegue on [Starmen.net](https://forum.sta
 
 ACVoicebox by mattmarch [mattmarch](https://github.com/mattmarch), edited by envy
 
+[fontbm](https://github.com/vladimirgamalyan/fontbm) by [vladimirgamalyan](https://github.com/vladimirgamalyan)
+
 © Davide Azzaretto/envyniv, 2020.
 
 
