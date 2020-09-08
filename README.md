@@ -1,6 +1,8 @@
 ﻿# Project Hope
 My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG in the style of a [Capcom-like fighting game](https://en.wikipedia.org/wiki/Street_Fighter) with some [WarioWare](https://en.wikipedia.org/wiki/Wario_(series)#WarioWare_series) sprinkled on top.
 
+[Website](https://envyniv.github.io/Project-Hope)
+
 Coded in Godot(https://godotengine.org/).
 
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
@@ -10,6 +12,8 @@ Some sections of the Troubleshooting help from [The Mesa Website](https://fdosse
 AppleKid and The Year is 199X fonts by Giegue on [Starmen.net](https://forum.starmen.net/forum/Fan/Forum/Apple-Kid-font/)
 
 ACVoicebox by mattmarch [mattmarch](https://github.com/mattmarch), edited by envy
+
+[fontbm](https://github.com/vladimirgamalyan/fontbm) by [vladimirgamalyan](https://github.com/vladimirgamalyan)
 
 © Davide Azzaretto/envyniv, 2020.
 
