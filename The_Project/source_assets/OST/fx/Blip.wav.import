@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Blip.wav-9fc5e13d5136f068e97413fc9118b89f.sample"
+path="res://.import/blip.wav-9bc3dfc903071ad135e3aa9cf00de328.sample"
 
 [deps]
 
-source_file="res://source_assets/OST/fx/voice/misc/Blip.wav"
-dest_files=[ "res://.import/Blip.wav-9fc5e13d5136f068e97413fc9118b89f.sample" ]
+source_file="res://source_assets/OST/fx/blip.wav"
+dest_files=[ "res://.import/blip.wav-9bc3dfc903071ad135e3aa9cf00de328.sample" ]
 
 [params]
 
