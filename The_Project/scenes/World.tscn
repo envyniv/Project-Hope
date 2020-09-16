@@ -11,9 +11,10 @@ extents = Vector2( 32.3357, 14.2908 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Test Wall" type="StaticBody2D" parent="YSort"]
-position = Vector2( 110.026, 98.2328 )
+position = Vector2( 89.8445, 49.0404 )
 
 [node name="Sprite" type="Sprite" parent="YSort/Test Wall"]
+position = Vector2( 0.420456, 1.68179 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Test Wall"]
@@ -21,4 +22,4 @@ position = Vector2( -0.33371, 19.6889 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 35.636, 108.244 )
+position = Vector2( 28.0679, 57.3698 )
