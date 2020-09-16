@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GUIMENU.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://scripts/Viewports.gd" type="Script" id=4]
 [ext_resource path="res://scenes/DiagBox.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Animation" id=1]
-resource_name = "fade-in"
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="Animation" id=2]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -22,8 +23,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "fade-out"
+[sub_resource type="Animation" id=3]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -53,6 +53,7 @@ __meta__ = {
 }
 
 [node name="Game" type="ViewportContainer" parent="HBoxContainer"]
+material = SubResource( 1 )
 margin_right = 360.0
 margin_bottom = 240.0
 size_flags_horizontal = 3
@@ -72,8 +73,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/Game/CanvasLayer/ColorRect"]
-anims/fade-in = SubResource( 1 )
-anims/fade-out = SubResource( 2 )
+anims/fade-in = SubResource( 2 )
+anims/fade-out = SubResource( 3 )
 
 [node name="Viewport" type="Viewport" parent="HBoxContainer/Game"]
 size = Vector2( 180, 120 )

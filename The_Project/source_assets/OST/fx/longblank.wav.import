@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/longblank.wav-c7490c83875141c7566d2033a20e7e41.sample"
+path="res://.import/longblank.wav-f52b20ab2ec608f40144b1239a9a1238.sample"
 
 [deps]
 
-source_file="res://source_assets/OST/fx/voice/misc/longblank.wav"
-dest_files=[ "res://.import/longblank.wav-c7490c83875141c7566d2033a20e7e41.sample" ]
+source_file="res://source_assets/OST/fx/longblank.wav"
+dest_files=[ "res://.import/longblank.wav-f52b20ab2ec608f40144b1239a9a1238.sample" ]
 
 [params]
 

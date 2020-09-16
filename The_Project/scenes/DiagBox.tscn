@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://source_assets/diag-box.png" type="Texture" id=1]
 [ext_resource path="res://source_assets/diag-box-next.png" type="Texture" id=2]
+[ext_resource path="res://scripts/DiagBox.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade-in"
@@ -29,6 +30,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 298 ), Vector2( 0, 208 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180, 290 ), Vector2( 180, 210 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -58,8 +71,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 208 ), Vector2( 0, 298 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180, 210 ), Vector2( 180, 290 ) ]
+}
 
 [node name="DiagBox" type="Node"]
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -74,14 +100,14 @@ __meta__ = {
 anchor_right = 1.0
 margin_top = 298.0
 margin_right = 3.05176e-05
-margin_bottom = 330.0
+margin_bottom = 330.001
 color = Color( 0.00784314, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 180, 210 )
+position = Vector2( 180, 290 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 

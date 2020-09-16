@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/twirlpixel.wav-60ad3588744b73866e9700942add3e44.sample"
+
+[deps]
+
+source_file="res://source_assets/OST/fx/twirlpixel.wav"
+dest_files=[ "res://.import/twirlpixel.wav-60ad3588744b73866e9700942add3e44.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
