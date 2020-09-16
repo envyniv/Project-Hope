@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source_assets/title.png" type="Texture" id=1]
 [ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=2]
+[ext_resource path="res://source_assets/fonts/apple_kid.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
 
 [node name="Node" type="Node"]
 
@@ -57,3 +61,13 @@ margin_bottom = 100.0
 custom_fonts/font = ExtResource( 2 )
 text = "End Game"
 flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_top = 225.0
+margin_right = 155.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 1 )
+text = "© Twirl Pixel/Envy, 2020"
+__meta__ = {
+"_edit_use_anchors_": false
+}
