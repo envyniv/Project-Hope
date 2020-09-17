@@ -79,10 +79,6 @@ A: What you're paying for in GameJolt is _the compiled_ version of the game, and
 
 A: As of now, the only thing you can do to support me is buying the game, sorry mate.
 
-**Q5: WHY DOES THIS GAME COST 10€?**
-
-A: The only portion of that money I get is 3€. The rest goes to my friend [David](https://soundcloud.com/dav4eva), he's an amazing composer.
-
 **Q6: I'm willing to buy the game and I want to support you.**
 
 A: Thank you, man. When buying the game, you'll be prompted to name your price, for a minimum of 3 euro. You're free to add to those 3 euros any amount you desire, even 1 cent. It'll still be helpful :)
