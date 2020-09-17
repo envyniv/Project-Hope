@@ -40,16 +40,15 @@ Davide Azzaretto (envyniv)
 
 ### Additional Contributors
 
-Male 1 by envy/Davide Azzaretto
-Male 2 by Simone Andolina
-Male 3 by supercatge/Alessandro Ficara
-Male 4 by Davidkvis99/David Kvistorf Larsen
-Male 5 by Svampgurka/Lucas
-Female 1 by
-Female 2 by
-Female 3 by
-Female 4 by
-Female 5 by
+envy/Davide Azzaretto
+
+Simone Andolina
+
+supercatge/Alessandro Ficara
+
+Davidkvis99/David Kvistorf Larsen
+
+Svampgurka/Lucas
 
 gotimo2 (separated player movement and animation)
 
