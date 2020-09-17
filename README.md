@@ -8,10 +8,15 @@ Coded in Godot(https://godotengine.org/).
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
 
 Some sections of the Troubleshooting help from [The Mesa Website](https://fdossena.com/?p=mesa/index.frag)
+
 ACVoicebox by mattmarch [mattmarch](https://github.com/mattmarch), edited by envy
+
 PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
+
 scrolling background node by [dploeger](https://github.com/dploeger)
+
 Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
+
 © Davide Azzaretto/envyniv, 2020.
 
 
