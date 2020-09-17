@@ -1,11 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://source_assets/diag-box.png" type="Texture" id=1]
 [ext_resource path="res://source_assets/diag-box-next.png" type="Texture" id=2]
 [ext_resource path="res://scripts/DiagBox.gd" type="Script" id=3]
+[ext_resource path="res://source_assets/fonts/PX Sans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://source_assets/fonts/PX Sans Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=6]
 
-[sub_resource type="Animation" id=1]
-resource_name = "fade-in"
+[sub_resource type="DynamicFont" id=1]
+extra_spacing_char = -1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=3]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -44,8 +53,7 @@ tracks/2/keys = {
 "values": [ Vector2( 180, 280 ), Vector2( 180, 200 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "next"
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite/Sprite:position")
@@ -57,7 +65,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 53, -3 ), Vector2( 53, 5 ), Vector2( 53, -3 ) ]
+"values": [ Vector2( 57, 3 ), Vector2( 57, 5 ), Vector2( 57, 3 ) ]
 }
 
 [node name="DiagBox" type="Node"]
@@ -87,25 +95,40 @@ position = Vector2( 180, 280 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="Sprite"]
-position = Vector2( 53, -3 )
-texture = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/fade-in = SubResource( 1 )
-anims/next = SubResource( 2 )
-
-[node name="Label" type="Label" parent="AnimationPlayer"]
-margin_left = 73.0
-margin_top = 176.0
-margin_right = 123.0
-margin_bottom = 190.0
+[node name="Label" type="Label" parent="Sprite"]
+margin_left = -54.0
+margin_top = -12.0
+margin_right = -2.0
+margin_bottom = 2.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_clip_content = true
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "lorem"
+align = 1
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="AnimationPlayer/Label"]
-margin_left = -7.0
-margin_top = 14.0
-margin_right = 203.0
-margin_bottom = 48.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite"]
+margin_left = -57.0
+margin_top = -5.0
+margin_right = 165.0
+margin_bottom = 29.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+position = Vector2( 57, 3 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade-in = SubResource( 3 )
+anims/next = SubResource( 4 )

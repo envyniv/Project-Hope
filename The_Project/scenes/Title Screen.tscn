@@ -2,10 +2,8 @@
 
 [ext_resource path="res://source_assets/title.png" type="Texture" id=1]
 [ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=2]
-[ext_resource path="res://source_assets/fonts/PX Sans.ttf" type="DynamicFontData" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 3 )
+[ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/scrolling_background/scrolling_background.gd" type="Script" id=4]
 
 [node name="Node" type="Node"]
 
@@ -66,8 +64,16 @@ flat = true
 margin_top = 225.0
 margin_right = 155.0
 margin_bottom = 239.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "© Twirl Pixel/Envy, 2020"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ScrollingBackground" type="Node" parent="."]
+script = ExtResource( 4 )
+texture = null
+speed_x = -1
+speed_y = 0
+scale = 1
+modulate = null
