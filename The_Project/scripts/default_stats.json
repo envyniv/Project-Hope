@@ -1,0 +1,10 @@
+[
+"default_stats"
+{
+"Kevin":{"HP":20,"DEF":15,"ATK":10,"KFAC":200,"EVA":8},
+"Quinton":{"HP":20,"DEF":15,"ATK":10,"KFAC":200,"EVA":8},
+"Charlie":{"HP":20,"DEF":15,"ATK":10,"KFAC":200,"EVA":8},
+"Bella":{"HP":20,"DEF":15,"ATK":10,"KFAC":200,"EVA":8},
+}
+
+]

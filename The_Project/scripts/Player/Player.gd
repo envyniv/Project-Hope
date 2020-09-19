@@ -27,7 +27,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	inputChk();
+	inputChk(0);
 	animHndlr();
 	#moving
 	match state:
@@ -45,7 +45,7 @@ func _physics_process(_delta):
 	pass
 
 #input
-func inputChk():
+func inputChk(deactivate):
 	var UP = Input.is_action_pressed("ui_up")
 	var DOWN = Input.is_action_pressed("ui_down")
 	var RIGHT = Input.is_action_pressed("ui_right")
@@ -55,6 +55,8 @@ func inputChk():
 	var RUN = Input.is_action_pressed("ui_sprint")
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
+	if deactivate:
+		return
 	pass
 
 

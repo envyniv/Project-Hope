@@ -1,0 +1,11 @@
+{
+    "1" : {"name":"Kevin", "pitch":4.5, "msg":"what's this about?"},
+    "2" : {"name":"Quinton", "pitch":4, "msg":"How the hell should I know?"},
+    "3" : {"name":"Kevin", "pitch":4.5, "msg":"is this some kind of trial?"},
+    "4" : {"name":"Quinton", "pitch":4, "msg":"seems more like a Lorem Ipsum of sorts."},
+    "5" : {"name":"Kevin", "pitch":4.5, "msg":"huh?"},
+    "6" : {"name":"Quinton", "pitch":4, "msg":"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used"},
+    "7" : {"name":"Quinton", "pitch":4, "msg":"to demonstrate the visual form of a product without relying on content."},
+    "8" : {"name":"Kevin", "pitch":4.5, "msg":"so, was that, by definition, a Lorem Ipsum?"},
+    "9" : {"name":"Quinton", "pitch":4, "msg":"Yes.\nYes it was."},
+}
