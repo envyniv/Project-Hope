@@ -8,10 +8,15 @@ Coded in Godot(https://godotengine.org/).
 Graphics Made in LibreSprite(https://github.com/LibreSprite/LibreSprite)
 
 Some sections of the Troubleshooting help from [The Mesa Website](https://fdossena.com/?p=mesa/index.frag)
+
 ACVoicebox by mattmarch [mattmarch](https://github.com/mattmarch), edited by envy
+
 PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
+
 scrolling background node by [dploeger](https://github.com/dploeger)
+
 Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
+
 © Davide Azzaretto/envyniv, 2020.
 
 
@@ -35,16 +40,15 @@ Davide Azzaretto (envyniv)
 
 ### Additional Contributors
 
-Male 1 by envy/Davide Azzaretto
-Male 2 by Simone Andolina
-Male 3 by supercatge/Alessandro Ficara
-Male 4 by Davidkvis99/David Kvistorf Larsen
-Male 5 by Svampgurka/Lucas
-Female 1 by
-Female 2 by
-Female 3 by
-Female 4 by
-Female 5 by
+envy/Davide Azzaretto
+
+Simone Andolina
+
+supercatge/Alessandro Ficara
+
+Davidkvis99/David Kvistorf Larsen
+
+Svampgurka/Lucas
 
 gotimo2 (separated player movement and animation)
 
@@ -74,10 +78,6 @@ A: What you're paying for in GameJolt is _the compiled_ version of the game, and
 **Q4: I don't think the game is worth the money but i want to support you?**
 
 A: As of now, the only thing you can do to support me is buying the game, sorry mate.
-
-**Q5: WHY DOES THIS GAME COST 10€?**
-
-A: The only portion of that money I get is 3€. The rest goes to my friend [David](https://soundcloud.com/dav4eva), he's an amazing composer.
 
 **Q6: I'm willing to buy the game and I want to support you.**
 
