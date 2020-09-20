@@ -68,8 +68,8 @@ func _get_property_list():
 	return [
 		{usage = PROPERTY_USAGE_CATEGORY, type = TYPE_NIL, name = "ScrollingBackground"},
 		{type = TYPE_OBJECT, name = "texture", hint = PROPERTY_HINT_RESOURCE_TYPE, hint_string = "StreamTexture"},
-		{type = TYPE_INT, name = "speed_x"},
-		{type = TYPE_INT, name = "speed_y"},
+		{type = TYPE_REAL, name = "speed_x"},
+		{type = TYPE_REAL, name = "speed_y"},
 		{type = TYPE_REAL, name = "scale"},
 		{type = TYPE_COLOR, name = "modulate"}
 	]

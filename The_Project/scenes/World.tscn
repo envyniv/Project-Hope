@@ -1,31 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://scenes/photobooth.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.3357, 14.2908 )
+[ext_resource path="res://scenes/stage/Meteora.tscn" type="PackedScene" id=2]
 
 [node name="World" type="Node"]
 
+[node name="Stage" parent="." instance=ExtResource( 2 )]
+
 [node name="YSort" type="YSort" parent="."]
-
-[node name="Test Wall" type="StaticBody2D" parent="YSort"]
-position = Vector2( 110.844, 38.2904 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="YSort/Test Wall"]
-position = Vector2( 0.420456, 1.68179 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Test Wall"]
-position = Vector2( -0.33371, 19.6889 )
-shape = SubResource( 1 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 28.0679, 57.3698 )
-
-[node name="Booth" parent="YSort" instance=ExtResource( 3 )]

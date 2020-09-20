@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source_assets/meteora.png" type="Texture" id=1]
+[ext_resource path="res://scenes/utility/PlayerSpawn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/CameraLimits.tscn" type="PackedScene" id=3]
+
+[node name="Stage" type="Node" groups=[
+"stage",
+]]
+
+[node name="Mountain" type="StaticBody2D" parent="."]
+
+[node name="Stage" type="Sprite" parent="Mountain"]
+position = Vector2( 47.0922, -635.178 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mountain"]
+position = Vector2( 30, 0 )
+polygon = PoolVector2Array( -188.069, -343.367, 187.418, 18.4372, 184.745, 104.583, 87.8968, 103.955, 86.0954, 34.7313 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mountain"]
+build_mode = 1
+polygon = PoolVector2Array( 12.3974, 104.781, -56.0399, 105.97, -55.6863, 86.5243, -127.104, 86.5243, -126.751, 155.114, -56.0399, 154.76, -56.0399, 137.082, 15.4274, 136.671, 15.389, 241.736, -382.868, 241.678, -406.005, -524.897, -388.106, -988.061, -178.974, -1189.95, 36.3641, -1368.25, 301.852, -1224.82, 510.27, -836.795, 485, 244.5, 15.5252, 242.194, 118.293, 241.135, 117.41, 123.354, 215.204, 123.354, 217.883, 242.724, 317.72, 241.258, 317.5, 12, -300.518, -520.116, 180.858, -163.332, 309.225, -311.52, -205.186, -764.805, 425.322, -238.986, 484.786, -461.133, -180, -1008, 273, -766, 392.742, -924.345, 51.5, -1131.5, 109.5, -1190.5, 137.481, -1166.02, 218.553, -1236.4, 55.5184, -1337.96, -17.4068, -1268.98, 4.88049, -1247.25, -102.385, -1126.7, 143.103, -930.383, -181.093, -1144.39, -352.726, -984.415, 364.99, -420.906, -248.8, -897.709, -344.36, -760.19, 14.767, -380.026, -385.5, -657.522, -382.67, -496.119, 15.0461, 29.5595 )
+
+[node name="CameraLimits" parent="." instance=ExtResource( 3 )]
+
+[node name="TopLeft" parent="CameraLimits" index="0"]
+position = Vector2( -588.901, -1512.16 )
+
+[node name="BottomRight" parent="CameraLimits" index="1"]
+position = Vector2( 683.069, 241.842 )
+
+[node name="PlayerSpawn" parent="." instance=ExtResource( 2 )]
+FACING = "UP"
+
+[editable path="CameraLimits"]

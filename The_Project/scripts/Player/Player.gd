@@ -56,6 +56,7 @@ func inputChk(deactivate):
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
 	if deactivate:
+		#don't give input to the player
 		return
 	pass
 

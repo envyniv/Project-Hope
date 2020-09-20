@@ -1,12 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://source_assets/Photo-booth.png" type="Texture" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.37107, 14.965 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5.14082, 15.4369 )
 
 [sub_resource type="Animation" id=3]
 tracks/0/type = "value"
@@ -27,14 +21,6 @@ tracks/0/keys = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0.10511, 0.420448 )
 collision_mask = 2147483649
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -15.338, 4.47676 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 12.6868, 4.35886 )
-shape = SubResource( 2 )
 
 [node name="Booth" type="Sprite" parent="StaticBody2D"]
 position = Vector2( -0.10511, -0.420448 )
