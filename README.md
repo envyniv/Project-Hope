@@ -55,7 +55,7 @@ gotimo2 (separated player movement and animation)
 
 ###### QnA (Not Applicable Yet)
 
-**Q1: My pc is fairly old and won't run the game, despite its minimum requirements.**
+**Q1: My pc is fairly old and won't run the game**
 
 A: Go [here](https://fdossena.com/?p=mesa/index.frag), download the proper version you need and put it in the same folder as Godot (if you're editing the project) or as the game itself.
 
