@@ -10,6 +10,8 @@ var diagpath = "scripts/dialogue/%s.json" % [diagname]
 var dictionarynum = 1
 var stringdictionary = str(dictionarynum)
 var letter_spd = .1
+signal start_dialogue
+signal dialogue_end
 
 func diag_start():
 	#message.visible_characters=0
@@ -34,12 +36,15 @@ func diag_start():
 pass
 
 func diag_end():
+	message.visible_characters=0
 	anims.play_backwards("fade-in")
+	message.set_text("null")
+	nametag.set_text("null")
 pass
 
 func _ready():
 	message.set_text("null")
 	nametag.set_text("null")
 	next_spr.hide()
-	diag_start();
+	connect("start_dialogue", self, "diag_start");
 pass
