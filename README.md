@@ -81,7 +81,7 @@ A: As of now, the only thing you can do to support me is buying the game, sorry 
 
 **Q6: I'm willing to buy the game and I want to support you.**
 
-A: Thank you, man. When buying the game, you'll be prompted to name your price, for a minimum of 3 euro. You're free to add to those 3 euros any amount you desire, even 1 cent. It'll still be helpful :)
+A: Thank you, man. When buying the game, you'll be prompted to name your price, for a minimum of 3 euro. You're free to add to those 5 euros any amount you desire, even 1 cent. It'll still be helpful :)
 
 **Q7: for whatever reason, i feel the impulse to divulge to you information through the means of electronic mail. What would happen to be your electronic mail address?**
 
