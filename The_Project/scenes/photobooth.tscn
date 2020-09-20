@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source_assets/Photo-booth.png" type="Texture" id=1]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -18,19 +18,14 @@ tracks/0/keys = {
 
 [node name="Node" type="Node"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 0.10511, 0.420448 )
-collision_mask = 2147483649
-
-[node name="Booth" type="Sprite" parent="StaticBody2D"]
-position = Vector2( -0.10511, -0.420448 )
+[node name="Booth" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
 
-[node name="Curtain" type="Sprite" parent="StaticBody2D/Booth"]
+[node name="Curtain" type="Sprite" parent="Booth"]
 texture = ExtResource( 1 )
 hframes = 3
 frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D/Booth/Curtain"]
-anims/photo = SubResource( 3 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Booth/Curtain"]
+anims/photo = SubResource( 1 )
