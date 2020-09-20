@@ -40,6 +40,11 @@ render_target_update_mode = 3
 
 [node name="World" parent="HBoxContainer/Game/Viewport" instance=ExtResource( 5 )]
 
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Game/Viewport"]
+margin_right = 360.0
+margin_bottom = 240.0
+color = Color( 1, 1, 1, 0 )
+
 [node name="DiagBox" parent="HBoxContainer/Game" instance=ExtResource( 4 )]
 
 [node name="GuiMenu" type="ViewportContainer" parent="HBoxContainer"]

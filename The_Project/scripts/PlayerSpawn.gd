@@ -1,10 +1,11 @@
 extends Position2D
-onready var player=get_node("../YSort/Player")
-onready var playeranims=get_node("%s/Sprite/AnimationPlayer" % [player])
+onready var player=get_node("../../YSort/Player")
+onready var playeranims=get_node("../../YSort/Player/Sprite/AnimationPlayer")
 export(String) var FACING
 
 func _ready():
 	if player:
+		print(player, playeranims)
 		match FACING:
 			"UP":
 				playeranims.play("idle_Up")
