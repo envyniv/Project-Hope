@@ -66,23 +66,3 @@ A: Make a folder with the same name as the exe of the program you want to run fo
 **Q1.2: why doesn't this work???????**
 
 A: If you're on Windows 7/8, Simply drag the exe of the program you want to run (could be Godot or The Game Itself) on MesaInjector.
-
-**Q2: Is the game free?**
-
-A: If you're willing to compile it, yes it is.
-
-**Q3: what am i paying for then?**
-
-A: What you're paying for in GameJolt is _the compiled_ version of the game, and also my heart and soul that i poured into this, i guess.
-
-**Q4: I don't think the game is worth the money but i want to support you?**
-
-A: As of now, the only thing you can do to support me is buying the game, sorry mate.
-
-**Q6: I'm willing to buy the game and I want to support you.**
-
-A: Thank you, man. When buying the game, you'll be prompted to name your price, for a minimum of 3 euro. You're free to add to those 5 euros any amount you desire, even 1 cent. It'll still be helpful :)
-
-**Q7: for whatever reason, i feel the impulse to divulge to you information through the means of electronic mail. What would happen to be your electronic mail address?**
-
-A: daviawesome67@gmail.com
