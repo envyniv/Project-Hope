@@ -17,6 +17,7 @@ enum {
 	MOVE,
 	ATK,
 	DODGE,
+	RUN,
 }
 
 var state = null
@@ -57,6 +58,8 @@ func inputChk(deactivate):
 	var RUN_KEY = Input.is_action_pressed("ui_sprint")
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
+	if RUN_KEY:
+		state=RUN;
 	if deactivate:
 		#don't give input to the player
 		return
@@ -66,25 +69,25 @@ func inputChk(deactivate):
 func moveState(): #movement
 	var motion = movedir.normalized() * moveSpeed
 	motion = move_and_slide(motion, Vector2(0,0))
-	if inputChk(0).RUN_KEY:
-		speed=9
+	if state==RUN:
+		speed+=9
 	pass
 
 
 #animation
 func animHndlr():
+	inputChk(0)
 	if movedir!=Vector2.ZERO:
 		animTree.set("parameters/idle/blend_position", movedir)
 		animTree.set("parameters/run/blend_position", movedir)
 		animTree.set("parameters/walk/blend_position", movedir)
 		if state==MOVE:
 				animState.travel("walk")
-				if inputChk(0).RUN_KEY:
-					if movedir!=Vector2.ZERO:
-						animState.travel("run_Pose")
-						pass
-					animState.travel("run")
-					pass
+		elif state==RUN:
+			animState.travel("run")
+			if movedir!=Vector2.ZERO:
+				animState.travel("run_Pose")
+				pass
 				pass
 	else:
 		animState.travel("idle")
