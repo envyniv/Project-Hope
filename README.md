@@ -13,7 +13,7 @@ ACVoicebox by [mattmarch](https://github.com/mattmarch), edited by envy
 
 PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
 
-scrolling background node by [dploeger](https://github.com/dploeger)
+original scrolling background node by [dploeger](https://github.com/dploeger)
 
 Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
 
