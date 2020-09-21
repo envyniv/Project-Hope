@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 #init
+var HP = 20
+var maxHP = HP
 var movedir = Vector2.ZERO
 var speed = 4
 var moveSpeed = speed*20
@@ -13,7 +15,6 @@ onready var animState=animTree.get("parameters/playback")
 #state
 enum {
 	MOVE,
-	RUN,
 	ATK,
 	DODGE,
 }
@@ -63,10 +64,9 @@ func inputChk(deactivate):
 
 
 func moveState(): #movement
-	inputChk(0)
 	var motion = movedir.normalized() * moveSpeed
 	motion = move_and_slide(motion, Vector2(0,0))
-	if RUN_KEY:
+	if inputChk(0).RUN_KEY:
 		speed=9
 	pass
 
@@ -77,11 +77,15 @@ func animHndlr():
 		animTree.set("parameters/idle/blend_position", movedir)
 		animTree.set("parameters/run/blend_position", movedir)
 		animTree.set("parameters/walk/blend_position", movedir)
-		match state:
-			MOVE:
+		if state==MOVE:
 				animState.travel("walk")
-			RUN:
-				animState.travel("run")
+				if inputChk(0).RUN_KEY:
+					if movedir!=Vector2.ZERO:
+						animState.travel("run_Pose")
+						pass
+					animState.travel("run")
+					pass
+				pass
 	else:
 		animState.travel("idle")
 		pass

@@ -8,7 +8,6 @@ var diagname = "test"
 var file = File.new()
 var diagpath = "scripts/dialogue/%s.json" % [diagname]
 var dictionarynum = 1
-var stringdictionary = str(dictionarynum)
 var letter_spd = .1
 signal start_dialogue
 signal dialogue_end
@@ -23,8 +22,8 @@ func diag_start():
 		var json = file.get_as_text()
 		var json_result = JSON.parse(json).result
 		file.close()
-		nametag.set_text(json_result[stringdictionary]["name"])
-		message.set_text(json_result[stringdictionary]["msg"])
+		nametag.set_text(json_result[str(dictionarynum)]["name"])
+		message.set_text(json_result[str(dictionarynum)]["msg"])
 		#check if dialogue has 1 more line than the one you're being shown and show next button
 		if dictionarynum<json_result.size():
 			next_spr.show()
