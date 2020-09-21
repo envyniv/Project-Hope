@@ -8,22 +8,22 @@ var diagname = "test"
 var file = File.new()
 var diagpath = "scripts/dialogue/%s.json" % [diagname]
 var dictionarynum = 1
-var letter_spd = .1
+var timer: Timer
 signal start_dialogue
 signal dialogue_end
 
+#i think i blacked out when writing this.
 func diag_start():
-	#message.visible_characters=0
 	anims.play("fade-in")
 	
 	if file.file_exists(diagpath):
-		#print("file found. \npath: %s" % [diagpath])
 		file.open(diagpath, file.READ)
 		var json = file.get_as_text()
 		var json_result = JSON.parse(json).result
 		file.close()
 		nametag.set_text(json_result[str(dictionarynum)]["name"])
 		message.set_text(json_result[str(dictionarynum)]["msg"])
+		read_text();
 		#check if dialogue has 1 more line than the one you're being shown and show next button
 		if dictionarynum<json_result.size():
 			next_spr.show()
@@ -46,4 +46,21 @@ func _ready():
 	nametag.set_text("null")
 	next_spr.hide()
 	connect("start_dialogue", self, "diag_start");
+	emit_signal("start_dialogue")
 pass
+
+func timer_tick():
+	message.visible_characters += 1
+	if message.visible_characters >= message.text.length():
+		message.visible_characters = -1
+		timer.stop()
+
+func read_text():
+	timer = Timer.new()
+	timer.wait_time = 0.08
+	timer.autostart = true
+	timer.connect("timeout", self, "timer_tick")
+	message.visible_characters = 0
+	add_child(timer)
+	timer.start()
+	pass
