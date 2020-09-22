@@ -4,6 +4,7 @@ onready var nametag=$Sprite/Label
 onready var message=$Sprite/RichTextLabel
 onready var anims=$AnimationPlayer
 onready var next_spr=$Sprite/Sprite
+onready var voicebox=$Voicebox
 var diagname = "test"
 var file = File.new()
 var diagpath = "scripts/dialogue/%s.json" % [diagname]
@@ -46,7 +47,6 @@ func _ready():
 	nametag.set_text("null")
 	next_spr.hide()
 	connect("start_dialogue", self, "diag_start");
-	emit_signal("start_dialogue")
 pass
 
 func timer_tick():
@@ -56,6 +56,7 @@ func timer_tick():
 		timer.stop()
 
 func read_text():
+	voicialize()
 	timer = Timer.new()
 	timer.wait_time = 0.08
 	timer.autostart = true
@@ -63,4 +64,19 @@ func read_text():
 	message.visible_characters = 0
 	add_child(timer)
 	timer.start()
+	pass
+
+func voicialize():
+	voicebox.play_string(message.text)
+	#check which character
+	match nametag.text:
+		"Kevin":
+			voicebox.base_pitch=2
+		"Quinton":
+			voicebox.base_pitch=1.7
+		"Charlie":
+			voicebox.base_pitch=3.5
+		"Bella":
+			voicebox.base_pitch=2.3
+		
 	pass

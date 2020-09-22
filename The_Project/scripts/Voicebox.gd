@@ -7,40 +7,40 @@ signal finished_phrase()
 const PITCH_MULTIPLIER_RANGE := 0.3
 const INFLECTION_SHIFT := 0.4
 
-export(float, 2.5, 4.5) var base_pitch := 3.5
+export(float, 1, 9) var base_pitch := 2.5
 
 #i need to fucking understand that loading everything from json isn't always the brightest of ideas.
 const sounds = {
-	'a': preload('res://source_assets/fx/voice/a.wav'),
-	'b': preload('res://source_assets/fx/voice/b.wav'),
-	'c': preload('res://source_assets/fx/voice/c.wav'),
-	'd': preload('res://source_assets/fx/voice/d.wav'),
-	'e': preload('res://source_assets/fx/voice/e.wav'),
-	'f': preload('res://source_assets/fx/voice/f.wav'),
-	'g': preload('res://source_assets/fx/voice/g.wav'),
-	'h': preload('res://source_assets/fx/voice/h.wav'),
-	'i': preload('res://source_assets/fx/voice/i.wav'),
-	'j': preload('res://source_assets/fx/voice/j.wav'),
-	'k': preload('res://source_assets/fx/voice/k.wav'),
-	'l': preload('res://source_assets/fx/voice/l.wav'),
-	'm': preload('res://source_assets/fx/voice/m.wav'),
-	'n': preload('res://source_assets/fx/voice/n.wav'),
-	'o': preload('res://source_assets/fx/voice/o.wav'),
-	'p': preload('res://source_assets/fx/voice/p.wav'),
-	'q': preload('res://source_assets/fx/voice/q.wav'),
-	'r': preload('res://source_assets/fx/voice/r.wav'),
-	's': preload('res://source_assets/fx/voice/s.wav'),
-	't': preload('res://source_assets/fx/voice/t.wav'),
-	'u': preload('res://source_assets/fx/voice/u.wav'),
-	'v': preload('res://source_assets/fx/voice/v.wav'),
-	'w': preload('res://source_assets/fx/voice/w.wav'),
-	'x': preload('res://source_assets/fx/voice/x.wav'),
-	'y': preload('res://source_assets/fx/voice/y.wav'),
-	'z': preload('res://source_assets/fx/voice/z.wav'),
-	'th': preload('res://source_assets/fx/voice/th.wav'),
-	'sh': preload('res://source_assets/fx/voice/sh.wav'),
-	' ': preload('res://source_assets/fx/blank.wav'),
-	'.': preload('res://source_assets/fx/longblank.wav')
+	'a': preload('res://source_assets/OST/fx/voice/a.wav'),
+	'b': preload('res://source_assets/OST/fx/voice/b.wav'),
+	'c': preload('res://source_assets/OST/fx/voice/c.wav'),
+	'd': preload('res://source_assets/OST/fx/voice/d.wav'),
+	'e': preload('res://source_assets/OST/fx/voice/e.wav'),
+	'f': preload('res://source_assets/OST/fx/voice/f.wav'),
+	'g': preload('res://source_assets/OST/fx/voice/g.wav'),
+	'h': preload('res://source_assets/OST/fx/voice/h.wav'),
+	'i': preload('res://source_assets/OST/fx/voice/i.wav'),
+	'j': preload('res://source_assets/OST/fx/voice/j.wav'),
+	'k': preload('res://source_assets/OST/fx/voice/k.wav'),
+	'l': preload('res://source_assets/OST/fx/voice/l.wav'),
+	'm': preload('res://source_assets/OST/fx/voice/m.wav'),
+	'n': preload('res://source_assets/OST/fx/voice/n.wav'),
+	'o': preload('res://source_assets/OST/fx/voice/o.wav'),
+	'p': preload('res://source_assets/OST/fx/voice/p.wav'),
+	'q': preload('res://source_assets/OST/fx/voice/q.wav'),
+	'r': preload('res://source_assets/OST/fx/voice/r.wav'),
+	's': preload('res://source_assets/OST/fx/voice/s.wav'),
+	't': preload('res://source_assets/OST/fx/voice/t.wav'),
+	'u': preload('res://source_assets/OST/fx/voice/u.wav'),
+	'v': preload('res://source_assets/OST/fx/voice/v.wav'),
+	'w': preload('res://source_assets/OST/fx/voice/w.wav'),
+	'x': preload('res://source_assets/OST/fx/voice/x.wav'),
+	'y': preload('res://source_assets/OST/fx/voice/y.wav'),
+	'z': preload('res://source_assets/OST/fx/voice/z.wav'),
+	'th': preload('res://source_assets/OST/fx/voice/th.wav'),
+	'sh': preload('res://source_assets/OST/fx/voice/sh.wav'),
+	' ': preload('res://source_assets/OST/fx/blank.wav'),
+	'.': preload('res://source_assets/OST/fx/longblank.wav')
 }
 
 

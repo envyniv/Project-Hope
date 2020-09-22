@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://source_assets/diag-box.png" type="Texture" id=1]
 [ext_resource path="res://source_assets/diag-box-next.png" type="Texture" id=2]
 [ext_resource path="res://scripts/DiagBox.gd" type="Script" id=3]
 [ext_resource path="res://source_assets/fonts/PX Sans Bold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/Voicebox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -117,3 +118,5 @@ texture = ExtResource( 2 )
 anims/fade-in = SubResource( 2 )
 
 [node name="next_char" type="Timer" parent="."]
+
+[node name="Voicebox" parent="." instance=ExtResource( 5 )]
