@@ -1,7 +1,8 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://source_assets/Kevin Clark.png" type="Texture" id=2]
+[ext_resource path="res://assets/Kevin Clark.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Player/Interact.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.6
@@ -41,30 +42,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true, false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Area2D/CollisionShape2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.343, -7.366 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Area2D/CollisionShape2D:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1.566, 1.812 ) ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "atk_down"
@@ -93,42 +70,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, -6.5 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Area2D/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 2 ),
-"update": 0,
-"values": [ Vector2( -4.411, -2.266 ), Vector2( -3.704, 3.978 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Area2D/CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 2 ),
-"update": 0,
-"values": [ Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Area2D/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
 
 [sub_resource type="Animation" id=3]
 length = 0.5
@@ -156,42 +97,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -3, -6.5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Area2D/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.2, 0.3 ),
-"transitions": PoolRealArray( 2.94781e-05, 2.891e-06 ),
-"update": 0,
-"values": [ Vector2( -15.5112, -2.98817 ), Vector2( 3.807, -1.777 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Area2D/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Area2D/CollisionShape2D:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0.1, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.248, 0.257 ), Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -478,6 +383,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=16]
 resource_name = "run_linearDown"
+length = 0.7
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -892,8 +798,10 @@ graph_offset = Vector2( 68.7359, 18.8016 )
 [sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 5.51691, 3.04215 )
 
-[sub_resource type="CircleShape2D" id=60]
-radius = 7.99771
+[sub_resource type="RectangleShape2D" id=60]
+extents = Vector2( 12.7864, 10 )
+
+[sub_resource type="CapsuleShape2D" id=61]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -911,7 +819,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -6.5 )
 vframes = 21
 hframes = 21
-frame = 60
+frame = 36
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/atk_airborne = SubResource( 1 )
@@ -962,10 +870,18 @@ shape = SubResource( 59 )
 one_way_collision_margin = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 0.210224, 0.50397 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -4.411, -2.266 )
-scale = Vector2( 0.3, 0.3 )
+[node name="HitBox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 3 )
 shape = SubResource( 60 )
+disabled = true
+
+[node name="Interact" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="InteractBox" type="CollisionShape2D" parent="Interact"]
+position = Vector2( 0, 10 )
+shape = SubResource( 61 )
 disabled = true

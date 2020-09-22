@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://source_assets/twirlpixel.png" type="Texture" id=1]
+[ext_resource path="res://assets/twirlpixel.png" type="Texture" id=1]
 [ext_resource path="res://materials/atlas boot.tres" type="DynamicFont" id=2]
 [ext_resource path="res://shaders/chromaticaberration.shader" type="Shader" id=3]
-[ext_resource path="res://source_assets/OST/fx/twirlpixel.wav" type="AudioStream" id=4]
-[ext_resource path="res://source_assets/fonts/PX Sans.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/OST/fx/twirlpixel.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/fonts/PX Sans.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/boot_scrn.gd" type="Script" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]

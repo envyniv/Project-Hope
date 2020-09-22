@@ -12,6 +12,7 @@ var dictionarynum = 1
 var timer: Timer
 signal start_dialogue
 signal dialogue_end
+var json_result = null
 
 #i think i blacked out when writing this.
 func diag_start():
@@ -20,16 +21,14 @@ func diag_start():
 	if file.file_exists(diagpath):
 		file.open(diagpath, file.READ)
 		var json = file.get_as_text()
-		var json_result = JSON.parse(json).result
+		json_result = JSON.parse(json).result
 		file.close()
-		nametag.set_text(json_result[str(dictionarynum)]["name"])
-		message.set_text(json_result[str(dictionarynum)]["msg"])
+		nametag.text=json_result[str(dictionarynum)]["name"]
+		message.text=json_result[str(dictionarynum)]["msg"]
 		read_text();
 		#check if dialogue has 1 more line than the one you're being shown and show next button
 		if dictionarynum<json_result.size():
-			next_spr.show()
-			#if the player presses attack and there's another line of dialogue, switch to that.
-			pass
+			next();
 	else:
 		nametag.set_text("System")
 		message.set_text("ERROR: DIALOGUE %s MISSING; \nREPORT IMMEDIATELY" % [diagname])
@@ -47,6 +46,7 @@ func _ready():
 	nametag.set_text("null")
 	next_spr.hide()
 	connect("start_dialogue", self, "diag_start");
+	emit_signal("start_dialogue")
 pass
 
 func timer_tick():
@@ -92,4 +92,11 @@ func voicialize():
 			voicebox.base_pitch=1.5
 		"Envy":
 			voicebox.base_pitch=1
+	pass
+
+func next():
+	next_spr.show()
+	if Input.is_action_pressed("ui_atklight"):
+		dictionarynum+=1
+		print(dictionarynum)
 	pass

@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "InteractableItem",
+"language": "GDScript",
+"path": "res://scripts/interactible.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/Player/Player.gd"
+}, {
 "base": "AudioStreamPlayer",
 "class": "VoiceBox",
 "language": "GDScript",
 "path": "res://scripts/Voicebox.gd"
 } ]
 _global_script_class_icons={
+"InteractableItem": "",
+"Player": "",
 "VoiceBox": ""
 }
 
@@ -22,7 +34,7 @@ _global_script_class_icons={
 
 config/name="Project Hope"
 run/main_scene="res://scenes/boot_scrn.tscn"
-config/icon="res://source_assets/icon.png"
+config/icon="res://assets/icon.png"
 config/windows_native_icon="res://source_assets/favicon.ico"
 
 [autoload]

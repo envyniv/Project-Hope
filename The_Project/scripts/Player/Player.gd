@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+class_name Player
 #init
 var HP = 20
 var maxHP = HP
