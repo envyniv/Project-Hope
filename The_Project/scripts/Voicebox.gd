@@ -7,7 +7,7 @@ signal finished_phrase()
 const PITCH_MULTIPLIER_RANGE := 0.3
 const INFLECTION_SHIFT := 0.4
 
-export(float, 1, 9) var base_pitch := 2.5
+export(float, -1.5, 4.5) var base_pitch := 2.5
 
 #i need to fucking understand that loading everything from json isn't always the brightest of ideas.
 const sounds = {

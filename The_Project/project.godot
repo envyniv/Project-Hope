@@ -29,10 +29,6 @@ config/windows_native_icon="res://source_assets/favicon.ico"
 
 SceneChanger="*res://scenes/utility/scene_changer.tscn"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/width=360

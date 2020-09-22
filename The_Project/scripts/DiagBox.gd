@@ -28,7 +28,7 @@ func diag_start():
 		#check if dialogue has 1 more line than the one you're being shown and show next button
 		if dictionarynum<json_result.size():
 			next_spr.show()
-			#if the player presses attack and there's another line of dialogue, then, switch to that.
+			#if the player presses attack and there's another line of dialogue, switch to that.
 			pass
 	else:
 		nametag.set_text("System")
@@ -78,5 +78,18 @@ func voicialize():
 			voicebox.base_pitch=3.5
 		"Bella":
 			voicebox.base_pitch=2.3
-		
+		"F.dly Man":
+			voicebox.base_pitch=2
+		"F.dly Lady":
+			voicebox.base_pitch=2.3
+		"Rude Man":
+			voicebox.base_pitch=1.7
+		"Rude Lady":
+			voicebox.base_pitch=2
+		"Dolus":
+			voicebox.base_pitch=1.9
+		"Thanatos":
+			voicebox.base_pitch=1.5
+		"Envy":
+			voicebox.base_pitch=1
 	pass

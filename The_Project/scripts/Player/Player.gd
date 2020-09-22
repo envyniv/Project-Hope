@@ -85,10 +85,10 @@ func animHndlr():
 				animState.travel("walk")
 		elif state==RUN:
 			animState.travel("run")
-			if movedir!=Vector2.ZERO:
-				animState.travel("run_Pose")
-				pass
-				pass
+			#if movedir!=Vector2.ZERO:
+				#animState.travel("run_Pose")
+				#pass
+			pass
 	else:
 		animState.travel("idle")
 		pass
