@@ -1,5 +1,4 @@
 extends KinematicBody2D
-class_name Player
 #init
 var HP = 20
 var maxHP = HP
@@ -10,7 +9,6 @@ var canDo = true #used for special actions like attacking and dodging
 onready var animPlayer=$Sprite/AnimationPlayer
 onready var animTree=$Sprite/AnimationPlayer/AnimationTree
 onready var animState=animTree.get("parameters/playback")
-#end_init
 
 #state
 enum {
@@ -29,7 +27,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	inputChk(0);
+	inputChk();
 	animHndlr();
 	#moving
 	match state:
@@ -45,7 +43,7 @@ func _physics_process(_delta):
 	pass
 
 #input
-func inputChk(deactivate):
+func inputChk():
 	var UP = Input.is_action_pressed("ui_up")
 	var DOWN = Input.is_action_pressed("ui_down")
 	var RIGHT = Input.is_action_pressed("ui_right")
@@ -60,9 +58,6 @@ func inputChk(deactivate):
 	movedir.y = -int(UP) + int(DOWN)
 	if RUN_KEY:
 		state=RUN;
-	if deactivate:
-		#don't give input to the player
-		return
 	pass
 
 
@@ -76,7 +71,7 @@ func moveState(): #movement
 
 #animation
 func animHndlr():
-	inputChk(0)
+	inputChk()
 	if movedir!=Vector2.ZERO:
 		animTree.set("parameters/idle/blend_position", movedir)
 		animTree.set("parameters/run/blend_position", movedir)
