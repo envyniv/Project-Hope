@@ -45,8 +45,6 @@ func _ready():
 	message.set_text("null")
 	nametag.set_text("null")
 	next_spr.hide()
-	connect("start_dialogue", self, "diag_start");
-	emit_signal("start_dialogue")
 pass
 
 func timer_tick():
@@ -98,5 +96,5 @@ func next():
 	next_spr.show()
 	if Input.is_action_pressed("ui_atklight"):
 		dictionarynum+=1
-		print(dictionarynum)
+		#print(dictionarynum)
 	pass

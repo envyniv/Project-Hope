@@ -1,0 +1,71 @@
+"Vending Machine Items"
+
+{
+
+"Frizzy Water":{"price":20,"attr":{
+            "HP":20,
+            "EVA":2,
+        }
+    },
+
+"Root Beer":{"price":30,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Sparkly Water":{"price":5,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Orange Soda":{"price":13,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Coke Soda":{"price":12,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Contender Coke Soda":{"price":20,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Chocolate Bar":{"price":20,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Disposable Camera":{"price":170,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Disposable Photo Printer":{"price":200,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Proteic Bar":{"price":20,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+"Huwait-Choco Bar":{"price":20,"attr":{
+            "HP":15,
+            "DEF":15,
+        }
+    },
+
+}

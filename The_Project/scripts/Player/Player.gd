@@ -1,5 +1,6 @@
 extends KinematicBody2D
 #init
+class_name OBJ_Player, "res://scenes/icons/player.png"
 var HP = 20
 var maxHP = HP
 var movedir = Vector2.ZERO
@@ -9,6 +10,7 @@ var canDo = true #used for special actions like attacking and dodging
 onready var animPlayer=$Sprite/AnimationPlayer
 onready var animTree=$Sprite/AnimationPlayer/AnimationTree
 onready var animState=animTree.get("parameters/playback")
+signal interact_req
 
 #state
 enum {
@@ -58,6 +60,23 @@ func inputChk():
 	movedir.y = -int(UP) + int(DOWN)
 	if RUN_KEY:
 		state=RUN;
+	if LEFT:
+		$Interact/Looking.rotation_degrees=90
+	if RIGHT:
+		$Interact/Looking.rotation_degrees=-90
+	if UP:
+		$Interact/Looking.rotation_degrees=180
+	if DOWN:
+		$Interact/Looking.rotation_degrees=0
+	if DOWN && RIGHT:
+		$Interact/Looking.rotation_degrees=-45
+	if DOWN && LEFT:
+		$Interact/Looking.rotation_degrees=45
+	if UP && RIGHT:
+		$Interact/Looking.rotation_degrees=-135
+	if UP && LEFT:
+		$Interact/Looking.rotation_degrees=135
+	
 	pass
 
 
@@ -66,6 +85,7 @@ func moveState(): #movement
 	motion = move_and_slide(motion, Vector2(0,0))
 	if state==RUN:
 		speed+=9
+	
 	pass
 
 
@@ -98,4 +118,8 @@ func dodgeState(): #dodging
 	
 	pass
 
-
+func _interact():
+	var CONFIRM = Input.is_action_just_pressed("ui_atklight")
+	var CANCEL = Input.is_action_just_pressed("ui_atkgod")
+	if CONFIRM: emit_signal("interact_req")
+	pass

@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/meteora.png" type="Texture" id=1]
+[ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
 [ext_resource path="res://scenes/utility/PlayerSpawn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/utility/CameraLimits.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/utility/photobooth.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/utility/Vending.tscn" type="PackedScene" id=5]
 
 
 [node name="Stage" type="Node"]
+
+[node name="Stage_Name" type="Label" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Meteora"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Mountain" type="StaticBody2D" parent="."]
 
@@ -19,17 +30,26 @@ polygon = PoolVector2Array( -188.069, -343.367, 189.192, 17.2441, 186.371, 103.9
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mountain"]
 build_mode = 1
-polygon = PoolVector2Array( 14.8785, 109.053, -56.2911, 109.053, -55.6863, 86.5243, -125.875, 87.2021, -125.875, 147.206, -56.1073, 147.678, -56.1038, 131.715, 15.6277, 131.902, 15.389, 241.736, -382.868, 241.678, -389.026, -889.236, -388.106, -988.061, -178.974, -1189.95, 36.3641, -1368.25, 301.852, -1224.82, 488.481, -945.557, 485, 244.5, 15.5252, 242.194, 118.293, 241.135, 117.41, 123.354, 215.204, 123.354, 217.883, 242.724, 317.72, 241.258, 317.5, 12, -300.518, -520.116, 180.858, -163.332, 309.225, -311.52, -205.186, -764.805, 425.322, -238.986, 484.786, -461.133, -180, -1008, 273, -766, 392.742, -924.345, 51.5, -1131.5, 109.5, -1190.5, 137.481, -1166.02, 218.553, -1236.4, 55.5184, -1337.96, -17.4068, -1268.98, 4.88049, -1247.25, -102.385, -1126.7, 143.103, -930.383, -181.093, -1144.39, -352.726, -984.415, 364.99, -420.906, -248.8, -897.709, -344.36, -760.19, 14.767, -380.026, -385.5, -657.522, -382.67, -496.119, 15.0461, 29.5595 )
+polygon = PoolVector2Array( 14.8785, 109.053, -56.2911, 109.053, -55.6863, 86.5243, -125.875, 87.2021, -125.875, 147.206, -56.1073, 147.678, -56.1038, 131.715, 15.6277, 131.902, 15.389, 241.736, -382.868, 241.678, -389.026, -889.236, -388.106, -988.061, -178.974, -1189.95, 36.3641, -1368.25, 301.852, -1224.82, 488.481, -945.557, 485, 244.5, 15.5252, 242.194, 118.293, 241.135, 117.41, 123.354, 215.204, 123.354, 217.883, 242.724, 317.72, 241.258, 317.5, 12, -301.307, -522.623, 180.668, -171.017, 305.472, -314.206, -205.545, -766.811, 424.772, -246.395, 480.402, -460.681, -183.83, -1012.27, 273, -766, 392.742, -924.345, 51.5, -1131.5, 109.509, -1193.8, 140.224, -1170.58, 214.016, -1236.51, 55.5184, -1337.96, -17.4068, -1268.98, 9.12201, -1249.62, -102.385, -1126.7, 143.702, -929.406, -181.093, -1144.39, -352.726, -984.415, 364.99, -420.906, -248.057, -893.032, -337.654, -765.263, 20.4328, -377.637, -384.688, -656.75, -383.888, -503.774, 15.7885, 26.58 )
 
 [node name="CameraLimits" parent="." instance=ExtResource( 3 )]
 
 [node name="TopLeft" parent="CameraLimits" index="0"]
-position = Vector2( -588.901, -1512.16 )
+position = Vector2( -588.705, -1512.17 )
 
 [node name="BottomRight" parent="CameraLimits" index="1"]
-position = Vector2( 683.069, 241.842 )
+position = Vector2( 683.148, 241.88 )
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 2 )]
+position = Vector2( 66.5515, 215.601 )
 FACING = "UP"
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Booth" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -107.947, 77.9459 )
+
+[node name="Vending" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -70.402, 80 )
 
 [editable path="CameraLimits"]
