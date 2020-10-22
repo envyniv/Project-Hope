@@ -4,3 +4,4 @@
 
 [node name="Voicebox" type="AudioStreamPlayer"]
 script = ExtResource( 1 )
+base_pitch = null

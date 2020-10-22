@@ -10,6 +10,8 @@ func _ready():
 	lload.connect("pressed", self, "_load_pressed")
 	set.connect("pressed", self, "_set_pressed")
 	exit.connect("pressed", self, "_exit_pressed")
+	_probe_files()
+	SaveLoad.load_set()
 	pass
 
 func _new_pressed():
@@ -17,13 +19,33 @@ func _new_pressed():
 	pass
 	
 func _load_pressed():
-	#SceneChanger.change_scene("res://scenes/Load.tscn",0)
+	SaveLoad.load_game()
+	#parse data and stuff
 	pass
 	
 func _set_pressed():
-	#SceneChanger.change_scene("res://scenes/Settings.tscn",0)
+	SceneChanger.change_scene("res://scenes/Settings.tscn",0)
 	pass
 	
 func _exit_pressed():
 	get_tree().quit()
+	pass
+	
+func _probe_files():
+	var files = []
+	var dir = Directory.new()
+	dir.open("res://scripts/dialogue")
+	dir.list_dir_begin()
+
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with("."):
+			files.append(file)
+
+	dir.list_dir_end()
+	#ProjectSettings.load_resource_pack("res://mod.pck")
+	#var imported_scene = load("res://mod_scene.tscn")
+	return files
 	pass

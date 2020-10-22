@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-class_name VoiceBox
+class_name VoiceBox, "res://scenes/icons/sound.png"
 
 signal characters_sounded(characters)
 signal finished_phrase()
@@ -9,7 +9,6 @@ const INFLECTION_SHIFT := 0.4
 
 export(float, -1.5, 4.5) var base_pitch := 2.5
 
-#i need to fucking understand that loading everything from json isn't always the brightest of ideas.
 const sounds = {
 	'a': preload('res://assets/OST/fx/voice/a.wav'),
 	'b': preload('res://assets/OST/fx/voice/b.wav'),
@@ -43,7 +42,7 @@ const sounds = {
 	'.': preload('res://assets/OST/fx/longblank.wav')
 }
 
-
+var bloop = preload("res://assets/OST/fx/blip.wav")
 var remaining_sounds := []
 
 
@@ -55,6 +54,26 @@ func play_string(in_string: String):
 	parse_input_string(in_string)
 	play_next_sound()
 
+func bloop_string(in_string: String):
+	parse_input_string(in_string)
+	play_next_bloop()
+	pass
+
+func play_next_bloop():
+	if len(remaining_sounds) == 0:
+		emit_signal("finished_phrase")
+		return
+	var next_symbol = remaining_sounds.pop_front()
+	emit_signal("characters_sounded", next_symbol.characters)
+	# Skip to next sound if no sound exists for text
+	if next_symbol.sound == '':
+		play_next_bloop()
+		return
+	var sound: AudioStreamSample = bloop
+	# Add some randomness to pitch plus optional inflection for end word in questions
+	pitch_scale = base_pitch
+	stream = sound
+	play()
 
 func play_next_sound():
 	if len(remaining_sounds) == 0:

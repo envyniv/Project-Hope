@@ -10,4 +10,3 @@
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 28.0679, 57.3698 )

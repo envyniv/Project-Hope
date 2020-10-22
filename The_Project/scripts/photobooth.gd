@@ -1,5 +1,5 @@
 extends Node2D
-class_name OBJ_Photo, "res://scenes/icons/photo.png"
+class_name Photo, "res://scenes/icons/photo.png"
 
 var boothid = null
 

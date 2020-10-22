@@ -8,7 +8,6 @@
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-extra_spacing_char = -1
 extra_spacing_space = -1
 font_data = ExtResource( 4 )
 
@@ -120,3 +119,4 @@ anims/fade-in = SubResource( 2 )
 [node name="next_char" type="Timer" parent="."]
 
 [node name="Voicebox" parent="." instance=ExtResource( 5 )]
+base_pitch = 2.5

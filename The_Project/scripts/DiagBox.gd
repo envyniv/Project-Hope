@@ -7,12 +7,13 @@ onready var next_spr=$Sprite/Sprite
 onready var voicebox=$Voicebox
 var diagname = "test"
 var file = File.new()
-var diagpath = "scripts/dialogue/%s.json" % [diagname]
-var dictionarynum = 1
+var diagpath = "scripts/dialogue/english/%s.json" % [diagname]
+var index = 1
 var timer: Timer
 signal start_dialogue
 signal dialogue_end
 var json_result = null
+
 
 #i think i blacked out when writing this.
 func diag_start():
@@ -23,12 +24,9 @@ func diag_start():
 		var json = file.get_as_text()
 		json_result = JSON.parse(json).result
 		file.close()
-		nametag.text=json_result[str(dictionarynum)]["name"]
-		message.text=json_result[str(dictionarynum)]["msg"]
+		print_text()
 		read_text();
-		#check if dialogue has 1 more line than the one you're being shown and show next button
-		if dictionarynum<json_result.size():
-			next();
+		next();
 	else:
 		nametag.set_text("System")
 		message.set_text("ERROR: DIALOGUE %s MISSING; \nREPORT IMMEDIATELY" % [diagname])
@@ -45,6 +43,7 @@ func _ready():
 	message.set_text("null")
 	nametag.set_text("null")
 	next_spr.hide()
+	diag_start()
 pass
 
 func timer_tick():
@@ -54,7 +53,12 @@ func timer_tick():
 		timer.stop()
 
 func read_text():
-	voicialize()
+	if SaveLoad.data["settings"]["voice"]==0:
+		voicialize()
+	elif SaveLoad.data["settings"]["voice"]==1:
+		blooplize()
+	elif SaveLoad.data["settings"]["voice"]==2:
+		pass
 	timer = Timer.new()
 	timer.wait_time = 0.08
 	timer.autostart = true
@@ -92,9 +96,22 @@ func voicialize():
 			voicebox.base_pitch=1
 	pass
 
+func blooplize():
+	
+	pass
+
+func print_text():
+	nametag.text = json_result[str(index)]["name"]
+	message.text = json_result[str(index)]["msg"]
+	pass
+
 func next():
-	next_spr.show()
+	if index < json_result.size():
+		next_spr.show()
+	else:
+		emit_signal("dialogue_end")
+		return
 	if Input.is_action_pressed("ui_atklight"):
-		dictionarynum+=1
-		#print(dictionarynum)
+		index+1
+		print_text()
 	pass

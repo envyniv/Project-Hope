@@ -1,0 +1,146 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/world-map.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Stage_Name.gd" type="Script" id=2]
+[ext_resource path="res://scenes/utility/CameraLimits.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/utility/MapCityPos.tscn" type="PackedScene" id=4]
+
+[node name="Stage" type="Node"]
+
+[node name="StageName" type="Node" parent="."]
+script = ExtResource( 2 )
+text = "World"
+
+[node name="Map" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Map"]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( -22.4655, 58.1241, -22.2038, 44.3445, -5.23328, 43.6374, 8.5553, 32.3237, 16.687, 33.0308, 36.5742, 42.6862, 46.6535, 42.6862, 54.6855, 35.5991, 60.8276, 35.7566, 64.6074, 38.2765, 62.4025, 48.9858, 79.4115, 48.9858, 81.3014, 45.836, 86.0261, 47.8834, 97.2079, 49.6157, 105.555, 57.6477, 155.746, 79.6156, 177.915, 102.345, 187.175, 103.749, 192.507, 100.942, 204.293, 104.029, 218.324, 104.029, 221.13, 101.223, 225.9, 103.468, 233.758, 104.029, 241.053, 109.922, 241.334, 114.973, 255.646, 93.927, 276.692, 82.983, 259.013, 48.1867, 253.12, 51.8347, 240.492, 51.2734, 224.778, 41.7325, 221.972, 36.4008, 192.226, 43.1356, 152.875, 44.5, 144.75, 38.5, 130.875, 38.75, 127.375, 31.5, 127.375, 22.875, 135.625, 6.125, 153.867, 1.06955, 154.534, -7.27319, 146.525, -11.2777, 148.194, -32.6351, 129.172, -22.6238, 116.491, -22.9576, 110.151, -32.3014, 109.15, -39.6431, 114.823, -53.6589, 123.833, -55.6611, 139.851, -82.3579, 140.852, -106.051, 128.838, -125.74, 104.568, -125.591, 100.325, -117.283, 94.4917, -118.874, 99.4414, -128.243, 86.8903, -128.243, 77.8746, -116.576, 66.7377, -116.576, 66.7377, -120.995, 80.3495, -134.784, 94.4917, -133.546, 111.285, -140.617, 135.105, -140.018, 151.15, -127.748, 160.235, -133.293, 157.522, -142.614, 119.948, -153.699, 75.7533, -150.34, 38.095, -153.459, 19.0677, -160.297, -13.2806, -163.686, -47.9289, -157.852, -76.625, -162.25, -114.5, -163.875, -148.375, -142.25, -179.08, -119.372, -204.336, -103.097, -219.489, -94.6781, -222.295, -89.9077, -227.907, -89.6271, -241.377, -68.0197, -244.744, -50.3409, -251.479, -45.5704, -254.846, -18.0701, -263.766, -12.1217, -260.938, 25.7085, -244.321, 49.043, -220.986, 53.2857, -206.49, 69.5491, -187.045, 66.3672, -178.913, 68.4885, -174.317, 75.9131, -152.75, 70.5, -145.25, 71.5, -142, 80.75, -123.25, 79.75, -115.001, 81.8345, -106.182, 96.6386, -81.9285, 106.403, -71.2781, 120.014, -65.1429, 114.823, -59.0077, 100.665, -42.018, 89.3381, -40.8381, 70.6966 )
+
+[node name="CameraLimits" parent="." instance=ExtResource( 3 )]
+
+[node name="TopLeft" parent="CameraLimits" index="0"]
+position = Vector2( -277.978, -257.963 )
+
+[node name="BottomRight" parent="CameraLimits" index="1"]
+position = Vector2( 278.061, 258.005 )
+
+[node name="Locations" type="Node" parent="."]
+
+[node name="Utopia" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -204.775, -49.6063 )
+
+[node name="Label" parent="Locations/Utopia/Sprite" index="0"]
+text = "Utopia"
+
+[node name="Oneiros" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -123.947, -32.7032 )
+
+[node name="Label" parent="Locations/Oneiros/Sprite" index="0"]
+text = "Oneiros"
+
+[node name="Fantasia" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -156.111, -102.272 )
+
+[node name="Label" parent="Locations/Fantasia/Sprite" index="0"]
+text = "Fantasia"
+
+[node name="Hypnos" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -213.193, 41.0276 )
+
+[node name="Label" parent="Locations/Hypnos/Sprite" index="0"]
+text = "Hypnos"
+
+[node name="Nyx" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -77.6232, 85.6229 )
+
+[node name="Label" parent="Locations/Nyx/Sprite" index="0"]
+text = "Nyx"
+
+[node name="Kassandra" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 180.759, 71.3524 )
+
+[node name="Label" parent="Locations/Kassandra/Sprite" index="0"]
+text = "Kassandra"
+
+[node name="Tyche" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -4.75684, 17.2435 )
+
+[node name="Label" parent="Locations/Tyche/Sprite" index="0"]
+text = "Tyche"
+
+[node name="Philomela" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 73.7309, -96.3258 )
+
+[node name="Label" parent="Locations/Philomela/Sprite" index="0"]
+text = "Philomela"
+
+[node name="Xenos" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 129.029, -8.91905 )
+
+[node name="Label" parent="Locations/Xenos/Sprite" index="0"]
+text = "Xenos"
+
+[node name="Atyche" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -92.1635, -141.516 )
+
+[node name="Label" parent="Locations/Atyche/Sprite" index="0"]
+text = "Atyche"
+
+[node name="Basileus" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 15.4597, -38.0546 )
+
+[node name="Label" parent="Locations/Basileus/Sprite" index="0"]
+text = "Basileus"
+
+[node name="Eirene" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 86.2175, 30.3248 )
+
+[node name="Label" parent="Locations/Eirene/Sprite" index="0"]
+text = "Eirene"
+
+[node name="Koine" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( -18.8775, -96.7471 )
+
+[node name="Label" parent="Locations/Koine/Sprite" index="0"]
+text = "Koine"
+
+[node name="Drop" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 150.548, -136.39 )
+
+[node name="Label" parent="Locations/Drop/Sprite" index="0"]
+text = "Drop"
+
+[editable path="CameraLimits"]
+
+[editable path="Locations/Utopia"]
+
+[editable path="Locations/Oneiros"]
+
+[editable path="Locations/Fantasia"]
+
+[editable path="Locations/Hypnos"]
+
+[editable path="Locations/Nyx"]
+
+[editable path="Locations/Kassandra"]
+
+[editable path="Locations/Tyche"]
+
+[editable path="Locations/Philomela"]
+
+[editable path="Locations/Xenos"]
+
+[editable path="Locations/Atyche"]
+
+[editable path="Locations/Basileus"]
+
+[editable path="Locations/Eirene"]
+
+[editable path="Locations/Koine"]
+
+[editable path="Locations/Drop"]

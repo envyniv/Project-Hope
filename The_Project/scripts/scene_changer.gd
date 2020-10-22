@@ -1,6 +1,7 @@
 extends Node
 
 signal scene_changed()
+signal node_swapped()
 
 onready var animation_player=$CanvasLayer/AnimationPlayer
 onready var color_rect=$CanvasLayer/Control/ColorRect
@@ -21,8 +22,8 @@ func swap_node(node,path,delay):
 	animation_player.play("fade")
 	yield(animation_player, "animation_finished")
 	#get "stage", check prerequisites and swap it
-	assert(node.change_scene(path) == OK)
+	
 	animation_player.play_backwards("fade")
 	yield(animation_player, "animation_finished")
-	emit_signal("scene_changed")
+	emit_signal("node_swapped")
 	pass

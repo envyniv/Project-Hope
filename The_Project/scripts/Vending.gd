@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name OBJ_Vending, "res://scenes/icons/vending.png"
+class_name Vending, "res://scenes/icons/vending.png"
 
 func _ready():
 	pass # Replace with function body.
