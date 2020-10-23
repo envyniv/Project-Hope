@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/Kevin Clark.png" type="Texture" id=2]
@@ -890,6 +890,8 @@ height = 14.9016
 [sub_resource type="RayShape2D" id=72]
 length = 15.0
 
+[sub_resource type="CapsuleShape2D" id=73]
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -909,10 +911,10 @@ frame = 81
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.210224, 0.50397 )
 texture = ExtResource( 2 )
-offset = Vector2( 0.3, -6.5 )
+offset = Vector2( -0.2, -6.5 )
 vframes = 21
 hframes = 21
-frame = 62
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/atk_airborne = SubResource( 2 )
@@ -973,3 +975,9 @@ position = Vector2( 0.5, 0 )
 [node name="Looking" type="CollisionShape2D" parent="Interact"]
 position = Vector2( 0, 8.5 )
 shape = SubResource( 72 )
+
+[node name="DamageBox" type="Area2D" parent="."]
+
+[node name="Damagebox" type="CollisionShape2D" parent="DamageBox"]
+position = Vector2( 0, 6 )
+shape = SubResource( 73 )
