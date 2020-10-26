@@ -5,7 +5,7 @@ export(String) var FACING
 
 func _ready():
 	if player:
-		print(player, playeranims)
+		#print(player, playeranims)
 		match FACING:
 			"UP":
 				playeranims.play("idle_Up")

@@ -53,12 +53,17 @@ func timer_tick():
 		timer.stop()
 
 func read_text():
-	if SaveLoad.data["settings"]["voice"]==0:
+	var chkfile = File.new()
+	var doFileExists = chkfile.file_exists("user://save.json")
+	if doFileExists:
+		if SaveLoad.data["settings"]["voice"]==0:
+			voicialize()
+		elif SaveLoad.data["settings"]["voice"]==1:
+			blooplize()
+		elif SaveLoad.data["settings"]["voice"]==2:
+			pass
+	else:
 		voicialize()
-	elif SaveLoad.data["settings"]["voice"]==1:
-		blooplize()
-	elif SaveLoad.data["settings"]["voice"]==2:
-		pass
 	timer = Timer.new()
 	timer.wait_time = 0.08
 	timer.autostart = true

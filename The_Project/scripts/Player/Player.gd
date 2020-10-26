@@ -24,6 +24,8 @@ var state = null
 #end_state
 
 func _ready():
+	for i in inv:
+		ItemManager.item_getter(i)
 	animTree.active = true
 	pass
 
