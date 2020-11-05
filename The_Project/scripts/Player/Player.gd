@@ -127,4 +127,7 @@ func dodgeState(): #dodging
 func _interact():
 	#if ATK_LIGHT: emit_signal("interact_req")
 	pass
+	
+func _calc_damage():
+	pass
 

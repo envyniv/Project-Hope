@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Settings.gd" type="Script" id=1]
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://addons/scrolling_background/scrolling_background.gd" type="Script" id=4]
 [ext_resource path="res://assets/boost-bg.png" type="Texture" id=5]
 [ext_resource path="res://assets/close.png" type="Texture" id=6]
+[ext_resource path="res://assets/reset.png" type="Texture" id=7]
 
 [node name="Settings" type="Node"]
 script = ExtResource( 1 )
@@ -41,7 +42,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
 margin_right = 84.0
-margin_bottom = 140.0
+margin_bottom = 114.0
 alignment = 1
 
 [node name="VoiceBloop" type="OptionButton" parent="ColorRect/ScrollContainer/VBoxContainer"]
@@ -94,7 +95,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Languange" type="OptionButton" parent="ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Language" type="OptionButton" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 66.0
 margin_right = 84.0
 margin_bottom = 88.0
@@ -102,7 +103,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Language"
 flat = true
 
-[node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/Languange"]
+[node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/Language"]
 margin_left = 120.0
 margin_top = 3.0
 margin_right = 40.0
@@ -113,17 +114,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Debug" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Controls" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 92.0
 margin_right = 84.0
 margin_bottom = 114.0
-custom_fonts/font = ExtResource( 2 )
-text = "Debug Game"
-
-[node name="Controls" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
-margin_top = 118.0
-margin_right = 84.0
-margin_bottom = 140.0
+hint_tooltip = "Bind controls"
 custom_fonts/font = ExtResource( 2 )
 text = "Controls"
 
@@ -142,13 +137,26 @@ __meta__ = {
 margin_left = 270.0
 margin_right = 292.0
 margin_bottom = 22.0
+hint_tooltip = "Back to main menu."
 texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset_Set" type="TextureButton" parent="ColorRect/Label"]
+margin_left = 270.0
+margin_top = 170.0
+margin_right = 292.0
+margin_bottom = 192.0
+hint_tooltip = "If pressed, will reset your settings."
+texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="item_selected" from="ColorRect/ScrollContainer/VBoxContainer/VoiceBloop" to="." method="_on_VoiceBloop_item_selected"]
 [connection signal="value_changed" from="ColorRect/ScrollContainer/VBoxContainer/Music" to="." method="_on_Music_value_changed"]
 [connection signal="value_changed" from="ColorRect/ScrollContainer/VBoxContainer/SFX" to="." method="_on_SFX_value_changed"]
-[connection signal="item_selected" from="ColorRect/ScrollContainer/VBoxContainer/Languange" to="." method="_on_Languange_item_selected"]
+[connection signal="item_selected" from="ColorRect/ScrollContainer/VBoxContainer/Language" to="." method="_on_Language_item_selected"]
 [connection signal="pressed" from="ColorRect/ScrollContainer/VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="ColorRect/Label/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/Label/Reset_Set" to="." method="_on_Reset_Set_pressed"]

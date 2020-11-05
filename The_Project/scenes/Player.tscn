@@ -1,8 +1,10 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/Kevin Clark.png" type="Texture" id=2]
 [ext_resource path="res://scenes/utility/Interact.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/utility/HitBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/utility/DamageBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.5, 2 )
@@ -884,8 +886,8 @@ graph_offset = Vector2( 68.7359, 18.8016 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=70]
 
 [sub_resource type="CapsuleShape2D" id=71]
-radius = 6.50262
-height = 14.9016
+radius = 7.34489
+height = 12.6646
 
 [sub_resource type="RayShape2D" id=72]
 length = 15.0
@@ -962,11 +964,10 @@ parameters/run/blend_position = Vector2( -0.057187, -0.468208 )
 parameters/run_Pose/blend_position = Vector2( 0, 0.225434 )
 parameters/walk/blend_position = Vector2( -0.00145346, 0.410405 )
 
-[node name="HitBox" type="Area2D" parent="."]
-collision_layer = 2
+[node name="HitBox" parent="." instance=ExtResource( 4 )]
 
-[node name="Hitbox" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 0.5, -6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( 0.529732, -6.09191 )
 shape = SubResource( 71 )
 
 [node name="Interact" parent="." instance=ExtResource( 3 )]
@@ -976,8 +977,9 @@ position = Vector2( 0.5, 0 )
 position = Vector2( 0, 8.5 )
 shape = SubResource( 72 )
 
-[node name="DamageBox" type="Area2D" parent="."]
+[node name="DamageBox" parent="." instance=ExtResource( 5 )]
 
-[node name="Damagebox" type="CollisionShape2D" parent="DamageBox"]
-position = Vector2( 0, 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
+position = Vector2( 0.0662155, 4.8338 )
 shape = SubResource( 73 )
+[connection signal="area_entered" from="DamageBox" to="HitBox" method="_on_DamageBox_area_entered"]

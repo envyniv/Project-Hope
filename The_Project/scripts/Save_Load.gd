@@ -57,7 +57,7 @@ func load_set():
 		file.open(path, file.READ)
 		var text=file.get_as_text()
 		data["settings"]=parse_json(text)["settings"]
-		#print(data)
+		print(data)
 	else:
 		reset_data()
 		return

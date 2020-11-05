@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
 [ext_resource path="res://scenes/utility/PlayerSpawn.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/utility/Vending.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/utility/scn_chgtrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/utility/StageName.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/utility/ZoomOUT.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.3774, 10 )
@@ -79,6 +80,9 @@ position = Vector2( 267.557, 233.887 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Warp2"]
 shape = SubResource( 3 )
+
+[node name="ZoomOUT" parent="." instance=ExtResource( 8 )]
+position = Vector2( 93.9877, -1261.28 )
 
 [editable path="CameraLimits"]
 

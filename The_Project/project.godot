@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-next/gui/cycle.gd"
 }, {
+"base": "Area2D",
+"class": "DamageBox",
+"language": "GDScript",
+"path": "res://scripts/DamageBox.gd"
+}, {
 "base": "Label",
 "class": "DebugLabel",
 "language": "GDScript",
@@ -93,6 +98,11 @@ _global_script_classes=[ {
 "class": "Geometry2D",
 "language": "GDScript",
 "path": "res://addons/godot-next/2d/geometry_2d.gd"
+}, {
+"base": "Area2D",
+"class": "HitBox",
+"language": "GDScript",
+"path": "res://scripts/HitBox.gd"
 }, {
 "base": "Reference",
 "class": "Icons",
@@ -241,12 +251,14 @@ _global_script_class_icons={
 "ClassType": "",
 "CustomLabel": "res://scenes/icons/label.png",
 "Cycle": "res://addons/godot-next/icons/icon_cycle.svg",
+"DamageBox": "",
 "DebugLabel": "",
 "DiscreteGradientTexture": "",
 "EditorTools": "",
 "FileSearch": "",
 "FileSystemLink": "",
 "Geometry2D": "res://addons/godot-next/icons/icon_geometry_2d.svg",
+"HitBox": "",
 "Icons": "",
 "Inflector": "",
 "InspectorControls": "",
@@ -280,13 +292,12 @@ _global_script_class_icons={
 
 config/name="Project Hope"
 run/main_scene="res://scenes/boot_scrn.tscn"
-config/icon="res://assets/icon.png"
-config/windows_native_icon="res://source_assets/favicon.ico"
 
 [autoload]
 
 SceneChanger="*res://scenes/utility/scene_changer.tscn"
 SaveLoad="*res://scenes/utility/Save_Load.tscn"
+ItemManager="*res://scenes/utility/Item_Manager.tscn"
 
 [display]
 
@@ -297,7 +308,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "FileSystemView", "godot-next", "scrolling_background" )
+enabled=PoolStringArray( "godot-next", "scrolling_background" )
 
 [importer_defaults]
 

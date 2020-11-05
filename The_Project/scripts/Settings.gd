@@ -1,7 +1,6 @@
 extends Node
 onready var voice_select=$ColorRect/ScrollContainer/VBoxContainer/VoiceBloop
 onready var language=$ColorRect/ScrollContainer/VBoxContainer/Language
-onready var mode=$ColorRect/ScrollContainer/VBoxContainer/Debug
 
 func _ready():
 	var path="user://save.json"
@@ -9,20 +8,6 @@ func _ready():
 	voice_select.add_item("Alien")
 	voice_select.add_item("Bloop")
 	voice_select.add_item("None")
-	voice_select.selected=0
-	mode.add_item("Game")
-	mode.add_item("Debug")
-	mode.selected=0
-	mode.hide()
-	if not file.file_exists(path):
-		SaveLoad.data["settings"]["voice"]=0
-		SaveLoad.data["settings"]["mode"]=0
-		SaveLoad.save_game()
-	else:
-		SaveLoad.data["settings"]["mode"]=0
-		SaveLoad.save_game()
-		pass
-
 
 func _on_Music_value_changed(value):
 	SaveLoad.data["settings"]["bgmvol"]=str(value)
@@ -54,7 +39,7 @@ func _on_Controls_pressed():
 	pass # Replace with function body.
 
 
-func _on_Debug_item_selected(index):
-	SaveLoad.data["settings"]["mode"]=index
+func _on_Reset_Set_pressed():
+	SaveLoad.data["settings"]={}
 	SaveLoad.save_game()
 	pass # Replace with function body.
