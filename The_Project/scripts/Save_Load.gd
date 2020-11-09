@@ -23,8 +23,20 @@ var default_data = {
 	"settings": {
 		"bgmvol":100,
 		"sfxvol":100,
-		"voice":"on",
+		"voice":0,
 		"lang":"en",
+		"controls":
+			{
+				"ui_left":"A",
+				"ui_right":"D",
+				"ui_up":"W",
+				"ui_down":"S",
+				"ui_sprint":"Shift",
+				"ui_accept":"J",
+				"ui_atkmed":"K",
+				"ui_atkheavy":"N",
+				"ui_atkgod":"M",
+			},
 	},
 }
 
@@ -57,7 +69,6 @@ func load_set():
 		file.open(path, file.READ)
 		var text=file.get_as_text()
 		data["settings"]=parse_json(text)["settings"]
-		print(data)
 	else:
 		reset_data()
 		return

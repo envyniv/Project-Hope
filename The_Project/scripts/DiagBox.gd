@@ -53,17 +53,12 @@ func timer_tick():
 		timer.stop()
 
 func read_text():
-	var chkfile = File.new()
-	var doFileExists = chkfile.file_exists("user://save.json")
-	if doFileExists:
-		if SaveLoad.data["settings"]["voice"]==0:
-			voicialize()
-		elif SaveLoad.data["settings"]["voice"]==1:
-			blooplize()
-		elif SaveLoad.data["settings"]["voice"]==2:
-			pass
-	else:
+	if SaveLoad.data["settings"]["voice"]==0:
 		voicialize()
+	elif SaveLoad.data["settings"]["voice"]==1:
+		blooplize()
+	elif SaveLoad.data["settings"]["voice"]==2:
+		pass
 	timer = Timer.new()
 	timer.wait_time = 0.08
 	timer.autostart = true
@@ -116,7 +111,7 @@ func next():
 	else:
 		emit_signal("dialogue_end")
 		return
-	if Input.is_action_pressed("ui_atklight"):
-		index+1
+	if Input.is_action_pressed("ui_accept"):
+		index+=1
 		print_text()
 	pass

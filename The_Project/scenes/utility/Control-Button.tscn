@@ -1,11 +1,23 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Control-Button.gd" type="Script" id=1]
+[ext_resource path="res://assets/characters/Kevin Clark.png" type="Texture" id=2]
+[ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=3]
 
 [node name="Button" type="Button"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = 4.5
+margin_top = 38.5
+margin_right = 16.5
+margin_bottom = 58.5
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="."]
-margin_left = 15.0
-margin_top = 5.0
-margin_right = 55.0
-margin_bottom = 19.0
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 11, -18.5 )
+texture = ExtResource( 2 )
+vframes = 21
+hframes = 21

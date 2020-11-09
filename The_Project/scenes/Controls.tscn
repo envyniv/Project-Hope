@@ -2,11 +2,10 @@
 
 [ext_resource path="res://addons/scrolling_background/scrolling_background.gd" type="Script" id=1]
 [ext_resource path="res://assets/boost-bg.png" type="Texture" id=2]
-[ext_resource path="res://scripts/Controls.gd" type="Script" id=3]
 [ext_resource path="res://scenes/utility/Control-Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://materials/stages.tres" type="DynamicFont" id=5]
 
 [node name="Node" type="Node"]
-script = ExtResource( 3 )
 
 [node name="ScrollingBackground" type="Node" parent="."]
 script = ExtResource( 1 )
@@ -27,12 +26,111 @@ __meta__ = {
 }
 
 [node name="Left" parent="ColorRect" instance=ExtResource( 4 )]
-margin_left = 16.5
-margin_top = 17.5
-margin_right = 28.5
-margin_bottom = 37.5
+margin_left = 15.0
+margin_top = 96.0
+margin_right = 27.0
+margin_bottom = 116.0
+action = "ui_left"
 
-[node name="Label" parent="ColorRect/Left" index="0"]
-text = "Left"
+[node name="Sprite" parent="ColorRect/Left" index="0"]
+frame = 6
+
+[node name="Down" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 49.0
+margin_top = 125.0
+margin_right = 61.0
+margin_bottom = 145.0
+
+[node name="Up" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 49.0
+margin_top = 65.0
+margin_right = 61.0
+margin_bottom = 85.0
+
+[node name="Sprite" parent="ColorRect/Up" index="0"]
+frame = 12
+
+[node name="Right" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 92.0
+margin_top = 96.0
+margin_right = 104.0
+margin_bottom = 116.0
+action = "ui_right"
+
+[node name="Sprite" parent="ColorRect/Right" index="0"]
+frame = 18
+
+[node name="Sprint" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 131.407
+margin_top = 95.0339
+margin_right = 143.407
+margin_bottom = 117.034
+action = "ui_sprint"
+
+[node name="Sprite" parent="ColorRect/Sprint" index="0"]
+position = Vector2( 19.8388, -18.8535 )
+frame = 33
+
+[node name="Weak" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 183.687
+margin_top = 69.1078
+margin_right = 195.687
+margin_bottom = 91.1078
+action = "ui_accept"
+
+[node name="Sprite" parent="ColorRect/Weak" index="0"]
+frame = 78
+
+[node name="Medium" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 236.128
+margin_top = 56.3721
+margin_right = 248.128
+margin_bottom = 78.3721
+action = "ui_atkmed"
+
+[node name="Sprite" parent="ColorRect/Medium" index="0"]
+frame = 65
+
+[node name="Heavy" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 202.416
+margin_top = 125.294
+margin_right = 214.416
+margin_bottom = 147.294
+action = "ui_cancel"
+
+[node name="Sprite" parent="ColorRect/Heavy" index="0"]
+frame = 76
+
+[node name="Skill" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 252.609
+margin_top = 114.057
+margin_right = 264.609
+margin_bottom = 136.057
+action = "ui_select"
+
+[node name="Sprite" parent="ColorRect/Skill" index="0"]
+frame = 84
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 9.739
+margin_top = 8.98985
+margin_right = 67.739
+margin_bottom = 24.9898
+custom_fonts/font = ExtResource( 5 )
+text = "Controls"
 
 [editable path="ColorRect/Left"]
+
+[editable path="ColorRect/Up"]
+
+[editable path="ColorRect/Right"]
+
+[editable path="ColorRect/Sprint"]
+
+[editable path="ColorRect/Weak"]
+
+[editable path="ColorRect/Medium"]
+
+[editable path="ColorRect/Heavy"]
+
+[editable path="ColorRect/Skill"]

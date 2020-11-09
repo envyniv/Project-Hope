@@ -9,6 +9,7 @@ onready var player=$AudioStreamPlayer
 #	"battle5" : [preload("res://assets/OST/BGM/orchestra.ogg"), "Orchestrating A Fight"],
 #	"battle6" : [preload("res://assets/OST/BGM/sounds.ogg"), "Sounds Of Battle"],
 #	"thoughtful" : [preload("res://assets/OST/BGM/thoughtful.ogg"), "Orchestrating A Fight - non battle"],
+#	"think" : [preload("rex://assets/OST/NGM/think.ogg"), "Think, Quick!"],
 #	"save" : [preload("res://assets/OST/BGM/save.ogg"), "Time To Save"],
 #	"winter" : [preload("res://assets/OST/BGM/winter.ogg"), "New World"],
 #	"sweet" : [preload("res://assets/OST/BGM/sweet.ogg"), "Sweet Melody"],
@@ -18,8 +19,14 @@ onready var player=$AudioStreamPlayer
 onready var stage=$Stage
 onready var stagename=get_node("../Viewport/World/Stage/StageName").text
 func _ready():
-	#player.stream = battle1
+	if SaveLoad.data["settings"].has("bgmvol"):
+		player.volume_db=SaveLoad.data["settings"]["bgmvol"]
+		pass
+	else:
+		#volume 100%
+		pass
+#	player.stream = battle1
 	stage.text = stagename
-	#anims.play("fade-in")
-	#player.play()
+#	anims.play("fade-in")
+#	player.play()
 	pass

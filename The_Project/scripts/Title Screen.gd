@@ -16,7 +16,6 @@ func _ready():
 
 func _new_pressed():
 	SceneChanger.change_scene("res://scenes/Viewports.tscn",0)
-	pass
 	
 func _load_pressed():
 	SaveLoad.load_game()

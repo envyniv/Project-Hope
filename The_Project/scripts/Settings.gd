@@ -30,16 +30,10 @@ func _on_VoiceBloop_item_selected(index):
 	pass
 
 func _on_Button_pressed():
-	SceneChanger.change_scene("res://scenes/Title Screen.tscn",0)
+	SceneChanger.change_scene("res://scenes/Viewports.tscn",0)
 	pass
 
 
 func _on_Controls_pressed():
 	SceneChanger.change_scene("res://scenes/Controls.tscn",0)
-	pass # Replace with function body.
-
-
-func _on_Reset_Set_pressed():
-	SaveLoad.data["settings"]={}
-	SaveLoad.save_game()
 	pass # Replace with function body.

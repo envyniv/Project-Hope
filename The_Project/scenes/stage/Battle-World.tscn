@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/scrolling_background/scrolling_background.gd" type="Script" id=1]
+[ext_resource path="res://assets/boost-bg.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Stage_Name.gd" type="Script" id=3]
+
+[node name="Battle-World" type="Node"]
+
+[node name="ScrollingBackground" type="Node" parent="."]
+script = ExtResource( 1 )
+texture = ExtResource( 2 )
+speed_x = 5.0
+speed_y = 0.0
+scale = 1
+modulate = Color( 1, 1, 1, 1 )
+
+[node name="CustomLabel" type="Node" parent="."]
+script = ExtResource( 3 )
+text = "Erebus"

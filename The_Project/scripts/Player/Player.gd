@@ -10,7 +10,9 @@ var inv = []
 onready var animPlayer=$Sprite/AnimationPlayer
 onready var animTree=$Sprite/AnimationPlayer/AnimationTree
 onready var animState=animTree.get("parameters/playback")
+onready var sprite= $Sprite
 signal interact_req()
+signal thinking()
 
 #state
 enum {
@@ -18,6 +20,7 @@ enum {
 	ATK,
 	DODGE,
 	RUN,
+	THINK,
 }
 
 var state = null
@@ -43,7 +46,8 @@ func _physics_process(_delta):
 			dodgeState();
 		RUN:
 			runState();
-			
+		THINK:
+			thinkState();
 	if movedir!=Vector2.ZERO:
 		state = MOVE;
 	pass
@@ -54,20 +58,24 @@ func inputChk(deactivate):
 	var DOWN = Input.is_action_pressed("ui_down")
 	var RIGHT = Input.is_action_pressed("ui_right")
 	var LEFT = Input.is_action_pressed("ui_left")
-	var KICK_WEAK = Input.is_action_just_pressed("ui_atklight")
-	var PUNCH_MED = Input.is_action_just_pressed("ui_atkmed")
-	var HIGH = Input.is_action_just_pressed("ui_atkheavy")
-	var SKILL = Input.is_action_just_pressed("ui_atkgod")
-	var DODGE_KEY = Input.is_action_just_pressed("ui_dodge")
-	var RUN_KEY = Input.is_action_pressed("ui_sprint")
+	var WEAK = Input.is_action_just_pressed("ui_accept")
+	var PUNCH = Input.is_action_just_pressed("ui_atkmed")
+	var HIGH = Input.is_action_just_pressed("ui_cancel")
+	var SKILL = Input.is_action_just_pressed("ui_select")
+	var SPRINT = Input.is_action_pressed("ui_sprint")
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
-	if RUN_KEY:
+	if SPRINT:
 		state=RUN;
 		moveSpeed=130
 	else:
 		moveSpeed=80;
 		pass
+	if SKILL:
+		state=THINK;
+		pass
+	#TODO: replace this terribleness with a code that makes the looking
+	#      collision shape point towards the movement vector
 	if LEFT:
 		$Interact/Looking.rotation_degrees=90
 	if RIGHT:
@@ -84,8 +92,10 @@ func inputChk(deactivate):
 		$Interact/Looking.rotation_degrees=-135
 	if UP && LEFT:
 		$Interact/Looking.rotation_degrees=135
+	# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		
 	if deactivate:
-		return
+		return #if you don't want input
 	pass
 
 
@@ -101,7 +111,9 @@ func runState():
 #animation
 func animHndlr():
 	inputChk(0)
-	if movedir!=Vector2.ZERO:
+	if state==THINK:
+			animPlayer.play("think")
+	elif movedir!=Vector2.ZERO:
 		animTree.set("parameters/idle/blend_position", movedir)
 		animTree.set("parameters/run/blend_position", movedir)
 		animTree.set("parameters/walk/blend_position", movedir)
@@ -118,16 +130,24 @@ func animHndlr():
 
 func atkState(): #attacking
 	canDo = false
+	#animations should not be played here
+	#however, checking is fine
+	yield( animPlayer, "animation_finished" )
+	canDo = true
+	pass
+	
+func thinkState(): #selecting spell
+	#move the camera to the right.
 	pass
 	
 func dodgeState(): #dodging
-	
+	canDo = false
 	pass
 
 func _interact():
-	#if ATK_LIGHT: emit_signal("interact_req")
+	#if WEAK: emit_signal("interact_req")
 	pass
 	
-func _calc_damage():
+func _process_damage():
 	pass
 

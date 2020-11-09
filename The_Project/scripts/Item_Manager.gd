@@ -1,7 +1,7 @@
 extends Node
 var existchk = File.new()
 var file = CSVFile.new()
-var itemDB = "res://scripts/itemDB.csv"
+var itemDB = "res://scripts/itemDB.hopedb"
 var item_type=null
 
 var csv = file.load_file(itemDB)

@@ -16,14 +16,18 @@ func change_scene(path,delay):
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
 	pass
-	
+
 func swap_node(node,path,delay):
 	yield(get_tree().create_timer(delay),"timeout")
 	animation_player.play("fade")
 	yield(animation_player, "animation_finished")
-	#get "stage", check prerequisites and swap it
-	
+	queue_free_children(node)
+	node.add_child(path.instance())
 	animation_player.play_backwards("fade")
 	yield(animation_player, "animation_finished")
 	emit_signal("node_swapped")
 	pass
+	
+func queue_free_children(node):
+		for i in node.get_children():
+			node.get_child().queue_free()
