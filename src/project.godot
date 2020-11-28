@@ -292,6 +292,7 @@ _global_script_class_icons={
 
 config/name="Project Hope"
 run/main_scene="res://scenes/boot_scrn.tscn"
+config/icon="res://icon.png"
 
 [autoload]
 

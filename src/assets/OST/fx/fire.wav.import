@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/time3.wav-a73c478ce5fbc9e0c16efd5b5889e89c.sample"
+path="res://.import/fire.wav-9e713cf3ded7da40a625be4c83f75c6d.sample"
 
 [deps]
 
-source_file="res://assets/OST/fx/time3.wav"
-dest_files=[ "res://.import/time3.wav-a73c478ce5fbc9e0c16efd5b5889e89c.sample" ]
+source_file="res://assets/OST/fx/fire.wav"
+dest_files=[ "res://.import/fire.wav-9e713cf3ded7da40a625be4c83f75c6d.sample" ]
 
 [params]
 
