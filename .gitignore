@@ -5,7 +5,7 @@ src/*.translation
 src/assets/OST/BGM/*
 src/assets/reference
 src/addons
-/*.gitignore~
+/*.*~
 /*.blend1
 
 #include

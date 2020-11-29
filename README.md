@@ -1,4 +1,4 @@
-# Project Hope
+# ![Official Last Hope Logo](src/title.svg,"Official Logo")
 *My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG with [Capcom fighting games](https://en.wikipedia.org/wiki/Street_Fighter) styled battles with some [WarioWare](https://en.wikipedia.org/wiki/Wario_(series)#WarioWare_series) sprinkled on top.*
 
 [Website](https://envyniv.github.io/Project-Hope)
@@ -16,6 +16,8 @@
 > Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
 
 > Base sounds from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) and [Freesound.org](freesound.org)
+
+> Logo(s) by [Davide Azzaretto/envyniv](https://github.com/envyniv)
 
 © Davide Azzaretto/envyniv, 2020.
 
