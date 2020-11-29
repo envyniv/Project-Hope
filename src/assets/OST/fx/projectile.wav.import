@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/projectile.wav-ad50bee747fb80fa2c6af53bc55034bc.sample"
+
+[deps]
+
+source_file="res://assets/OST/fx/projectile.wav"
+dest_files=[ "res://.import/projectile.wav-ad50bee747fb80fa2c6af53bc55034bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

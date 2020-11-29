@@ -1,3 +1,13 @@
-#Godot ignores
+
+#ignore
 src/.import/
 src/*.translation
+src/assets/OST/BGM/*
+src/assets/reference
+src/addons
+/*.gitignore~
+/*.blend1
+
+#include
+!src/assets/OST/BGM/think.ogg
+!src/assets/OST/BGM/think.ogg.import
