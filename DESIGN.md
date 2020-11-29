@@ -157,7 +157,7 @@ battle transition: when colliding with an enemy, apply a shader that’s a mixtu
 
 # THOUGHTS LOGS
 
-###### 
+######
 this is a collection of various thoughts or research of mine during the game's development cycle.
 these will, most likely, **not** be in order
 * * *
