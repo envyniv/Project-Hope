@@ -1,4 +1,5 @@
-# ![Official Last Hope Logo](src/title.svg,"Official Logo")
+![Official Last Hope Logo](src/title.svg,"Official Logo")
+- - -
 *My take on a 2D [Mother](https://en.wikipedia.org/wiki/Mother_(video_game_series))-like ARPG with [Capcom fighting games](https://en.wikipedia.org/wiki/Street_Fighter) styled battles with some [WarioWare](https://en.wikipedia.org/wiki/Wario_(series)#WarioWare_series) sprinkled on top.*
 
 [Website](https://envyniv.github.io/Project-Hope)
