@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_cycle.svg-704a1bd2b44d109f39c24978002f0840.stex"
+path="res://.import/plugin.png-9b0bdde391be649548404e7be8859cfe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/godot-next/icons/icon_cycle.svg"
-dest_files=[ "res://.import/icon_cycle.svg-704a1bd2b44d109f39c24978002f0840.stex" ]
+source_file="res://scenes/icons/plugin.png"
+dest_files=[ "res://.import/plugin.png-9b0bdde391be649548404e7be8859cfe.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

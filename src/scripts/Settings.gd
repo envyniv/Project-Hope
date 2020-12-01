@@ -37,3 +37,8 @@ func _on_Button_pressed():
 func _on_Controls_pressed():
 	SceneChanger.change_scene("res://scenes/Controls.tscn",0)
 	pass # Replace with function body.
+
+
+func _on_Reset_Set_pressed():
+	SceneChanger.change_scene("res://scenes/Reset.tscn",0)
+	pass # Replace with function body.
