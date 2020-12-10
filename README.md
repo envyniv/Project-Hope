@@ -36,7 +36,6 @@
 ### Sound Engineer(s):
 
 * Davide Azzaretto (envyniv);
-
 * David Kvistorf (davidkvis99);
 
 ### Sound Designer(s):
@@ -56,8 +55,12 @@
 * Davide Azzaretto (envyniv);
 
 
-## Additional Contributor(s):
+## Special Thanks to:
 
+* Everyone in [my discord server](https://discord.gg/bNkDkHW) (for being supportive)
+* You (for acknowledging this game)
+* Gzillion/Newbie (minor sprite work)
+* Aléris (minor sprite work)
 * gotimo2 (separated player movement and animation)
 
 ## Contact
