@@ -38,6 +38,7 @@ const sounds = {
 	'z': preload('res://assets/OST/fx/voice/z.wav'),
 	'th': preload('res://assets/OST/fx/voice/th.wav'),
 	'sh': preload('res://assets/OST/fx/voice/sh.wav'),
+	'ph':preload('res://assets/OST/fx/voice/th.wav'),
 	' ': preload('res://assets/OST/fx/blank.wav'),
 	'.': preload('res://assets/OST/fx/longblank.wav')
 }
@@ -47,7 +48,11 @@ var remaining_sounds := []
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("finished", self, "play_next_sound")
+	if SaveLoad.data["settings"].has("sfxvol"):
+		volume_db=linear2db(float(SaveLoad.data["settings"]["sfxvol"]))
+
 
 
 func play_string(in_string: String):

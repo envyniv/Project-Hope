@@ -1,75 +1,60 @@
 extends Node
 
-onready var nametag=$Sprite/Label
-onready var message=$Sprite/RichTextLabel
+onready var nametag=$DiagBox/Label
+onready var message=$DiagBox/RichTextLabel
 onready var anims=$AnimationPlayer
-onready var next_spr=$Sprite/Sprite
+onready var next_spr=$DiagBox/Next
 onready var voicebox=$Voicebox
-var diagname = "test"
 var file = File.new()
-var diagpath = "scripts/dialogue/english/%s.json" % [diagname]
 var index = 1
-var timer: Timer
-signal start_dialogue
-signal dialogue_end
-var json_result = null
+onready var timer=$next_char
+var json_result
+signal diag_started()
+signal diag_ended()
 
+func _ready():
+	message.set_text("")
+	nametag.set_text("")
+	next_spr.hide()
+pass
 
-#i think i blacked out when writing this.
-func diag_start():
+func diag_start(diagname):
 	anims.play("fade-in")
-	
+	var diagpath = "res://scripts/dialogue/%s.json" % [diagname]
 	if file.file_exists(diagpath):
 		file.open(diagpath, file.READ)
 		var json = file.get_as_text()
 		json_result = JSON.parse(json).result
-		file.close()
-		print_text()
+		print_text();
 		read_text();
-		next();
+		emit_signal("diag_started")
+		file.close()
 	else:
 		nametag.set_text("System")
-		message.set_text("ERROR: DIALOGUE %s MISSING; \nREPORT IMMEDIATELY" % [diagname])
+		message.set_text("ERROR: DIALOGUE %s MISSING; \nISSUE IMMEDIATELY" % [diagname])
 pass
 
 func diag_end():
 	message.visible_characters=0
 	anims.play_backwards("fade-in")
-	message.set_text("null")
-	nametag.set_text("null")
+	message.set_text("")
+	nametag.set_text("")
+	emit_signal("diag_ended")
 pass
-
-func _ready():
-	message.set_text("null")
-	nametag.set_text("null")
-	next_spr.hide()
-	diag_start()
-pass
-
-func timer_tick():
-	message.visible_characters += 1
-	if message.visible_characters >= message.text.length():
-		message.visible_characters = -1
-		timer.stop()
 
 func read_text():
-	if SaveLoad.data["settings"]["voice"]==0:
-		voicialize()
-	elif SaveLoad.data["settings"]["voice"]==1:
-		blooplize()
-	elif SaveLoad.data["settings"]["voice"]==2:
-		pass
-	timer = Timer.new()
-	timer.wait_time = 0.08
-	timer.autostart = true
-	timer.connect("timeout", self, "timer_tick")
+	voicialize()
+	timer.wait_time = 0.1
 	message.visible_characters = 0
-	add_child(timer)
 	timer.start()
 	pass
 
 func voicialize():
-	voicebox.play_string(message.text)
+	voicebox.remaining_sounds=[]
+	if SaveLoad.data["settings"]["voice"]==0:
+		voicebox.play_string(message.bbcode_text);
+	elif SaveLoad.data["settings"]["voice"]==1:
+		voicebox.bloop_string(message.bbcode_text);
 	#check which character
 	match nametag.text:
 		"Kevin":
@@ -91,27 +76,39 @@ func voicialize():
 		"Dolus":
 			voicebox.base_pitch=1.9
 		"Thanatos":
-			voicebox.base_pitch=1.5
+			voicebox.base_pitch=0.5
 		"Envy":
 			voicebox.base_pitch=1
 	pass
 
-func blooplize():
-	
-	pass
-
 func print_text():
 	nametag.text = json_result[str(index)]["name"]
-	message.text = json_result[str(index)]["msg"]
+	message.bbcode_text = json_result[str(index)]["msg"]
 	pass
 
+func _input(_event):
+	var NEXT=Input.is_action_just_pressed("ui_accept")
+	if NEXT:
+		if message.visible_characters!=message.bbcode_text.length()&&message.visible_characters!=-1:
+			timer.stop()
+			message.visible_characters=-1
+			voicebox.remaining_sounds=[]
+		elif index==json_result.size():
+			diag_end()
+		else:
+			next()
+
 func next():
-	if index < json_result.size():
-		next_spr.show()
-	else:
-		emit_signal("dialogue_end")
-		return
-	if Input.is_action_pressed("ui_accept"):
+	if index <= json_result.size():
+		#for whatever reason the dialogue box can't get input
 		index+=1
-		print_text()
+		print_text();
+		read_text();
+	pass
+
+func _on_next_char_timeout():
+	message.visible_characters += 1
+	if message.visible_characters > message.bbcode_text.length():
+		message.visible_characters -= 1
+		timer.stop()
 	pass

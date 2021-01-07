@@ -1,0 +1,205 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/characters/hp-cont.png" type="Texture" id=1]
+[ext_resource path="res://assets/hp-bar-end.png" type="Texture" id=2]
+[ext_resource path="res://assets/hp-bar-under.png" type="Texture" id=3]
+[ext_resource path="res://assets/HP-container.png" type="Texture" id=4]
+[ext_resource path="res://assets/hp-bar-progress.png" type="Texture" id=5]
+[ext_resource path="res://assets/heart.png" type="Texture" id=6]
+[ext_resource path="res://assets/shield.png" type="Texture" id=7]
+[ext_resource path="res://scripts/HP-Container.gd" type="Script" id=8]
+[ext_resource path="res://materials/hp-font.tres" type="BitmapFont" id=9]
+[ext_resource path="res://assets/star.png" type="Texture" id=10]
+[ext_resource path="res://materials/HP-FONT-small.tres" type="BitmapFont" id=11]
+[ext_resource path="res://materials/HP-FONT-smaller.tres" type="BitmapFont" id=12]
+[ext_resource path="res://materials/HP-FONT-thin.tres" type="BitmapFont" id=13]
+
+[node name="HP-Container" type="Control"]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp-cont" type="Sprite" parent="."]
+position = Vector2( -21, -14 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Character" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+hframes = 4
+
+[node name="HPBar" type="TextureProgress" parent="Character"]
+margin_left = -10.6958
+margin_top = -5.0
+margin_right = 29.3042
+margin_bottom = 3.0
+max_value = 999.0
+value = 999.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 0.572549, 0.956863, 0.0431373, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="Character/HPBar"]
+margin_left = -9.0
+margin_top = -3.0
+margin_right = 4.0
+margin_bottom = 10.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Label" parent="Character/HPBar/icon"]
+margin_left = -6.0
+margin_top = 3.0
+margin_right = 18.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 9 )
+text = "999"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPBarEnd" type="TextureRect" parent="Character/HPBar"]
+margin_left = 39.0
+margin_right = 41.0
+margin_bottom = 7.0
+rect_scale = Vector2( 1, 1.15 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MAXHP" type="Label" parent="Character/HPBar"]
+margin_left = 23.8609
+margin_top = 1.6665
+margin_right = 38.8609
+margin_bottom = 6.6665
+custom_fonts/font = ExtResource( 11 )
+text = "999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DEFBar" type="TextureProgress" parent="Character"]
+margin_left = 3.0
+margin_top = -16.0
+margin_right = 32.0
+margin_bottom = -10.0
+max_value = 499.0
+value = 300.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 0.427451, 0.741176, 0.929412, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="Character/DEFBar"]
+margin_left = -12.0
+margin_top = -3.0
+margin_right = 0.999999
+margin_bottom = 10.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DEF" type="Label" parent="Character/DEFBar/icon"]
+margin_left = -1.84449
+margin_top = 3.0
+margin_right = 16.1555
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 13 )
+text = "300"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DEFBarEnd" type="TextureRect" parent="Character/DEFBar"]
+margin_left = 28.0
+margin_right = 30.0
+margin_bottom = 7.0
+rect_scale = Vector2( 1, 0.859 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MAXDEF" type="Label" parent="Character/DEFBar"]
+margin_left = 13.8513
+margin_right = 28.8513
+margin_bottom = 5.0
+custom_fonts/font = ExtResource( 12 )
+text = "499"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MANABar" type="TextureProgress" parent="Character"]
+margin_left = -17.1487
+margin_top = 7.0
+margin_right = 16.8513
+margin_bottom = 13.0
+max_value = 10.0
+value = 5.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 0.784314, 0.427451, 0.929412, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="Character/MANABar"]
+margin_left = -9.32581
+margin_top = -3.86139
+margin_right = 3.67419
+margin_bottom = 9.13861
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MANA" type="Label" parent="Character/MANABar/icon"]
+margin_left = -2.37004
+margin_top = 3.86139
+margin_right = 15.63
+margin_bottom = 10.8614
+custom_fonts/font = ExtResource( 13 )
+text = "5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MANABarEnd" type="TextureRect" parent="Character/MANABar"]
+margin_left = 33.1338
+margin_right = 35.1338
+margin_bottom = 7.0
+rect_scale = Vector2( 1, 0.859 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MAXMANA" type="Label" parent="Character/MANABar"]
+margin_left = 24.3042
+margin_right = 33.3042
+margin_bottom = 5.0
+custom_fonts/font = ExtResource( 12 )
+text = "10"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

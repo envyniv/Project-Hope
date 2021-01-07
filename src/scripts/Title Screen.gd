@@ -11,7 +11,7 @@ func _ready():
 	set.connect("pressed", self, "_set_pressed")
 	exit.connect("pressed", self, "_exit_pressed")
 	_probe_files()
-	SaveLoad.load_set()
+	SaveLoad.load_game()
 	pass
 
 func _new_pressed():

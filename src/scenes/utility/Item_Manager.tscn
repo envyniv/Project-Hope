@@ -4,19 +4,3 @@
 
 [node name="Item_Manager" type="Node"]
 script = ExtResource( 1 )
-
-[node name="Generic_BG" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = 30.0
-margin_right = -30.0
-margin_bottom = -30.0
-color = Color( 0.141176, 0.141176, 0.141176, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Inventory" type="Node" parent="Generic_BG"]
-
-[node name="Player" type="Node" parent="Generic_BG"]

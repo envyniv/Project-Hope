@@ -1,18 +1,24 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
 [ext_resource path="res://scenes/utility/PlayerSpawn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/utility/CameraLimits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/utility/photobooth.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/utility/Vending.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/utility/scn_chgtrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/utility/StageName.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/utility/ZoomOUT.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.3774, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 38.7473, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 52.0581, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 52.6088, 10 )
 
 [node name="Stage" type="Node"]
 
@@ -21,9 +27,15 @@ text = "Meteora"
 
 [node name="Mountain" type="StaticBody2D" parent="."]
 
-[node name="Stage" type="Sprite" parent="Mountain"]
-position = Vector2( 47.0922, -635.178 )
+[node name="Stage" type="TextureRect" parent="Mountain"]
+margin_left = -588.7
+margin_top = -1512.17
+margin_right = 683.3
+margin_bottom = 241.83
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mountain"]
 polygon = PoolVector2Array( 117.671, 104.334, 214.764, 105.176, 217.289, 18.466, -158.479, -343.743, 115.104, 34.1678 )
@@ -64,7 +76,16 @@ position = Vector2( -107.947, 77.9459 )
 [node name="Vending" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -70.402, 80 )
 
-[node name="ZoomOUT" parent="." instance=ExtResource( 8 )]
-position = Vector2( 93.9877, -1261.28 )
+[node name="Warp" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 165.108, 277.186 )
+stage = "map"
+
+[node name="left" type="CollisionShape2D" parent="YSort/Warp"]
+position = Vector2( -97.6392, -45.1717 )
+shape = SubResource( 3 )
+
+[node name="right" type="CollisionShape2D" parent="YSort/Warp"]
+position = Vector2( 102.899, -44.9904 )
+shape = SubResource( 4 )
 
 [editable path="CameraLimits"]

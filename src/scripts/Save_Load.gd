@@ -4,27 +4,49 @@ var path="user://save.json"
 
 var default_data = {
 	"player":{
-		"as":"Kevin",
-		"HP":20, #health
-		"DEF":5, #defense
-		"EVA":8, #evasion
-		"ATK":3, #attack
-		"LV":0, #level
-		"EXP":0, #experience
-		"PRO":"0x", #proficiency/times the exp 0x up to 3x
-		"CHR":"none", #charm
-		"LUC":0, #luck/chance of crit hit
+		"party":[],
 		"inv":[], #inventory, duh
+		"Kevin":{ #stats show base, not bonuses
+			"HP":20, #health
+			"DEF":10, #defense
+			"EVA":8, #evasion
+			"ATK":12, #attack
+			"LV":1, #level
+			"EXP":0, #experience
+			"PRO":0, #proficiency/times the exp 0x up to 3x
+			"CHR":0, #charm
+			"LUC":0, #luck/chance of crit hit
+			"god":[],
+			"equip":[],
+		},
+		"Quinton":{
+			"HP":17,
+			"DEF":25,
+			"EVA":6,
+			"ATK":10,
+			"LV":1,
+			"EXP":0,
+			"PRO":0,
+			"CHR":0,
+			"LUC":0,
+			"equip":[],
+		},
+		"Charlie":{
+			
+		},
+		"Bella":{
+			
+		},
 	},
 	"location": {
 		"map":"Kevin's Bedroom",
 		"boothid":null,
 	},
 	"settings": {
-		"bgmvol":100,
-		"sfxvol":100,
+		"bgmvol":1,
+		"sfxvol":1,
 		"voice":0,
-		"lang":"en",
+		"lang":0,
 		"controls":
 			{
 				"ui_left":"A",
@@ -61,15 +83,4 @@ func save_game():
 
 func reset_data():
 	data=default_data.duplicate(true)
-	pass
-	
-func load_set():
-	var file=File.new();
-	if file.file_exists(path):
-		file.open(path, file.READ)
-		var text=file.get_as_text()
-		data["settings"]=parse_json(text)["settings"]
-	else:
-		reset_data()
-		return
 	pass

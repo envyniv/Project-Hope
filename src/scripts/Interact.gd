@@ -6,4 +6,5 @@ func _on_Interact_area_entered(area):
 	if area.get_parent()!=get_parent():
 		if area.get_parent().has_method("_interact"):
 			area.get_parent()._interact()
+		#elif area.get_parent().has_method("")
 	pass

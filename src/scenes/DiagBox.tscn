@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 298 ), Vector2( 0, 208 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
+tracks/2/path = NodePath("DiagBox:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -47,7 +47,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 180, 280 ), Vector2( 180, 200 ) ]
+"values": [ Vector2( 35, 260 ), Vector2( 35, 170 ) ]
 }
 
 [node name="DiagBox" type="Node"]
@@ -72,33 +72,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 180, 280 )
-scale = Vector2( 2, 2 )
+[node name="DiagBox" type="TextureRect" parent="."]
+margin_left = 35.0
+margin_top = 260.0
+margin_right = 323.0
+margin_bottom = 320.0
 texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="Sprite"]
-margin_left = -54.0
-margin_top = -13.0
-margin_right = -2.0
-margin_bottom = 3.0
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="Label" type="Label" parent="DiagBox"]
+margin_left = 36.0
+margin_top = 4.0
+margin_right = 88.0
+margin_bottom = 20.0
 rect_clip_content = true
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Lorem"
 align = 1
 clip_text = true
+max_lines_visible = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Sprite"]
-margin_left = -57.0
-margin_top = -5.0
-margin_right = 165.0
-margin_bottom = 29.0
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="RichTextLabel" type="RichTextLabel" parent="DiagBox"]
+margin_left = 31.0
+margin_top = 19.0
+margin_right = 250.0
+margin_bottom = 53.0
 custom_fonts/bold_font = SubResource( 1 )
 custom_fonts/normal_font = ExtResource( 6 )
 bbcode_enabled = true
@@ -109,9 +114,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Sprite"]
-position = Vector2( 57, 3 )
+[node name="Next" type="TextureRect" parent="DiagBox"]
+margin_left = 250.655
+margin_top = 29.2182
+margin_right = 263.655
+margin_bottom = 43.2182
 texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade-in = SubResource( 2 )
@@ -119,4 +131,4 @@ anims/fade-in = SubResource( 2 )
 [node name="next_char" type="Timer" parent="."]
 
 [node name="Voicebox" parent="." instance=ExtResource( 5 )]
-base_pitch = 2.5
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]

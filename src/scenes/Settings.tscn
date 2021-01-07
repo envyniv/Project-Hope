@@ -19,14 +19,13 @@ speed_y = 0
 scale = 1
 modulate = Color( 0.498039, 0.0431373, 1, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="Panel" parent="."]
 anchor_left = 0.0327384
 anchor_top = 0.0370744
 anchor_right = 0.966072
 anchor_bottom = 0.957908
-color = Color( 0.137255, 0.137255, 0.137255, 1 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
@@ -67,7 +66,9 @@ __meta__ = {
 margin_top = 26.0
 margin_right = 84.0
 margin_bottom = 42.0
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/Music"]
 margin_left = 120.0
@@ -79,11 +80,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Percentage" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/Music"]
+margin_left = 20.0
+margin_right = 60.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "75%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SFX" type="HSlider" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 46.0
 margin_right = 84.0
 margin_bottom = 62.0
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/SFX"]
 margin_left = 120.0
@@ -91,6 +105,17 @@ margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 2 )
 text = "SFX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Percentage" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/SFX"]
+margin_left = 20.0
+margin_right = 60.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "75%"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -148,7 +173,7 @@ margin_left = 270.0
 margin_top = 170.0
 margin_right = 292.0
 margin_bottom = 192.0
-hint_tooltip = "If pressed, will reset your settings."
+hint_tooltip = "If pressed, will reset your save data."
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false

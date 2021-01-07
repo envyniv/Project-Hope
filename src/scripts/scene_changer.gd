@@ -1,8 +1,6 @@
 extends Node
 
 signal scene_changed()
-signal node_swapped()
-
 onready var animation_player=$CanvasLayer/AnimationPlayer
 onready var color_rect=$CanvasLayer/Control/ColorRect
 
@@ -16,18 +14,11 @@ func change_scene(path,delay):
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
 	pass
-
-func swap_node(node,path,delay):
+	
+func transition(delay):
 	yield(get_tree().create_timer(delay),"timeout")
 	animation_player.play("fade")
 	yield(animation_player, "animation_finished")
-	queue_free_children(node)
-	node.add_child(path.instance())
 	animation_player.play_backwards("fade")
 	yield(animation_player, "animation_finished")
-	emit_signal("node_swapped")
 	pass
-	
-func queue_free_children(node):
-		for i in node.get_children():
-			node.get_child().queue_free()

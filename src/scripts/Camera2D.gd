@@ -54,19 +54,9 @@ func shake(duration, frequency, amplitude):
 	set_offset(get_offset() - _last_offset)
 	_last_offset = Vector2(0, 0)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if target:
 		position = target.position
-	if get_node("../World/Stage/ZoomOUT"):
-		var zoomout=get_node("../World/Stage/ZoomOUT")
-		var player2zoom = stepify(target.position.distance_to(zoomout.position)/1000,0.01);
-		var distance = player2zoom
-		var step = 0.1
-		#store player2zoom in distance, then check if player2zoom is smaller than distance
-		#if it's smaller by a step, re-store, and increment zoom by a step
-		if player2zoom < distance:
-			distance = player2zoom
-			zoom += step
 pass
 
 func _ready():
@@ -77,9 +67,5 @@ func _ready():
 		limit_right = bottomRight.position.x
 		limit_bottom = bottomRight.position.y
 pass
-
-func playerThink():
-	position.x+=30
-	pass
 
 

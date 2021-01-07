@@ -10,7 +10,7 @@
 script = ExtResource( 1 )
 texture = ExtResource( 2 )
 speed_x = 5.0
-speed_y = 0.0
+speed_y = 0
 scale = 1
 modulate = Color( 1, 1, 1, 1 )
 

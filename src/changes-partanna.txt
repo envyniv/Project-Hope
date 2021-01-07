@@ -1,0 +1,32 @@
+changes:
+implemented battle stats containers
+finished dialogue box implementation
+restarted warp points implementation
+fixed diagbox using raw text instead of bbcode text
+changed map
+touched-up vector logo to be more accurate to its pixel form
+added a bunch of small fonts for the containers
+changed city position indicator to look like an actual location indicator
+changed how city position indicators work
+added file editor and bitmapfontmaker to addons folder
+made point b of the player's looking segment point towards the movement vector
+added minimal status report gui in the top left for when not in battle
+todos:
+make custom scrolling background node
+add proper battle mode implementation
+finish warp points (scn_chgtrigger)
+add dummy enemy
+add minigames
+add damagebox and tweak hitbox in player's animations
+rename player to Kevin and make Quinton, Bella and Charlie
+start inventory implementation
+make minimal status report gui's children show() when there's party members in the player array
+add development history in readme.md
+# Development History
+In 2017, after having finished playing MOTHER3, i thought to myself how would i go on to create a game
+after various scrapped concepts (one of which was an Undertale fangame!) i decided to start development in 2018.
+I hired my (now) friend David, to be the composer for my game short after.
+up to April 2020, i had achieved very little in GameMaker Studio, and i was getting bored of the project.
+I had just tried tinkering a bit with the Godot Engine and decided to see if i could've ported what i had up until then
+in godot. To my surprise, in just a month i accomplished my objective, and started the expansion of the code base.
+I took a bit of a break from September to December 2020, due to school being my priority

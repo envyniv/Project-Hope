@@ -1,6 +1,8 @@
-extends Button
+extends TextureButton
 
 export(String) var action = "ui_up"
+
+onready var text = $Label.text
 
 func _ready():
 	assert(InputMap.has_action(action))

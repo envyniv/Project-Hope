@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://scenes/HP-Container.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/utility/Camera2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Viewports.gd" type="Script" id=3]
 [ext_resource path="res://scenes/DiagBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/World.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/utility/StageBGM.tscn" type="PackedScene" id=6]
+[ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/StatusMinimal.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -40,11 +43,55 @@ render_target_update_mode = 3
 
 [node name="World" parent="HBoxContainer/Game/Viewport" instance=ExtResource( 5 )]
 
-[node name="Light" type="ColorRect" parent="HBoxContainer/Game/Viewport"]
-margin_right = 360.0
-margin_bottom = 240.0
-color = Color( 1, 1, 1, 0 )
-
 [node name="DiagBox" parent="HBoxContainer/Game" instance=ExtResource( 4 )]
 
 [node name="StageBGM" parent="HBoxContainer/Game" instance=ExtResource( 6 )]
+
+[node name="Battle-Stat-Layout" type="HBoxContainer" parent="HBoxContainer/Game"]
+margin_left = 46.0
+margin_top = 205.0
+margin_right = 319.0
+margin_bottom = 205.0
+custom_constants/separation = 90
+
+[node name="HP-Kevin" parent="HBoxContainer/Game/Battle-Stat-Layout" instance=ExtResource( 1 )]
+
+[node name="HP-Quinton" parent="HBoxContainer/Game/Battle-Stat-Layout" instance=ExtResource( 1 )]
+margin_left = 90.0
+margin_right = 90.0
+who = 1
+container = 1
+
+[node name="HP-Charlie" parent="HBoxContainer/Game/Battle-Stat-Layout" instance=ExtResource( 1 )]
+margin_left = 180.0
+margin_right = 180.0
+who = 2
+container = 2
+
+[node name="HP-Bella" parent="HBoxContainer/Game/Battle-Stat-Layout" instance=ExtResource( 1 )]
+margin_left = 270.0
+margin_right = 270.0
+who = 3
+container = 3
+
+[node name="StatusMinimal" parent="HBoxContainer/Game" instance=ExtResource( 8 )]
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="QuitLabel" type="Label" parent="."]
+visible = false
+margin_left = 8.0
+margin_top = 7.0
+margin_right = 68.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 7 )
+text = "Quitting..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitTimer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="diag_ended" from="HBoxContainer/Game/DiagBox" to="." method="_on_DiagBox_diag_ended"]
+[connection signal="diag_started" from="HBoxContainer/Game/DiagBox" to="." method="_on_DiagBox_diag_started"]
+[connection signal="timeout" from="QuitTimer" to="." method="_on_QuitTimer_timeout"]
