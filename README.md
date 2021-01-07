@@ -49,6 +49,15 @@
 * Aléris (minor sprite work)
 * gotimo2 (separated player movement and animation)
 
+## Development History
+In 2017, after having finished playing MOTHER3, i thought to myself how would i go on to create a game
+after various scrapped concepts (one of which was an Undertale fangame!) i decided to start development in 2018.
+I hired my (now) friend David, to be the composer for my game short after.
+up to April 2020, i had achieved very little in GameMaker Studio, and i was getting bored of the project.
+I had just tried tinkering a bit with the Godot Engine and decided to see if i could've ported what i had up until then
+in godot. To my surprise, in just a month i accomplished my objective, and started the expansion of the code base.
+I took a bit of a break from September to December 2020, due to school being my priority
+
 ## Contact
 
 Wanna ask me something? send an email to envy67@pm.me
