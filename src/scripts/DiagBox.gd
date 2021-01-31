@@ -18,6 +18,8 @@ func _ready():
 	next_spr.hide()
 pass
 
+# FIXME: LIMIT TEXT LINES TO 2
+
 func diag_start(diagname):
 	anims.play("fade-in")
 	var diagpath = "res://scripts/dialogue/%s.json" % [diagname]
@@ -55,6 +57,10 @@ func voicialize():
 		voicebox.play_string(message.bbcode_text);
 	elif SaveLoad.data["settings"]["voice"]==1:
 		voicebox.bloop_string(message.bbcode_text);
+	elif !SaveLoad.data["settings"].has("voice"):
+		voicebox.play_string(message.bbcode_text);
+	else:
+		pass
 	#check which character
 	match nametag.text:
 		"Kevin":

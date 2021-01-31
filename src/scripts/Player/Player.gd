@@ -1,12 +1,10 @@
 extends KinematicBody2D
 #init
+export(String, "UP", "RIGHT", "DOWN", "LEFT") var Facing
 class_name Player, "res://scenes/icons/player.png"
 var movedir = Vector2.ZERO
 var moveSpeed
-var battle_mode=true
 var canDo = true #used for special actions like attacking and dodging
-var inv = []
-var party = []
 var stats={
 	HP = 20,
 	maxHP = 20, #1 to 999
@@ -45,11 +43,28 @@ enum {
 var state
 #end_state
 
+func _process(_delta):
+	SaveLoad.tempdata["Kevin"]=stats
+	if SaveLoad.inDialog==true:
+		set_process_unhandled_input(false)
+	else: set_process_unhandled_input(true)
+	pass
+
 func _ready():
-#	for i in inv:
-#		ItemManager.item_getter(i)
 	animTree.active = true
 	value_check();
+	if SaveLoad.tempdata.has("Kevin"):
+		stats=SaveLoad.tempdata["Kevin"]
+	match Facing:
+		"UP": 
+			animPlayer.play("idle_Up")
+		"RIGHT":
+			animPlayer.play("idle_Right")
+		"DOWN":
+			animPlayer.play("idle_Down")
+		"LEFT":
+			animPlayer.play("idle_Left")
+	animTree.active = true
 	pass
 
 func value_check():
@@ -100,7 +115,8 @@ func _unhandled_input(_event):
 	if SKILL:
 		state=THINK;
 		pass
-	if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH)&&battle_mode==true: state=ATKING
+	if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH) && SaveLoad.inBattle==true:
+		state=ATKING
 	pass
 
 func _physics_process(_delta):
@@ -158,7 +174,6 @@ func atkState(): #attacking
 	pass
 	
 func thinkState(): #selecting spell
-	
 	pass
 	
 func dodgeState(): #dodging
@@ -177,5 +192,4 @@ func stunState():
 
 func downState():
 	set_process_unhandled_input(false)
-	print("dead")
 	pass

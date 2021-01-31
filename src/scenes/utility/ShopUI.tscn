@@ -1,0 +1,127 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://materials/outline sans.tres" type="DynamicFont" id=2]
+[ext_resource path="res://materials/ItemDescription-normal.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/ShopUI.gd" type="Script" id=4]
+
+[node name="BuyMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelShop" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = 20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyList" type="ItemList" parent="PanelShop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 23.0
+margin_right = -10.0
+margin_bottom = -10.0
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyCount" type="Label" parent="PanelShop"]
+anchor_right = 1.0
+anchor_bottom = 0.207
+margin_left = 94.0
+margin_top = 3.5525
+margin_right = -21.4369
+margin_bottom = -21.8475
+custom_fonts/font = ExtResource( 1 )
+text = "999.999"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyLabel" type="Label" parent="PanelShop/MoneyCount"]
+anchor_right = 1.0
+anchor_bottom = 0.984
+margin_left = 45.0
+margin_top = 0.333931
+margin_right = 6.0
+margin_bottom = 0.589931
+custom_fonts/font = ExtResource( 2 )
+text = "G"
+
+[node name="PanelInv" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = 20.0
+margin_right = 160.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="PanelInv"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 104.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 2
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YouHave" type="Label" parent="PanelInv"]
+anchor_right = 1.0
+anchor_bottom = 0.053
+margin_left = 76.0
+margin_top = 85.0
+margin_right = -28.0
+margin_bottom = 90.4
+custom_fonts/font = ExtResource( 1 )
+text = "You Have:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Num" type="Label" parent="PanelInv/YouHave"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 57.0
+margin_right = 8.0
+custom_fonts/font = ExtResource( 2 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="PanelInv"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 3 )
+text = "It's a white chocolate bar.
+Heals 50HP and maybe some of your dignity.
+Nah, it's just a placeholder item."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="item_selected" from="PanelShop/BuyList" to="." method="_on_BuyList_item_selected"]

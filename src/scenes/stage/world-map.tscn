@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/map.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Stage_Name.gd" type="Script" id=2]
 [ext_resource path="res://scenes/utility/CameraLimits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/utility/MapCityPos.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/utility/PlayerSpawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/utility/Camera2D.tscn" type="PackedScene" id=7]
 
 [node name="Stage" type="Node"]
 
@@ -36,12 +37,62 @@ position = Vector2( -254.194, -167.583 )
 [node name="BottomRight" parent="CameraLimits" index="1"]
 position = Vector2( 320.872, 212.815 )
 
-[node name="PlayerSpawn" parent="." instance=ExtResource( 5 )]
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Locations" type="YSort" parent="."]
+[node name="Player" parent="YSort" instance=ExtResource( 6 )]
 
-[node name="Test" parent="Locations" instance=ExtResource( 4 )]
+[node name="Camera2D" parent="YSort/Player" instance=ExtResource( 7 )]
+
+[node name="Utopia" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -196.835, 28.9606 )
 location = "Utopia"
+
+[node name="Oneiros" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -145.163, 64.5965 )
+location = "Oneiros"
+
+[node name="Fantasia" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -139.078, -77.0566 )
+location = "Fantasia"
+
+[node name="Tyche" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 23.6422, -62.802 )
+location = "Tyche"
+
+[node name="Kassandra" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -64.9848, 6.6881 )
+location = "Kassandra"
+
+[node name="Basileus" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 50.4002, 22.7242 )
+location = "Basileus"
+
+[node name="Nyx" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 101.181, 140.826 )
+location = "Nyx"
+
+[node name="Erimos" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -8.84498, 64.874 )
+location = "Erimos"
+
+[node name="Hypnos" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 83.8272, 66.2104 )
+location = "Hypnos"
+
+[node name="Philomela" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 165.036, 43.4922 )
+location = "Philomela"
+
+[node name="Xenos" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 188.063, -41.1427 )
+location = "Xenos"
+
+[node name="Koine" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 102.137, -52.7242 )
+location = "Koine"
+
+[node name="Eirene" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 139.755, -95.0416 )
+location = "Eirene"
 
 [editable path="CameraLimits"]

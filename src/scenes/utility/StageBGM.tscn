@@ -39,7 +39,7 @@ margin_top = 44.0
 margin_right = -57.0
 margin_bottom = 60.0
 custom_fonts/font = ExtResource( 3 )
-text = "Meteora"
+text = "Lorem"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -50,7 +50,7 @@ margin_top = 57.0
 margin_right = -44.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 2 )
-text = "Your Voice"
+text = "Lorem Ipsum"
 __meta__ = {
 "_edit_use_anchors_": false
 }

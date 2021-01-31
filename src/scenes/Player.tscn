@@ -977,7 +977,6 @@ parameters/walk/blend_position = Vector2( -0.00145346, 0.410405 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( 0.529732, -6.09191 )
 shape = SubResource( 72 )
-disabled = true
 
 [node name="Interact" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0.5, 0 )
@@ -985,54 +984,3 @@ position = Vector2( 0.5, 0 )
 [node name="Looking" type="CollisionShape2D" parent="Interact"]
 position = Vector2( 0, 8.5 )
 shape = SubResource( 73 )
-
-[node name="Popup" type="Popup" parent="."]
-visible = true
-margin_left = -95.0
-margin_top = -50.0
-margin_right = 95.0
-margin_bottom = 42.0
-popup_exclusive = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Popup"]
-margin_right = 190.0
-margin_bottom = 92.0
-size_flags_stretch_ratio = 0.0
-custom_constants/separation = 44
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ItemPanel" type="Panel" parent="Popup/HBoxContainer"]
-margin_right = 73.0
-margin_bottom = 92.0
-size_flags_horizontal = 3
-
-[node name="ItemList" type="ItemList" parent="Popup/HBoxContainer/ItemPanel"]
-margin_left = 4.0
-margin_top = 5.0
-margin_right = 64.0
-margin_bottom = 78.0
-max_text_lines = 7
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SpellPanel" type="Panel" parent="Popup/HBoxContainer"]
-margin_left = 117.0
-margin_right = 190.0
-margin_bottom = 92.0
-size_flags_horizontal = 3
-
-[node name="SpellList" type="ItemList" parent="Popup/HBoxContainer/SpellPanel"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 65.0
-margin_bottom = 79.0
-__meta__ = {
-"_edit_use_anchors_": false
-}

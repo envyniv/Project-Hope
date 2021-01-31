@@ -1,6 +1,6 @@
 extends Camera2D
-onready var topLeft = get_node("../World/Stage/CameraLimits/TopLeft")
-onready var bottomRight = get_node("../World/Stage/CameraLimits/BottomRight")
+onready var topLeft = get_node("../../../CameraLimits/TopLeft")
+onready var bottomRight = get_node("../../../CameraLimits/BottomRight")
 var target = null
 
 var _duration = 0.0

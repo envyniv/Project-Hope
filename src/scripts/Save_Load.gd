@@ -1,7 +1,12 @@
 extends Node
 
 var path="user://save.json"
-
+var party=[] #max 3
+var inv={} #max 200
+var money=0 #max 999.999
+var inBattle=false
+var inDialog=true
+var switch_stage={false:null}
 var default_data = {
 	"player":{
 		"party":[],
@@ -40,7 +45,6 @@ var default_data = {
 	},
 	"location": {
 		"map":"Kevin's Bedroom",
-		"boothid":null,
 	},
 	"settings": {
 		"bgmvol":1,
@@ -64,14 +68,24 @@ var default_data = {
 
 var data = {"settings":{}}
 
+var tempdata = {}
+
+func _init():
+	if !save_check("settings"):
+		data["settings"]=default_data["settings"].duplicate(true)
+	else:
+		var file=File.new();
+		file.open(path, file.READ)
+		var text=file.get_as_text()
+		data["settings"]=parse_json(text)["settings"]
+		file.close()
+
 func load_game():
 	var file=File.new();
-	if not file.file_exists(path):
-		reset_data()
-		return
 	file.open(path, file.READ)
 	var text=file.get_as_text()
 	data=parse_json(text)
+	file.close()
 	pass
 
 func save_game():
@@ -84,3 +98,43 @@ func save_game():
 func reset_data():
 	data=default_data.duplicate(true)
 	pass
+
+# HACK: IF YOU WANT TO CHECK FOR SETTINGS, DO save_check("settings")
+func save_check(check="player"):
+	var file=File.new();
+	file.open(path, file.READ)
+	if file.file_exists(path):
+		print("savefile at %s found." % path)
+		var text=file.get_as_text()
+		if parse_json(text).has(check):
+			print("%s found in %s" % [check, path])
+			return true
+		else:
+			print("%s NOT found in %s" % [check, path])
+			return false
+	else:
+		print("%s not found." % path)
+	file.close()
+
+func add_item(item,qty=1):
+	# if item is stackable append {item:qty}
+	if ItemDatabase.get_item(item).Stackable:
+		if item in inv:
+			inv[item]+=qty
+		else: 
+			inv[item]=qty;
+	else:
+		inv[item]=0
+	pass
+
+func remove_item(item,qty=1):
+	if ItemDatabase.get_item(item).Stackable:
+		if item in inv:
+			inv[item]-=qty
+			if inv[item]<=1:
+				inv.erase(item)
+	else:
+		if item in inv:
+			inv.erase(item)
+	pass
+

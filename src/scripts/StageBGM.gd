@@ -9,7 +9,7 @@ onready var player=$AudioStreamPlayer
 #	"battle4" : [preload("res://assets/OST/BGM/hand.ogg"), "What Has It Come To?"],
 #	"battle5" : [preload("res://assets/OST/BGM/orchestra.ogg"), "Orchestrating A Fight"],
 #	"battle6" : [preload("res://assets/OST/BGM/sounds.ogg"), "Sounds Of Battle"],
-#	"think" : [preload("rex://assets/OST/NGM/think.ogg"), "Think, Quick!"],
+#	"think" : [preload("res://assets/OST/NGM/think.ogg"), "Think, Quick!"],
 #	"save" : [preload("res://assets/OST/BGM/save.ogg"), "Time To Save"],
 #	"winter" : [preload("res://assets/OST/BGM/winter.ogg"), "New World"],
 #	"sweet" : [preload("res://assets/OST/BGM/sweet.ogg"), "Sweet Melody"],
@@ -21,8 +21,8 @@ onready var player=$AudioStreamPlayer
 #	"luck" : [preload("res://assets/OST/BGM/casino.ogg"), "Lucky to see you"],
 #	"east" : [preload("res://assets/OST/BGM/casino.ogg"), "Time to see the East"],
 #}
-onready var stage=$Stage
-onready var stagename=get_node("../Viewport/World/Stage/StageName").text
+#onready var stage=$Stage
+#onready var stagename=get_node("../Viewport/World/Stage/StageName").text
 func _ready():
 	if SaveLoad.data["settings"].has("bgmvol"):
 		player.volume_db=linear2db(float(SaveLoad.data["settings"]["bgmvol"]))
@@ -31,7 +31,7 @@ func _ready():
 		#volume 100%
 		pass
 #	player.stream = battle1
-	stage.text = stagename
+#	stage.text = stagename
 #	anims.play("fade-in")
 #	player.play()
 	pass

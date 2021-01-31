@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
-[ext_resource path="res://scenes/utility/PlayerSpawn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/utility/CameraLimits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/utility/photobooth.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/utility/Vending.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/utility/scn_chgtrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/utility/StageName.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/dummy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/utility/Camera2D.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.3774, 10 )
@@ -64,11 +66,16 @@ position = Vector2( -588.705, -1512.17 )
 [node name="BottomRight" parent="CameraLimits" index="1"]
 position = Vector2( 683.148, 241.88 )
 
-[node name="PlayerSpawn" parent="." instance=ExtResource( 2 )]
-position = Vector2( 66.2365, 211.979 )
-FACING = "UP"
-
 [node name="YSort" type="YSort" parent="."]
+
+[node name="Dummy" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 91.3708, -1255.07 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 67.5765, 207.011 )
+Facing = "UP"
+
+[node name="Camera2D" parent="YSort/Player" instance=ExtResource( 9 )]
 
 [node name="Booth" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -107.947, 77.9459 )

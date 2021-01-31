@@ -1,41 +1,62 @@
 extends Node
 
-onready var world = $HBoxContainer/Game/Viewport/World
-onready var stage = $HBoxContainer/Game/Viewport/World/Stage/YSort
-onready var camera = $HBoxContainer/Game/Viewport/Camera2D
+onready var view = $HBoxContainer/Game/Viewport
 onready var diagbox = $HBoxContainer/Game/DiagBox
-onready var player = $HBoxContainer/Game/Viewport/World/YSort/Player
-onready var audioplay=$AudioPlayer
-onready var battlelayout=$"HBoxContainer/Game/Battle-Stat-Layout"
-onready var hpkev=$"HBoxContainer/Game/Battle-Stat-Layout/HP-Kevin/"
-onready var hpquin=$"HBoxContainer/Game/Battle-Stat-Layout/HP-Quinton"
-onready var hpcharlie=$"HBoxContainer/Game/Battle-Stat-Layout/HP-Charlie"
-onready var hpbella=$"HBoxContainer/Game/Battle-Stat-Layout/HP-Bella"
-onready var statusmin=$HBoxContainer/Game/StatusMinimal
+onready var battlelayout = $HBoxContainer/Game/BattleStatLayout
+onready var hpkev = $HBoxContainer/Game/BattleStatLayout/HPKevin
+onready var hpquin = $HBoxContainer/Game/BattleStatLayout/HPQuinton
+onready var hpcharlie = $HBoxContainer/Game/BattleStatLayout/HPCharlie
+onready var hpbella = $HBoxContainer/Game/BattleStatLayout/HPBella
+onready var statusmin = $HBoxContainer/Game/StatusMinimal
+
+const stage={
+	"meteora":preload("res://scenes/stage/Meteora.tscn"),
+	"battle":preload("res://scenes/stage/Battle-World.tscn"),
+	"map":preload("res://scenes/stage/world-map.tscn"),
+	"utopia":"",
+	"fantasia":"",
+	"tyche":"",
+	"koine":"",
+	"eirene":"",
+	"xenos":"",
+	"oneiros":"",
+	"kassandra":"",
+	"basileus":"",
+	"philomela":"",
+	"erimos":"",
+	"hypnos":"",
+	"nyx":"",
+}
 
 func _ready():
-	camera.target = player
-	#get how many photobooths there are and assign an id to all of them
 	diagbox.diag_start("test")
 	statusmin.get_node("Party1").hide()
 	statusmin.get_node("Party2").hide()
 	statusmin.get_node("Party3").hide()
 	battlelayout.hide()
-	pass
-	
+	if !SaveLoad.data.has("location"):
+		change_stage("meteora")
+
 func _process(_delta):
-	hpkev.hp.max_value=player.stats.maxHP
-	hpkev.def.max_value=player.stats.maxDEF
-	hpkev.hp.value=player.stats.HP
-	hpkev.def.value=player.stats.DEF
-	hpkev.mana.value=player.stats.MANA
-	hpkev.mana.max_value=player.stats.maxMANA
-	
-	statusmin.hp.value=player.stats.HP
-	statusmin.hp.max_value=player.stats.maxHP
-	statusmin.def.value=player.stats.DEF
-	statusmin.def.max_value=player.stats.maxDEF
-	match player.party.size():
+	set_status()
+	if SaveLoad.switch_stage.has(true):
+		change_stage(SaveLoad.switch_stage[true])
+
+func set_status():
+	if SaveLoad.tempdata.has("Kevin"):
+		var kevindata=SaveLoad.tempdata["Kevin"]
+		hpkev.hp.max_value=kevindata["maxHP"]
+		hpkev.def.max_value=kevindata["maxDEF"]
+		hpkev.hp.value=kevindata["HP"]
+		hpkev.def.value=kevindata["DEF"]
+		hpkev.mana.value=kevindata["MANA"]
+		hpkev.mana.max_value=kevindata["maxMANA"]
+
+		statusmin.hp.value=kevindata["HP"]
+		statusmin.hp.max_value=kevindata["maxHP"]
+		statusmin.def.value=kevindata["DEF"]
+		statusmin.def.max_value=kevindata["maxDEF"]
+	match SaveLoad.party.size():
 		1:
 			statusmin.get_node("Party1").show()
 		2:
@@ -46,6 +67,21 @@ func _process(_delta):
 			statusmin.get_node("Party2").show()
 			statusmin.get_node("Party3").show()
 
+#FIXME: FOR WHATEVER REASON, THE TRANSITION TRIGGERS RIGHT WHEN THE STAGE IS CREATED
+#		AND IT ALSO NEVER ENDS.
+#		USING A yield() WILL NOT WORK. IT WILL BREAK THE PLAYER'S MOVEMENT, SOMEHOW.
+#		I'VE HAD A CHAT WITH THE FELLAS IN GODOT'S DISCORD AND THEY COULDN'T ANSWER IT;
+#		BIG THANKS TO KamiGrave AND derkok FOR BEING WILLING TO HELP.
+#		IT'S PROBABLY THE GREMLINS' FAULT
+func change_stage(chosenstg):
+	if stage.has(chosenstg)&&view.get_child_count()!=0:
+#		SceneChanger.transition_start(0)
+		view.get_child(0).queue_free()
+		view.add_child(stage[chosenstg].instance())
+		SaveLoad.switch_stage={false:null}
+#		SceneChanger.transition_end()
+	else:
+		print("hmm... %s not found." % chosenstg)
 
 func _input(_event):
 	var QUIT=Input.is_action_pressed("ui_end")
@@ -62,16 +98,13 @@ func _on_DiagBox_diag_started():
 	diagbox.set_process_input(true)
 	battlelayout.hide()
 	statusmin.hide()
-	player.set_process_unhandled_input(false)
+	SaveLoad.inDialog=true
+
 func _on_DiagBox_diag_ended():
 	diagbox.set_process_input(false)
-	player.set_process_unhandled_input(true)
-	if player.battle_mode==true:battlelayout.show()
+	if SaveLoad.inBattle==true:battlelayout.show()
 	else: statusmin.show()
+	SaveLoad.inDialog=false
 
 func _on_QuitTimer_timeout():
-	audioplay.set_stream("res://assets/OST/fx/byebye.wav")
-	audioplay.play()
-	yield(audioplay.play(),"finished")
 	get_tree().quit()
-	pass # Replace with function body.

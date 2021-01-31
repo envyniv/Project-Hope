@@ -5,11 +5,14 @@ onready var music=$ColorRect/ScrollContainer/VBoxContainer/Music
 onready var sfx=$ColorRect/ScrollContainer/VBoxContainer/SFX
 onready var muslabel=$ColorRect/ScrollContainer/VBoxContainer/Music/Percentage
 onready var sfxlabel=$ColorRect/ScrollContainer/VBoxContainer/SFX/Percentage
+onready var confirmdialog=$ColorRect/Label/Reset_Set/ConfirmationDialog
 
 func _ready():
 	voice_select.add_item("Alien")
 	voice_select.add_item("Bloop")
 	voice_select.add_item("None")
+	# TODO: replace with system that parses through languages in
+	#       scripts/dialogue/[language-name]/[lang-name].json
 	language.add_item("English")
 	language.add_item("French")
 	language.add_item("Spanish")
@@ -53,14 +56,15 @@ func _on_Button_pressed():
 	SceneChanger.change_scene("res://scenes/Title Screen.tscn",0)
 	pass
 
-
 func _on_Controls_pressed():
 	SceneChanger.change_scene("res://scenes/Controls.tscn",0)
 	pass # Replace with function body.
 
-
 func _on_Reset_Set_pressed():
-	SaveLoad.reset_data()
-	SaveLoad.save_game()
+	confirmdialog.popup()
+	if confirmdialog:
+		pass
+	#SaveLoad.reset_data()
+	#SaveLoad.save_game()
 	was_set()
 	pass # Replace with function body.

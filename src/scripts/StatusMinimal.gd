@@ -10,7 +10,7 @@ onready var def2=$Party2/DEF
 onready var def3=$Party3/DEF
 
 var lowhp=Color(1,0.16,0.41,1)#ff2869
-var lowdef=Color(0.18,0.14,1,1)#2f23ff - 
+var lowdef=Color(0.18,0.14,1,1)#2f23ff
 var normhp=Color(0.57,0.95,0.04,1)#92f40b
 var normdef=Color(0.43,0.74,0.93,1)#6dbded
 var med=Color(0.96,0.72,0.29,1)#f5b949

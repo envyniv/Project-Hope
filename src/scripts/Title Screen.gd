@@ -10,8 +10,10 @@ func _ready():
 	lload.connect("pressed", self, "_load_pressed")
 	set.connect("pressed", self, "_set_pressed")
 	exit.connect("pressed", self, "_exit_pressed")
-	_probe_files()
-	SaveLoad.load_game()
+	if SaveLoad.save_check():
+		lload.show()
+	#_probe_files()
+	#SaveLoad.load_game()
 	pass
 
 func _new_pressed():
@@ -19,6 +21,7 @@ func _new_pressed():
 	
 func _load_pressed():
 	SaveLoad.load_game()
+	SceneChanger.change_scene("res://scenes/Viewports.tscn",0)
 	#parse data and stuff
 	pass
 	
@@ -44,7 +47,5 @@ func _probe_files():
 			files.append(file)
 
 	dir.list_dir_end()
-	#ProjectSettings.load_resource_pack("res://mod.pck")
-	#var imported_scene = load("res://mod_scene.tscn")
 	return files
 	pass

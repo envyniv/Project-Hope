@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/CameraLimits.gd"
 }, {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
 "base": "Node",
 "class": "CustomLabel",
 "language": "GDScript",
@@ -33,11 +28,6 @@ _global_script_classes=[ {
 "class": "DamageBox",
 "language": "GDScript",
 "path": "res://scripts/DamageBox.gd"
-}, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
 "base": "HTTPRequest",
 "class": "GoogleTranslateAPI",
@@ -54,10 +44,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Interact.gd"
 }, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
+"base": "Resource",
+"class": "Item",
 "language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
+"path": "res://scripts/Item.gd"
 }, {
 "base": "Node2D",
 "class": "Photo",
@@ -68,11 +58,6 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://scripts/Player/Player.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
 }, {
 "base": "Node",
 "class": "ScrollingBackground",
@@ -102,17 +87,14 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "CSVEditor": "",
 "CameraLimits": "res://scenes/icons/photo.png",
-"ContributorClass": "",
 "CustomLabel": "res://scenes/icons/label.png",
 "DamageBox": "",
-"GistItem": "",
 "GoogleTranslateAPI": "",
 "HitBox": "",
 "Interact": "res://scenes/icons/interact.png",
-"InvitationItem": "",
+"Item": "",
 "Photo": "res://scenes/icons/photo.png",
 "Player": "res://scenes/icons/player.png",
-"RepositoryItem": "",
 "ScrollingBackground": "res://scenes/icons/plugin.png",
 "StageBGM": "res://scenes/icons/sound.png",
 "Vending": "res://scenes/icons/vending.png",
@@ -131,10 +113,7 @@ config/icon="res://icon.svg"
 SceneChanger="*res://scenes/utility/scene_changer.tscn"
 SaveLoad="*res://scenes/utility/Save_Load.tscn"
 LastOpenedFiles="*res://addons/file-editor/scripts/LastOpenedFiles.gd"
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+ItemDatabase="*res://scripts/ItemDatabase.gd"
 
 [display]
 
@@ -145,7 +124,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "BitmapFontMaker", "Todo_Manager", "file-editor", "github-integration", "scrolling_background" )
+enabled=PoolStringArray( "BitmapFontMaker", "Todo_Manager", "file-editor" )
 
 [importer_defaults]
 

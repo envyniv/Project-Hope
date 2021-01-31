@@ -1,10 +1,14 @@
 extends Node2D
 class_name Photo, "res://scenes/icons/photo.png"
-
-var boothid = null
-
-func _ready():
-	pass # Replace with function body.
+#TODO: make this work
 
 func _interact():
-	pass
+	set_process_input(true)
+
+func _input(event):
+	var UP = Input.is_action_pressed("ui_up")
+	var DOWN = Input.is_action_pressed("ui_down")
+	var RIGHT = Input.is_action_pressed("ui_right")
+	var LEFT = Input.is_action_pressed("ui_left")
+	var ACCEPT = Input.is_action_pressed("ui_accept")
+	var CANCEL = Input.is_action_pressed("ui_cancel")
