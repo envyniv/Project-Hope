@@ -5,16 +5,18 @@
 [Website](https://envyniv.github.io/Project-Hope)
 
 > Coded in [Godot](https://godotengine.org/).
+
 > Graphics made in [Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
-> Graphics formerly made in [LibreSprite](https://github.com/LibreSprite/LibreSprite)
-> ACVoicebox by [mattmarch](https://github.com/mattmarch), edited by envy
+
 > PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
-> original scrolling background node by [dploeger](https://github.com/dploeger)
+
 > Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
+
 > Base sounds from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) and [Freesound.org](freesound.org)
+
 > Logo(s) by [Davide Azzaretto/envyniv](https://github.com/envyniv)
+
 > map made with [Azgaar's Fantasy Map Editor](https://azgaar.github.io/Fantasy-Map-Generator/), formerly based on [Phillip Island](https://en.wikipedia.org/wiki/Phillip_Island)
-> FileEditor by [fenix-hub](https://github.com/fenix-hub)
 
 © Davide Azzaretto/envyniv, 2020.
 
@@ -50,7 +52,6 @@
 * Aléris (minor sprite work)
 * gotimo2 (separated player movement and animation)
 * KamiGrave, derkok, AnidemDex, Exuin, Haledire, Nisovin from the [Godot Engine discord server](https://discord.gg/4JBkykG) that were willing to answer any question I'd ask!
-* The Gremlins: for being annoying little shi-
 
 ## Contact
 
