@@ -16,7 +16,7 @@
 
 > Logo(s) by [Davide Azzaretto/envyniv](https://github.com/envyniv)
 
-> map made with [Azgaar's Fantasy Map Editor](https://azgaar.github.io/Fantasy-Map-Generator/), formerly based on [Phillip Island](https://en.wikipedia.org/wiki/Phillip_Island)
+> map made with [Azgaar's Fantasy Map Editor](https://azgaar.github.io/Fantasy-Map-Generator/)
 
 © Davide Azzaretto/envyniv, 2020.
 
