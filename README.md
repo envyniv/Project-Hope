@@ -5,6 +5,7 @@
 [Website](https://envyniv.github.io/Project-Hope)
 
 > Coded in [Godot](https://godotengine.org/).
+
 > Graphics made in [Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
 > PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
 > Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
