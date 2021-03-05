@@ -7,9 +7,13 @@
 > Coded in [Godot](https://godotengine.org/).
 
 > Graphics made in [Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
+
 > PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
+
 > Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
+
 > Logo(s) by [Davide Azzaretto/envyniv](https://github.com/envyniv)
+
 > Map made with [Azgaar's Fantasy Map Editor](https://azgaar.github.io/Fantasy-Map-Generator/)
 
 © Davide Azzaretto/envyniv, 2020.
