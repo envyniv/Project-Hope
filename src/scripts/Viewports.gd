@@ -2,6 +2,7 @@ extends Node
 
 onready var view = $HBoxContainer/Game/Viewport
 onready var diagbox = $HBoxContainer/Game/DiagBox
+onready var shopui = $HBoxContainer/Game/BuyMenu
 onready var battlelayout = $HBoxContainer/Game/BattleStatLayout
 onready var hpkev = $HBoxContainer/Game/BattleStatLayout/HPKevin
 onready var hpquin = $HBoxContainer/Game/BattleStatLayout/HPQuinton
@@ -13,6 +14,7 @@ const stage={
 	"meteora":preload("res://scenes/stage/Meteora.tscn"),
 	"battle":preload("res://scenes/stage/Battle-World.tscn"),
 	"map":preload("res://scenes/stage/world-map.tscn"),
+
 	"utopia":"",
 	"fantasia":"",
 	"tyche":"",
@@ -39,8 +41,10 @@ func _ready():
 
 func _process(_delta):
 	set_status()
-	if SaveLoad.switch_stage.has(true):
+	if true in SaveLoad.switch_stage:
 		change_stage(SaveLoad.switch_stage[true])
+	if SaveLoad.inShop:
+		shopui.show()
 
 func set_status():
 	if SaveLoad.tempdata.has("Kevin"):
@@ -89,7 +93,6 @@ func _input(_event):
 	if QUIT:
 		$QuitLabel.show()
 		quit_wait.start()
-		
 	else: 
 		$QuitLabel.hide()
 		quit_wait.stop()

@@ -1,5 +1,5 @@
 extends Node2D
-class_name Photo, "res://scenes/icons/photo.png"
+
 #TODO: make this work
 
 func _interact():

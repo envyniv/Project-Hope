@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blank.wav-b8b8b9bdd23c13010a57ccc0e234c4d8.sample"
+
+[deps]
+
+source_file="res://OST/fx/blank.wav"
+dest_files=[ "res://.import/blank.wav-b8b8b9bdd23c13010a57ccc0e234c4d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

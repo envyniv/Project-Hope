@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://materials/atlas-boot.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/PX Sans.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/BootScrn.gd" type="Script" id=3]
+[ext_resource path="res://shaders/chromaticaberration.shader" type="Shader" id=4]
+[ext_resource path="res://assets/twirlpixel.png" type="Texture" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/apply = true
+shader_param/amount = 0.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = -6
+font_data = ExtResource( 2 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.141176, 0.141176, 0.141176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 180, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Sprite"]
+margin_left = -180.0
+margin_top = 120.0
+margin_right = 195.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "Twirl Pixel"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Sprite/Label"]
+margin_left = 94.4381
+margin_top = 80.0
+margin_right = 319.438
+margin_bottom = 138.0
+custom_fonts/font = SubResource( 2 )
+text = "Inspiration."
+__meta__ = {
+"_edit_use_anchors_": false
+}

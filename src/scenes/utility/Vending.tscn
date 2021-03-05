@@ -24,6 +24,7 @@ position = Vector2( 0, 9 )
 shape = SubResource( 1 )
 
 [node name="Interact" parent="." instance=ExtResource( 2 )]
+type = "Object"
 
 [node name="SearchArea" type="CollisionShape2D" parent="Interact"]
 position = Vector2( 0, 11 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/super.wav-3c29edb76b52590c5f66dda1577e49c6.sample"
+
+[deps]
+
+source_file="res://OST/fx/super.wav"
+dest_files=[ "res://.import/super.wav-3c29edb76b52590c5f66dda1577e49c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

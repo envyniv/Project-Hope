@@ -4,7 +4,7 @@
 
 [node name="Interact" type="Area2D"]
 gravity_vec = Vector2( 0, 0 )
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
 [connection signal="area_entered" from="." to="." method="_on_Interact_area_entered"]

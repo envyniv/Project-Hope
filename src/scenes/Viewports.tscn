@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/HP-Container.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/stage/Meteora.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Viewports.gd" type="Script" id=3]
 [ext_resource path="res://scenes/DiagBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/utility/ShopUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/utility/StageBGM.tscn" type="PackedScene" id=6]
 [ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/StatusMinimal.tscn" type="PackedScene" id=8]
@@ -45,6 +46,7 @@ render_target_update_mode = 3
 [node name="StageBGM" parent="HBoxContainer/Game" instance=ExtResource( 6 )]
 
 [node name="BattleStatLayout" type="HBoxContainer" parent="HBoxContainer/Game"]
+visible = false
 margin_left = 46.0
 margin_top = 205.0
 margin_right = 319.0
@@ -70,6 +72,9 @@ who = 3
 
 [node name="StatusMinimal" parent="HBoxContainer/Game" instance=ExtResource( 8 )]
 
+[node name="BuyMenu" parent="HBoxContainer/Game" instance=ExtResource( 5 )]
+visible = false
+
 [node name="QuitLabel" type="Label" parent="."]
 visible = false
 margin_left = 8.0
@@ -87,5 +92,3 @@ wait_time = 3.0
 [connection signal="diag_ended" from="HBoxContainer/Game/DiagBox" to="." method="_on_DiagBox_diag_ended"]
 [connection signal="diag_started" from="HBoxContainer/Game/DiagBox" to="." method="_on_DiagBox_diag_started"]
 [connection signal="timeout" from="QuitTimer" to="." method="_on_QuitTimer_timeout"]
-
-[editable path="HBoxContainer/Game/Viewport/Stage"]

@@ -1,6 +1,7 @@
 [gd_resource type="BitmapFont" load_steps=2 format=2]
 
-[ext_resource path="res://assets/fonts/HP-FONT-thin.png" type="Texture" id=1]
+[ext_resource path="res://fonts/HP-FONT-thin.png" type="Texture" id=1]
+
 
 [resource]
 textures = [ ExtResource( 1 ) ]

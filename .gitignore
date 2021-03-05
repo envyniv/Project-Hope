@@ -1,10 +1,10 @@
-
 src/.import/
 src/*.translation
 src/assets/OST/BGM/*
 src/assets/reference
 src/logs
 src/addons
+src/bin
 /*.*~
 /*.blend1
-
+/*.xcf

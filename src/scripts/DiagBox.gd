@@ -4,7 +4,6 @@ onready var nametag=$DiagBox/Label
 onready var message=$DiagBox/RichTextLabel
 onready var anims=$AnimationPlayer
 onready var next_spr=$DiagBox/Next
-onready var voicebox=$Voicebox
 var file = File.new()
 var index = 1
 onready var timer=$next_char
@@ -17,8 +16,6 @@ func _ready():
 	nametag.set_text("")
 	next_spr.hide()
 pass
-
-# FIXME: LIMIT TEXT LINES TO 2
 
 func diag_start(diagname):
 	anims.play("fade-in")
@@ -45,46 +42,9 @@ func diag_end():
 pass
 
 func read_text():
-	voicialize()
-	timer.wait_time = 0.1
+	timer.wait_time = 0.075
 	message.visible_characters = 0
 	timer.start()
-	pass
-
-func voicialize():
-	voicebox.remaining_sounds=[]
-	if SaveLoad.data["settings"]["voice"]==0:
-		voicebox.play_string(message.bbcode_text);
-	elif SaveLoad.data["settings"]["voice"]==1:
-		voicebox.bloop_string(message.bbcode_text);
-	elif !SaveLoad.data["settings"].has("voice"):
-		voicebox.play_string(message.bbcode_text);
-	else:
-		pass
-	#check which character
-	match nametag.text:
-		"Kevin":
-			voicebox.base_pitch=2
-		"Quinton":
-			voicebox.base_pitch=1.7
-		"Charlie":
-			voicebox.base_pitch=3.5
-		"Bella":
-			voicebox.base_pitch=2.3
-		"F.dly Man":
-			voicebox.base_pitch=2
-		"F.dly Lady":
-			voicebox.base_pitch=2.3
-		"Rude Man":
-			voicebox.base_pitch=1.7
-		"Rude Lady":
-			voicebox.base_pitch=2
-		"Dolus":
-			voicebox.base_pitch=1.9
-		"Thanatos":
-			voicebox.base_pitch=0.5
-		"Envy":
-			voicebox.base_pitch=1
 	pass
 
 func print_text():
@@ -98,7 +58,6 @@ func _input(_event):
 		if message.visible_characters!=message.bbcode_text.length()&&message.visible_characters!=-1:
 			timer.stop()
 			message.visible_characters=-1
-			voicebox.remaining_sounds=[]
 		elif index==json_result.size():
 			diag_end()
 		else:
@@ -106,15 +65,21 @@ func _input(_event):
 
 func next():
 	if index <= json_result.size():
-		#for whatever reason the dialogue box can't get input
-		index+=1
+		index += 1
 		print_text();
 		read_text();
 	pass
 
 func _on_next_char_timeout():
-	message.visible_characters += 1
-	if message.visible_characters > message.bbcode_text.length():
-		message.visible_characters -= 1
+	var string=message.bbcode_text
+	var regex = RegEx.new()
+	regex.compile("\\[.*?\\]")
+	var string_proc=regex.sub(string, "", true)
+	if message.visible_characters >= string_proc.length():
+		message.visible_characters = -1
 		timer.stop()
+		return
+	else:
+		message.visible_characters += 1
+		$Speak.play()
 	pass

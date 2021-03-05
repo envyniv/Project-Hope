@@ -1,12 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/utility/CameraLimits.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/utility/photobooth.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/utility/Photobooth.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/utility/Vending.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/utility/scn_chgtrigger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/utility/StageName.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/utility/ScnChgTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/dummy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/utility/Camera2D.tscn" type="PackedScene" id=9]
 
@@ -24,20 +23,11 @@ extents = Vector2( 52.6088, 10 )
 
 [node name="Stage" type="Node"]
 
-[node name="StageName" parent="." instance=ExtResource( 7 )]
-text = "Meteora"
-
 [node name="Mountain" type="StaticBody2D" parent="."]
 
-[node name="Stage" type="TextureRect" parent="Mountain"]
-margin_left = -588.7
-margin_top = -1512.17
-margin_right = 683.3
-margin_bottom = 241.83
+[node name="Stage" type="Sprite" parent="Mountain"]
+position = Vector2( 46.6214, -634.693 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mountain"]
 polygon = PoolVector2Array( 117.671, 104.334, 214.764, 105.176, 217.289, 18.466, -158.479, -343.743, 115.104, 34.1678 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/denied.wav-0c1d86a4cc6ecd4306bdc99a057e4a33.sample"
+
+[deps]
+
+source_file="res://OST/fx/denied.wav"
+dest_files=[ "res://.import/denied.wav-0c1d86a4cc6ecd4306bdc99a057e4a33.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

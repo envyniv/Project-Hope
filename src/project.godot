@@ -9,30 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Control",
-"class": "CSVEditor",
-"language": "GDScript",
-"path": "res://addons/file-editor/scripts/CSVEditor.gd"
-}, {
-"base": "Node",
-"class": "CameraLimits",
-"language": "GDScript",
-"path": "res://scripts/CameraLimits.gd"
-}, {
-"base": "Node",
-"class": "CustomLabel",
-"language": "GDScript",
-"path": "res://scripts/Stage_Name.gd"
-}, {
 "base": "Area2D",
 "class": "DamageBox",
 "language": "GDScript",
 "path": "res://scripts/DamageBox.gd"
 }, {
-"base": "HTTPRequest",
-"class": "GoogleTranslateAPI",
+"base": "RichTextEffect",
+"class": "HideTextFX",
 "language": "GDScript",
-"path": "res://addons/file-editor/scripts/GoogleTranslatorAPI.gd"
+"path": "res://richtexteffects/hide.gd"
 }, {
 "base": "Area2D",
 "class": "HitBox",
@@ -49,70 +34,50 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Item.gd"
 }, {
-"base": "Node2D",
-"class": "Photo",
+"base": "RichTextEffect",
+"class": "RichTextGhost",
 "language": "GDScript",
-"path": "res://scripts/photobooth.gd"
+"path": "res://richtexteffects/ghost.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Player",
+"base": "RichTextEffect",
+"class": "RichTextMatrix",
 "language": "GDScript",
-"path": "res://scripts/Player/Player.gd"
+"path": "res://richtexteffects/matrix.gd"
 }, {
-"base": "Node",
-"class": "ScrollingBackground",
+"base": "RichTextEffect",
+"class": "RichTextPulse",
 "language": "GDScript",
-"path": "res://scripts/scrolling_background.gd"
+"path": "res://richtexteffects/pulse.gd"
 }, {
-"base": "Node",
-"class": "StageBGM",
+"base": "TextureRect",
+"class": "ScrollingTextureRect",
 "language": "GDScript",
-"path": "res://scripts/StageBGM.gd"
-}, {
-"base": "Node2D",
-"class": "Vending",
-"language": "GDScript",
-"path": "res://scripts/Vending.gd"
-}, {
-"base": "AudioStreamPlayer",
-"class": "VoiceBox",
-"language": "GDScript",
-"path": "res://scripts/Voicebox.gd"
-}, {
-"base": "Area2D",
-"class": "Warp",
-"language": "GDScript",
-"path": "res://scripts/scn_chgtrigger.gd"
+"path": "res://scripts/ScrollingTextureRect.gd"
 } ]
 _global_script_class_icons={
-"CSVEditor": "",
-"CameraLimits": "res://scenes/icons/photo.png",
-"CustomLabel": "res://scenes/icons/label.png",
 "DamageBox": "",
-"GoogleTranslateAPI": "",
+"HideTextFX": "",
 "HitBox": "",
 "Interact": "res://scenes/icons/interact.png",
 "Item": "",
-"Photo": "res://scenes/icons/photo.png",
-"Player": "res://scenes/icons/player.png",
-"ScrollingBackground": "res://scenes/icons/plugin.png",
-"StageBGM": "res://scenes/icons/sound.png",
-"Vending": "res://scenes/icons/vending.png",
-"VoiceBox": "res://scenes/icons/sound.png",
-"Warp": "res://scenes/icons/interact.png"
+"RichTextGhost": "",
+"RichTextMatrix": "",
+"RichTextPulse": "",
+"ScrollingTextureRect": ""
 }
 
 [application]
 
-config/name="Project Hope"
-run/main_scene="res://scenes/boot_scrn.tscn"
+config/name="LAST HOPE"
+run/main_scene="res://scenes/BootScrn.tscn"
 config/icon="res://icon.svg"
+config/AppVersion=Vector3( 0, 0, 1 )
+config/icon.zipfileonly="Null"
 
 [autoload]
 
-SceneChanger="*res://scenes/utility/scene_changer.tscn"
-SaveLoad="*res://scenes/utility/Save_Load.tscn"
-LastOpenedFiles="*res://addons/file-editor/scripts/LastOpenedFiles.gd"
+SceneChanger="*res://scenes/utility/SceneChanger.tscn"
+SaveLoad="*res://scripts/SaveLoad.gd"
 ItemDatabase="*res://scripts/ItemDatabase.gd"
 
 [display]
@@ -124,7 +89,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "BitmapFontMaker", "Todo_Manager", "file-editor" )
+enabled=PoolStringArray( "BitmapFontMaker", "Todo_Manager" )
 
 [importer_defaults]
 
@@ -222,13 +187,13 @@ ui_end={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
-ui_sprint={
+sprint={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
-ui_atkmed={
+atkmed={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":75,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)

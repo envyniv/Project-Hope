@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/ControlButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/characters/Kevin Clark.png" type="Texture" id=2]
+[ext_resource path="res://assets/objects/keyboard-key.png" type="Texture" id=4]
+
+[node name="Button" type="Button"]
+margin_left = 5.0
+margin_top = 39.0
+margin_right = 27.0
+margin_bottom = 59.0
+toggle_mode = true
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 22.0
+margin_bottom = 16.0
+texture = ExtResource( 4 )
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 11, -18.5 )
+texture = ExtResource( 2 )
+vframes = 21
+hframes = 21

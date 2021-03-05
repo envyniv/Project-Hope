@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=1]
 [ext_resource path="res://materials/outline sans.tres" type="DynamicFont" id=2]
 [ext_resource path="res://materials/ItemDescription-normal.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/ShopUI.gd" type="Script" id=4]
+[ext_resource path="res://OST/fx/denied.wav" type="AudioStream" id=5]
+[ext_resource path="res://OST/fx/money.wav" type="AudioStream" id=6]
 
 [node name="BuyMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 __meta__ = {
+"_edit_horizontal_guides_": [  ],
 "_edit_use_anchors_": false
 }
 
@@ -24,6 +27,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Buy" type="Label" parent="PanelShop"]
+anchor_right = 1.0
+anchor_bottom = 0.207
+margin_left = 5.0
+margin_top = 4.0
+margin_right = -134.0
+margin_bottom = -21.4
+custom_fonts/font = ExtResource( 1 )
+text = "Buy"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BuyList" type="ItemList" parent="PanelShop"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,6 +48,7 @@ margin_left = 10.0
 margin_top = 23.0
 margin_right = -10.0
 margin_bottom = -10.0
+custom_fonts/font = ExtResource( 1 )
 allow_reselect = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -54,12 +72,15 @@ __meta__ = {
 [node name="CurrencyLabel" type="Label" parent="PanelShop/MoneyCount"]
 anchor_right = 1.0
 anchor_bottom = 0.984
-margin_left = 45.0
-margin_top = 0.333931
-margin_right = 6.0
-margin_bottom = 0.589931
+margin_left = 44.9008
+margin_top = 0.929207
+margin_right = 7.90079
+margin_bottom = 1.18521
 custom_fonts/font = ExtResource( 2 )
 text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PanelInv" type="Panel" parent="."]
 anchor_left = 0.5
@@ -72,6 +93,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sell" type="Label" parent="PanelInv"]
+anchor_right = 1.0
+anchor_bottom = 0.053
+margin_left = 5.0
+margin_top = 85.0
+margin_right = -135.0
+margin_bottom = 90.4
+custom_fonts/font = ExtResource( 1 )
+text = "Sell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ItemList" type="ItemList" parent="PanelInv"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -79,7 +113,7 @@ margin_left = 10.0
 margin_top = 104.0
 margin_right = -10.0
 margin_bottom = -10.0
-mouse_filter = 2
+custom_fonts/font = ExtResource( 1 )
 allow_reselect = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,7 +138,7 @@ anchor_bottom = 1.0
 margin_left = 57.0
 margin_right = 8.0
 custom_fonts/font = ExtResource( 2 )
-text = "99"
+text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -117,11 +151,22 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -18.0
 custom_fonts/font = ExtResource( 3 )
-text = "It's a white chocolate bar.
-Heals 50HP and maybe some of your dignity.
-Nah, it's just a placeholder item."
+text = "Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="money" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="denied" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="item_activated" from="PanelShop/BuyList" to="." method="_on_BuyList_item_activated"]
 [connection signal="item_selected" from="PanelShop/BuyList" to="." method="_on_BuyList_item_selected"]
+[connection signal="item_activated" from="PanelInv/ItemList" to="." method="_on_ItemList_item_activated"]
+[connection signal="item_selected" from="PanelInv/ItemList" to="." method="_on_ItemList_item_selected"]
