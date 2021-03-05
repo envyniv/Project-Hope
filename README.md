@@ -88,7 +88,7 @@ echo "3.2.3.stable" > bin/templates/version.txt
 7z a export_templates_custom.zip ./bin/*
 rd bin/*
 rn export_templates_custom.zip export_templates_custom.tpz
-
+```
 
 ## Special Thanks to:
 * Everyone in [my discord server](https://discord.gg/bNkDkHW) for being supportive
