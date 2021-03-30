@@ -1,4 +1,4 @@
-﻿
+
 ![Non-Stylized Project Hope Logo](doc_stuff/nostyle-logo.png)
 
 The Official Design Document
@@ -51,7 +51,7 @@ TO BE FILLED
 
 ###### This story is happening on a fictional island named “Evrys”, in the “Bermuda Triangle"
 
-The year is 2006.
+The year is 2020.
 on a small island located in the bermuda triangle,
 
 ### Chapter 1 - Start
@@ -65,6 +65,40 @@ on a small island located in the bermuda triangle,
 ### Chapter 5 - Burnt Soil
 
 ### Chapter 6 - Curtain Call
+
+## Characters:
+
+### Kevin:
+The first.
+Never speaks.
+origins? unknown.
+win anim is him punching air
+can stop time for whatever reason.
+should represent Nemesis, Apollo, Elpis but not needed
+
+### Quinton:
+Shy swiss teen.
+man of few words.
+
+Represents: Zeus, Metis, Hygieia
+Win anim is him sit-standing and lighting a match.
+
+### Bella:
+Hot-headed scottish lass.
+not afraid to speak her mind or get her hands dirty.
+
+Represents: Athena, Hephaestos, Lyssa
+win anim is her putting her hands on her hips and stepping forward with chin up.
+
+### Charlie:
+bri'ish baseball kid.
+represents: Ares, Auxo, Hebe
+win anim is him catching a base-ball with the typical glove thing.
+
+### Thanatos:
+dolus, but eeveel.
+
+
 
 ## CONCEPT ART
 
@@ -82,11 +116,6 @@ on a small island located in the bermuda triangle,
 ![](doc_stuff/envy-gallant.png "The Gallant Warrior by Envy")
 ![](doc_stuff/envy-meteora.png "Meteora by Envy")
 ![](doc_stuff/envy-quinrede.png "Quinton's Redesign by Envy")
-
-Kevin: Nemesis, Apollo, Elpis
-Quinton: Zeus, Metis, Hygieia
-Charlie: Ares, Auxo, Hebe
-Bella: Athena, Hephaestos, Lyssa
 
 Apollo, the god of prophecy.
 Theodon, god of reality and uncertainty.

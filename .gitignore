@@ -1,6 +1,6 @@
 src/.import/
 src/*.translation
-src/OST/BGM/*
+src/sounds/music/*
 src/assets/reference
 src/logs
 src/addons

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/thanatos_laugh.wav-0f391e0b68d9d13a1d6fe7b58c45f886.sample"
+
+[deps]
+
+source_file="res://sounds/fx/thanatos_laugh.wav"
+dest_files=[ "res://.import/thanatos_laugh.wav-0f391e0b68d9d13a1d6fe7b58c45f886.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

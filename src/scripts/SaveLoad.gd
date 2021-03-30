@@ -1,15 +1,18 @@
 extends Node
 
 var path="user://save.json"
+
 var party=[] #max 3
-var inv=[]
+var inv=[] #inventory for non-stackable items; added because of necessity.
 var invS={} #max 200
+
 var money=100 #max 999.999
 var level=1 #max 99
 var inShop=false
 var inBattle=false
 var inDialog=false
 var switch_stage={false:null}
+
 var default_data = {
 	"player":{
 		"level":1,
@@ -17,6 +20,7 @@ var default_data = {
 		"party":[],
 		"inv":[], #inventory, duh
 		"Kevin":{ #stats show base, not bonuses
+			"LVL":1,
 			"HP":20, #health
 			"DEF":10, #defense
 			"EVA":8, #evasion
@@ -30,6 +34,7 @@ var default_data = {
 			"equip":[],
 		},
 		"Quinton":{
+			"LVL":1,
 			"HP":17,
 			"DEF":25,
 			"EVA":6,
@@ -42,10 +47,30 @@ var default_data = {
 			"equip":[],
 		},
 		"Charlie":{
-			
+			"LVL":1,
+			"HP":17,
+			"DEF":25,
+			"EVA":6,
+			"ATK":8,
+			"LV":1,
+			"EXP":0,
+			"PRO":0,
+			"CHR":0,
+			"LUC":0,
+			"equip":[],
 		},
 		"Bella":{
-			
+			"LVL":1,
+			"HP":17,
+			"DEF":25,
+			"EVA":6,
+			"ATK":8,
+			"LV":1,
+			"EXP":0,
+			"PRO":0,
+			"CHR":0,
+			"LUC":0,
+			"equip":[],
 		},
 	},
 	"location": {
@@ -55,7 +80,7 @@ var default_data = {
 		"bgmvol":1,
 		"sfxvol":1,
 		"voice":0,
-		"lang":0,
+		"lang":"en",
 		"controls":
 			{
 				"ui_left":"A",

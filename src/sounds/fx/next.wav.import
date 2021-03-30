@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/next.wav-71c2836a683ebb8ca9c08fe3725a3d48.sample"
+
+[deps]
+
+source_file="res://sounds/fx/next.wav"
+dest_files=[ "res://.import/next.wav-71c2836a683ebb8ca9c08fe3725a3d48.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

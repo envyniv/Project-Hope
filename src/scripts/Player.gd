@@ -1,10 +1,10 @@
 extends KinematicBody2D
-#init
+class_name Player
 export(String, "UP", "RIGHT", "DOWN", "LEFT") var Facing
 var movedir = Vector2.ZERO
 var moveSpeed
 var canDo = true #used for special actions like attacking and dodging
-var stats={
+var stats = {
 	HP = 20,
 	maxHP = 20, #1 to 999
 	DEF = 10,
@@ -44,7 +44,7 @@ var state
 
 func _process(_delta):
 	SaveLoad.tempdata["Kevin"]=stats
-	if SaveLoad.inDialog||SaveLoad.inShop==true:
+	if SaveLoad.inDialog || SaveLoad.inShop==true:
 		set_process_unhandled_input(false)
 	else:
 		set_process_unhandled_input(true)
@@ -70,18 +70,33 @@ func _ready():
 func value_check():
 	#if HP>maxHP add difference to DEF
 	if stats.HP > stats.maxHP:
-		stats.DEF+=(stats.HP-stats.maxHP);
-		stats.HP=stats.maxHP
+		stats.DEF += (stats.HP-stats.maxHP);
+		stats.HP = stats.maxHP
+
 	if stats.DEF > stats.maxDEF:
-		stats.DEF=stats.maxDEF
+		stats.DEF = stats.maxDEF
+
 	#if maxstats are more than expected, bring them back
-	if stats.maxHP>999:stats.maxHP=999;
-	if stats.maxDEF>499:stats.maxDEF=499;
-	if stats.ATK>250:stats.ATK=250;
-	if stats.PRO>3:stats.PRO=3;
-	if stats.LV>99:stats.LV=99;
-	if stats.CHR>30:stats.CHR=30;
-	if stats.HP==0:state=DOWN
+	if stats.maxHP > 999:
+		stats.maxHP=999;
+
+	if stats.maxDEF > 499:
+		stats.maxDEF=499;
+
+	if stats.ATK > 250:
+		stats.ATK=250;
+
+	if stats.PRO > 3:
+		stats.PRO=3;
+
+	if stats.LV > 99:
+		stats.LV=99;
+
+	if stats.CHR > 30:
+		stats.CHR=30;
+
+	if stats.HP == 0:
+		state=DOWN
 	pass
 	
 func after_battle():
@@ -149,15 +164,15 @@ func moveState(): #movement
 
 #animation
 func animHndlr():
-	if state==THINK:
+	if state == THINK:
 			animPlayer.play("think")
-	elif movedir!=Vector2.ZERO:
+	elif movedir != Vector2.ZERO:
 		animTree.set("parameters/idle/blend_position", movedir)
 		animTree.set("parameters/run/blend_position", movedir)
 		animTree.set("parameters/walk/blend_position", movedir)
-		if state==MOVE:
+		if state == MOVE:
 			animState.travel("walk")
-		if moveSpeed>80:
+		if moveSpeed > 80:
 			animState.travel("run")
 			pass
 	else:

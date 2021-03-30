@@ -1,8 +1,11 @@
-extends Node2D
+extends StaticBody2D
 
-#TODO: finally make this work
+# TODO: FINISH THIS
 func _ready():
-	pass # Replace with function body.
+	pass
 
-func _interact():
+func can_interact(interactionComponentParent : Node) -> bool:
+	return interactionComponentParent is Player
+
+func _interact(_interactionComponentParent : Node) -> void:
 	pass

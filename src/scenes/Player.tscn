@@ -1,10 +1,10 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/Kevin Clark.png" type="Texture" id=2]
 [ext_resource path="res://scenes/utility/Interact.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/utility/HitBox.tscn" type="PackedScene" id=4]
-
+[ext_resource path="res://scenes/utility/InteractUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.5, 2 )
@@ -981,7 +981,12 @@ shape = SubResource( 72 )
 
 [node name="Interact" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0.5, 0 )
+interaction_parent = NodePath("..")
 
 [node name="Looking" type="CollisionShape2D" parent="Interact"]
 position = Vector2( 0, 8.5 )
 shape = SubResource( 73 )
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]
+
+[node name="InteractUI" parent="." instance=ExtResource( 5 )]

@@ -1,9 +1,10 @@
 extends Node
 
-onready var nametag=$DiagBox/Label
-onready var message=$DiagBox/RichTextLabel
-onready var anims=$AnimationPlayer
-onready var next_spr=$DiagBox/Next
+onready var nametag = $DiagBox/Label
+onready var message = $DiagBox/RichTextLabel
+onready var anims = $AnimationPlayer
+onready var next_spr = $DiagBox/Next
+onready var speak = $Speak
 var file = File.new()
 var index = 1
 onready var timer=$next_char
@@ -15,6 +16,8 @@ func _ready():
 	message.set_text("")
 	nametag.set_text("")
 	next_spr.hide()
+	if "sfxvol" in SaveLoad.data["settings"]:
+		speak.volume_db = linear2db(float(SaveLoad.data["settings"]["sfxvol"]))
 pass
 
 func diag_start(diagname):
@@ -55,7 +58,7 @@ func print_text():
 func _input(_event):
 	var NEXT=Input.is_action_just_pressed("ui_accept")
 	if NEXT:
-		if message.visible_characters!=message.bbcode_text.length()&&message.visible_characters!=-1:
+		if message.visible_characters!=message.bbcode_text.length() && message.visible_characters!=-1:
 			timer.stop()
 			message.visible_characters=-1
 		elif index==json_result.size():
@@ -71,15 +74,19 @@ func next():
 	pass
 
 func _on_next_char_timeout():
-	var string=message.bbcode_text
+	var string = message.bbcode_text
 	var regex = RegEx.new()
 	regex.compile("\\[.*?\\]")
-	var string_proc=regex.sub(string, "", true)
+	var string_proc = regex.sub(string, "", true)
 	if message.visible_characters >= string_proc.length():
 		message.visible_characters = -1
 		timer.stop()
+		if "special" in json_result[str(index)]:
+			print("you should choose")
+			pass
 		return
 	else:
 		message.visible_characters += 1
+		$Speak.pitch_scale=rand_range(0.6, 1)
 		$Speak.play()
 	pass

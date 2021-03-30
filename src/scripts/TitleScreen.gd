@@ -4,6 +4,7 @@ onready var new = $Control/Menu/new
 onready var lload = $Control/Menu/load
 onready var set = $Control/Menu/settings
 onready var exit = $Control/Menu/exit
+onready var player = $AudioStreamPlayer
 var version = ProjectSettings.get("application/config/AppVersion")
 
 func _ready():
@@ -14,7 +15,9 @@ func _ready():
 	if SaveLoad.save_check():
 		lload.show()
 	$Copyright/Version.text="Version %s" % str(version)
-	pass
+	if SaveLoad.data["settings"].has("bgmvol"):
+		player.volume_db=linear2db(float(SaveLoad.data["settings"]["bgmvol"]))
+	player.play()
 
 func _new_pressed():
 	SceneChanger.change_scene("game")

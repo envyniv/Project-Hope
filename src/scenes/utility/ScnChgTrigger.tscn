@@ -2,8 +2,9 @@
 
 [ext_resource path="res://scripts/ScnChgTrigger.gd" type="Script" id=1]
 
-[node name="Warp" type="Area2D" groups=[
-"change",
-]]
+[node name="Warp" type="Area2D"]
+input_pickable = false
+monitorable = false
+collision_layer = 0
 script = ExtResource( 1 )
 [connection signal="area_entered" from="." to="." method="_on_Warp_area_entered"]

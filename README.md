@@ -75,6 +75,7 @@ rm -rf bin/*
 mv export_templates_custom.zip export_templates_custom.tpz
 ```
 ### Windows:
+* install GNU [binutils](http://www.gnu.org/software/binutils/)
 * download the godot 3.2.3-stable source code from [here](https://github.com/godotengine/godot/archive/3.2.3-stable.zip)
 * download `custom.py` from [here](https://github.com/envyniv/Project-Hope/raw/master/customtemplates/custom.py)
 * put custom.py in the godot source code folder
