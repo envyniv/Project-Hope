@@ -5,6 +5,6 @@ func _ready():
 	var f=File.new()
 	var fCheck = f.file_exists("res://%s.zip" % executableName)
 	if fCheck:
-		ProjectSettings.load_resource_pack("res://%s.zip" % executableName)
+	   ProjectSettings.load_resource_pack("res://%s.zip" % executableName)
 
-	SceneChanger.change_scene("title",1.5)
+	SceneChanger.change_scene("title",2.25)

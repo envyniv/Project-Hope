@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/gui/diag-box.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/diag-box-next.png" type="Texture" id=2]
 [ext_resource path="res://scripts/DiagBox.gd" type="Script" id=3]
-[ext_resource path="res://fonts/PX Sans Bold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/PXSansBold.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://richtexteffects/hide.gd" type="Script" id=5]
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=6]
 [ext_resource path="res://richtexteffects/matrix.gd" type="Script" id=7]
@@ -11,7 +11,6 @@
 [ext_resource path="res://richtexteffects/pulse.gd" type="Script" id=9]
 [ext_resource path="res://sounds/fx/speak-blip.wav" type="AudioStream" id=10]
 [ext_resource path="res://sounds/fx/next.wav" type="AudioStream" id=11]
-
 
 [sub_resource type="DynamicFont" id=1]
 extra_spacing_space = -1
@@ -44,7 +43,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -90 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, -180 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("ColorRect2:rect_position")
@@ -56,19 +55,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 298 ), Vector2( 0, 208 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("DiagBox:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 35, 260 ), Vector2( 35, 170 ) ]
+"values": [ Vector2( 0, 596 ), Vector2( 0, 416 ) ]
 }
 
 [node name="DiagBox" type="Node"]
@@ -76,8 +63,10 @@ script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
-margin_top = -90.0
-margin_bottom = -58.0
+anchor_bottom = 1.0
+margin_top = -180.0
+margin_right = 6.10352e-05
+margin_bottom = -596.0
 mouse_filter = 2
 color = Color( 0.00784314, 0, 0, 1 )
 __meta__ = {
@@ -86,28 +75,33 @@ __meta__ = {
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 anchor_right = 1.0
-margin_top = 298.0
-margin_right = 3.05176e-05
-margin_bottom = 330.001
+anchor_bottom = 1.0
+margin_top = 596.0
+margin_right = 6.10352e-05
+margin_bottom = 180.0
 mouse_filter = 2
 color = Color( 0.00784314, 0, 0, 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="DiagBox" type="TextureRect" parent="."]
-margin_left = 35.0
-margin_top = 260.0
-margin_right = 323.0
-margin_bottom = 320.0
+[node name="DiagBox" type="TextureRect" parent="ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.0
+margin_top = -80.0
+margin_right = -362.0
+margin_bottom = -84.0
+rect_scale = Vector2( 2, 2 )
 mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true,
+"_edit_use_anchors_": true
 }
 
-[node name="Next" type="TextureRect" parent="DiagBox"]
+[node name="Next" type="TextureRect" parent="ColorRect2/DiagBox"]
 margin_left = 250.655
 margin_top = 29.2182
 margin_right = 263.655
@@ -118,7 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DiagBox"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/DiagBox"]
 margin_left = 31.0
 margin_top = 16.0
 margin_right = 250.0
@@ -134,7 +128,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBGShadow" type="ColorRect" parent="DiagBox"]
+[node name="LabelBGShadow" type="ColorRect" parent="ColorRect2/DiagBox"]
 modulate = Color( 0.109804, 0.0784314, 0.121569, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -146,7 +140,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBG" type="ColorRect" parent="DiagBox"]
+[node name="LabelBG" type="ColorRect" parent="ColorRect2/DiagBox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 35.0
@@ -156,7 +150,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="DiagBox"]
+[node name="Label" type="Label" parent="ColorRect2/DiagBox"]
 margin_left = 35.0
 margin_right = 111.0
 margin_bottom = 16.0

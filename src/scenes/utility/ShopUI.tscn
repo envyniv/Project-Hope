@@ -20,9 +20,11 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -160.0
+margin_left = -320.0
 margin_top = 20.0
-margin_bottom = -20.0
+margin_right = -160.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -86,9 +88,11 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = 3.05176e-05
 margin_top = 20.0
 margin_right = 160.0
-margin_bottom = -20.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

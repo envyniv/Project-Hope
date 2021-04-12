@@ -31,8 +31,8 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 180, 100 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 360, 200 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Sprite"]

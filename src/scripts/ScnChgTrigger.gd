@@ -1,5 +1,8 @@
-extends Area2D
+extends StaticBody2D
 export(String) var stage
-#		**Warps should interact with COLLISIONS, NOT INTERACTIONS layers.**
-func _on_Warp_area_entered(_area):
+
+func can_interact(interactParent : Node) -> bool:
+	return interactParent is Player
+
+func _interact(_interactParent : Node) -> void:
 	SaveLoad.switch_stage={true:stage}

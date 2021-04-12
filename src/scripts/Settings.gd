@@ -24,8 +24,8 @@ func was_set():
 		music.value=float(SaveLoad.data["settings"]["bgmvol"])
 	if SaveLoad.data["settings"].has("voice"):
 		voice_select.selected=(SaveLoad.data["settings"]["voice"])
-	if SaveLoad.data["settings"].has("lang"):
-		language.selected=(SaveLoad.data["settings"]["lang"])
+#	if SaveLoad.data["settings"].has("lang"):
+#		language.selected=(SaveLoad.data["settings"]["lang"])
 
 func _process(_delta):
 	muslabel.text=str(music.value*100)+"%"

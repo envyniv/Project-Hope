@@ -1,11 +1,9 @@
 extends StaticBody2D
 
-# TODO: FINISH THIS
-func _ready():
-	pass
+var genobj
 
-func can_interact(interactionComponentParent : Node) -> bool:
-	return interactionComponentParent is Player
+func can_interact(interactParent : Node) -> bool:
+	return interactParent is Player
 
-func _interact(_interactionComponentParent : Node) -> void:
-	pass
+func _interact(_interactParent : Node) -> void:
+	SaveLoad.inShop=true

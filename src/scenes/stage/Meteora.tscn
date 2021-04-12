@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -16,10 +16,7 @@ extents = Vector2( 30.3774, 10 )
 extents = Vector2( 38.7473, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 52.0581, 10 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 52.6088, 10 )
+extents = Vector2( 52.0581, 3.82057 )
 
 [node name="Stage" type="Node"]
 
@@ -59,7 +56,7 @@ position = Vector2( 683.148, 241.88 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Dummy" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 91.3708, -1255.07 )
+position = Vector2( -273.966, -423.28 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 67.5765, 207.011 )
@@ -69,20 +66,16 @@ Facing = "UP"
 
 [node name="Booth" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -107.947, 77.9459 )
+map = "meteora"
 
 [node name="Vending" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -70.402, 80 )
 
 [node name="Warp" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 165.108, 277.186 )
+position = Vector2( 67.9845, 240.186 )
 stage = "map"
 
 [node name="left" type="CollisionShape2D" parent="YSort/Warp"]
-position = Vector2( -97.6392, -45.1717 )
 shape = SubResource( 3 )
-
-[node name="right" type="CollisionShape2D" parent="YSort/Warp"]
-position = Vector2( 102.899, -44.9904 )
-shape = SubResource( 4 )
 
 [editable path="CameraLimits"]

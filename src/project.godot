@@ -24,16 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/HitBox.gd"
 }, {
-"base": "Node",
-"class": "InteractableItem",
-"language": "GDScript",
-"path": "res://scripts/InteractableItem.gd"
-}, {
-"base": "Control",
-"class": "InteractionUI",
-"language": "GDScript",
-"path": "res://scripts/InteractUI.gd"
-}, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
@@ -68,8 +58,6 @@ _global_script_class_icons={
 "DamageBox": "",
 "HideTextFX": "",
 "HitBox": "",
-"InteractableItem": "",
-"InteractionUI": "",
 "Item": "",
 "Player": "",
 "RichTextGhost": "",
@@ -83,7 +71,7 @@ _global_script_class_icons={
 config/name="LAST HOPE"
 run/main_scene="res://scenes/BootScrn.tscn"
 config/icon="res://icon.svg"
-config/AppVersion=Vector3( 24, 3, 21 )
+config/AppVersion=Vector3( 4, 4, 21 )
 
 [autoload]
 
@@ -93,8 +81,8 @@ ItemDatabase="*res://scripts/ItemDatabase.gd"
 
 [display]
 
-window/size/width=360
-window/size/height=240
+window/size/width=720
+window/size/height=480
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

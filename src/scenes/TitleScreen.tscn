@@ -12,20 +12,24 @@
 script = ExtResource( 6 )
 
 [node name="ScrollingTextureRect" parent="." instance=ExtResource( 4 )]
-margin_top = -480.0
-margin_right = 0.0
-margin_bottom = -3.05176e-05
+margin_top = -960.0
+margin_right = -360.0
+margin_bottom = -720.0
+rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
-scroll_velocity = Vector2( 0, 3 )
+scroll_velocity = Vector2( 0, 6 )
 
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 180, 80 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 360, 140 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -360.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,10 +80,11 @@ flat = true
 [node name="Copyright" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.264862
-margin_top = 224.205
-margin_right = -200.0
-margin_bottom = 0.205414
+margin_left = 6.67419
+margin_top = 442.654
+margin_right = -594.326
+margin_bottom = -21.3461
+rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 3 )
 text = "© Twirl Pixel/Envy, 2020"
 __meta__ = {
@@ -89,10 +94,10 @@ __meta__ = {
 [node name="Version" type="Label" parent="Copyright"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 208.409
-margin_top = -224.149
-margin_right = 197.144
-margin_bottom = -221.15
+margin_left = 269.693
+margin_top = -220.558
+margin_right = 231.693
+margin_bottom = -217.558
 custom_fonts/font = ExtResource( 3 )
 text = "Version (0, 0, 0)"
 align = 2

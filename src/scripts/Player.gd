@@ -4,7 +4,7 @@ export(String, "UP", "RIGHT", "DOWN", "LEFT") var Facing
 var movedir = Vector2.ZERO
 var moveSpeed
 var canDo = true #used for special actions like attacking and dodging
-var stats = {
+export var stats = {
 	HP = 20,
 	maxHP = 20, #1 to 999
 	DEF = 10,
@@ -29,7 +29,6 @@ onready var sprite=$Sprite
 #~ signal player_control()
 #~ signal no_player_control()
 
-#state
 enum {
 	MOVE,
 	ATKING,
@@ -38,25 +37,22 @@ enum {
 	STUN,
 	DOWN
 }
-
 var state
-#end_state
 
 func _process(_delta):
 	SaveLoad.tempdata["Kevin"]=stats
 	if SaveLoad.inDialog || SaveLoad.inShop==true:
 		set_process_unhandled_input(false)
+		moveSpeed=0
 	else:
 		set_process_unhandled_input(true)
-	pass
 
 func _ready():
-	animTree.active = true
 	value_check();
 	if SaveLoad.tempdata.has("Kevin"):
 		stats=SaveLoad.tempdata["Kevin"]
 	match Facing:
-		"UP": 
+		"UP":
 			animPlayer.play("idle_Up")
 		"RIGHT":
 			animPlayer.play("idle_Right")
@@ -65,7 +61,6 @@ func _ready():
 		"LEFT":
 			animPlayer.play("idle_Left")
 	animTree.active = true
-	pass
 
 func value_check():
 	#if HP>maxHP add difference to DEF
@@ -76,50 +71,46 @@ func value_check():
 	if stats.DEF > stats.maxDEF:
 		stats.DEF = stats.maxDEF
 
-	#if maxstats are more than expected, bring them back
 	if stats.maxHP > 999:
 		stats.maxHP=999;
-
 	if stats.maxDEF > 499:
 		stats.maxDEF=499;
-
 	if stats.ATK > 250:
 		stats.ATK=250;
-
 	if stats.PRO > 3:
 		stats.PRO=3;
-
 	if stats.LV > 99:
 		stats.LV=99;
-
 	if stats.CHR > 30:
 		stats.CHR=30;
-
 	if stats.HP == 0:
 		state=DOWN
-	pass
-	
+
 func after_battle():
 	#stats.XP+enemydrop*stats.PRO
-
 	if stats.XP == stats.nextXP:
 		stats.LV+=1
 		stats.maxHP=int(stats.LV^2/3)
 		stats.ATK=int(stats.HP*0.6)
 		stats.nextXP=stats.LV*100
-	pass
 
 func _unhandled_input(_event):
 	var UP = Input.is_action_pressed("ui_up")
 	var DOWN = Input.is_action_pressed("ui_down")
 	var RIGHT = Input.is_action_pressed("ui_right")
 	var LEFT = Input.is_action_pressed("ui_left")
-	var ATTK={
-		WEAK = Input.is_action_pressed("ui_accept"),
-		PUNCH = Input.is_action_pressed("atkmed"),
-		HIGH = Input.is_action_pressed("ui_cancel")
-		}
-	var SKILL = Input.is_action_just_pressed("ui_select")
+	if true in SaveLoad.inBattle:
+		var ATTK={
+			WEAK = Input.is_action_pressed("ui_accept"),
+			PUNCH = Input.is_action_pressed("atkmed"),
+			HIGH = Input.is_action_pressed("ui_cancel")
+			}
+		var SKILL = Input.is_action_just_pressed("ui_select")
+		if SKILL:
+			state=THINK;
+		if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH):
+			state=ATKING
+
 	var SPRINT = Input.is_action_pressed("sprint")
 	movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed
 	movedir.y = -int(UP) + int(DOWN)
@@ -127,16 +118,10 @@ func _unhandled_input(_event):
 		moveSpeed=130
 	else:
 		moveSpeed=80
-	if SKILL:
-		state=THINK;
-		pass
-	if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH) && SaveLoad.inBattle==true:
-		state=ATKING
-	pass
 
 func _physics_process(_delta):
 	animHndlr();
-	
+
 	match state:
 		MOVE:
 			moveState();
@@ -150,19 +135,18 @@ func _physics_process(_delta):
 			stunState();
 		DOWN:
 			downState();
-	
+
 	if movedir!=Vector2.ZERO:
-		state = MOVE;
-	pass
+		state = MOVE
 
 func moveState(): #movement
 	var motion = movedir.normalized() * moveSpeed
 	motion = move_and_slide(motion, Vector2(0,0))
 	if movedir!=Vector2.ZERO:
-		$Interact/Looking.shape.b=move_and_slide(movedir.normalized()*30, Vector2(0,0))
-	pass
+		var compare=Vector2.DOWN.normalized()
+		var difference=compare.angle_to(motion)
+		$Interact.rotation_degrees=rad2deg(difference)
 
-#animation
 func animHndlr():
 	if state == THINK:
 			animPlayer.play("think")
@@ -174,35 +158,23 @@ func animHndlr():
 			animState.travel("walk")
 		if moveSpeed > 80:
 			animState.travel("run")
-			pass
+			if movedir==Vector2.ZERO:
+				animState.travel("run_Pose")
 	else:
 		animState.travel("idle")
-		pass
-	
-	pass
 
 func atkState(): #attacking
 	canDo = false
 	animPlayer.play("atk_airborne")
 	yield(animPlayer, "animation_finished")
 	canDo = true
-	pass
-	
+
 func thinkState(): #selecting spell
 	pass
-	
+
 func dodgeState(): #dodging
 	canDo = false
-	pass
 
-func _interact():
-	var ACCEPT = Input.is_action_pressed("ui_accept")
-	if ACCEPT: SaveLoad.inShop=true
-	pass
-	
-func _process_damage():
-	pass
-	
 func stunState():
 	pass
 

@@ -61,7 +61,7 @@ func get_have(item):
 # if an item is activated, subtract value from money and add item
 func _on_BuyList_item_activated(index):
 	select = AvailableList.get_item_text(index)
-	
+
 	if playermoney >= ItemDatabase.get_item(select).Price && playerinv.size()+playerinvS.size()!=32:
 		SaveLoad.add_item(select)
 		playermoney -= ItemDatabase.get_item(select).Price
@@ -69,7 +69,7 @@ func _on_BuyList_item_activated(index):
 		$money.play()
 	else:
 		$denied.play()
-	
+
 	getPlayerInv()
 
 # if an item in the player's inventory gets activated, remove item and give money
@@ -106,3 +106,8 @@ func setDesc_Inv(index):
 	desc = ItemDatabase.get_item(select).Description
 	ItemDesc.text = desc
 	HaveNum.text = str(get_have(select))
+
+func _input(_event):
+  if Input.is_action_pressed("ui_cancel"):
+    hide()
+    SaveLoad.inShop=false

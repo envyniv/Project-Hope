@@ -9,7 +9,7 @@ var invS={} #max 200
 var money=100 #max 999.999
 var level=1 #max 99
 var inShop=false
-var inBattle=false
+var inBattle={false:null}
 var inDialog=false
 var switch_stage={false:null}
 
@@ -155,12 +155,12 @@ func add_item(item,qty=1):
 				return false
 			else:
 				invS[item]+=qty
-		else: 
+		else:
 			invS[item]=qty;
 	else:
 		inv.append(item)
 	print(inv, invS)
-	
+
 	pass
 
 func remove_item(item,qty=1):
@@ -173,4 +173,3 @@ func remove_item(item,qty=1):
 		if item in inv:
 			inv.erase(item)
 	pass
-

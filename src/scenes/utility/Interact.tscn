@@ -8,5 +8,5 @@ gravity_vec = Vector2( 0, 0 )
 collision_layer = 4
 collision_mask = 4
 script = ExtResource( 1 )
-[connection signal="area_entered" from="." to="." method="_on_Interact_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_Interact_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_Interact_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Interact_body_exited"]
