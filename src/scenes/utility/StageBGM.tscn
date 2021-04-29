@@ -24,7 +24,7 @@ tracks/0/keys = {
 [node name="StageBGM" type="Node"]
 script = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -248.0
@@ -32,18 +32,6 @@ margin_top = 39.0
 margin_right = -844.0
 margin_bottom = -400.0
 rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-margin_top = 2.0
-margin_right = 122.0
-margin_bottom = 39.0
-color = Color( 0.137255, 0.0941176, 0.0941176, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Stage" type="Label" parent="ColorRect"]
 margin_left = 13.168

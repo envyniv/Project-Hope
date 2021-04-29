@@ -71,7 +71,7 @@ _global_script_class_icons={
 config/name="LAST HOPE"
 run/main_scene="res://scenes/BootScrn.tscn"
 config/icon="res://icon.svg"
-config/AppVersion=Vector3( 4, 4, 21 )
+config/AppVersion=Vector3( 16, 4, 21 )
 
 [autoload]
 
@@ -113,7 +113,6 @@ texture={
 "svg/scale": 1.0
 }
 image={
-
 }
 
 [input]

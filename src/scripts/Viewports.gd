@@ -1,13 +1,17 @@
 extends Node
 
-onready var view = $HBoxContainer/Game/Viewport
-onready var diagbox = $HBoxContainer/Game/DiagBox
-onready var shopui = $HBoxContainer/Game/BuyMenu
-onready var battlelayout = $HBoxContainer/Game/BattleStatLayout
-onready var hpkev = $HBoxContainer/Game/BattleStatLayout/HPKevin
-onready var hpquin = $HBoxContainer/Game/BattleStatLayout/HPQuinton
-onready var hpcharlie = $HBoxContainer/Game/BattleStatLayout/HPCharlie
-onready var hpbella = $HBoxContainer/Game/BattleStatLayout/HPBella
+onready var view = $Game/Viewport
+onready var diagbox = $Game/DiagBox
+onready var shopui = $Game/BuyMenu
+onready var battlelayout = $Game/BattleStatLayout
+
+#TODO: remove, this should be handled in itself, not here
+onready var hpkev = $Game/BattleStatLayout/HPKevin
+onready var hpquin = $Game/BattleStatLayout/HPQuinton
+onready var hpcharlie = $Game/BattleStatLayout/HPCharlie
+onready var hpbella = $Game/BattleStatLayout/HPBella
+
+onready var camera = $Game/Viewport/Camera2D
 
 const stage={
     "meteora":preload("res://scenes/stage/Meteora.tscn"),
@@ -30,10 +34,12 @@ const stage={
 }
 
 func _ready():
-    diagbox.diag_start("test")
-    battlelayout.hide()
-    if !SaveLoad.data.has("location"):
-        change_stage("meteora")
+  diagbox.diag_start("test")
+  battlelayout.hide()
+  if !SaveLoad.data.has("location"):
+    change_stage("meteora")
+  var player = $Game/Viewport/Stage/YSort/Player
+  camera.target = player
 
 func _process(_delta):
     set_status()
