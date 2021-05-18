@@ -18,6 +18,11 @@ anchor_left = 0.0327384
 anchor_top = 0.0370744
 anchor_right = 0.966072
 anchor_bottom = 0.957908
+margin_left = 0.428352
+margin_top = 0.204288
+margin_right = -335.572
+margin_bottom = -220.796
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -186,6 +191,7 @@ dialog_autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="item_selected" from="ColorRect/ScrollContainer/VBoxContainer/VoiceBloop" to="." method="_on_VoiceBloop_item_selected"]
 [connection signal="value_changed" from="ColorRect/ScrollContainer/VBoxContainer/Music" to="." method="_on_Music_value_changed"]
 [connection signal="value_changed" from="ColorRect/ScrollContainer/VBoxContainer/SFX" to="." method="_on_SFX_value_changed"]

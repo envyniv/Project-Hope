@@ -13,16 +13,17 @@ signal diag_started()
 signal diag_ended()
 
 func _ready():
+    set_process_input(false)
     message.set_text("")
     nametag.set_text("")
     next_spr.hide()
     if "sfxvol" in SaveLoad.data["settings"]:
         speak.volume_db = linear2db(float(SaveLoad.data["settings"]["sfxvol"]))
-pass
 
 func diag_start(diagname):
+    set_process_input(true)
     anims.play("fade-in")
-    var diagpath = "res://scripts/dialogue/%s.json" % [diagname]
+    var diagpath = "res://scripts/diag/%s/%s.json" % [SaveLoad.data["settings"]["lang"], diagname]
     if file.file_exists(diagpath):
         file.open(diagpath, file.READ)
         var json = file.get_as_text()
@@ -34,21 +35,19 @@ func diag_start(diagname):
     else:
         nametag.set_text("System")
         message.set_text("ERROR: DIALOGUE %s MISSING; \nISSUE IMMEDIATELY" % [diagname])
-pass
 
 func diag_end():
-    message.visible_characters=0
-    anims.play_backwards("fade-in")
-    message.set_text("")
-    nametag.set_text("")
-    emit_signal("diag_ended")
-pass
+  set_process_input(false)
+  message.visible_characters=0
+  anims.play_backwards("fade-in")
+  message.set_text("")
+  nametag.set_text("")
+  emit_signal("diag_ended")
 
 func read_text():
     timer.wait_time = 0.075
     message.visible_characters = 0
     timer.start()
-    pass
 
 func print_text():
     nametag.text = json_result[str(index)]["name"]

@@ -24,9 +24,6 @@ onready var animPlayer=$Sprite/AnimationPlayer
 onready var animTree=$Sprite/AnimationPlayer/AnimationTree
 onready var animState=animTree.get("parameters/playback")
 onready var sprite=$Sprite
-signal interact_req()
-signal thinking()
-signal player_control()
 
 enum {
     MOVE,
@@ -47,7 +44,8 @@ func _process(_delta):
         set_process_unhandled_input(true)
 
 func _ready():
-    value_check();
+    SceneManager.tactical_lock_on(self)
+    value_check()
     if SaveLoad.tempdata.has("Kevin"):
         stats=SaveLoad.tempdata["Kevin"]
     match Facing:
@@ -60,7 +58,7 @@ func _ready():
         "LEFT":
             animPlayer.play("idle_Left")
     animTree.active = true
-    emit_signal("player_control", true)
+    #emit_signal("player_control", true)
 
 func value_check():
     #if HP>maxHP add difference to DEF

@@ -4,12 +4,12 @@ var items=[]
 
 func _ready():
 	var directory=Directory.new()
-	directory.open("res://scripts/itemDB/")
+	directory.open("res://scripts/items/")
 	directory.list_dir_begin()
 	var filename=directory.get_next()
 	while(filename):
 		if !directory.current_is_dir():
-			items.append(load("res://scripts/itemDB/%s" % filename))
+			items.append(load("res://scripts/items/%s" % filename))
 		filename=directory.get_next()
 
 func get_item(item):

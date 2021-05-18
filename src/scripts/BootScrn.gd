@@ -7,4 +7,4 @@ func _ready():
 	if fCheck:
 	   ProjectSettings.load_resource_pack("res://%s.zip" % executableName)
 
-	SceneChanger.change_scene("title",2.25)
+	SceneManager.change_scene("title",0)

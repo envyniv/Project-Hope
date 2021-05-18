@@ -2,9 +2,9 @@
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/Kevin Clark.png" type="Texture" id=2]
-[ext_resource path="res://scenes/utility/Interact.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/utility/HitBox.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/utility/InteractUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/puzzlebox/Interact.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/puzzlebox/HitBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/puzzlebox/InteractUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/DamageBox.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -1128,20 +1128,16 @@ position = Vector2( 0.529732, -6.09191 )
 shape = SubResource( 73 )
 
 [node name="Interact" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.5, 0 )
+position = Vector2( 0.5, 6.25 )
 collision_layer = 0
 
 [node name="Looking" type="CollisionPolygon2D" parent="Interact"]
-position = Vector2( 0, 8.5 )
-polygon = PoolVector2Array( -20, 20, 20, 20, 10, 0, -10, 0 )
+polygon = PoolVector2Array( -14, 20, 14, 20, 8, 0, -8, 0 )
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="."]
 
 [node name="InteractUI" parent="." instance=ExtResource( 5 )]
-margin_left = -30.5531
-margin_top = -39.53
-margin_right = 30.4469
-margin_bottom = -23.53
+position = Vector2( 0, -30 )
 
 [node name="DamageBox" type="Area2D" parent="."]
 visible = false

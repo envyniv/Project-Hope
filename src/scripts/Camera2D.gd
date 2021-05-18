@@ -1,7 +1,5 @@
 extends Camera2D
-# onready var topLeft = get_node("../../../CameraLimits/TopLeft")
-# onready var bottomRight = get_node("../../../CameraLimits/BottomRight")
-var target = null
+var follow = null
 
 var _duration = 0.0
 var _period_in_ms = 0.0
@@ -11,6 +9,17 @@ var _last_shook_timer = 0
 var _previous_x = 0.0
 var _previous_y = 0.0
 var _last_offset = Vector2(0, 0)
+
+func _ready():
+  print(SceneManager.connect("target_locked", self, "target_found"))
+
+func target_found(target):
+  print(target.position)
+  follow=target
+
+func _physics_process(_delta):
+  if follow:
+      position = follow.position
 
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
@@ -53,17 +62,3 @@ func shake(duration, frequency, amplitude):
     # Reset previous offset, if any.
     set_offset(get_offset() - _last_offset)
     _last_offset = Vector2(0, 0)
-
-func _physics_process(_delta):
-    if target:
-        position = target.position
-pass
-
-func _ready():
-  set_process(true)
-    # if bottomRight&&topLeft:
-    # 	limit_top = topLeft.position.y
-    # 	limit_left = topLeft.position.x
-    # 	limit_right = bottomRight.position.x
-    # 	limit_bottom = bottomRight.position.y
-pass

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/gui/title.png" type="Texture" id=1]
 [ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=2]
-[ext_resource path="res://materials/outline sans.tres" type="DynamicFont" id=3]
+[ext_resource path="res://materials/outlinesans.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/ScrollingTextureRect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/music/start.ogg" type="AudioStream" id=5]
 [ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=6]
@@ -19,10 +19,16 @@ rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 scroll_velocity = Vector2( 0, 6 )
 
-[node name="Logo" type="Sprite" parent="."]
-position = Vector2( 360, 140 )
-scale = Vector2( 2.5, 2.5 )
+[node name="Logo" type="TextureRect" parent="."]
+margin_left = 130.0
+margin_top = 50.0
+margin_right = 280.0
+margin_bottom = 112.0
+rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -94,10 +100,10 @@ __meta__ = {
 [node name="Version" type="Label" parent="Copyright"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 269.693
-margin_top = -220.558
-margin_right = 231.693
-margin_bottom = -217.558
+margin_left = 266.0
+margin_top = -220.0
+margin_right = 228.0
+margin_bottom = -217.0
 custom_fonts/font = ExtResource( 3 )
 text = "Version (0, 0, 0)"
 align = 2

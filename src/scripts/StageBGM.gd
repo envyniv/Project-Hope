@@ -10,7 +10,6 @@ var BGM = {
     "battle4" :  [load(musfolder % "hand"), "What Has It Come To?"],
     "battle5" :  [load(musfolder % "orchestra"), "Orchestrating A Fight"],
     "battle6" :  [load(musfolder % "sounds"), "Sounds Of Battle"],
-    "think" :    [load(musfolder % "think"), "Think, Quick!"],
     "save" :     [load(musfolder % "save"), "Time To Save"],
     "winter" :   [load(musfolder % "winter"), "New World"],
     "sweet" :    [load(musfolder % "sweet"), "Sweet Melody"],
