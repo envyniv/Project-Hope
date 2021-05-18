@@ -1,0 +1,21 @@
+{
+
+
+"English" : {
+  "dir":"en",
+},
+
+"Italian" : {
+  "dir":"it",
+},
+
+"French" : {
+  "dir":"fr",
+},
+
+"DevOutline" : {
+  "dir":"devc"
+},
+
+
+}
