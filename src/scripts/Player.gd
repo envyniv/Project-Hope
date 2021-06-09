@@ -36,18 +36,14 @@ enum {
 var state
 
 func _process(_delta):
-    SaveLoad.tempdata["Kevin"]=stats
-    if SaveLoad.inDialog || SaveLoad.inShop==true:
-        set_process_unhandled_input(false)
-        moveSpeed=0
-    else:
-        set_process_unhandled_input(true)
+    FileMan.tempdata["Kevin"]=stats
+
 
 func _ready():
     SceneManager.tactical_lock_on(self)
     value_check()
-    if SaveLoad.tempdata.has("Kevin"):
-        stats=SaveLoad.tempdata["Kevin"]
+    if FileMan.tempdata.has("Kevin"):
+        stats=FileMan.tempdata["Kevin"]
     match Facing:
         "UP":
             animPlayer.play("idle_Up")
@@ -58,7 +54,19 @@ func _ready():
         "LEFT":
             animPlayer.play("idle_Left")
     animTree.active = true
+    SceneManager.connect("convo_y", self, "disable_input")
+    SceneManager.connect("convo_n", self, "enable_input")
+    SceneManager.connect("fighting", self, "enable_input")
+    SceneManager.connect("fighting_over", self, "disable_input")
+    SceneManager.connect("vending", self, "disable_input")
+    SceneManager.connect("left_vending", self, "enable_input")
     #emit_signal("player_control", true)
+
+func enable_input():
+  set_process_unhandled_input(true)
+
+func disable_input():
+  set_process_unhandled_input(false)
 
 func value_check():
     #if HP>maxHP add difference to DEF
@@ -97,17 +105,17 @@ func _unhandled_input(_event):
     var DOWN = Input.is_action_pressed("ui_down")
     var RIGHT = Input.is_action_pressed("ui_right")
     var LEFT = Input.is_action_pressed("ui_left")
-    if true in SaveLoad.inBattle:
-        var ATTK={
-            WEAK = Input.is_action_pressed("ui_accept"),
-            PUNCH = Input.is_action_pressed("atkmed"),
-            HIGH = Input.is_action_pressed("ui_cancel")
-            }
-        var SKILL = Input.is_action_just_pressed("ui_select")
-        if SKILL:
-            state=THINK;
-        if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH):
-            state=ATKING
+    #if true in FileMan.inBattle:
+    #    var ATTK={
+    #        WEAK = Input.is_action_pressed("ui_accept"),
+    #        PUNCH = Input.is_action_pressed("atkmed"),
+    #        HIGH = Input.is_action_pressed("ui_cancel")
+    #        }
+    #    var SKILL = Input.is_action_just_pressed("ui_select")
+    #    if SKILL:
+    #        state=THINK;
+    #    if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH):
+    #        state=ATKING
 
     var SPRINT = Input.is_action_pressed("sprint")
     movedir.x = -int(LEFT) + int(RIGHT) #don't move if the left and right keys are pressed

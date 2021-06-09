@@ -6,8 +6,8 @@ onready var hpcharlie = $HPCharlie
 onready var hpbella = $HPBella
 
 func _process(_delta):
-  if SaveLoad.tempdata.has("Kevin"):
-      var kevindata=SaveLoad.tempdata["Kevin"]
+  if FileMan.tempdata.has("Kevin"):
+      var kevindata=FileMan.tempdata["Kevin"]
       hpkev.hp.max_value=kevindata["maxHP"]
       hpkev.def.max_value=kevindata["maxDEF"]
       hpkev.hp.value=kevindata["HP"]

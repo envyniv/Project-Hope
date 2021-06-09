@@ -1,0 +1,72 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/SaveFile.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+mods = [  ]
+hm = 0
+party = [  ]
+inv = [  ]
+invS = {
+}
+location = {
+"map": "meteora"
+}
+kevin = {
+"ATK": 12,
+"CHR": 0,
+"DEF": 10,
+"EVA": 8,
+"EXP": 0,
+"HP": 20,
+"LUC": 0,
+"LV": 1,
+"LVL": 1,
+"PRO": 0,
+"equip": [  ],
+"god": [  ]
+}
+quinton = {
+"ATK": 8,
+"CHR": 0,
+"DEF": 25,
+"EVA": 6,
+"EXP": 0,
+"HP": 17,
+"LUC": 0,
+"LV": 1,
+"LVL": 1,
+"PRO": 0,
+"equip": [  ]
+}
+bella = {
+"ATK": 8,
+"CHR": 0,
+"DEF": 25,
+"EVA": 6,
+"EXP": 0,
+"HP": 17,
+"LUC": 0,
+"LV": 1,
+"LVL": 1,
+"PRO": 0,
+"equip": [  ]
+}
+charlie = {
+"ATK": 8,
+"CHR": 0,
+"DEF": 25,
+"EVA": 6,
+"EXP": 0,
+"HP": 17,
+"LUC": 0,
+"LV": 1,
+"LVL": 1,
+"PRO": 0,
+"equip": [  ]
+}
+sfxvol = 0.0
+bgmvol = 0.0
+voice = false
+lang = ""

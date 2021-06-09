@@ -5,7 +5,6 @@ onready var message = $ColorRect2/DiagBox/RichTextLabel
 onready var anims = $AnimationPlayer
 onready var next_spr = $ColorRect2/DiagBox/Next
 onready var speak = $Speak
-var file = File.new()
 var index = 1
 onready var timer=$next_char
 var json_result
@@ -13,28 +12,25 @@ signal diag_started()
 signal diag_ended()
 
 func _ready():
-    set_process_input(false)
-    message.set_text("")
-    nametag.set_text("")
-    next_spr.hide()
-    if "sfxvol" in SaveLoad.data["settings"]:
-        speak.volume_db = linear2db(float(SaveLoad.data["settings"]["sfxvol"]))
+  set_process_input(false)
+  message.set_text("")
+  nametag.set_text("")
+  next_spr.hide()
+  if FileMan.data.sfxvol != null:
+      speak.volume_db = linear2db(FileMan.data.sfxvol)
 
 func diag_start(diagname):
     set_process_input(true)
     anims.play("fade-in")
-    var diagpath = "res://scripts/diag/%s/%s.json" % [SaveLoad.data["settings"]["lang"], diagname]
-    if file.file_exists(diagpath):
-        file.open(diagpath, file.READ)
-        var json = file.get_as_text()
-        json_result = JSON.parse(json).result
-        print_text();
-        read_text();
-        emit_signal("diag_started")
-        file.close()
+    var diagpath = "res://scripts/diag/%s/%s.json" % [FileMan.data.lang, diagname]
+    var diag = FileMan.return_file(diagpath)
+    if !diag:
+      print("bruh")
     else:
-        nametag.set_text("System")
-        message.set_text("ERROR: DIALOGUE %s MISSING; \nISSUE IMMEDIATELY" % [diagname])
+      json_result = JSON.parse(diag.get_as_text()).result
+    print_text();
+    read_text();
+    emit_signal("diag_started")
 
 func diag_end():
   set_process_input(false)

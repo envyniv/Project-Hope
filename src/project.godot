@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://richtexteffects/pulse.gd"
 }, {
+"base": "Resource",
+"class": "Save",
+"language": "GDScript",
+"path": "res://scripts/SaveFile.gd"
+}, {
 "base": "TextureRect",
 "class": "ScrollingTextureRect",
 "language": "GDScript",
@@ -68,6 +73,7 @@ _global_script_class_icons={
 "RichTextGhost": "",
 "RichTextMatrix": "",
 "RichTextPulse": "",
+"Save": "",
 "ScrollingTextureRect": "",
 "Skill": ""
 }
@@ -81,7 +87,7 @@ config/AppVersion=Vector3( 17, 5, 21 )
 
 [autoload]
 
-SaveLoad="*res://scripts/SaveLoad.gd"
+FileMan="*res://scripts/FileMan.gd"
 ItemDatabase="*res://scripts/ItemDatabase.gd"
 SceneManager="*res://scenes/puzzlebox/SceneManager.tscn"
 

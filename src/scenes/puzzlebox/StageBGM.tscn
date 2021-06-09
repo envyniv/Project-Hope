@@ -63,3 +63,6 @@ texture = ExtResource( 1 )
 anims/fade-in = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0

@@ -38,24 +38,26 @@ texture = ExtResource( 5 )
 [node name="Label" type="Label" parent="Sprite"]
 margin_left = -180.0
 margin_top = 120.0
-margin_right = 195.0
+margin_right = 189.0
 margin_bottom = 208.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-text = "Twirl Pixel"
+text = "Triskeles"
+align = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Sprite/Label"]
-margin_left = 94.4381
+margin_left = 94.0
 margin_top = 80.0
-margin_right = 319.438
+margin_right = 292.0
 margin_bottom = 138.0
 custom_fonts/font = SubResource( 2 )
 text = "Inspiration."
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

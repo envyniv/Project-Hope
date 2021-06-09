@@ -11,10 +11,17 @@ var _previous_y = 0.0
 var _last_offset = Vector2(0, 0)
 
 func _ready():
-  print(SceneManager.connect("target_locked", self, "target_found"))
+  SceneManager.connect("target_locked", self, "target_found")
+  SceneManager.connect("fighting", self, "reduce_zoom")
+  SceneManager.connect("fighting_over", self, "amplify")
+
+func reduce_zoom():
+  zoom=Vector2(1, 1)
+
+func amplify():
+  zoom=Vector2(0.5, 0.5)
 
 func target_found(target):
-  print(target.position)
   follow=target
 
 func _physics_process(_delta):

@@ -4,6 +4,13 @@ signal scene_changed()
 onready var animation_player=$CanvasLayer/AnimationPlayer
 onready var color_rect=$CanvasLayer/Control/ColorRect
 signal target_locked
+signal convo_y
+signal convo_n
+signal fighting
+signal fighting_over
+signal vending
+signal left_vending
+
 
 const select = {
     "title"    : "res://scenes/TitleScreen.tscn",
@@ -55,3 +62,21 @@ func transition_end():
 
 func tactical_lock_on(target):
   emit_signal("target_locked", target)
+
+func vending_up():
+  emit_signal("vending")
+
+func vending_left():
+  emit_signal("left_vending")
+
+func convo_on():
+  emit_signal("convo_y")
+
+func convo_off():
+  emit_signal("convo_n")
+
+func battle_started():
+  emit_signal("fighting")
+
+func battle_over():
+  emit_signal("fighting_over")

@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=1]
+[ext_resource path="res://materials/theme.tres" type="Theme" id=2]
+
+[node name="Control" type="Control"]
+margin_right = 720.0
+margin_bottom = 480.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+color = Color( 0.105882, 0.117647, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 31.0
+margin_right = -570.0
+margin_bottom = -243.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+margin_right = 120.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "Resume"
+flat = true
+
+[node name="Items" type="Button" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 120.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 1 )
+text = "Items"
+flat = true
+
+[node name="Equip" type="Button" parent="VBoxContainer"]
+margin_top = 52.0
+margin_right = 120.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 1 )
+text = "Equip"
+flat = true
+
+[node name="Stats" type="Button" parent="VBoxContainer"]
+margin_top = 78.0
+margin_right = 120.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 1 )
+text = "Stats"
+flat = true
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 120.0
+margin_bottom = 126.0
+custom_fonts/font = ExtResource( 1 )
+text = "Back to Menu"
+flat = true
+
+[node name="Close" type="Button" parent="VBoxContainer"]
+margin_top = 130.0
+margin_right = 120.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit Game"
+flat = true

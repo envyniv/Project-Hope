@@ -10,10 +10,10 @@ func can_interact(interactParent : Node) -> bool:
 func _interact(_interactParent : Node) -> void:
 	if used:
 		return
-	SaveLoad.data["location"]={"map":map}
+	FileMan.data["location"]={"map":map}
 	$Booth/Curtain/AnimationPlayer.play("photo")
 	used = true
 	collision_layer = collision_layer ^ 4
-	
-	SaveLoad.save_game()
+
+	FileMan.save_game()
 	print("save")
