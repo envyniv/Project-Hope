@@ -6,13 +6,9 @@
 script = ExtResource( 1 )
 mods = [  ]
 hm = 0
-party = [  ]
+party = [ "Kevin" ]
 inv = [  ]
-invS = {
-}
-location = {
-"map": "meteora"
-}
+location = "kevinsbedroom"
 kevin = {
 "ATK": 12,
 "CHR": 0,
@@ -21,52 +17,64 @@ kevin = {
 "EXP": 0,
 "HP": 20,
 "LUC": 0,
-"LV": 1,
 "LVL": 1,
+"MANA": 5,
 "PRO": 0,
 "equip": [  ],
-"god": [  ]
+"god": [  ],
+"maxDEF": 10,
+"maxHP": 20,
+"maxMANA": 5
 }
 quinton = {
 "ATK": 8,
 "CHR": 0,
-"DEF": 25,
+"DEF": 10,
 "EVA": 6,
 "EXP": 0,
-"HP": 17,
+"HP": 20,
 "LUC": 0,
-"LV": 1,
 "LVL": 1,
+"MANA": 5,
 "PRO": 0,
-"equip": [  ]
+"equip": [  ],
+"maxDEF": 10,
+"maxHP": 20,
+"maxMANA": 5
 }
 bella = {
 "ATK": 8,
 "CHR": 0,
-"DEF": 25,
+"DEF": 10,
 "EVA": 6,
 "EXP": 0,
-"HP": 17,
+"HP": 20,
 "LUC": 0,
-"LV": 1,
 "LVL": 1,
+"MANA": 5,
 "PRO": 0,
-"equip": [  ]
+"equip": [  ],
+"maxDEF": 10,
+"maxHP": 20,
+"maxMANA": 5
 }
 charlie = {
 "ATK": 8,
 "CHR": 0,
-"DEF": 25,
+"DEF": 10,
 "EVA": 6,
 "EXP": 0,
-"HP": 17,
+"HP": 20,
 "LUC": 0,
-"LV": 1,
 "LVL": 1,
+"MANA": 5,
 "PRO": 0,
-"equip": [  ]
+"equip": [  ],
+"maxDEF": 10,
+"maxHP": 20,
+"maxMANA": 5
 }
-sfxvol = 0.0
-bgmvol = 0.0
-voice = false
-lang = ""
+sfxvol = 0.25
+bgmvol = 0.05
+voice = true
+lang = "it"

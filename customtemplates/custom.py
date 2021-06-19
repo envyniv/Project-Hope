@@ -2,11 +2,12 @@
 #18,3 mb on 3.3 vs 17,6 on 3.2.3
 #17,8 mb on win
 #18,3 -> 6,6 MB on linux with UPX
-#17,8 -> 6,2 MB on linux with UPX
+#17,8 -> 6,2 MB on win with UPX
 # experimenting removing GLES2
+# don't uncomment the ones with yes or it's gonna take a way longer time compiling and more space, somehow.
 
-target                         ="release"
-bits                           ="64"
+target                         = "release"
+bits                           = "64"
 
 tools                          = "no"
 disable_3d                     = "yes"

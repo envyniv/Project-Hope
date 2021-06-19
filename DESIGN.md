@@ -1,4 +1,4 @@
-
+﻿
 ![Non-Stylized Project Hope Logo](doc_stuff/nostyle-logo.png)
 
 The Official Design Document
@@ -125,7 +125,7 @@ Cratus, god of strengh.
 Eleos, god of mercy
 Eros, guess what he's the god of.
 Nike, Goddes of Victory
-goddess of justice
+Astraea, goddess of justice
 Metis, for his clairvoyance
 Tyche, goddess of fortune
 Ares.

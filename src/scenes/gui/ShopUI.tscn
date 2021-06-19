@@ -1,0 +1,142 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://materials/ItemDescription-normal.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/ShopUI.gd" type="Script" id=4]
+[ext_resource path="res://sounds/fx/denied.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/fx/money.wav" type="AudioStream" id=6]
+
+[node name="BuyMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_use_anchors_": false
+}
+
+[node name="PanelShop" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -320.0
+margin_top = 20.0
+margin_right = -160.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy" type="Label" parent="PanelShop"]
+anchor_right = 1.0
+anchor_bottom = 0.207
+margin_left = 5.0
+margin_top = 4.0
+margin_right = -44.0
+margin_bottom = -21.54
+custom_fonts/font = ExtResource( 1 )
+text = "gameBuy"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyList" type="ItemList" parent="PanelShop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 23.0
+margin_right = -12.0
+margin_bottom = -87.0
+custom_fonts/font = ExtResource( 1 )
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelInv" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 3.05176e-05
+margin_top = 20.0
+margin_right = 160.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell" type="Label" parent="PanelInv"]
+anchor_right = 1.0
+anchor_bottom = 0.053
+margin_left = 49.0
+margin_top = 4.0
+margin_right = -4.99997
+margin_bottom = 9.34
+custom_fonts/font = ExtResource( 1 )
+text = "gameSell"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="PanelInv"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 23.0
+margin_right = -9.99997
+margin_bottom = -87.0
+custom_fonts/font = ExtResource( 1 )
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 292.0
+margin_right = -360.0
+margin_bottom = -112.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 3 )
+text = "Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet.
+Lorem Ipsum Dolor Sit Amet."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyCount" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.207
+margin_left = 40.0
+margin_top = 30.0
+margin_right = -360.0
+margin_bottom = -53.36
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "999.999 G"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="money" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="denied" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="item_activated" from="PanelShop/BuyList" to="." method="_on_BuyList_item_activated"]
+[connection signal="item_selected" from="PanelShop/BuyList" to="." method="_on_BuyList_item_selected"]
+[connection signal="item_activated" from="PanelInv/ItemList" to="." method="_on_ItemList_item_activated"]
+[connection signal="item_selected" from="PanelInv/ItemList" to="." method="_on_ItemList_item_selected"]

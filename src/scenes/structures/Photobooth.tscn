@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Photobooth.gd" type="Script" id=1]
+[ext_resource path="res://assets/stages/Photo-booth.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 18.9829, 10 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 1 )
+
+[node name="Booth" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+hframes = 3
+
+[node name="Curtain" type="Sprite" parent="Booth"]
+texture = ExtResource( 3 )
+hframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Booth/Curtain"]
+anims/photo = SubResource( 1 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 11 )
+shape = SubResource( 2 )

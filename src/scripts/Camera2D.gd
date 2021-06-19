@@ -9,11 +9,16 @@ var _last_shook_timer = 0
 var _previous_x = 0.0
 var _previous_y = 0.0
 var _last_offset = Vector2(0, 0)
+signal set_limits
 
 func _ready():
+# warning-ignore:return_value_discarded
   SceneManager.connect("target_locked", self, "target_found")
+# warning-ignore:return_value_discarded
   SceneManager.connect("fighting", self, "reduce_zoom")
+# warning-ignore:return_value_discarded
   SceneManager.connect("fighting_over", self, "amplify")
+  emit_signal("set_limits")
 
 func reduce_zoom():
   zoom=Vector2(1, 1)

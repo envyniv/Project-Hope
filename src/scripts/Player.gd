@@ -1,25 +1,35 @@
 extends KinematicBody2D
 class_name Player
-export(String, "UP", "RIGHT", "DOWN", "LEFT") var Facing
+enum look {UP, RIGHT, DOWN, LEFT}
+export(look) var facing
+
 var movedir = Vector2.ZERO
-var moveSpeed
+var moveSpeed = 80
+var motion
+
+var curvefollow
+var followindex = 0
+var followpoints
+export(bool) var snakeTail
+export(int,1,50) var follower
+
 var canDo = true #used for special actions like attacking and dodging
-export var stats = {
-    HP = 20,
-    maxHP = 20, #1 to 999
-    DEF = 10,
-    maxDEF = 10, #1 to 499
-    MANA = 5,
-    maxMANA = 5, #1 to 10
-    EVA = 5, #1 to 4; 1 = 10% chance avoid
-    LV = 1, #1 to 99
-    PRO = 1, #1 to 3x times the XP
-    CHR = 0, #0 to 30% chance of inflicting lovestun
-    LUC = 0, #0 to 40% chance of crit
-    ATK = 3, #1 to 250?
-    XP = 0,
-    nextXP = 100, #100 to 4900 for LV98?
-}
+
+export(int) var maxHP = 20 #1 to 999
+var HP = maxHP
+export(int) var maxDEF = 10 #1 to 499
+var DEF = maxDEF
+export(int) var maxMANA = 5 #1 to 10
+var MANA = maxMANA
+export(int) var EVA = 5 #1 to 4; 1 = 10% chance avoid
+var LV = 1 #1 to 99
+var PRO = 1 #1 to 3x times the XP
+var CHR = 0 #0 to 30% chance of inflicting lovestun
+var LUC = 0 #0 to 40% chance of crit
+export(int) var ATK = 3 #1 to 250?
+var XP = 0
+var nextXP = get_next_xp(LV + 1) #100 to 4900 for LV98?
+
 onready var animPlayer=$Sprite/AnimationPlayer
 onready var animTree=$Sprite/AnimationPlayer/AnimationTree
 onready var animState=animTree.get("parameters/playback")
@@ -31,36 +41,57 @@ enum {
     DODGE,
     THINK,
     STUN,
-    DOWN
+    KO,
+    TAIL
 }
 var state
 
-func _process(_delta):
-    FileMan.tempdata["Kevin"]=stats
-
-
 func _ready():
-    SceneManager.tactical_lock_on(self)
-    value_check()
-    if FileMan.tempdata.has("Kevin"):
-        stats=FileMan.tempdata["Kevin"]
-    match Facing:
-        "UP":
+  #  disable_input()
+  value_check()
+  match facing:
+        look.UP:
             animPlayer.play("idle_Up")
-        "RIGHT":
+        look.RIGHT:
             animPlayer.play("idle_Right")
-        "DOWN":
+        look.DOWN:
             animPlayer.play("idle_Down")
-        "LEFT":
+        look.LEFT:
             animPlayer.play("idle_Left")
-    animTree.active = true
+  animTree.active = true
+  #emit_signal("player_control", true)
+  if snakeTail:
+    disable_interaction()
+    disable_input()
+    $Collision.disabled=true
+    #warning-ignore:return_value_discarded
+    get_parent().connect("player_chdir", self, "add_snake_queue")
+    #get_parent().connect("player_run", self, "add_snake_queue")
+  else:
+    SceneManager.tactical_lock_on(self)
+  # warning-ignore:return_value_discarded
     SceneManager.connect("convo_y", self, "disable_input")
+  # warning-ignore:return_value_discarded
     SceneManager.connect("convo_n", self, "enable_input")
+  # warning-ignore:return_value_discarded
     SceneManager.connect("fighting", self, "enable_input")
+  # warning-ignore:return_value_discarded
     SceneManager.connect("fighting_over", self, "disable_input")
+  # warning-ignore:return_value_discarded
     SceneManager.connect("vending", self, "disable_input")
+  # warning-ignore:return_value_discarded
     SceneManager.connect("left_vending", self, "enable_input")
-    #emit_signal("player_control", true)
+  # warning-ignore:return_value_discarded
+    SceneManager.connect("pDisable", self, "disable_input")
+  # warning-ignore:return_value_discarded
+    SceneManager.connect("pEnable", self, "enable_input")
+
+func _exit_tree():
+  if !snakeTail:
+    camera_stop_follow()
+
+func camera_stop_follow():
+  SceneManager.tactical_lock_on(null)
 
 func enable_input():
   set_process_unhandled_input(true)
@@ -68,37 +99,66 @@ func enable_input():
 func disable_input():
   set_process_unhandled_input(false)
 
+func disable_interaction():
+  $Interact/Looking.disabled=true
+  $InteractUI.hide()
+  $Interact.hide()
+
+func get_next_xp(level):
+  return round(pow(level, 1.85))+level*0.75
+
 func value_check():
     #if HP>maxHP add difference to DEF
-    if stats.HP > stats.maxHP:
-        stats.DEF += (stats.HP-stats.maxHP);
-        stats.HP = stats.maxHP
+    #TODO: should def from hp items temporary?
+    if HP > maxHP:
+      var dif = HP-maxHP
+      DEF += dif;
+      HP = maxHP
+      rollbackDEF(dif)
+    if DEF > maxDEF:
+      DEF = maxDEF
 
-    if stats.DEF > stats.maxDEF:
-        stats.DEF = stats.maxDEF
-
-    if stats.maxHP > 999:
-        stats.maxHP=999;
-    if stats.maxDEF > 499:
-        stats.maxDEF=499;
-    if stats.ATK > 250:
-        stats.ATK=250;
-    if stats.PRO > 3:
-        stats.PRO=3;
-    if stats.LV > 99:
-        stats.LV=99;
-    if stats.CHR > 30:
-        stats.CHR=30;
-    if stats.HP == 0:
-        state=DOWN
+    if maxHP > 999:
+        maxHP = 999;
+    if maxDEF > 499:
+        maxDEF=499;
+    if ATK > 250:
+        ATK=250;
+    if PRO > 3:
+        PRO = 3;
+    if LV > 99:
+        LV = 99;
+    if CHR > 30:
+        CHR = 30;
+    if HP == 0:
+        state=KO
 
 func after_battle():
-    #stats.XP+enemydrop*stats.PRO
-    if stats.XP == stats.nextXP:
-        stats.LV+=1
-        stats.maxHP=int(stats.LV^2/3)
-        stats.ATK=int(stats.HP*0.6)
-        stats.nextXP=stats.LV*100
+    #XP+enemydrop*PRO
+   if XP >= nextXP:
+      levelUp()
+        
+func levelUp():
+  LV+=1
+  #maxHP=int(LV^2/3)
+  #ATK=int(HP*0.6)
+  #nextXP=LV*100
+
+func rollbackDEF(amount):
+  print(DEF)
+  var after = DEF-amount
+  for i in amount:
+    yield(get_tree().create_timer(1.5), "timeout")
+    DEF -= 1
+    FileMan.update_values(self)
+  if DEF<=after:
+    return
+
+func heal(amount):
+  HP+=amount
+
+func toughen(amount):
+  DEF+=amount
 
 func _unhandled_input(_event):
     var UP = Input.is_action_pressed("ui_up")
@@ -127,26 +187,56 @@ func _unhandled_input(_event):
 
 func _physics_process(_delta):
     animHndlr();
-
-    match state:
+    if snakeTail:
+      snakeState()
+    else:
+      match state:
         MOVE:
-            moveState();
+          moveState();
         ATKING:
-            atkState();
+          atkState();
         DODGE:
-            dodgeState();
+          dodgeState();
         THINK:
-            thinkState();
+          thinkState();
         STUN:
-            stunState();
-        DOWN:
-            downState();
-
+          stunState();
+        KO:
+          downState();
     if movedir!=Vector2.ZERO:
-        state = MOVE
+      state = MOVE
+
+func snakeState():
+  if !curvefollow:
+    return
+  followpoints = curvefollow.get_baked_points()
+  var target = followpoints[followindex]
+  if position.distance_to(target) < 14*follower:
+    followindex += 1
+    if followindex >= followpoints.size():
+      followindex = 0
+      curvefollow=null
+      movedir=Vector2.ZERO
+    target = followpoints[followindex]
+  movedir = target - position
+  var multiplier=position.distance_to(target)
+  motion = movedir.normalized() * multiplier * 6/follower
+  motion = move_and_slide(motion, Vector2(0,0))
+  if position.distance_to(target) > 15*follower:
+    moveSpeed = 130
+  else:
+    moveSpeed = 80
+
+
+#func add_snake_queue(where, what_dir):
+func add_snake_queue(curve):
+  curvefollow=curve
+#  pos_array.append(where)
+#  directions.append(what_dir)
+  pass
 
 func moveState(): #movement
-    var motion = movedir.normalized() * moveSpeed
+    motion = movedir.normalized() * moveSpeed
     motion = move_and_slide(motion, Vector2(0,0))
     if movedir!=Vector2.ZERO:
         var compare=Vector2.DOWN
@@ -154,20 +244,23 @@ func moveState(): #movement
         $Interact.rotation_degrees=rad2deg(difference)
 
 func animHndlr():
-    if state == THINK:
-            animPlayer.play("think")
-    elif movedir != Vector2.ZERO:
-        animTree.set("parameters/idle/blend_position", movedir)
-        animTree.set("parameters/run/blend_position", movedir)
-        animTree.set("parameters/walk/blend_position", movedir)
-        if state == MOVE:
-            animState.travel("walk")
-        if moveSpeed > 80:
-            animState.travel("run")
-            if movedir==Vector2.ZERO:
-                animState.travel("run_Pose")
-    else:
-        animState.travel("idle")
+  animTree.set("parameterns/run_Pose/blend_position", movedir)
+  animTree.set("parameters/idle/blend_position", movedir)
+  animTree.set("parameters/run/blend_position", movedir)
+  animTree.set("parameters/walk/blend_position", movedir)
+  if state == THINK:
+    animPlayer.play("think")
+  elif state == STUN:
+    print("player stunned")
+  elif movedir!=Vector2.ZERO:
+    animState.travel("walk")
+    if moveSpeed > 80:
+      animState.travel("run")
+      if movedir==Vector2.ZERO:
+        #TODO: match case for animation playing and play corresponding run pose direction
+        animState.travel("run_Pose")
+  else:
+    animState.travel("idle")
 
 func atkState(): #attacking
     canDo = false

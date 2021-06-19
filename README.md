@@ -54,7 +54,7 @@
 * put custom.py in the godot source code folder
 * [make sure you've got compiling dependencies installed](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_x11.html)
 * * Optional: [Cross compiling for Windows](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_windows.html#cross-compiling-for-windows-from-other-operating-systems)
-* * Optional: [Cross compiling for macOS](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_osx.html#cross-compiling-for-macos-from-linux)
+* * Optional: [Cross compiling for macOS](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_osx.html#cross-compiling-for-macos-from-linux) (not recommended)
 * either execute the following commands one-by-one or make a script:
 ```
 scons platform=windows target=release bits=64
@@ -98,6 +98,42 @@ rn export_templates_custom.zip export_templates_custom.tpz
 * Aléris (minor sprite work)
 * gotimo2 (separated player movement and animation)
 * Everyone from the [Godot Engine discord server](https://discord.gg/4JBkykG) that were willing to answer any question I'd ask!
+
+## How the game works
+A collection of all .md files in the game's source folders, that i reunited in this section, for convinience.
+### custom rich text effects:
+* [ghost]
+* [matrix]
+* [pulse freq=x height=x color=#ffffff]
+* [shake rate=x level=x]
+* [fade start=x length=x]
+* [rainbow freq=x]
+* [hide char=x] in this case, x is a letter
+* [tornado radius=x freq=x]
+
+### STAGE PREREQUISITES
+A stage must have:
+- StaticBody2D with TextureRect and Collision[Shape/Polygon]
+- CameraLimits instanced scene
+- PlayerSpawn instanced scene
+- Hidden Label node whose text is the name of the stage and that has been renamed to "Stage_Name"
+*ALL UNDER A RENAMED "Scene" Node which is actually just a basic Node (NOT NODE2D)*
+The Structure must, then, be as follows:
+```
+"Stage" Node
+|
+└──"Stage_Name" Label with Name as text (Not visible)
+|
+└──StaticBody2D
+|       |
+|       └──TextureRect
+|       |
+|       └──Collision[Shape/Polygon; Polygon preferred]
+|
+└──CameraLimits (tick editable children)
+|
+└──PlayerSpawn
+```
 
 ## Contact
 

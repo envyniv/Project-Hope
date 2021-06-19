@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/gui/title.png" type="Texture" id=1]
 [ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=2]
 [ext_resource path="res://materials/outlinesans.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/ScrollingTextureRect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gui/ScrollingTextureRect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/music/start.ogg" type="AudioStream" id=5]
 [ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=6]
 [ext_resource path="res://assets/gui/titleBG.png" type="Texture" id=7]
@@ -16,7 +16,6 @@ script = ExtResource( 6 )
 margin_top = -960.0
 margin_right = -360.0
 margin_bottom = -720.0
-rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 scroll_velocity = Vector2( 0, 6 )
 
@@ -37,6 +36,7 @@ anchor_bottom = 1.0
 margin_right = -360.0
 margin_bottom = -240.0
 rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,8 +56,7 @@ margin_right = 120.0
 margin_bottom = 22.0
 mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
-enabled_focus_mode = 0
-text = "New Game"
+text = "menuNew"
 flat = true
 
 [node name="load" type="Button" parent="Control/Menu"]
@@ -65,10 +64,8 @@ visible = false
 margin_top = 26.0
 margin_right = 120.0
 margin_bottom = 48.0
-focus_mode = 0
 custom_fonts/font = ExtResource( 2 )
-enabled_focus_mode = 0
-text = "Load"
+text = "menuLoad"
 flat = true
 
 [node name="settings" type="Button" parent="Control/Menu"]
@@ -76,7 +73,7 @@ margin_top = 26.0
 margin_right = 120.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 2 )
-text = "Settings"
+text = "menuSet"
 flat = true
 
 [node name="exit" type="Button" parent="Control/Menu"]
@@ -84,7 +81,7 @@ margin_top = 52.0
 margin_right = 120.0
 margin_bottom = 74.0
 custom_fonts/font = ExtResource( 2 )
-text = "End Game"
+text = "menuQuit"
 flat = true
 
 [node name="Copyright" type="Label" parent="."]

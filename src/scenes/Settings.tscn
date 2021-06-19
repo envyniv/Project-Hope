@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Settings.gd" type="Script" id=1]
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=2]
 [ext_resource path="res://materials/stages.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/ScrollingTextureRect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gui/ScrollingTextureRect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://materials/theme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/gui/close.png" type="Texture" id=6]
 [ext_resource path="res://assets/gui/reset.png" type="Texture" id=7]
@@ -41,31 +41,32 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
-margin_right = 67.0
-margin_bottom = 116.0
+margin_right = 80.0
+margin_bottom = 142.0
 alignment = 1
 
 [node name="VoiceBloop" type="CheckBox" parent="ColorRect/ScrollContainer/VBoxContainer"]
-margin_right = 67.0
+margin_right = 80.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 2 )
-text = "Voice"
+text = "setVoice"
 flat = true
 
 [node name="Music" type="HSlider" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 28.0
-margin_right = 67.0
+margin_right = 80.0
 margin_bottom = 44.0
 max_value = 1.0
 step = 0.01
 value = 1.0
 
 [node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/Music"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 120.0
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 128.0
 custom_fonts/font = ExtResource( 2 )
-text = "Music"
+text = "setBGM"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -83,18 +84,19 @@ __meta__ = {
 
 [node name="SFX" type="HSlider" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 48.0
-margin_right = 67.0
+margin_right = 80.0
 margin_bottom = 64.0
 max_value = 1.0
 step = 0.01
 value = 1.0
 
 [node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/SFX"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 120.0
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 128.0
 custom_fonts/font = ExtResource( 2 )
-text = "SFX"
+text = "setSFX"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,33 +114,33 @@ __meta__ = {
 
 [node name="Language" type="MenuButton" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 68.0
-margin_right = 67.0
+margin_right = 80.0
 margin_bottom = 90.0
 custom_fonts/font = ExtResource( 2 )
-text = "Language"
-
-[node name="Controls" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
-visible = false
-margin_top = 94.0
-margin_right = 67.0
-margin_bottom = 116.0
-hint_tooltip = "Bind controls"
-custom_fonts/font = ExtResource( 2 )
-text = "Controls"
+text = "setLang"
 
 [node name="Modman" type="MenuButton" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 94.0
-margin_right = 67.0
+margin_right = 80.0
 margin_bottom = 116.0
-text = "Mods"
+text = "setMod"
+
+[node name="Controls" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 80.0
+margin_bottom = 142.0
+hint_tooltip = "setTooltipCntrls"
+custom_fonts/font = ExtResource( 2 )
+text = "setCntrl"
+flat = true
 
 [node name="Label" type="Label" parent="ColorRect"]
-margin_left = 21.888
-margin_top = 13.4695
-margin_right = 72.888
-margin_bottom = 27.4695
+margin_left = 22.0
+margin_top = 13.0
+margin_right = 78.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 3 )
-text = "Settings"
+text = "menuSet"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,8 +149,21 @@ __meta__ = {
 margin_left = 270.0
 margin_right = 292.0
 margin_bottom = 22.0
-hint_tooltip = "Back to main menu."
+hint_tooltip = "setTooltipMenu"
 texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TipLabel" type="Label" parent="ColorRect/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 139.0
+margin_top = 102.0
+margin_right = 209.0
+margin_bottom = 180.0
+text = "setTip"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -158,7 +173,7 @@ margin_left = 270.0
 margin_top = 170.0
 margin_right = 292.0
 margin_bottom = 192.0
-hint_tooltip = "If pressed, will reset your save data."
+hint_tooltip = "setTooltipReset"
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false

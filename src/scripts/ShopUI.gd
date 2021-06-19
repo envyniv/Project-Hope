@@ -6,26 +6,32 @@ onready var Money = $MoneyCount
 onready var ItemDesc = $Description
 onready var InvPanel = $PanelInv
 onready var HaveList = $PanelInv/ItemList
+onready var selllabel = $PanelInv/Sell
+onready var buylabel = $PanelShop/Buy
 var playermoney = FileMan.money
 var playerlevel = FileMan.level
-var playerinv = FileMan.inv
+var playerinv = FileMan.data.inv
 var existingitems = ItemDatabase.items
 var select
 var desc
 
 func _ready():
-    SceneManager.connect("vending", self, "show")
+  buylabel.text=FileMan.returnTranslation(buylabel.text)
+  selllabel.text=FileMan.returnTranslation(selllabel.text)
+  # warning-ignore:return_value_discarded
+  SceneManager.connect("vending", self, "show")
     # get all items and add them if the player's level is high enough
     # and if the item in question is not a key item
-    for i in existingitems:
-        if ItemDatabase.get_item(i.name).RequiredLevel <= playerlevel:
-            if ItemDatabase.get_item(i.name).type != "KEY":
-                AvailableList.add_item(i.name, guess_icon(i.type), true)
-    AvailableList.select(0)
-    getPlayerInv()
-    ItemDesc.text=""
+  for i in existingitems:
+    if ItemDatabase.get_item(i.name).RequiredLevel <= playerlevel:
+      if ItemDatabase.get_item(i.name).type != "KEY":
+        AvailableList.add_item(i.name, guess_icon(i.type), true)
+  AvailableList.select(0)
+  getPlayerInv()
+  ItemDesc.text=""
+  update_money()
 
-func _process(_delta):
+func update_money():
     Money.text = str(playermoney)+" G"
 
 #when an item in the left panel is selected, show its description
@@ -60,6 +66,7 @@ func _on_BuyList_item_activated(index):
         $denied.play()
 
     getPlayerInv()
+    update_money()
 
 # if an item in the player's inventory gets activated, remove item and give money
 func _on_ItemList_item_activated(index):

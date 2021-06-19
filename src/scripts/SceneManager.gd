@@ -10,11 +10,13 @@ signal fighting
 signal fighting_over
 signal vending
 signal left_vending
-
+signal ready_stage
+signal pDisable
+signal pEnable
 
 const select = {
     "title"    : "res://scenes/TitleScreen.tscn",
-    "game"     : "res://scenes/Viewports.tscn",
+    "game"     : "res://scenes/gui/Viewports.tscn",
     "settings" : "res://scenes/Settings.tscn",
     "controls" : "res://scenes/Controls.tscn"
 }
@@ -46,6 +48,7 @@ func change_scene(chosen, delay=0):
         print(select[chosen], "not found")
     transition_start(delay)
     yield(animation_player, "animation_finished")
+  # warning-ignore:return_value_discarded
     get_tree().change_scene(path)
     transition_end()
     yield(animation_player, "animation_finished")
@@ -80,3 +83,12 @@ func battle_started():
 
 func battle_over():
   emit_signal("fighting_over")
+
+func stage_ready(name):
+  emit_signal("ready_stage", name)
+
+func pDisableInput():
+  emit_signal("pDisable")
+
+func pEnableInput():
+  emit_signal("pEnable")

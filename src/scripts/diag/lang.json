@@ -1,21 +1,69 @@
 {
+  "English" : {
+    "dir":"en",
+    "menuNew":"New Game",
+    "menuLoad":"Load",
+    "menuSet":"Settings",
+    "menuQuit":"End Game",
 
+    "setVoice":"Voice",
+    "setBGM":"Music",
+    "setSFX":"SFX",
+    "setLang":"Language",
+    "setMod":"Mods",
+    "setCntrl":"Controls",
+    "setTip":"Hover over buttons to read a description of their effects.",
+    "setTooltipCntrls":"Bind controls",
+    "setTooltipReset":"Reset SAVE DATA and SETTINGS",
+    "setTooltipMenu":"Back to menu",
 
-"English" : {
-  "dir":"en",
-},
+    "gameBuy":"Buy",
+    "gameSell":"Sell",
+    "gameItems":"Items",
+    "gameEquip":"Equipment",
+    "gameSkill":"Skills",
+    "gameWhose":"Whose?",
+    "gameOnWho":"Use On Who?",
+    "gameHP":"HP",
+    "gameDEF":"DEF",
+    "gameMANA":"MANA",
+  },
 
-"Italian" : {
-  "dir":"it",
-},
+  "Italiano" : {
+    "dir":"it",
+    "menuNew":"Nuova Partita",
+    "menuLoad":"Carica",
+    "menuSet":"Impostazioni",
+    "menuQuit":"Termina Partita",
 
-"French" : {
-  "dir":"fr",
-},
+    "setVoice":"Voce",
+    "setBGM":"Musica",
+    "setSFX":"Effetti Sonori",
+    "setLang":"Lingua",
+    "setMod":"Mod",
+    "setCntrl":"Controlli",
+    "setTip":"Mantieni il cursore su i pulsanti per visualizzare una descrizione dei loro effetti.",
+    "setTooltipCntrls":"Associa i controlli",
+    "setTooltipReset":"Resetta DATI DI SALVATAGGIO e IMPOSTAZIONI",
+    "setTooltipMenu":"Ritorna nel menù",
 
-"DevOutline" : {
-  "dir":"devc"
-},
+    "gameBuy":"Compra",
+    "gameSell":"Vendi",
+    "gameItems":"Items",
+    "gameEquip":"Equipaggiamento",
+    "gameSkill":"Abilità",
+    "gameWhose":"Di Chi?",
+    "gameOnWho":"Da Utilizzare Su?",
+    "gameHP":"PV",
+    "gameDEF":"DIF",
+    "gameMANA":"MANA",
+  },
 
+  "François" : {
+    "dir":"fr",
+  },
 
+  "DevOutline" : {
+    "dir":"devc"
+  },
 }
