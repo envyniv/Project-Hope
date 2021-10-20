@@ -37,6 +37,9 @@ margin_right = 74.0
 margin_bottom = 13.0619
 rect_scale = Vector2( 0.5, 0.5 )
 text = "Kevin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="XP" type="Label" parent="."]
 margin_left = 65.0

@@ -19,6 +19,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+who = "Kevin"
 
 [node name="hp-cont" type="Sprite" parent="."]
 position = Vector2( -21, -14 )
@@ -29,13 +30,26 @@ hframes = 4
 texture = ExtResource( 4 )
 hframes = 4
 
+[node name="Exponent" type="Label" parent="Character"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -34.6759
+margin_top = -27.2299
+margin_right = -93.6759
+margin_bottom = -81.2299
+custom_fonts/font = ExtResource( 13 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HPBar" type="TextureProgress" parent="Character"]
 margin_left = -10.6958
 margin_top = -5.0
 margin_right = 29.3042
 margin_bottom = 3.0
 max_value = 999.0
-value = 999.0
+value = 456.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 5 )
 tint_progress = Color( 0.572549, 0.956863, 0.0431373, 1 )

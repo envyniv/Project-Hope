@@ -7,4 +7,5 @@ script = ExtResource( 1 )
 name = ""
 Description = ""
 RequiredMana = 0
+usage = 1
 type = ""

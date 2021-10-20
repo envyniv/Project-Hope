@@ -1,15 +1,17 @@
 extends Resource
 # THE DATA CONTAINED HERE REPLACES FileMan.default_data
-# FIXME: MAKE CONTROLS REBOUNDABLE BUT ONLY FOR KEYBOARD
 class_name Save
 #sys
 export(Array) var mods
 
 #game
-export(int, 0, 13) var hm
+export(String) var name
+export(int, 0, 13) var hm #TODO? supposed to be a "secrets" value, kinda like WTF or FUN; doubt i'll use it, but if i do, here it is.
 export(Array) var party = ["Kevin"]
 export(Array) var inv
 export(String) var location = "kevinsbedroom"
+
+export(PoolByteArray) var preview
 
 export(Dictionary) var kevin = { #stats show base, not bonuses
   "LVL":1,
@@ -81,7 +83,7 @@ export(Dictionary) var charlie = {
 }
 
 #settings
-export(float) var sfxvol = 1.000
-export(float) var bgmvol = 1.000
-export(bool) var voice = true
-export(String) var lang = "en"
+#export(float) var sfxvol = 1.000
+#export(float) var bgmvol = 1.000
+#export(bool) var voice = true
+#export(String) var lang = "en"

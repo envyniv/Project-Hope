@@ -8,7 +8,7 @@ onready var hpbella = $HPBella
 func _ready():
   update()
 
-#TODO: use FileMan.data as a resource, tempdata is obsolete, as now there are predefined saves
+#DONE: use FileMan.data as a resource, tempdata is obsolete, as now there are predefined saves
 #      as explained in SaveFile.gd
 #      also use signals to trigger this, don't just slam it into _process
 func update():

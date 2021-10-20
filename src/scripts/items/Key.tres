@@ -8,9 +8,6 @@ name = "Key"
 Description = "It's a key. It tastes metal-ly."
 RequiredLevel = 0
 Price = 50
-Stackable = false
-maxStack = 1
 type = "KEY"
 affect = {
-
 }

@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Ermes' Winged Sandals"
-Description = "These sandals are the key to immense speed."
+name = "Ermes' Sandals"
+Description = "itemdescHSandals"
 RequiredLevel = 0
 Price = 0
 type = "ACCESSORY"

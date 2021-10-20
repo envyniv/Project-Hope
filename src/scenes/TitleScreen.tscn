@@ -47,13 +47,14 @@ margin_top = 120.0
 margin_right = 240.0
 margin_bottom = 212.0
 theme = ExtResource( 8 )
+custom_constants/separation = 9
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="new" type="Button" parent="Control/Menu"]
 margin_right = 120.0
-margin_bottom = 22.0
+margin_bottom = 16.0
 mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
 text = "menuNew"
@@ -61,25 +62,25 @@ flat = true
 
 [node name="load" type="Button" parent="Control/Menu"]
 visible = false
-margin_top = 26.0
+margin_top = 25.0
 margin_right = 120.0
-margin_bottom = 48.0
+margin_bottom = 41.0
 custom_fonts/font = ExtResource( 2 )
 text = "menuLoad"
 flat = true
 
 [node name="settings" type="Button" parent="Control/Menu"]
-margin_top = 26.0
+margin_top = 25.0
 margin_right = 120.0
-margin_bottom = 48.0
+margin_bottom = 41.0
 custom_fonts/font = ExtResource( 2 )
 text = "menuSet"
 flat = true
 
 [node name="exit" type="Button" parent="Control/Menu"]
-margin_top = 52.0
+margin_top = 50.0
 margin_right = 120.0
-margin_bottom = 74.0
+margin_bottom = 66.0
 custom_fonts/font = ExtResource( 2 )
 text = "menuQuit"
 flat = true

@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/stages/meteora.png" type="Texture" id=1]
-[ext_resource path="res://scenes/organs/Party.tscn" type="PackedScene" id=2]
+[ext_resource path="res://materials/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/structures/CameraLimits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/structures/Photobooth.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/Vending.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/structures/ScnChgTrigger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/organs/Quinton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/organs/dummy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/organs/Kevin.tscn" type="PackedScene" id=9]
 
@@ -15,19 +13,13 @@ extents = Vector2( 52.0581, 2.43283 )
 
 [node name="Stage" type="Node"]
 
-[node name="Mountain" type="StaticBody2D" parent="."]
-
-[node name="Stage" type="Sprite" parent="Mountain"]
-position = Vector2( 46.6214, -634.693 )
-z_index = -2
-texture = ExtResource( 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mountain"]
-polygon = PoolVector2Array( 117.671, 104.334, 214.764, 105.176, 217.289, 18.466, -158.479, -343.743, 115.104, 34.1678 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mountain"]
-build_mode = 1
-polygon = PoolVector2Array( -46.5951, 106.128, 16.1399, 106.88, 14.7602, 28.469, -384.67, -500.905, -385.218, -659.445, 20.295, -378, -340.705, -765, -245.705, -899, 363.295, -422, -354.705, -986, -178.502, -1145.5, 142.885, -930.495, -102.088, -1128.27, 6.34174, -1248.18, -17.2034, -1269.21, 55.9547, -1339, 216.566, -1237.25, 136.681, -1166.62, 109.772, -1191, 50.0684, -1131.3, 390.631, -923.598, 274.042, -766.563, -185.088, -1013.79, 482.584, -463.841, 424.39, -239.513, -203.401, -766.917, 307.522, -312.93, 181.664, -166.096, -299.292, -521.195, 315.267, 9.1881, 316.601, 152.016, 214.875, 124.813, 116.587, 124.106, 117.848, 241.637, 15.5354, 242.004, 14.8786, 136.522, -47.1375, 136.522, -70.6826, 137.573, -118.824, 131.687, -117.563, 101.625, -71.3133, 102.466 )
+[node name="Top" type="TileMap" parent="."]
+scale = Vector2( 1.15, 1.15 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+show_collision = true
+centered_textures = true
+format = 1
 
 [node name="CameraLimits" parent="." instance=ExtResource( 3 )]
 
@@ -40,31 +32,24 @@ position = Vector2( 683.148, 241.88 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Dummy" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -273.966, -423.28 )
+position = Vector2( 78.8541, 157.586 )
 
-[node name="Party" parent="YSort" instance=ExtResource( 2 )]
-
-[node name="Kevin" parent="YSort/Party" instance=ExtResource( 9 )]
-position = Vector2( 67.5557, 124.248 )
-
-[node name="Quinton" parent="YSort/Party" instance=ExtResource( 7 )]
-position = Vector2( 67.5931, 145.967 )
-snakeTail = true
-follower = 1
+[node name="Kevin" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 31.0224, 196.276 )
 
 [node name="Booth" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -90.9956, 78.4756 )
+position = Vector2( -44.2313, 140.17 )
 map = "meteora"
 
 [node name="Vending" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 94.98, 78.865 )
+position = Vector2( 8.34872, 140.235 )
 
 [node name="Warp" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 170.867, 301.538 )
 stage = "map"
 
 [node name="left" type="CollisionShape2D" parent="YSort/Warp"]
-position = Vector2( -103.676, -59.0672 )
+position = Vector2( -138.163, -69.1754 )
 shape = SubResource( 1 )
 
 [editable path="CameraLimits"]

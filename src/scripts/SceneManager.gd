@@ -1,5 +1,13 @@
 extends Node
 
+var head
+var prev_coord = Vector2.ZERO
+var prev_dir
+signal player_chdir
+var possible = {
+  "Kevin" : load("res://scenes/organs/Kevin.tscn"),
+  "Quinton" : load("res://scenes/organs/Quinton.tscn"),
+}
 signal scene_changed()
 onready var animation_player=$CanvasLayer/AnimationPlayer
 onready var color_rect=$CanvasLayer/Control/ColorRect
@@ -13,12 +21,15 @@ signal left_vending
 signal ready_stage
 signal pDisable
 signal pEnable
+signal plsChangeLeveliBegYou
+signal plsStartDialogue
 
 const select = {
     "title"    : "res://scenes/TitleScreen.tscn",
     "game"     : "res://scenes/gui/Viewports.tscn",
     "settings" : "res://scenes/Settings.tscn",
-    "controls" : "res://scenes/Controls.tscn"
+    "controls" : "res://scenes/Controls.tscn",
+    "filemenu" : "res://scenes/gui/SaveMenu.tscn"
 }
 
 const stage={
@@ -54,6 +65,11 @@ func change_scene(chosen, delay=0):
     yield(animation_player, "animation_finished")
     pass
 
+func change_level_relay(levelrelay):
+  transition_start(0)
+  emit_signal("plsChangeLeveliBegYou", stage[levelrelay])
+  transition_end()
+
 func transition_start(delay=0):
     yield(get_tree().create_timer(delay),"timeout")
     animation_player.play("fade")
@@ -65,6 +81,7 @@ func transition_end():
 
 func tactical_lock_on(target):
   emit_signal("target_locked", target)
+  head = target
 
 func vending_up():
   emit_signal("vending")
@@ -77,6 +94,9 @@ func convo_on():
 
 func convo_off():
   emit_signal("convo_n")
+
+func start_convo(diag):
+  emit_signal("plsStartDialogue", diag)
 
 func battle_started():
   emit_signal("fighting")
@@ -92,3 +112,14 @@ func pDisableInput():
 
 func pEnableInput():
   emit_signal("pEnable")
+
+func _physics_process(_delta):
+  if head:
+    var dir_changed = false
+    if prev_coord != head.position:
+      prev_coord = head.position
+      dir_changed=true
+    if dir_changed:
+      var curve = Curve2D.new()
+      curve.add_point(head.position)
+      emit_signal("player_chdir", curve)

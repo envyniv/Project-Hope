@@ -1,14 +1,19 @@
 extends Node
 
 var save_class=load("res://scripts/SaveFile.gd")
+var sets_class=load("res://scripts/SettingsFile.gd")
 var path="res://save.tres"
-var langfile   = "res://scripts/diag/lang.json"
+var path2="res://save2.tres"
+var path3="res://save3.tres"
+var setpath="res://settings.tres"
 
 var money=100 #max 999.999
 var level=1 #max 99
 var switch_stage={false:null}
 signal upd_cur_stats
+var slotselected
 
+var settings = sets_class.new()
 var data = save_class.new()
 
 # var default_data = {
@@ -35,7 +40,7 @@ func _load_paks():
   if f.file_exists("res://%s.zip" % executableName):
   # warning-ignore:return_value_discarded
     ProjectSettings.load_resource_pack("res://%s.zip" % executableName)
-  else:
+  elif !OS.has_feature("editor"):
     OS.alert("Make sure there's a copy of 'Project-Hope.zip' in the game folder\nand that the executable and it share the same filename", "Missing Game Data!")
 
 #load mods, don't need to check if valid or not, godot won't load if not valid
@@ -55,44 +60,38 @@ func _load_paks():
    print("no mods found.")
 
 func _init():
-  #if !save_check("settings"):
-  #    data["settings"]=default_data["settings"].duplicate(true)
-  #else:
-  #    var file=File.new();
-  #    file.open_encrypted_with_pass(path, File.READ, "xd.png")
-  #    var text=file.get_as_text()
-  #    data["settings"]=parse_json(text)["settings"]
-  #    file.close()
   _load_paks()
   load_settings()
 
 func load_game():
-  #if file_check(path):
-  #var gameload = load(path)
-  #data=gameload.duplicate()
-  data = load(path)
-  #var file=File.new();
-  #file.open_encrypted_with_pass(path, File.READ, "xd.png")
-  #var text=file.get_as_text()
-  #data=parse_json(text)
-  #file.close()
+  data = load(slotselected)
 
 func load_settings():
-  var settings = load(path)
-  data.lang = settings.lang
-  data.voice = settings.voice
-  data.bgmvol = settings.bgmvol
-  data.sfxvol = settings.sfxvol
+  if ResourceLoader.exists(setpath):
+    settings = load(setpath)
+    data.preview=settings.preview
+    data.lang = settings.lang
+    data.voice = settings.voice
+    data.bgmvol = settings.bgmvol
+    data.sfxvol = settings.sfxvol
+    TranslationServer.set_locale(settings.lang)
 
 func save_game():
   #warning-ignore:return_value_discarded
-  ResourceSaver.save(path, data)
+  ResourceSaver.save(slotselected, data)
+
+func dump2sets():
+  ResourceSaver.save(setpath, settings)
 
 func reset_data():
   data=save_class.new()
 
 func save_check():
   if ResourceLoader.exists(path):
+    return true
+  elif ResourceLoader.exists(path2):
+    return true
+  elif ResourceLoader.exists(path3):
     return true
   else:
     return false
@@ -129,10 +128,6 @@ func update_values(whose):
   data.get(who)["MANA"]=whose.MANA
   emit_signal("upd_cur_stats")
 
-func returnTranslation(string):
-  var langdata = return_file_as_text(FileMan.langfile)
-  var json = JSON.parse(langdata).result
-  for i in json:
-    if json[i]["dir"] == data.lang:
-      return json[i][string]
-
+func return_saves_details():
+  var details : Dictionary
+  return details

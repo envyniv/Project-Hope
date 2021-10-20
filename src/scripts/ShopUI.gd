@@ -16,10 +16,10 @@ var select
 var desc
 
 func _ready():
-  buylabel.text=FileMan.returnTranslation(buylabel.text)
-  selllabel.text=FileMan.returnTranslation(selllabel.text)
   # warning-ignore:return_value_discarded
   SceneManager.connect("vending", self, "show")
+  SceneManager.connect("vending", self, "enable_input")
+  SceneManager.connect("left_vending", self, "disable_input")
     # get all items and add them if the player's level is high enough
     # and if the item in question is not a key item
   for i in existingitems:
@@ -30,6 +30,12 @@ func _ready():
   getPlayerInv()
   ItemDesc.text=""
   update_money()
+
+func enable_input():
+  set_process_input(true)
+
+func disable_input():
+  set_process_input(false)
 
 func update_money():
     Money.text = str(playermoney)+" G"

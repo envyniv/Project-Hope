@@ -1,5 +1,5 @@
 extends Control
-
+tool
 #get progress bars
 onready var def=$Character/DEFBar
 onready var hp=$Character/HPBar

@@ -14,7 +14,7 @@ func _ready():
   #SceneManager.connect("fighting", self, "show_battle_gui")
   #SceneManager.connect("fighting_over", self, "hide_battle_gui")
   #cam.connect("set_limits", self, set_cam_limit())
-  diagbox.diag_start("test")
+  SceneManager.connect("plsChangeLeveliBegYou", self, "change_level")
   pass
 
 #func show_battle_gui():
@@ -24,8 +24,13 @@ func _ready():
 #  battlelayout.hide()
 
 func _input(_event):
-    var MENU=Input.is_action_just_pressed("ui_end")
-    if MENU:
-      set_process_input(false)
-      $Game/Control.show()
-      SceneManager.pDisableInput()
+  var MENU=Input.is_action_just_pressed("ui_end")
+  if MENU:
+    set_process_input(false)
+    $Game/Control.show()
+    SceneManager.pDisableInput()
+
+func change_level(level):
+  var current_stage = view.get_child(1)
+  current_stage.queue_free()
+  view.add_child(load(level).instance())

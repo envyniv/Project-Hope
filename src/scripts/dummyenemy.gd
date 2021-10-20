@@ -19,6 +19,6 @@ func can_interact(interactParent : Node) -> bool:
   return interactParent is Player
 
 func _interact(_interactParent : Node) -> void:
-  #SaveLoad.switch_stage={true:"battle"}
+  SceneManager.change_level_relay("battle")
   #SaveLoad.inBattle={true:"dummy"}
   SceneManager.battle_started()

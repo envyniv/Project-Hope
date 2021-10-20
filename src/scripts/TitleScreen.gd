@@ -14,23 +14,21 @@ func _ready():
   lload.connect("pressed", self, "_load_pressed")
   set.connect("pressed", self, "_set_pressed")
   exit.connect("pressed", self, "_exit_pressed")
-  for i in $Control/Menu.get_child_count():
-    $Control/Menu.get_child(i).text = FileMan.returnTranslation($Control/Menu.get_child(i).text)
   if FileMan.save_check():
-    lload.show()
+  #  lload.show()
+    new.text="menuLoad"
   $Copyright/Version.text="Version %s" % str(version)
-  player.volume_db=linear2db(FileMan.data.bgmvol)
+  player.volume_db=linear2db(FileMan.settings.bgmvol)
   player.play()
 
 func _new_pressed():
-    SceneManager.change_scene("game",0)
+    SceneManager.change_scene("filemenu",0)
   #if !FileMan.data.has("location"):
     #change_stage("meteora")
 
 func _load_pressed():
     FileMan.load_game()
-    SceneManager.change_scene("game")
-    #parsing data should be done in viewports
+    SceneManager.change_scene("meteora")
     pass
 
 func _set_pressed():

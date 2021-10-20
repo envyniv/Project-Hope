@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Precious Something"
-Description = "It is said this artifact can influence time and space themselves."
+Description = "itemdescThing"
 RequiredLevel = 0
 Price = 0
 type = "KEY"
