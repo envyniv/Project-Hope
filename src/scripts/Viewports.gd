@@ -15,6 +15,7 @@ func _ready():
   #SceneManager.connect("fighting_over", self, "hide_battle_gui")
   #cam.connect("set_limits", self, set_cam_limit())
   SceneManager.connect("plsChangeLeveliBegYou", self, "change_level")
+  FileMan.curtime=OS.get_unix_time()
   pass
 
 #func show_battle_gui():

@@ -21,5 +21,8 @@ func _interact(_interactParent : Node) -> void: #TODO: finish this, details foll
   $Booth/Curtain/AnimationPlayer.play("photo")
   used = true
   collision_layer = collision_layer ^ 4
+  FileMan.data.position=SceneManager.head.position
+#  if SceneManager.start_convo("save-quit"):
+  FileMan.data.playtime+=(OS.get_unix_time()-FileMan.curtime)
 
   FileMan.save_game()

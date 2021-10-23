@@ -16,8 +16,8 @@ func _ready():
   set_process_input(false)
   message.set_text("")
   nametag.set_text("")
-  if FileMan.data.sfxvol != null:
-    speak.volume_db = linear2db(FileMan.data.sfxvol)
+  if FileMan.settings.sfxvol != null:
+    speak.volume_db = linear2db(FileMan.settings.sfxvol)
   SceneManager.connect("plsStartDialogue", self, "diag_start")
 
 func diag_start(diagname):

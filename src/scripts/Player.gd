@@ -1,8 +1,8 @@
+tool
 extends KinematicBody2D
 class_name Player
 enum look { UP, RIGHT, DOWN, LEFT }
 export (look) var facing
-tool
 
 var movedir:= Vector2.ZERO
 var moveSpeed:int = 65 #TODO: resolve having to manually type 65 moveSpeed in all movement altering functions' else statements
@@ -213,7 +213,7 @@ func _physics_process(_delta):
     state = MOVE
 
 func snakeState():
-  if ! curvefollow:
+  if !curvefollow:
     return
   followpoints = curvefollow.get_baked_points()
   var target = followpoints[followindex]
@@ -249,7 +249,6 @@ func moveState():  #movement
 func animHndlr():
   animTree.set("parameters/run_Pose/blend_position", movedir)
   animTree.set("parameters/idle/blend_position", movedir)
-  animTree.set("parameters/run/blend_position", movedir)
   animTree.set("parameters/walk/blend_position", movedir)
   if state == THINK:
     animPlayer.play("think")
@@ -257,12 +256,10 @@ func animHndlr():
     print("player stunned")
   elif movedir != Vector2.ZERO:
     animState.travel("walk")
+  else:
+    animState.travel("idle")
     if moveSpeed > 65:
-      animState.travel("run")
-    else:
-      animState.travel("idle")
-      if moveSpeed > 65:
-        animState.travel("run_Pose")
+      animState.travel("run_Pose")
 
 func atkState():  #attacking
   canDo = false

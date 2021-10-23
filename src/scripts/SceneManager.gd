@@ -29,7 +29,8 @@ const select = {
     "game"     : "res://scenes/gui/Viewports.tscn",
     "settings" : "res://scenes/Settings.tscn",
     "controls" : "res://scenes/Controls.tscn",
-    "filemenu" : "res://scenes/gui/SaveMenu.tscn"
+    "filemenu" : "res://scenes/gui/SaveMenu.tscn",
+    "savewiz"  : "res://scenes/gui/SaveWizard.tscn",
 }
 
 const stage={

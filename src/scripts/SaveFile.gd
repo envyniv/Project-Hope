@@ -8,10 +8,13 @@ export(Array) var mods
 export(String) var name
 export(int, 0, 13) var hm #TODO? supposed to be a "secrets" value, kinda like WTF or FUN; doubt i'll use it, but if i do, here it is.
 export(Array) var party = ["Kevin"]
-export(Array) var inv
+export(Array) var inv = []
 export(String) var location = "kevinsbedroom"
+export(int) var playtime = 0
 
 export(PoolByteArray) var preview
+
+export(Vector2) var position
 
 export(Dictionary) var kevin = { #stats show base, not bonuses
   "LVL":1,

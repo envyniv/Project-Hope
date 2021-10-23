@@ -33,31 +33,35 @@ func _ready():
 
 func enable_input():
   set_process_input(true)
+  return
 
 func disable_input():
   set_process_input(false)
+  return
 
 func update_money():
-    Money.text = str(playermoney)+" G"
+  Money.text = str(playermoney)+" G"
+  return
 
 #when an item in the left panel is selected, show its description
 func _on_BuyList_item_selected(index):
-    setDesc(index)
+  setDesc(index)
+  return
 
 # This funcion simply returns the right icon. Nothing to see here
 func guess_icon(itemtype):
-    var icons={
-        "generic"    : load("res://assets/item-icon/item-icon.png"),
-        "status"     : load("res://assets/item-icon/item-icon2.png"),
-        "helm"       : load("res://assets/item-icon/item-icon3.png"),
-        "equip"      : load("res://assets/item-icon/item-icon4.png"),
-        "consumable" : load("res://assets/item-icon/item-icon5.png"),
-        "skill"      : load("res://assets/item-icon/item-icon6.png"),
-        "key"        : load("res://assets/item-icon/item-icon7.png"),
-        "accessory"  : load("res://assets/item-icon/item-icon8.png")
-    }
-    if itemtype.to_lower() in icons:
-        return icons[itemtype.to_lower()]
+  var icons={
+    "generic"    : load("res://assets/item-icon/item-icon.png"),
+    "status"     : load("res://assets/item-icon/item-icon2.png"),
+    "helm"       : load("res://assets/item-icon/item-icon3.png"),
+    "equip"      : load("res://assets/item-icon/item-icon4.png"),
+    "consumable" : load("res://assets/item-icon/item-icon5.png"),
+    "skill"      : load("res://assets/item-icon/item-icon6.png"),
+    "key"        : load("res://assets/item-icon/item-icon7.png"),
+    "accessory"  : load("res://assets/item-icon/item-icon8.png")
+  }
+  if itemtype.to_lower() in icons:
+    return icons[itemtype.to_lower()]
 
 # if an item is activated, subtract value from money and add item
 func _on_BuyList_item_activated(index):

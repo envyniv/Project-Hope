@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://assets/characters/kevin-clark.png" type="Texture" id=2]
 [ext_resource path="res://scenes/organs/Interact.tscn" type="PackedScene" id=3]
@@ -997,6 +997,24 @@ animation = "walk_up"
 [sub_resource type="AnimationNodeAnimation" id=64]
 animation = "walk_down"
 
+[sub_resource type="AnimationNodeAnimation" id=75]
+animation = "run_diagLeft.Down"
+
+[sub_resource type="AnimationNodeAnimation" id=76]
+animation = "run_linearDown"
+
+[sub_resource type="AnimationNodeAnimation" id=77]
+animation = "run_linearUp"
+
+[sub_resource type="AnimationNodeAnimation" id=78]
+animation = "run_diagLeft.Up"
+
+[sub_resource type="AnimationNodeAnimation" id=79]
+animation = "run_linearLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=80]
+animation = "run_diagLeft.Down"
+
 [sub_resource type="AnimationNodeAnimation" id=65]
 animation = "walk_right"
 
@@ -1015,6 +1033,12 @@ animation = "walk_diagRight.Up"
 [sub_resource type="AnimationNodeAnimation" id=70]
 animation = "walk_diagRight.Down"
 
+[sub_resource type="AnimationNodeAnimation" id=81]
+animation = "run_linearRight"
+
+[sub_resource type="AnimationNodeAnimation" id=82]
+animation = "idle_diagRight.Up"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id=71]
 blend_point_0/node = SubResource( 63 )
 blend_point_0/pos = Vector2( 0, -0.4 )
@@ -1032,15 +1056,31 @@ blend_point_6/node = SubResource( 69 )
 blend_point_6/pos = Vector2( 0.3, -0.3 )
 blend_point_7/node = SubResource( 70 )
 blend_point_7/pos = Vector2( 0.3, 0.3 )
+blend_point_8/node = SubResource( 81 )
+blend_point_8/pos = Vector2( 1, 0 )
+blend_point_9/node = SubResource( 82 )
+blend_point_9/pos = Vector2( 0.8, -0.8 )
+blend_point_10/node = SubResource( 75 )
+blend_point_10/pos = Vector2( 0.8, 0.8 )
+blend_point_11/node = SubResource( 76 )
+blend_point_11/pos = Vector2( 0, 1 )
+blend_point_12/node = SubResource( 77 )
+blend_point_12/pos = Vector2( 0, -1 )
+blend_point_13/node = SubResource( 78 )
+blend_point_13/pos = Vector2( -0.8, -0.8 )
+blend_point_14/node = SubResource( 79 )
+blend_point_14/pos = Vector2( -1, 0 )
+blend_point_15/node = SubResource( 80 )
+blend_point_15/pos = Vector2( -0.8, 0.8 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=72]
 states/idle/node = SubResource( 48 )
 states/idle/position = Vector2( 304.12, 77 )
 states/run/node = SubResource( 57 )
-states/run/position = Vector2( 436.12, 77 )
+states/run/position = Vector2( 455.12, 161 )
 states/run_Pose/node = SubResource( 62 )
-states/run_Pose/position = Vector2( 436.12, 161 )
+states/run_Pose/position = Vector2( 469.12, 77 )
 states/walk/node = SubResource( 71 )
 states/walk/position = Vector2( 304.12, 161 )
 start_node = "idle"
@@ -1147,10 +1187,10 @@ parameters/walk/blend_position = Vector2( 0, 0 )
 [node name="DamageBox" type="Area2D" parent="."]
 visible = false
 position = Vector2( -1.33484, 9.0192 )
-monitoring = false
-monitorable = false
 collision_layer = 8
 collision_mask = 0
+monitoring = false
+monitorable = false
 __meta__ = {
 "_edit_group_": true
 }

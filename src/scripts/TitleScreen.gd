@@ -1,7 +1,7 @@
 extends Node
 
 onready var new = $Control/Menu/new
-onready var lload = $Control/Menu/load
+#onready var lload = $Control/Menu/load
 onready var set = $Control/Menu/settings
 onready var exit = $Control/Menu/exit
 onready var player = $AudioStreamPlayer
@@ -11,7 +11,7 @@ func _ready():
   new.set_focus_mode(Control.FOCUS_ALL)
   new.grab_focus()
   new.connect("pressed", self, "_new_pressed")
-  lload.connect("pressed", self, "_load_pressed")
+  #lload.connect("pressed", self, "_load_pressed")
   set.connect("pressed", self, "_set_pressed")
   exit.connect("pressed", self, "_exit_pressed")
   if FileMan.save_check():
@@ -26,10 +26,10 @@ func _new_pressed():
   #if !FileMan.data.has("location"):
     #change_stage("meteora")
 
-func _load_pressed():
-    FileMan.load_game()
-    SceneManager.change_scene("meteora")
-    pass
+#func _load_pressed():
+#    FileMan.load_game()
+#    SceneManager.change_scene("meteora")
+#    pass
 
 func _set_pressed():
     SceneManager.change_scene("settings")

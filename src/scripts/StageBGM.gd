@@ -23,7 +23,7 @@ var BGM = {
     "meteora" :  [load(musfolder % "save"),      "Time To Save"],
 }
 func _ready():
-  player.volume_db=linear2db(FileMan.data.bgmvol)
+  player.volume_db=linear2db(FileMan.settings.bgmvol)
 # warning-ignore:return_value_discarded
   $Timer.connect("timeout", self, "stop_anim")
 # warning-ignore:return_value_discarded
