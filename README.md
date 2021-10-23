@@ -65,7 +65,7 @@ mkdir bin/templates
 mv bin/godot.x11.opt.64 bin/templates/linux_x11_64_release
 mv bin/godot.windows.opt.64.exe bin/templates/windows_64_release.exe
 touch bin/templates/version.txt
-echo "3.2.3.stable" > bin/templates/version.txt
+echo "3.4.stable" > bin/templates/version.txt
 7z a export_templates_custom.zip ./bin/*
 rm -rf bin/*
 mv export_templates_custom.zip export_templates_custom.tpz
@@ -90,30 +90,6 @@ A collection of all .md files in the game's source folders, that i reunited in t
 * [rainbow freq=x]
 * [hide char=x] in this case, x is a letter
 * [tornado radius=x freq=x]
-
-### STAGE PREREQUISITES
-A stage must have:
-- StaticBody2D with TextureRect and Collision[Shape/Polygon]
-- CameraLimits instanced scene
-- PlayerSpawn instanced scene
-- Hidden Label node whose text is the name of the stage and that has been renamed to "Stage_Name"
-*ALL UNDER A RENAMED "Scene" Node which is actually just a basic Node (NOT NODE2D)*
-The Structure must, then, be as follows:
-```
-"Stage" Node
-|
-└──"Stage_Name" Label with Name as text (Not visible)
-|
-└──StaticBody2D
-|       |
-|       └──TextureRect
-|       |
-|       └──Collision[Shape/Polygon; Polygon preferred]
-|
-└──CameraLimits (tick editable children)
-|
-└──PlayerSpawn
-```
 
 ## Contact
 
