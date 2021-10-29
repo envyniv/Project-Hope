@@ -12,7 +12,7 @@ func can_interact(interactParent : Node) -> bool:
 func _interact(_interactParent : Node) -> void: #TODO: finish this, details following
   #the game now prompts you before saving, but we still need to check if the player replied yes or no.
   # we should also pause the game and pullup a savefile(s, multiple) menu
-#  if SceneManager.start_convo("save"):
+  SceneManager.start_convo("save")
   var image = get_viewport().get_texture().get_data()
   if used:
     return

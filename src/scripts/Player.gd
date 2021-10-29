@@ -43,6 +43,8 @@ var state
 
 func _ready():
   #  disable_input()
+  position=FileMan.data.position
+  facing=look.DOWN
   value_check()
   match facing:
     look.UP:
@@ -250,16 +252,21 @@ func animHndlr():
   animTree.set("parameters/run_Pose/blend_position", movedir)
   animTree.set("parameters/idle/blend_position", movedir)
   animTree.set("parameters/walk/blend_position", movedir)
+  animTree.set("parameters/run/blend_position", movedir)
   if state == THINK:
     animPlayer.play("think")
   elif state == STUN:
     print("player stunned")
   elif movedir != Vector2.ZERO:
-    animState.travel("walk")
+    if moveSpeed > 65:
+      animState.travel("run")
+    else:
+      animState.travel("walk")
   else:
-    animState.travel("idle")
     if moveSpeed > 65:
       animState.travel("run_Pose")
+    else:
+      animState.travel("idle")
 
 func atkState():  #attacking
   canDo = false

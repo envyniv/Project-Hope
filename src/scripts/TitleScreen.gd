@@ -8,7 +8,7 @@ onready var player = $AudioStreamPlayer
 var version = ProjectSettings.get("application/config/AppVersion")
 
 func _ready():
-  new.set_focus_mode(Control.FOCUS_ALL)
+  #new.set_focus_mode(Control.FOCUS_ALL)
   new.grab_focus()
   new.connect("pressed", self, "_new_pressed")
   #lload.connect("pressed", self, "_load_pressed")

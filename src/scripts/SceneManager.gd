@@ -35,6 +35,7 @@ const select = {
 
 const stage={
   "meteora"   : "res://scenes/stage/Meteora.tscn",
+  "kevinsbedroom"   : "res://scenes/stage/Meteora.tscn",
   "battle"    : "res://scenes/stage/BattleWorld.tscn",
   "map"       : "res://scenes/stage/worldmap.tscn",
   "utopia"    : "",
@@ -67,9 +68,9 @@ func change_scene(chosen, delay=0):
     pass
 
 func change_level_relay(levelrelay):
-  transition_start(0)
+  #transition_start()
   emit_signal("plsChangeLeveliBegYou", stage[levelrelay])
-  transition_end()
+  #transition_end()
 
 func transition_start(delay=0):
     yield(get_tree().create_timer(delay),"timeout")

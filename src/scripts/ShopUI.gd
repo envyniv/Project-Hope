@@ -18,7 +18,9 @@ var desc
 func _ready():
   # warning-ignore:return_value_discarded
   SceneManager.connect("vending", self, "show")
+  # warning-ignore:return_value_discarded
   SceneManager.connect("vending", self, "enable_input")
+  # warning-ignore:return_value_discarded
   SceneManager.connect("left_vending", self, "disable_input")
     # get all items and add them if the player's level is high enough
     # and if the item in question is not a key item

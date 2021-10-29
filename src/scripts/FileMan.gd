@@ -77,7 +77,9 @@ func save_game() ->void:
   return
 
 func dump2sets() ->void:
+  #warning-ignore:return_value_discarded
   ResourceSaver.save(setpath, settings)
+  #OS.alert("", "Save error ()")
   return
 
 func reset_data() ->void:
@@ -144,9 +146,8 @@ func update_values(whose):
 
 func return_saves_details():
   var details : Dictionary = {}
-  for i in 2:
-    if save_check(i):
-      print("path%s" % (i+1))
+  for i in 2: #0, 1, 2
+    if save_check((i+1)):
       slotselected=get("path%s" % (i+1))
       load_game()
       details["%s" % (i+1)]={ "name":data.name, "location":data.location,"playtime":data.playtime,"preview":data.preview.data["data"] }

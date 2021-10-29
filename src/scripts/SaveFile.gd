@@ -15,6 +15,7 @@ export(int) var playtime = 0
 export(PoolByteArray) var preview
 
 export(Vector2) var position
+export(Vector2) var facing
 
 export(Dictionary) var kevin = { #stats show base, not bonuses
   "LVL":1,
