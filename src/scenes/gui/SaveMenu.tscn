@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://materials/theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/gui/SaveMenuSlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sounds/music/save.ogg" type="AudioStream" id=3]
+[ext_resource path="res://scripts/SaveMenu.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 33.0
+margin_right = -486.0
+margin_bottom = -431.0
+rect_scale = Vector2( 2, 2 )
+text = "menuFileMenu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 110.0
+margin_right = -595.0
+margin_bottom = -314.0
+rect_scale = Vector2( 6, 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" parent="Panel/VBoxContainer" instance=ExtResource( 2 )]
+rect_scale = Vector2( 1, 1 )
+
+[node name="Slot2" parent="Panel/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 20.0
+margin_bottom = 36.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="Slot3" parent="Panel/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 40.0
+margin_bottom = 56.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

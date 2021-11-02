@@ -1,0 +1,34 @@
+,en,it,de,fr,es
+creditsAuthorL8n,Envy,Envy,Envy (Machine Translated),Envy (Machine Translated),Envy (Machine Translated)
+menuNew,New Game,Nuova Partita,Neues Spiel,Nouveau Jeu,Nuevo juego 
+menuLoad,Load,Carica,Laden,Charger,Carga 
+menuSet,Settings,Impostazioni,Einstellungen,Paramètres,Ajustes 
+menuQuit,End Game,Termina Partita,Spiel Beenden,Fin du jeu,Fin del juego 
+setVoice,Voice,Voce,Stimme,Voix,Voz 
+setBGM,Music,Musica,Musik,Musique,Música 
+setSFX,SFX,Effetti sonori,Soundeffekte,Effets sonores,SFX 
+setLang,Language,Lingua,Sprache,Langue,Idioma 
+setMod,Mods,Mod,Modifikationen,Mod,Mods 
+setCntrl,Controls,Controlli,Kontrollen,Chèques,Control S 
+setTip,Hover over buttons to read a description of their effects,Mantieni il cursore sulle opzioni per visualizzare una descrizione dei loro effetti,"Bewegen Sie den Mauszeiger über die Schaltflächen, um eine Beschreibung ihrer Auswirkungen zu lesen",Maintenez votre curseur sur les boutons pour voir une description de leurs effets,Coloca el cursor sobre los botones para leer una descripción de sus efectos. 
+setTooltipCntrls,Bind controls,Associa i controlli,Bindesteuerungen,Lier les contrôles,Vincular controles 
+setTooltipReset,Reset SAVE DATA and SETTINGS,Resetta DATI DI SALVATAGGIO e IMPOSTAZIONI,DATEN SPEICHERN und EINSTELLUNGEN zurücksetzen,Réinitialiser SAUVEGARDER LES DONNÉES et les PARAMÈTRES,Restablecer GUARDAR DATOS y CONFIGURACIONES 
+setTooltipMenu,Back to menu,Ritorna nel menù,Zurück zum Menü,Retour au menu,Volver al menú 
+gameBuy,Buy,Compra,Kaufen,Acheter,Comprar 
+gameSell,Sell,Vendi,Verkaufen,Vendre,Vender 
+gameItems,Items,Oggetti,Artikel,Objets,Artículos 
+gameEquip,Equipment,Equipaggiamento,Ausrüstung,Équipement,Equipo 
+gameSkill,Skills,Abilità,Fähigkeiten,Compétences,Habilidades 
+gameWhose,Whose?,Di chi?,Deren?,À qui?,¿Cuyo? 
+gameOnWho,On Who?,Utilizzare su?,Auf wem?,Utiliser sur?,¿En quién? 
+gameItemFound_1,You got %s,Hai ottenuto %s,Du hast %s,Vous avez %s,Tienes% s 
+gameItemFound_2,You found %s,Hai trovato %s,Du hast %s gefunden,Vous avez trouvé %s,Encontraste% s 
+gameItemFound_3,You picked up %s,Hai raccolto %s,Du hast %s abgeholt,Vous avez collecté %s,Recogiste% s 
+itemHSandals,Hermes’ Sandals,I Sandali di Ermete,Hermes Sandalen,Les sandales d'Hermès,Las Sandalias de Hermes 
+placeTartarus,Tartarus,Tartaro,Tartarus,Tartare,Tártaro 
+menuFileMenu,Please select a save slot.,Scegli uno slot di salvataggio.,Bitte wählen Sie einen Speicherplatz aus.,Veuillez sélectionner un emplacement d'enregistrement.,Seleccione una ranura para guardar.
+menuHours,h,o,s,h,h
+menuMins,min,min,pro,com,act
+menuYourNamePlease,"Your name, please.","Il tuo nome, per favore.","Ihr Name, bitte.","Votre nom, s'il vous plaît.","Su nombre, por favor."
+menuFileDelete,You are about to delete your save file\nKeep in mind there is no going back.\nAre you sure?,Stai per eliminare il tuo savefile\nTieni presente che non si può tornare indietro.\nSei sicuro?,"Sie sind dabei, Ihre Speicherdatei zu löschen\nDenken Sie daran, dass es kein Zurück mehr gibt.\nSind Sie sicher?",Vous êtes sur le point de supprimer votre fichier d'enregistrement\nGardez à l'esprit qu'il n'y a pas de retour en arrière.\nÊtes-vous sûr?,Está a punto de eliminar su archivo de guardado\nMantenga en cuenta que no hay vuelta atrás.\n¿Está seguro?
+looksLikeEnvynFuckedUp,Please; report this.,Perfavore; segnala questo errore.,Bitte; Melden Sie diesen Fehler.,S'il vous plaît; Signalez cette erreur.,Por favor; Informar de este error.

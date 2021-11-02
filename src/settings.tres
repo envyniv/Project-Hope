@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/SettingsFile.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+mods = [  ]
+sfxvol = 0.28
+bgmvol = 0.04
+voice = true
+lang = "en"
