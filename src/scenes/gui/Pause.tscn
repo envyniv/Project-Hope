@@ -37,9 +37,9 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuSmall"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 3.0
+margin_left = 7.0
 margin_top = 5.0
-margin_right = 38.0
+margin_right = 33.0
 margin_bottom = 46.0
 rect_scale = Vector2( 0.5, 0.5 )
 theme = ExtResource( 2 )
@@ -48,7 +48,7 @@ __meta__ = {
 }
 
 [node name="Items" type="Button" parent="MenuSmall/VBoxContainer"]
-margin_right = 96.0
+margin_right = 87.0
 margin_bottom = 16.0
 text = "gameItems"
 flat = true
@@ -56,7 +56,7 @@ align = 0
 
 [node name="Skills" type="Button" parent="MenuSmall/VBoxContainer"]
 margin_top = 20.0
-margin_right = 96.0
+margin_right = 87.0
 margin_bottom = 36.0
 text = "gameSkill"
 flat = true
@@ -64,7 +64,7 @@ align = 0
 
 [node name="Quit" type="Button" parent="MenuSmall/VBoxContainer"]
 margin_top = 40.0
-margin_right = 96.0
+margin_right = 87.0
 margin_bottom = 56.0
 text = "menuQuit"
 flat = true

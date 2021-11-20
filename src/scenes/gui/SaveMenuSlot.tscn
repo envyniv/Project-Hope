@@ -98,7 +98,6 @@ margin_top = 8.0
 margin_right = -57.0
 margin_bottom = 22.0
 rect_scale = Vector2( -0.33, 0.33 )
-texture_hover = ExtResource( 4 )
 texture_focused = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

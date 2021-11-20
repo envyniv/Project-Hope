@@ -87,6 +87,7 @@ func _on_ItemList_item_activated(index):
     playermoney += ItemDatabase.get_item(select).Price*0.8
     $money.play()
     getPlayerInv()
+    update_money()
 
 func _on_ItemList_item_selected(index):
     setDesc_Inv(index)

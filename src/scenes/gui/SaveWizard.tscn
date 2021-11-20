@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://materials/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/gui/KeyboardButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/SaveWizard.gd" type="Script" id=3]
-[ext_resource path="res://scripts/KeyboardButton.gd" type="Script" id=4]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -50,56 +49,48 @@ margin_left = 13.0
 margin_right = 22.0
 group = SubResource( 1 )
 text = "B"
-script = ExtResource( 4 )
 
 [node name="Button3" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 26.0
 margin_right = 37.0
 group = SubResource( 1 )
 text = "C"
-script = ExtResource( 4 )
 
 [node name="Button5" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 41.0
 margin_right = 49.0
 group = SubResource( 1 )
 text = "D"
-script = ExtResource( 4 )
 
 [node name="Button6" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 53.0
 margin_right = 62.0
 group = SubResource( 1 )
 text = "E"
-script = ExtResource( 4 )
 
 [node name="Button7" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 66.0
 margin_right = 73.0
 group = SubResource( 1 )
 text = "F"
-script = ExtResource( 4 )
 
 [node name="Button8" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 77.0
 margin_right = 86.0
 group = SubResource( 1 )
 text = "G"
-script = ExtResource( 4 )
 
 [node name="Button9" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 90.0
 margin_right = 98.0
 group = SubResource( 1 )
 text = "H"
-script = ExtResource( 4 )
 
 [node name="Button10" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 102.0
 margin_right = 109.0
 group = SubResource( 1 )
 text = "I"
-script = ExtResource( 4 )
 
 [node name="Button11" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 113.0
@@ -107,14 +98,12 @@ margin_right = 130.0
 group = SubResource( 1 )
 text = "J"
 align = 0
-script = ExtResource( 4 )
 
 [node name="Button12" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_top = 20.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "K"
-script = ExtResource( 4 )
 
 [node name="Button13" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 13.0
@@ -123,7 +112,6 @@ margin_right = 22.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "L"
-script = ExtResource( 4 )
 
 [node name="Button14" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 26.0
@@ -132,7 +120,6 @@ margin_right = 37.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "M"
-script = ExtResource( 4 )
 
 [node name="Button15" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 41.0
@@ -141,7 +128,6 @@ margin_right = 49.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "N"
-script = ExtResource( 4 )
 
 [node name="Button16" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 53.0
@@ -150,7 +136,6 @@ margin_right = 62.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "O"
-script = ExtResource( 4 )
 
 [node name="Button17" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 66.0
@@ -159,7 +144,6 @@ margin_right = 73.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "P"
-script = ExtResource( 4 )
 
 [node name="Button18" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 77.0
@@ -168,7 +152,6 @@ margin_right = 86.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "Q"
-script = ExtResource( 4 )
 
 [node name="Button19" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 90.0
@@ -177,7 +160,6 @@ margin_right = 98.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "R"
-script = ExtResource( 4 )
 
 [node name="Button20" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 102.0
@@ -186,7 +168,6 @@ margin_right = 109.0
 margin_bottom = 36.0
 group = SubResource( 1 )
 text = "S"
-script = ExtResource( 4 )
 
 [node name="Button21" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 113.0
@@ -196,14 +177,12 @@ margin_bottom = 36.0
 group = SubResource( 1 )
 text = "T"
 align = 0
-script = ExtResource( 4 )
 
 [node name="Button22" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_top = 40.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "U"
-script = ExtResource( 4 )
 
 [node name="Button23" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 13.0
@@ -212,7 +191,6 @@ margin_right = 22.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "V"
-script = ExtResource( 4 )
 
 [node name="Button24" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 26.0
@@ -221,7 +199,6 @@ margin_right = 37.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "W"
-script = ExtResource( 4 )
 
 [node name="Button25" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 41.0
@@ -230,7 +207,6 @@ margin_right = 49.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "X"
-script = ExtResource( 4 )
 
 [node name="Button26" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 53.0
@@ -239,7 +215,6 @@ margin_right = 62.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "Y"
-script = ExtResource( 4 )
 
 [node name="Button4" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 66.0
@@ -248,7 +223,6 @@ margin_right = 73.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "Z"
-script = ExtResource( 4 )
 
 [node name="Button30" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 77.0
@@ -259,7 +233,6 @@ custom_styles/disabled = SubResource( 3 )
 disabled = true
 group = SubResource( 1 )
 text = ""
-script = ExtResource( 4 )
 
 [node name="Button29" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 90.0
@@ -268,7 +241,6 @@ margin_right = 98.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "·"
-script = ExtResource( 4 )
 
 [node name="Button27" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 102.0
@@ -277,7 +249,6 @@ margin_right = 109.0
 margin_bottom = 56.0
 group = SubResource( 1 )
 text = "<"
-script = ExtResource( 4 )
 
 [node name="Button28" parent="Panel/Keyboard" instance=ExtResource( 2 )]
 margin_left = 113.0
@@ -287,7 +258,6 @@ margin_bottom = 56.0
 group = SubResource( 1 )
 text = "OK"
 align = 0
-script = ExtResource( 4 )
 
 [node name="Name" type="Label" parent="Panel"]
 anchor_right = 1.0
