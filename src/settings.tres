@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 mods = [  ]
-sfxvol = 0.28
-bgmvol = 0.04
+sfxvol = 0.14
+bgmvol = 0.37
 voice = true
+scale = 2
 lang = "en"

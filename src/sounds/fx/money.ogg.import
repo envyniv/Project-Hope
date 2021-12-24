@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/money.ogg-20a6332bfa45fba92e66ad17e8c8c7ec.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/money.ogg"
+dest_files=[ "res://.import/money.ogg-20a6332bfa45fba92e66ad17e8c8c7ec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

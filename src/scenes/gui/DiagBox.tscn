@@ -9,8 +9,8 @@
 [ext_resource path="res://richtexteffects/matrix.gd" type="Script" id=7]
 [ext_resource path="res://richtexteffects/ghost.gd" type="Script" id=8]
 [ext_resource path="res://richtexteffects/pulse.gd" type="Script" id=9]
-[ext_resource path="res://sounds/fx/speak-blip.wav" type="AudioStream" id=10]
-[ext_resource path="res://sounds/fx/next.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/fx/speak-blip.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sounds/fx/next.ogg" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 extra_spacing_space = -1

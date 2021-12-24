@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thanatos_laugh.ogg-1301ed639d94a13b353cd8ada906f069.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/thanatos_laugh.ogg"
+dest_files=[ "res://.import/thanatos_laugh.ogg-1301ed639d94a13b353cd8ada906f069.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

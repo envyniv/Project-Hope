@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Settings.gd" type="Script" id=1]
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://materials/theme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/gui/close.png" type="Texture" id=6]
 [ext_resource path="res://assets/gui/reset.png" type="Texture" id=7]
+[ext_resource path="res://sounds/music/settings_loop.ogg" type="AudioStream" id=8]
 
 [node name="Settings" type="Node"]
 script = ExtResource( 1 )
@@ -42,7 +43,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
 margin_right = 72.0
-margin_bottom = 116.0
+margin_bottom = 136.0
 alignment = 1
 
 [node name="VoiceBloop" type="CheckBox" parent="ColorRect/ScrollContainer/VBoxContainer"]
@@ -125,10 +126,17 @@ margin_right = 72.0
 margin_bottom = 96.0
 text = "setMod"
 
-[node name="Controls" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Scale" type="MenuButton" parent="ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 100.0
 margin_right = 72.0
 margin_bottom = 116.0
+focus_mode = 2
+text = "setXscale"
+
+[node name="Controls" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 72.0
+margin_bottom = 136.0
 hint_tooltip = "setTooltipCntrls"
 custom_fonts/font = ExtResource( 2 )
 text = "setCntrl"
@@ -178,6 +186,9 @@ texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="music-loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="toggled" from="ColorRect/ScrollContainer/VBoxContainer/VoiceBloop" to="." method="_on_VoiceBloop_toggled"]
 [connection signal="value_changed" from="ColorRect/ScrollContainer/VBoxContainer/Music" to="." method="_on_Music_value_changed"]

@@ -32,3 +32,4 @@ menuMins,min,min,pro,com,act
 menuYourNamePlease,"Your name, please.","Il tuo nome, per favore.","Ihr Name, bitte.","Votre nom, s'il vous plaît.","Su nombre, por favor."
 menuFileDelete,You are about to delete your save file\nKeep in mind there is no going back.\nAre you sure?,Stai per eliminare il tuo savefile\nTieni presente che non si può tornare indietro.\nSei sicuro?,"Sie sind dabei, Ihre Speicherdatei zu löschen\nDenken Sie daran, dass es kein Zurück mehr gibt.\nSind Sie sicher?",Vous êtes sur le point de supprimer votre fichier d'enregistrement\nGardez à l'esprit qu'il n'y a pas de retour en arrière.\nÊtes-vous sûr?,Está a punto de eliminar su archivo de guardado\nMantenga en cuenta que no hay vuelta atrás.\n¿Está seguro?
 looksLikeEnvynFuckedUp,Please; report this.,Perfavore; segnala questo errore.,Bitte; Melden Sie diesen Fehler.,S'il vous plaît; Signalez cette erreur.,Por favor; Informar de este error.
+setXscale,Scale,Dimensioni,,,

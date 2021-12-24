@@ -23,6 +23,12 @@ signal pDisable
 signal pEnable
 signal plsChangeLeveliBegYou
 signal plsStartDialogue
+var def_scr_w = ProjectSettings.get("display/window/size/width")
+var def_scr_h = ProjectSettings.get("display/window/size/height")
+
+func _init():
+  reset_video()
+  return
 
 const select = {
     "title"    : "res://scenes/TitleScreen.tscn",
@@ -125,3 +131,7 @@ func _physics_process(_delta):
       var curve = Curve2D.new()
       curve.add_point(head.position)
       emit_signal("player_chdir", curve)
+
+func reset_video():
+  OS.set_window_size(Vector2(def_scr_w*FileMan.settings.scale, def_scr_h*FileMan.settings.scale))
+  return
