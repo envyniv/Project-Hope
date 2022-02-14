@@ -5,8 +5,23 @@
 [resource]
 script = ExtResource( 1 )
 mods = [  ]
-sfxvol = 0.14
-bgmvol = 0.37
+sfxvol = 1.0
+bgmvol = 1.0
+txtspd = 0.1
 voice = true
-scale = 2
+scale = 1
 lang = "en"
+controls = {
+"keyboard": {
+"defend": 65,
+"sprint": 16777237,
+"ui_accept": 90,
+"ui_cancel": 88,
+"ui_down": 16777234,
+"ui_focus_next": 32,
+"ui_left": 16777231,
+"ui_right": 16777233,
+"ui_select": 83,
+"ui_up": 16777232
+}
+}

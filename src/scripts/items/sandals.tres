@@ -4,10 +4,14 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Ermes' Sandals"
+name = "itemHSandals"
 Description = "itemdescHSandals"
 RequiredLevel = 0
 Price = 0
 type = "ACCESSORY"
+isSold = true
 affect = {
+"ATK": -1,
+"EVA": "5"
 }
+whereCanBeUsed = ""

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/longblank.ogg-01f292c82e7665d8fe0371d65cad976e.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

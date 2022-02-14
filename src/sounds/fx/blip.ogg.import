@@ -11,5 +11,5 @@ dest_files=[ "res://.import/blip.ogg-b628705bb9b58447f02536cdec69244b.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -10,7 +10,7 @@ var possible = {
 }
 signal scene_changed()
 onready var animation_player=$CanvasLayer/AnimationPlayer
-onready var color_rect=$CanvasLayer/Control/ColorRect
+var color_rect=ColorRect.new()
 signal target_locked
 signal convo_y
 signal convo_n

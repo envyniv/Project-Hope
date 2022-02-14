@@ -11,5 +11,5 @@ dest_files=[ "res://.import/denied.ogg-80622b8c5039f5044506bce20f9f79c5.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

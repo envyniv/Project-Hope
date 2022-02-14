@@ -11,5 +11,5 @@ dest_files=[ "res://.import/projectile.ogg-0536fed923dfdcd573c4bc1e98e1a4b8.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

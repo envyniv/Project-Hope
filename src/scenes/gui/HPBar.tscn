@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://materials/theme.tres" type="Theme" id=1]
+[ext_resource path="res://materials/hp-font.tres" type="BitmapFont" id=2]
+[ext_resource path="res://materials/HP-FONT-small.tres" type="BitmapFont" id=3]
+[ext_resource path="res://assets/gui/bar-icon.png" type="Texture" id=4]
+[ext_resource path="res://scripts/gui/elements/HPBar.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.54902, 0, 1 )
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_bottom_right = 15
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 26, 0, 13, 13 )
+
+[node name="ProgressBar" type="ProgressBar"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 37.0
+margin_bottom = 9.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 4 )
+step = 1.0
+value = 50.0
+percent_visible = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValueBar" type="ProgressBar" parent="."]
+modulate = Color( 0.96, 0.72, 0.29, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/bg = SubResource( 5 )
+step = 1.0
+value = 30.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_left = -9.2611
+margin_top = -2.70066
+margin_right = 3.7389
+margin_bottom = 2.29934
+mouse_filter = 2
+texture = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Current" type="Label" parent="icon"]
+anchor_left = 0.5
+anchor_top = 0.138
+anchor_right = 0.5
+anchor_bottom = 0.769
+margin_left = -12.5
+margin_top = 1.13167
+margin_right = 11.5
+margin_bottom = -0.0713263
+custom_colors/font_color_shadow = Color( 1, 1, 1, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "40"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MAX" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -6.0
+margin_right = -5.0
+margin_bottom = -1.0
+custom_colors/font_color_shadow = Color( 1, 1, 1, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "100"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/speak-blip.ogg-aedcf880e3025e2d51cad1bbbeb687c5.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

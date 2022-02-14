@@ -1,96 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sounds/fx/denied.ogg" type="AudioStream" id=2]
 [ext_resource path="res://materials/ItemDescription-normal.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scripts/ShopUI.gd" type="Script" id=4]
+[ext_resource path="res://scripts/gui/ShopUI.gd" type="Script" id=4]
 [ext_resource path="res://sounds/fx/money.ogg" type="AudioStream" id=5]
+[ext_resource path="res://scenes/gui/GTimePanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://materials/theme.tres" type="Theme" id=7]
 
-[node name="BuyMenu" type="Control"]
+[node name="BuyMenu" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 11.0
+margin_right = -423.0
+margin_bottom = -270.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 7 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_horizontal_guides_": [  ],
-"_edit_use_anchors_": false
-}
-
-[node name="PanelShop" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -320.0
-margin_top = 20.0
-margin_right = -160.0
-margin_bottom = -240.0
-rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buy" type="Label" parent="PanelShop"]
-anchor_right = 1.0
-anchor_bottom = 0.207
-margin_left = 5.0
-margin_top = 4.0
-margin_right = -44.0
-margin_bottom = -21.54
-custom_fonts/font = ExtResource( 1 )
-text = "gameBuy"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BuyList" type="ItemList" parent="PanelShop"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 23.0
-margin_right = -12.0
-margin_bottom = -87.0
-custom_fonts/font = ExtResource( 1 )
-allow_reselect = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PanelInv" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 3.05176e-05
-margin_top = 20.0
-margin_right = 160.0
-margin_bottom = -240.0
-rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sell" type="Label" parent="PanelInv"]
-anchor_right = 1.0
-anchor_bottom = 0.053
-margin_left = 49.0
-margin_top = 4.0
-margin_right = -4.99997
-margin_bottom = 9.34
-custom_fonts/font = ExtResource( 1 )
-text = "gameSell"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ItemList" type="ItemList" parent="PanelInv"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 23.0
-margin_right = -9.99997
-margin_bottom = -87.0
-custom_fonts/font = ExtResource( 1 )
-allow_reselect = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,11 +25,10 @@ __meta__ = {
 [node name="Description" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = 292.0
-margin_right = -360.0
-margin_bottom = -112.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 15.0078
+margin_top = 118.8
+margin_right = -108.992
+margin_bottom = -8.19986
 custom_fonts/font = ExtResource( 3 )
 text = "Lorem Ipsum Dolor Sit Amet.
 Lorem Ipsum Dolor Sit Amet.
@@ -114,29 +40,86 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MoneyCount" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 0.207
-margin_left = 40.0
-margin_top = 30.0
-margin_right = -360.0
-margin_bottom = -53.36
-rect_scale = Vector2( 2, 2 )
-custom_fonts/font = ExtResource( 1 )
-text = "999.999 G"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="money" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
 [node name="denied" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
-[connection signal="item_activated" from="PanelShop/BuyList" to="." method="_on_BuyList_item_activated"]
-[connection signal="item_selected" from="PanelShop/BuyList" to="." method="_on_BuyList_item_selected"]
-[connection signal="item_activated" from="PanelInv/ItemList" to="." method="_on_ItemList_item_activated"]
-[connection signal="item_selected" from="PanelInv/ItemList" to="." method="_on_ItemList_item_selected"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 11.0
+margin_right = -5.0
+margin_bottom = -85.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 137.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+
+[node name="Buy" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 137.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "gameBuy"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyList" type="ItemList" parent="HBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 137.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 141.0
+margin_right = 279.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+
+[node name="Sell" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 138.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "gameSell"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 20.0
+margin_right = 138.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GPanel" parent="." instance=ExtResource( 6 )]
+margin_left = 230.306
+margin_top = 154.796
+margin_right = 288.306
+margin_bottom = 187.796
+
+[connection signal="item_activated" from="HBoxContainer/VBoxContainer/BuyList" to="." method="_on_BuyList_item_activated"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/BuyList" to="." method="_on_BuyList_item_selected"]
+[connection signal="item_activated" from="HBoxContainer/VBoxContainer2/ItemList" to="." method="_on_ItemList_item_activated"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer2/ItemList" to="." method="_on_ItemList_item_selected"]

@@ -4,10 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Key"
-Description = "It's a key. It tastes metal-ly."
+name = "itemKey"
+Description = "itemdescKey"
 RequiredLevel = 0
 Price = 50
 type = "KEY"
+isSold = true
 affect = {
 }
+whereCanBeUsed = "OVERWORLD"

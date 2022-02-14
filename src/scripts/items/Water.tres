@@ -4,14 +4,12 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Water"
-Description = "It's quite refreshing.
-Heals 20HP."
+name = "itemWater"
+Description = "itemdescWater"
 RequiredLevel = 0
 Price = 5
-Stackable = true
-maxStack = 99
 type = "CONSUMABLE"
+isSold = true
 affect = {
-
 }
+whereCanBeUsed = ""

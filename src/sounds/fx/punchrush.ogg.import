@@ -11,5 +11,5 @@ dest_files=[ "res://.import/punchrush.ogg-75faabe5c316e01e5962b362dce54337.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

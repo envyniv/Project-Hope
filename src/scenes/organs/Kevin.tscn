@@ -1,20 +1,25 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=82 format=2]
 
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/kevin-clark.png" type="Texture" id=2]
 [ext_resource path="res://scenes/organs/Interact.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/stages/shadowsmall.png" type="Texture" id=4]
 [ext_resource path="res://scenes/gui/InteractUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/structures/HitBox.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/Player.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.94963, 2 )
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 7.34489
-height = 12.6646
+radius = 6.0
+height = 7.0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8.37008, 10.6949 )
+[sub_resource type="RayShape2D" id=76]
+length = 15.0
+
+[sub_resource type="CapsuleShape2D" id=74]
+radius = 7.44521
+height = 3.72669
 
 [sub_resource type="Animation" id=4]
 length = 0.6
@@ -1051,54 +1056,60 @@ graph_offset = Vector2( 68.7359, 18.8016 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=73]
 
-[sub_resource type="CapsuleShape2D" id=74]
-radius = 14.0074
-
 [node name="Kevin" type="KinematicBody2D"]
-script = ExtResource( 7 )
+script = ExtResource( 1 )
 
 [node name="Shadow" type="Sprite" parent="."]
 z_index = -1
-texture = ExtResource( 2 )
-offset = Vector2( 0, -6 )
-hframes = 441
-frame = 440
+texture = ExtResource( 4 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 8.5 )
+position = Vector2( 0.5, 0 )
 scale = Vector2( 1, 0.979 )
 shape = SubResource( 1 )
 one_way_collision_margin = 0.0
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( -0.5, -14 )
+hframes = 441
+frame = 1
+
 [node name="HitBox" parent="." instance=ExtResource( 6 )]
-visible = false
 collision_mask = 8
 script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 0.529732, -6.09191 )
+position = Vector2( 0, -8.5 )
 shape = SubResource( 2 )
 
 [node name="Interact" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.5, 6.25 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
-position = Vector2( 0, 10.219 )
-shape = SubResource( 3 )
+shape = SubResource( 76 )
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="."]
 
 [node name="InteractUI" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -40.5 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-offset = Vector2( -0.3, -10.564 )
-hframes = 441
-frame = 33
+[node name="DamageBox" type="Area2D" parent="."]
+visible = false
+position = Vector2( 0, 3 )
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
+position = Vector2( 0.5, -3 )
+shape = SubResource( 74 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
 anims/atk_airborne = SubResource( 4 )
 anims/atk_down = SubResource( 5 )
 anims/atk_left = SubResource( 6 )
@@ -1136,7 +1147,7 @@ anims/walk_left = SubResource( 37 )
 anims/walk_right = SubResource( 38 )
 anims/walk_up = SubResource( 39 )
 
-[node name="AnimationTree" type="AnimationTree" parent="Sprite/AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
 tree_root = SubResource( 72 )
 anim_player = NodePath("..")
 active = true
@@ -1146,17 +1157,3 @@ parameters/idle/blend_position = Vector2( 0, 0 )
 parameters/run/blend_position = Vector2( 0, 0 )
 parameters/run_Pose/blend_position = Vector2( 0, 0 )
 parameters/walk/blend_position = Vector2( 0, 0 )
-
-[node name="DamageBox" type="Area2D" parent="."]
-visible = false
-position = Vector2( 0, -8 )
-collision_layer = 8
-collision_mask = 0
-monitoring = false
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
-position = Vector2( 0.554794, -2.69145 )
-shape = SubResource( 74 )

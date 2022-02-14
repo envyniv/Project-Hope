@@ -109,6 +109,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Sprite/Label"]
+visible = false
 margin_left = 94.0
 margin_top = 80.0
 margin_right = 292.0
@@ -133,5 +134,6 @@ hframes = 4
 frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
 anims/RESET = SubResource( 3 )
 anims/boot = SubResource( 4 )

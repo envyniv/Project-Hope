@@ -6,98 +6,46 @@ The Official Design Document
 ## ABOUT THE WORLD
 
 ### Nyx
-Italian city in which there is never the day, there is only night.
 
 ### Hypnos
-Italo-American city where you can only see stars in the sky doesn't matter if it's day or night. Sub-city of Prima Luna born in the 20th July 1969, extremely famous for its free lunar trips
 
 ### Basileus
-City founded by travellers and aristocrats in the 1900s, the inhabitants still wear classic aristocrat clothing: blue jacket and a white wig.
 
 ### Oneiros
-Rebuilt Utopia after the 1962 earthquake
 
 ### Fantasia
-City famous for its inventors. Utopia: Ancient city of travellers coming from various parts of the world. Historians believe it was founded at the start of humanity itself.
 
 ### Eimos
-now-abandoned city founded by the cowboy named John in the 1856s.
 
 ### Tyche
-this, now-abandoned, city was founded by John's brother, nicknamed “Doe", around the same timeframe as Atyche was. This place was known all around Evrys as “The Luckiest Place Ever”, however documentation that would explain the meaning behind this title, to this day, is still missing; Lots of the families that originally lived here were (after a catastrophe, which documentation about, is again, still missing to this day), subsequently moved to Ace
 
 ### Eirene
-city founded by “the Prince” in 1834. The peculiar name comes from the unique pyramidal rock formation that happens to be common there; divided in 4 sections.
-
-##### Civil Zone I
-On sea level, most of the shops in Sharplains reside here.
-
-##### Civil Zone II
-Above sea level,on a hill, decorated with trees and bushes.
-##### Civil Zone III
-located on a mountain, surrounded by a forest. Most of the houses there are built out of wood
 
 ### Xenos
-City founded by pirates, flooded like Venice. Known for the Excellent Food.
 
 ### Philomela
-Community founded by “the Prince” sometime after Sharplains. Not a real city, more like a camping spot.
 
 ### Kassandra
-TO BE FILLED
 
 
 ## ABOUT THE EVENTS
 
 ###### This story is happening on a fictional island named “Evrys”, in the “Bermuda Triangle"
 
-The year is 2020.
+The year is XXXX.
 on a small island located in the bermuda triangle,
 
 ### Chapter 1 - Start
 
 ### Chapter 2 - Let's Begin
 
-### Chapter 3 - The Five Tapes
+### Chapter 3 - 
 
-### Chapter 4 - Illumination
+### Chapter 4 - 
 
-### Chapter 5 - Burnt Soil
+### Chapter 5 - 
 
 ### Chapter 6 - Curtain Call
-
-## Characters:
-
-### Kevin:
-The first.
-Never speaks.
-origins? unknown.
-win anim is him punching air
-can stop time for whatever reason.
-should represent Nemesis, Apollo, Elpis but not needed
-
-### Quinton:
-Shy swiss teen.
-man of few words.
-
-Represents: Zeus, Metis, Hygieia
-Win anim is him sit-standing and lighting a match.
-
-### Bella:
-Hot-headed scottish lass.
-not afraid to speak her mind or get her hands dirty.
-
-Represents: Athena, Hephaestos, Lyssa
-win anim is her putting her hands on her hips and stepping forward with chin up.
-
-### Charlie:
-bri'ish baseball kid.
-represents: Ares, Auxo, Hebe
-win anim is him catching a base-ball with the typical glove thing.
-
-### Thanatos:
-dolus, but eeveel.
-
 
 
 ## CONCEPT ART

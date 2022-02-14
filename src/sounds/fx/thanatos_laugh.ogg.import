@@ -11,5 +11,5 @@ dest_files=[ "res://.import/thanatos_laugh.ogg-1301ed639d94a13b353cd8ada906f069.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
