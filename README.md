@@ -2,7 +2,7 @@
 
 --------------------------------------------------------------------------------
 
-_My take on an RPG._
+_My take on an RPG. Not really inspired from anything._
 
 [Website](https://envyniv.github.io/Project-Hope)
 
@@ -18,31 +18,31 @@ Davide Azzaretto/envyniv, 2020.
 
 # Twirl Pixel Members
 
-- envyniv; (Code, Art, Writing, Lead, etc.)
-- David Kvistorf (davidkvis99); (Music, Writing)
+- envyniv; (Pretty Much Anything™℠®©, etc.)
+- David Kvistorf (davidkvis99/Fluffclipse); (Music, Writing)
 
 # Footage
 
-<!-- [![Early Indev](http://img.youtube.com/vi/2yaVttZoP04/0.jpg)](https://www.youtube.com/watch?v=2yaVttZoP04 "Early Indev") -->
+dummy <!-- [![Early Indev](http://img.youtube.com/vi/2yaVttZoP04/0.jpg)](https://www.youtube.com/watch?v=2yaVttZoP04 "Early Indev") -->
 
- # TODO
+# TODO
+
+Estimated Completion Percentage: ![Pretty Much Nothing](https://progress-bar.dev/7?title=Nothing)
 
 - [ ] Allow party composition changes
-- [ ] _Player.gd_, fix movement functions so that moveSpeed doesn't always have to be specified
-- [ ] _Party members_, fix jittering ([potentially related to normalized vectors](https://youtu.be/fZ6bOERw03M?t=123)), replace `snakeTail` & `follower` with a more correct, signal based system
+- [ ] _Party members_, fix jittering ([potentially related to normalized vectors](https://youtu.be/fZ6bOERw03M?t=123)), replace `snakeTail` & `follower` with a proper signal based system
 - [ ] _Minigames_, implement
-- [ ] _DiagBox.gd_, make it so punctuation slows down text flow
+- [X] _DiagBox.gd_, make it so punctuation slows down text flow
 - [ ] _Skills_, implement
-- [ ] _ModManager_, figure out why the =!%$ it loads stuff into itemDB
-- [ ] _DiagBox.gd_, implement emitting signals following LE-Diag specs <!-- - [ ] maybe merge dialogue .json and localization csv? -->
-- [ ] _DiagBox.gd_, reimplement choices, since they don't work properly.
+- [ ] _ModMan_, figure out why the !$%? it loads stuff into itemDB
+- [X] _DiagBox.gd_, move to DialogueNodes spec
 - [ ] _Pause Menu_, clean up and finish
 - [X] _File Menu_, 3 saves
-- [X] Custom Splashscreen
+- [X] _Splashscreen_, implement custom
 - [X] _Viewports_, replace `inbattle`, `inshop`, `indialog` with signals
 - [X] _Trailing Party Members/PlayerFollower.gd_, fix always playing walk anim
 - [X] _FileMan_, offload all filechecks and loads to it
-- [X] _SaveFile.gd_, move to Godot Resource (.res)
+- [X] _SaveFile_, move to Godot Resource (.res)
 - [X] _Controls_, make reboundable
 - [X] _Controls_, fix scene
 - [X] _Settings_, allow a bunch of customization options (Volume, Text spd, video scaling)
@@ -94,17 +94,18 @@ _Please Note 2: As obvious as it may sound, this has to be stated; PCKs and ZIPs
 # Special Thanks
 
 - Everyone in [my discord server](https://discord.gg/bNkDkHW) for being supportive
-- You (for acknowledging this game)
-- Gzillion/Newbie (minor sprite work)
-- Aléris (minor sprite work)
+- You (you're awesome :sunglasses:)
+- Gzillion/Newbie, Aléris (minor sprite work)
 - gotimo2 (separated player movement and animation)
-- Everyone from the [Godot Engine discord server](https://discord.gg/4JBkykG) for being a bunch of awesome peeps!
+- Everyone from the [Godot Engine discord server](https://discord.gg/4JBkykG) for being cool
 
 --------------------------------------------------------------------------------
 
 # About the game
 
 A collection of all .md files in the game's source folders, that i reunited in this section, for convinience.
+
+:thinking:
 
 --------------------------------------------------------------------------------
 

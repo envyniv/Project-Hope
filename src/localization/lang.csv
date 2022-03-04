@@ -4,7 +4,7 @@ menuNew,New Game,Nuovo Gioco,DUMMY,DUMMY,DUMMY,DUMMY
 menuLoad,Load,Carica,DUMMY,DUMMY,DUMMY,DUMMY
 menuSet,Settings,Impostazioni,DUMMY,DUMMY,DUMMY,DUMMY
 menuQuit,End Game,Esci,DUMMY,DUMMY,DUMMY,DUMMY
-setVoice,Speaking Blip,Blip conversazione,DUMMY,DUMMY,DUMMY,DUMMY
+setVoice,Speaking Blip,Suono per ogni lettera,DUMMY,DUMMY,DUMMY,DUMMY
 setBGM,Music,Musica,DUMMY,DUMMY,DUMMY,DUMMY
 setSFX,SFX,Effetti Sonori,DUMMY,DUMMY,DUMMY,DUMMY
 setLang,Language,Lingua,DUMMY,DUMMY,DUMMY,DUMMY
@@ -29,7 +29,7 @@ placeTartarus,Tartarus,Tartaro,DUMMY,DUMMY,DUMMY,DUMMY
 menuFileMenu,Please select a save slot.,Per favore seleziona un salvataggio,DUMMY,DUMMY,DUMMY,DUMMY
 menuYourNamePlease,"Your name, please.","Il tuo nome, per favore.",DUMMY,DUMMY,DUMMY,DUMMY
 menuFileDelete,You are about to delete your save file\nKeep in mind there is no going back.\nAre you sure?,Stai per cancellare un file di salvataggio\nRicorda che non puoi tornare indietro\nSei sicuro?,DUMMY,DUMMY,DUMMY,DUMMY
-looksLikeEnvynFuckedUp,Please; report this.,"Per favore, riporta questo errore",DUMMY,DUMMY,DUMMY,DUMMY
+looksLikeEnvynFuckedUp,"Please, report this.","Per favore, riporta questo errore",DUMMY,DUMMY,DUMMY,DUMMY
 setXscale,Scale,Dimensione,DUMMY,DUMMY,DUMMY,DUMMY
 setTxtSpd,Text Speed,Velocità testo,DUMMY,DUMMY,DUMMY,DUMMY
 setTxtSpdSlow,Slow,Lento,DUMMY,DUMMY,DUMMY,DUMMY
@@ -48,16 +48,14 @@ keyRight,Move to the Right,Muoviti a Destra,DUMMY,DUMMY,DUMMY,DUMMY
 keySprint,Run,Corri,DUMMY,DUMMY,DUMMY,DUMMY
 keyNext,Next Party Member,Prossimo membro del gruppo,DUMMY,DUMMY,DUMMY,DUMMY
 gameParty,Friends,Amici,DUMMY,DUMMY,DUMMY,DUMMY
-itemdescHSandals,cool wings\nmake go fast :))),NOTFINAL,DUMMY,DUMMY,DUMMY,DUMMY
-itemThing,Precious Something,NOTFINAL,DUMMY,DUMMY,DUMMY,DUMMY
-itemdescThing,Precious Something’s Description,NOTFINAL,DUMMY,DUMMY,DUMMY,DUMMY
+itemdescHSandals,cool wings\nmake go fast :))),DUMMY,DUMMY,DUMMY,DUMMY,DUMMY
+itemThing,Precious Something,DUMMY,DUMMY,DUMMY,DUMMY,DUMMY
+itemdescThing,Precious Something’s Description,DUMMY,DUMMY,DUMMY,DUMMY,DUMMY
 itemWater,Water,Acqua,DUMMY,DUMMY,DUMMY,DUMMY
 itemdescWater,It's quite refreshing.\nHeals 20HP.,Molto rinfrescante\nCura per 20PV,DUMMY,DUMMY,DUMMY,DUMMY
 placeMeteora,Meteora (DBG),Meteora (DBG),DUMMY,DUMMY,DUMMY,DUMMY
 itemKey,Key,Chiave,DUMMY,DUMMY,DUMMY,DUMMY
 itemdescKey,It's a key.\nIt tastes metal-ly.\nDoes absolutely nothing,Una chiave.\nSa di metallo\nNon fa assolutamente nulla.,DUMMY,DUMMY,DUMMY,DUMMY
-diagTest_Message0,what is [color=#ffff8900][b]this[/b][/color]? looks like a????a,MAYNOTBEUSED,DUMMY,DUMMY,DUMMY,DUMMY
-diagTest_Name0,Kevin,MAYNOTBEUSED,DUMMY,DUMMY,DUMMY,DUMMY
 errDataMissingStr,Make sure there's a copy of '%s.zip' in the game folder\nand that the executable and it share the same filename,Assicurati ci sia un file nominato ‘%s.zip’ nella cartella di gioco\ne che l’eseguibile ed esso condividano lo stesso nome.,DUMMY,DUMMY,DUMMY,DUMMY
 errDataMissing,Missing Game Data!,Dati di gioco mancanti!,DUMMY,DUMMY,DUMMY,DUMMY
 statHP,HP,PV,DUMMY,DUMMY,DUMMY,DUMMY
@@ -74,3 +72,7 @@ statATK,ATK,ATT.,DUMMY,DUMMY,DUMMY,DUMMY
 statEVA,EVA,VEL.,DUMMY,DUMMY,DUMMY,DUMMY
 tooltipSWizKeyboard,to switch to/from Keyboard mode,per passare alla/dalla Tastiera,DUMMY,DUMMY,DUMMY,DUMMY
 saveEmpty,Empty,Vuoto,DUMMY,DUMMY,DUMMY,DUMMY
+langQMark,?,?,?,?,?,？
+langComma,",",",",",",",",",",、
+langFullStop,.,.,.,.,.,。
+creditsLastUpdate,1646058417,1646058417,1646058417,1646058417,1646058417,1646058417

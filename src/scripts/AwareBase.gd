@@ -3,8 +3,10 @@ class_name AwareBase
 enum look { UP, RIGHT, DOWN, LEFT }
 export (look) var facing
 
-var movedir:= Vector2.ZERO
-var moveSpeed:int = 65 #TODO: resolve having to manually type 65 moveSpeed in all movement altering functions' else statements
+var movedir := Vector2.ZERO
+var moveSpeed: int #TODO: resolve having to manually type 65 moveSpeed in all movement altering functions' else statements
+var moving : int = 65
+var running: int = 135
 var motion
 
 
@@ -116,25 +118,13 @@ func _unhandled_input(_event):
   var DOWN = Input.is_action_pressed("ui_down")
   var RIGHT = Input.is_action_pressed("ui_right")
   var LEFT = Input.is_action_pressed("ui_left")
-  #if true in FileMan.inBattle:
-  #    var ATTK={
-  #        WEAK = Input.is_action_pressed("ui_accept"),
-  #        PUNCH = Input.is_action_pressed("atkmed"),
-  #        HIGH = Input.is_action_pressed("ui_cancel")
-  #        }
-  #    var SKILL = Input.is_action_just_pressed("ui_select")
-  #    if SKILL:
-  #        state=THINK;
-  #    if (ATTK.WEAK||ATTK.PUNCH||ATTK.HIGH):
-  #        state=ATKING
-
   var SPRINT = Input.is_action_pressed("sprint")
   movedir.x = -int(LEFT) + int(RIGHT)  #don't move if the left and right keys are pressed
   movedir.y = -int(UP) + int(DOWN)
   if SPRINT:
-    moveSpeed = 130
+    moveSpeed = running
   else:
-    moveSpeed = 65
+    moveSpeed = moving
 
 func _physics_process(_delta):
   if movedir != Vector2.ZERO:

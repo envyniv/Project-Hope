@@ -22,7 +22,6 @@ func _ready():
     look.LEFT:
       animPlayer.play("idle_Left")
   animTree.active = true
-  SceneManager.tactical_lock_on(self)
     # warning-ignore:return_value_discarded
   SceneManager.connect("convo_y", self, "disable_input")
     # warning-ignore:return_value_discarded

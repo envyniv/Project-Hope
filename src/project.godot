@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/DamageBox.gd"
 }, {
-"base": "RichTextEffect",
-"class": "HideTextFX",
+"base": "PopupDialog",
+"class": "DialogueBox",
 "language": "GDScript",
-"path": "res://richtexteffects/hide.gd"
+"path": "res://addons/dialogue_nodes/objects/dialogueBox.gd"
 }, {
 "base": "Area2D",
 "class": "HitBox",
@@ -50,19 +50,9 @@ _global_script_classes=[ {
 "path": "res://scripts/PlayerFollower.gd"
 }, {
 "base": "RichTextEffect",
-"class": "RichTextGhost",
+"class": "RichTextWait",
 "language": "GDScript",
-"path": "res://richtexteffects/ghost.gd"
-}, {
-"base": "RichTextEffect",
-"class": "RichTextMatrix",
-"language": "GDScript",
-"path": "res://richtexteffects/matrix.gd"
-}, {
-"base": "RichTextEffect",
-"class": "RichTextPulse",
-"language": "GDScript",
-"path": "res://richtexteffects/pulse.gd"
+"path": "res://addons/dialogue_nodes/objects/bbcodeWait.gd"
 }, {
 "base": "Resource",
 "class": "Save",
@@ -87,15 +77,13 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AwareBase": "",
 "DamageBox": "",
-"HideTextFX": "",
+"DialogueBox": "",
 "HitBox": "",
 "Item": "",
 "NPC": "",
 "Player": "",
 "PlayerFollower": "",
-"RichTextGhost": "",
-"RichTextMatrix": "",
-"RichTextPulse": "",
+"RichTextWait": "",
 "Save": "",
 "ScrollingTextureRect": "",
 "Settings": "",
@@ -135,7 +123,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/BitmapFontMaker/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/BitmapFontMaker/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogue_nodes/plugin.cfg" )
 
 [importer_defaults]
 

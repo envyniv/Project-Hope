@@ -13,7 +13,8 @@ signal itemSelected
 
 func _ready() -> void:
 # warning-ignore:return_value_discarded
-  SceneManager.connect("plsChangeLeveliBegYou", self, "change_level")
+  SceneManager.viewport_ready(self)
+  
   FileMan.curtime = OS.get_unix_time()
   SceneManager.change_level_relay(FileMan.data.location)
   SceneManager.start_convo("test")
@@ -21,13 +22,6 @@ func _ready() -> void:
   menuitem.connect("itemusage", self, "onItemSelected")
   menuitem.hide()
   pausemenu.connect("iNeedItems", self, "onItemRequest")
-  return
-
-func change_level(level) -> void: # use SceneManager.change_level_relay(levelrelay)
-  if view.get_children().size() == 2:
-    var current_stage = view.get_child(1)
-    current_stage.queue_free()
-  view.add_child(load(level).instance())
   return
 
 func onItemRequest(filter="") -> void:

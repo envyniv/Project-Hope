@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://materials/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/organs/Quinton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/structures/CameraLimits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/structures/Photobooth.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/Vending.tscn" type="PackedScene" id=5]
@@ -36,6 +37,9 @@ position = Vector2( 42.0431, -53.8418 )
 
 [node name="Kevin" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( -52, 19 )
+
+[node name="Quinton" parent="YSort/Kevin" instance=ExtResource( 2 )]
+position = Vector2( 52, -19 )
 
 [node name="Booth" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -77.2669, -25.008 )

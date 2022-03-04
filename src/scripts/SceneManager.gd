@@ -1,17 +1,15 @@
 extends Node
 
-var head
-var prev_coord = Vector2.ZERO
-var prev_dir
-signal player_chdir
 var possible = {
   "Kevin" : load("res://scenes/organs/Kevin.tscn"),
   "Quinton" : load("res://scenes/organs/Quinton.tscn"),
 }
+
+var view = null
+
 signal scene_changed()
 onready var animation_player=$CanvasLayer/AnimationPlayer
-var color_rect=ColorRect.new()
-signal target_locked
+var color_rect = ColorRect.new()
 signal convo_y
 signal convo_n
 signal fighting
@@ -39,7 +37,7 @@ const select = {
     "savewiz"  : "res://scenes/gui/SaveWizard.tscn",
 }
 
-const stage={
+const stage = {
   "meteora"   : "res://scenes/stage/Meteora.tscn",
   "kevinsbedroom"   : "res://scenes/stage/Meteora.tscn",
   "battle"    : "res://scenes/stage/BattleWorld.tscn",
@@ -59,6 +57,16 @@ const stage={
   "nyx"       : "",
 }
 
+func viewport_ready(viewport) -> void:
+  view=viewport
+  return
+
+func change_level_relay(level) -> void:
+  if view.get_children().size() == 2:
+    var current_stage = view.get_child(1)
+    current_stage.queue_free()
+  view.add_child(load(stage[level]).instance())
+
 func change_scene(chosen, delay=0):
     var path
     if chosen in select:
@@ -73,11 +81,6 @@ func change_scene(chosen, delay=0):
     yield(animation_player, "animation_finished")
     pass
 
-func change_level_relay(levelrelay):
-  #transition_start()
-  emit_signal("plsChangeLeveliBegYou", stage[levelrelay])
-  #transition_end()
-
 func transition_start(delay=0):
     yield(get_tree().create_timer(delay),"timeout")
     animation_player.play("fade")
@@ -86,10 +89,6 @@ func transition_end():
     animation_player.play_backwards("fade")
     emit_signal("scene_changed")
     pass
-
-func tactical_lock_on(target):
-  emit_signal("target_locked", target)
-  head = target
 
 func vending_up():
   emit_signal("vending")
@@ -120,17 +119,6 @@ func pDisableInput():
 
 func pEnableInput():
   emit_signal("pEnable")
-
-func _physics_process(_delta):
-  if head:
-    var dir_changed = false
-    if prev_coord != head.position:
-      prev_coord = head.position
-      dir_changed=true
-    if dir_changed:
-      var curve = Curve2D.new()
-      curve.add_point(head.position)
-      emit_signal("player_chdir", curve)
 
 func reset_video():
   OS.set_window_size(Vector2(def_scr_w*FileMan.settings.scale, def_scr_h*FileMan.settings.scale))

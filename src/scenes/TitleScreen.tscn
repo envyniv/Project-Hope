@@ -90,7 +90,7 @@ margin_right = -594.326
 margin_bottom = -21.3461
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 3 )
-text = "Envy, 2021"
+text = "Envy, 2022"
 __meta__ = {
 "_edit_use_anchors_": false
 }

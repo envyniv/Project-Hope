@@ -9,13 +9,22 @@ onready var animPlayer = $AnimationPlayer
 onready var animTree   = $AnimationPlayer/AnimationTree
 onready var animState  = animTree.get("parameters/playback")
 
+onready var following = get_parent()
+var prev_coord = Vector2.ZERO
+var prev_dir
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   setup()
   return
 
 func _physics_process(_delta) -> void:
+  if following && curvefollow:
+    if prev_coord != following.position:
+      prev_coord = following.position
+      curvefollow.add_point(following.position)
   moveState()
+
   return
 
 func moveState() -> void:
@@ -41,7 +50,7 @@ func moveState() -> void:
 func add_snake_queue(curve:Curve2D) -> void:
   curvefollow = curve
   return
-  
+
 func animHndlr():
   animTree.set("parameters/run_Pose/blend_position", movedir)
   animTree.set("parameters/idle/blend_position", movedir)
