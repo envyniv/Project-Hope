@@ -1,7 +1,8 @@
 extends NinePatchRect
 
-export(String, "kevin", "quinton", "charlie", "bella") var who
+export(Resource) var pointing setget set_ref
 
+#TODO: un-hardcode all this bullshit
 onready var character = $VBoxContainer/TextureRect
 onready var level = $VBoxContainer/TextureRect/Level
 onready var hpbar = $VBoxContainer/TextureRect/HPBar
@@ -13,63 +14,65 @@ onready var Helm = $VBoxContainer/HBoxContainer/Equip/Buttons/Helm
 onready var Armor = $VBoxContainer/HBoxContainer/Equip/Buttons/Armor
 onready var Charm = $VBoxContainer/HBoxContainer/Equip/Buttons/Charm
 
-onready var xMANA=$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/xMANA
-onready var EVA=$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/EVA
-onready var DEF=$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/DEF
-onready var ATK=$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/ATK
-onready var LUC=$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/LUC
+onready var xMANA =$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/xMANA
+onready var EVA   = $VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/EVA
+#onready var DEF=$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/DEF
+onready var ATK   =$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/ATK
+onready var LUC   =$VBoxContainer/HBoxContainer/PanelStats/Aligner/Values/LUC
 
 signal exit_menumember
 signal iRequireItems
 
-func _ready() -> void:
+func set_ref(val) -> void:
+  #so i can avoid to call setup()
+  pointing = val
   setup()
+  return
+
+func _ready() -> void:
+  hpbar.setup()
+  defbar.setup()
   Helm.connect("pressed", self, "helmPressed")
   Armor.connect("pressed", self, "armorPressed")
   Charm.connect("pressed", self, "charmPressed")
   return
 
 func setup() -> void:
-  hpbar.setup()
-  defbar.setup()
-  return
+  nameLabel.set_text(pointing.localizedName)
 
-func _process(_delta) -> void:
-  #i can probably do this some other way that i don't know of yet
-  if who:
-    var whodata = FileMan.data.get(who)
-    
-    hpbar.update_value(whodata["HP"])
-    hpbar.max_value=whodata["maxHP"]
-    defbar.update_value(whodata["DEF"])
-    defbar.max_value=whodata["maxDEF"]
-    xpLabel.text = TranslationServer.translate("statEXP")+": "+str(whodata["EXP"])+" / "+str(whodata["nextEXP"])
+  var atlas               = AtlasTexture.new()
+  atlas.atlas             = pointing.inGui
+  atlas.region.size       = Vector2(24,30)
+  atlas.region.position.x = 24
+  character.texture       = atlas
 
-    level.text = str(whodata["LVL"])
+  hpbar.update_value( pointing.health )
+  hpbar.max_value   = pointing.max_health
+  defbar.update_value(pointing.defense)
+  defbar.max_value  = pointing.max_defense
+  xpLabel.text      = (
+                      TranslationServer.translate("statEXP")+": "+
+                      str(pointing.experience)+" / "+ #current XP
+                      str(pointing.experience) #maxXP
+                      )
+  level.text        = str(pointing.level)
 
-    xMANA.text = str(whodata["maxMANA"])
-    DEF.text   = str(whodata["DEF"])
-    ATK.text   = str(whodata["ATK"])
-    LUC.text   = str(whodata["LUC"])
-    EVA.text   = str(whodata["EVA"])
+  xMANA.text = str(pointing.max_mana)
+  #DEF.text   = str(pointing.defense)
+  ATK.text   = str(pointing.strength)
+  LUC.text   = str(pointing.luck)
+  EVA.text   = str(pointing.speed)
   return
 
 func _input(_event : InputEvent) -> void:
   if Input.is_action_pressed("ui_cancel"):
     emit_signal("exit_menumember")
-    release_focus()
   return
 
-func itemReceived(type : String, itemfile : String) -> void:
+func itemReceived(type : String, item : Resource) -> void:
   disconnect("itemSelected", self, "itemReceived")
-  match type:
-    "HELM":
-      Helm.text = TranslationServer.translate(itemfile)
-    "ACCESSORY":
-      Charm.text = TranslationServer.translate(itemfile)
-    "EQUIP":
-      Armor.text = TranslationServer.translate(itemfile)
-  FileMan.data.get(who)["equip"][type] = itemfile
+  pointing.set(type, item)
+
   return
 
 func helmPressed() -> void:
@@ -79,7 +82,7 @@ func helmPressed() -> void:
 func armorPressed() -> void:
   emit_signal("iRequireItems", "EQUIP")
   return
-  
+
 func charmPressed() -> void:
   emit_signal("iRequireItems", "ACCESSORY")
   return

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/gui/BGM-icon.png" type="Texture" id=1]
-[ext_resource path="res://materials/diagbox-normal.tres" type="DynamicFont" id=2]
-[ext_resource path="res://materials/stages.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/gui/elements/BGM-icon.png" type="Texture" id=1]
+[ext_resource path="res://materials/fonts/diagbox-normal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://materials/fonts/stages.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/StageBGM.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -63,6 +63,7 @@ texture = ExtResource( 1 )
 anims/fade-in = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "bgm"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0

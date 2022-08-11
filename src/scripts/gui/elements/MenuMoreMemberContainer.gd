@@ -2,56 +2,54 @@ extends Control
 
 onready var nameLabel = $Clickable/NameLabel
 onready var xpLabel   = $Clickable/XP
-onready var hpbar = $HPBar
-onready var defbar = $DEFBar
+onready var hpbar     = $HPBar
+onready var defbar    = $DEFBar
 
 onready var character = $TextureRect
-onready var level = $TextureRect/Level
+onready var level     = $TextureRect/Level
 
-onready var button = $Clickable
+onready var button    = $Clickable
 
-export(String, "kevin", "quinton", "charlie", "bella") var who
+export(Resource) var pointing
 
 signal partymember_selected
 
 func _process(_delta) -> void:
-  #i can probably do this some other way that i don't know of yet
-  var whodata = FileMan.data.get(who)
   if button.is_hovered() || button.has_focus():
     xpLabel.set("custom_colors/font_color", Color(0, 0, 0, 1))
     nameLabel.set("custom_colors/font_color", Color(0, 0, 0, 1))
   else:
     xpLabel.set("custom_colors/font_color", Color(1, 1, 1, 1))
     nameLabel.set("custom_colors/font_color", Color(1, 1, 1, 1))
-  hpbar.update_value(whodata["HP"])
-  hpbar.max_value=whodata["maxHP"]
-  defbar.update_value(whodata["DEF"])
-  defbar.max_value=whodata["maxDEF"]
-  xpLabel.text = TranslationServer.translate("statEXP")+": "+str(whodata["EXP"])+" / "+str(whodata["nextEXP"])
-  level.text=str(whodata["LVL"])
   return
 
 func _ready() -> void:
   hpbar.setup()
   defbar.setup()
   button.connect("pressed", self, "onButton")
-  nameLabel.text=TranslationServer.translate("char"+who)
-  
   #redundant setup to avoid region sharing between nodes
   var atlas = AtlasTexture.new()
-  atlas.atlas = load("res://assets/gui/menu-party.png")
-  atlas.region.size=Vector2(25,34)
+  atlas.atlas = pointing.inGui
+  atlas.region.size=Vector2(24,30)
   character.texture=atlas
-  
-  match who:
-    "quinton":
-      character.texture.region.position.x=25
-    "charlie":
-      character.texture.region.position.x=75
-    "bella":
-      character.texture.region.position.x=50
+
+  setup()
   return
 
 func onButton() -> void:
-  emit_signal("partymember_selected", who)
+  emit_signal("partymember_selected", pointing)
+  return
+
+func setup() -> void:
+  nameLabel.set_text(pointing.localizedName)
+  hpbar.update_value(pointing.health)
+  hpbar.max_value   = pointing.max_health
+  defbar.update_value(pointing.defense)
+  defbar.max_value  = pointing.max_defense
+  xpLabel.text      = (
+                      TranslationServer.translate("statEXP")+": "+
+                      str(pointing.experience)+" / "+ #current XP
+                      str(pointing.experience) #maxXP
+                      )
+  level.text        = str(pointing.level)
   return

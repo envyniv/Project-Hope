@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/defboost.ogg-baeeacf9843cb7c91933a6ec020bfb1e.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/battle/defboost.ogg"
+dest_files=[ "res://.import/defboost.ogg-baeeacf9843cb7c91933a6ec020bfb1e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,272 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/gui/MenuMember.gd" type="Script" id=1]
+[ext_resource path="res://scenes/gui/HPBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://materials/fonts/HP-FONT-thin.tres" type="BitmapFont" id=3]
+[ext_resource path="res://assets/gui/item-icon/item-icon3.png" type="Texture" id=6]
+[ext_resource path="res://characters/dummy.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/item-icon/item-icon8.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui/item-icon/item-icon4.png" type="Texture" id=9]
+[ext_resource path="res://assets/gui/patches/box-patch.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.54902, 0, 1 )
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_bottom_right = 15
+anti_aliasing = false
+
+[node name="MenuMember" type="NinePatchRect"]
+margin_right = 130.0
+margin_bottom = 110.0
+rect_scale = Vector2( 2, 2 )
+rect_clip_content = true
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 24, 24 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_right = 118.0
+margin_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="VBoxContainer/TextureRect"]
+anchor_top = 0.135
+anchor_bottom = 0.135
+margin_left = 16.9306
+margin_top = -3.49594
+margin_right = 26.9306
+margin_bottom = 3.50406
+custom_fonts/font = ExtResource( 3 )
+text = "99"
+align = 1
+
+[node name="HPBar" parent="VBoxContainer/TextureRect" instance=ExtResource( 2 )]
+anchor_right = 0.5
+margin_left = 45.0
+margin_top = 12.0
+margin_right = 48.0
+margin_bottom = 19.0
+custom_styles/fg = SubResource( 4 )
+type = "Health"
+
+[node name="DEFBar" parent="VBoxContainer/TextureRect" instance=ExtResource( 2 )]
+anchor_right = 0.568
+margin_left = 36.0
+margin_top = 22.2993
+margin_right = 30.976
+margin_bottom = 29.2993
+custom_styles/fg = SubResource( 4 )
+type = "Defense"
+
+[node name="Name" type="Label" parent="VBoxContainer/TextureRect"]
+margin_left = 33.0
+margin_top = 1.09406
+margin_right = 73.0
+margin_bottom = 17.0941
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Kevin"
+
+[node name="XP" type="Label" parent="VBoxContainer/TextureRect"]
+anchor_left = 0.962
+anchor_right = 0.962
+margin_left = -59.516
+margin_top = 1.0
+margin_right = 59.484
+margin_bottom = 17.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "EXP: 9999 / 9999"
+align = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 118.0
+margin_bottom = 38.0
+
+[node name="PanelStats" type="Panel" parent="VBoxContainer/HBoxContainer"]
+margin_right = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Aligner" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelStats"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Labels" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner"]
+margin_right = 71.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xMANA" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Labels"]
+margin_right = 71.0
+margin_bottom = 14.0
+text = "statxMANA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EVA" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Labels"]
+margin_top = 18.0
+margin_right = 71.0
+margin_bottom = 32.0
+text = "statEVA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ATK" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Labels"]
+margin_top = 36.0
+margin_right = 71.0
+margin_bottom = 50.0
+text = "statATK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DEF" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Labels"]
+visible = false
+margin_top = 54.0
+margin_right = 71.0
+margin_bottom = 68.0
+text = "statDEF"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LUC" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Labels"]
+margin_top = 54.0
+margin_right = 71.0
+margin_bottom = 68.0
+text = "statLUC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Values" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner"]
+margin_left = 75.0
+margin_right = 107.0
+margin_bottom = 68.0
+
+[node name="xMANA" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Values"]
+margin_right = 32.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.556863, 0.690196, 1, 1 )
+text = "99+1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EVA" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Values"]
+margin_top = 18.0
+margin_right = 32.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0.556863, 0.690196, 1, 1 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ATK" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Values"]
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.556863, 0.690196, 1, 1 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DEF" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Values"]
+visible = false
+margin_top = 54.0
+margin_right = 32.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0.556863, 0.690196, 1, 1 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LUC" type="Label" parent="VBoxContainer/HBoxContainer/PanelStats/Aligner/Values"]
+margin_top = 54.0
+margin_right = 32.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0.556863, 0.690196, 1, 1 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equip" type="Panel" parent="VBoxContainer/HBoxContainer"]
+margin_left = 61.0
+margin_right = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Equip"]
+margin_right = 69.0
+margin_bottom = 56.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Helm" type="Button" parent="VBoxContainer/HBoxContainer/Equip/Buttons"]
+margin_right = 71.0
+margin_bottom = 22.0
+text = "Helm"
+icon = ExtResource( 6 )
+
+[node name="Armor" type="Button" parent="VBoxContainer/HBoxContainer/Equip/Buttons"]
+margin_top = 26.0
+margin_right = 71.0
+margin_bottom = 48.0
+text = "Armor"
+icon = ExtResource( 9 )
+
+[node name="Charm" type="Button" parent="VBoxContainer/HBoxContainer/Equip/Buttons"]
+margin_top = 52.0
+margin_right = 71.0
+margin_bottom = 74.0
+text = "Charm"
+icon = ExtResource( 8 )
+
+[node name="Card" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Equip"]
+margin_left = -4.0
+margin_top = 37.0
+margin_right = 94.0
+margin_bottom = 81.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="First" type="Button" parent="VBoxContainer/HBoxContainer/Equip/Card"]
+margin_right = 98.0
+margin_bottom = 20.0
+text = "The Idiot"
+
+[node name="Second" type="Button" parent="VBoxContainer/HBoxContainer/Equip/Card"]
+margin_top = 24.0
+margin_right = 98.0
+margin_bottom = 44.0
+text = "The Idiot"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/gui/buttons/selector.png" type="Texture" id=1]
+[ext_resource path="res://scripts/gui/elements/menu_cursor.gd" type="Script" id=2]
+[ext_resource path="res://sounds/fx/gui/menuMove.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sounds/fx/gui/menuSelect.ogg" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 10, 9 )
+
+[node name="Cursor" type="TextureRect"]
+margin_right = 10.0
+margin_bottom = 9.0
+texture = SubResource( 7 )
+script = ExtResource( 2 )
+menu_parent_path = NodePath("../Choices")
+cursor_offset = Vector2( 35, 4.5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "sfx"
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "bgm"

@@ -7,26 +7,26 @@ onready var selllabel = $HBoxContainer/VBoxContainer2/Sell
 onready var buylabel = $HBoxContainer/VBoxContainer/Buy
 
 var playermoney = FileMan.data.money
-var playerlevel = FileMan.data.level
-var playerinv = FileMan.data.inv
-var existingitems = ItemDatabase.items
+var playerinv   = FileMan.data.inv
+#var existingitems = ItemDatabase.items
 var select
-
-func _ready():
-  # warning-ignore:return_value_discarded
-  SceneManager.connect("vending", self, "showStuff")
-  # warning-ignore:return_value_discarded
-  SceneManager.connect("left_vending", self, "hideStuff")
-
+var selling := []
+"""
+func _ready() -> void:
   for i in existingitems:
-    if ItemDatabase.get_item(i.name).RequiredLevel <= playerlevel: #if the player is at a high enough level
-      if ItemDatabase.get_item(i.name).isSold:                     #if the item can be sold
-        AvailableList.add_item(TranslationServer.translate(i.name), ItemDatabase.guess_icon(i.type), true) #show it
+    if i.isSold:                     #if the item can be sold
+      selling.append(i)
+      AvailableList.add_item(
+        TranslationServer.translate(i.name),
+        ItemDatabase.guess_icon(i.type),
+        true
+        ) #show it
   AvailableList.select(0)
   updPlayerInv()
   ItemDesc.text=""
+  return
 
-func showStuff():
+func showStuff() -> void:
   show()
   set_process_input(true)
   if HaveList.get_item_count()>0:
@@ -34,7 +34,7 @@ func showStuff():
   #AvailableList.grab_focus()
   return
 
-func hideStuff():
+func hideStuff() -> void:
   set_process_input(false)
   hide()
   return
@@ -46,17 +46,17 @@ func _on_BuyList_item_selected(index) -> void:
 
 # if an item is activated, subtract value from money and add item
 func _on_BuyList_item_activated(index) -> void:
-    select = AvailableList.get_item_text(index)
+  select = AvailableList.get_item_text(index)
 
-    if playermoney >= ItemDatabase.get_translation_item(select).Price:
-        if FileMan.add_item(ItemDatabase.get_translation_item(select).name):
-          playermoney -= ItemDatabase.get_translation_item(select).Price
-          setDesc(index)
-          $money.play()
-    else:
-      $denied.play()
-    updPlayerInv()
-    return
+  if playermoney >= selling[index].Price:
+    if FileMan.add_item(selling[index].name):
+      playermoney -= selling[index].Price
+      setDesc(index)
+      $money.play()
+  else:
+    $denied.play()
+  updPlayerInv()
+  return
 
 # if an item in the player's inventory gets activated, remove item and give 80% the price
 func _on_ItemList_item_activated(index) -> void:
@@ -105,5 +105,6 @@ func setDesc(index, inv=false) -> void:
 
 func _input(_event) -> void:
   if Input.is_action_pressed("ui_cancel"):
-    SceneManager.vending_left()
+    pass
   return
+"""

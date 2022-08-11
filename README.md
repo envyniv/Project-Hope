@@ -1,46 +1,179 @@
-![Official Last Hope Logo](src/title.svg)
+![# Official Last Hope Logo](src/title.svg)
 
 --------------------------------------------------------------------------------
 
-_My take on an RPG. Not really inspired from anything._
+_SUNBURST - Run of the mill RPG with a somewhat unique battle system._
 
 [Website](https://envyniv.github.io/Project-Hope)
 
 > Coded in [Godot](https://godotengine.org/).
 
-> Font used is PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
+> [PX Sans](https://github.com/teryror/pixel-fonts) by [teryor](https://github.com/teryror)
 
 > Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
 
-> Logo(s) by [Davide Azzaretto/envyniv](https://github.com/envyniv)
+> Logo(s) by [envyniv](https://github.com/envyniv)
 
-Davide Azzaretto/envyniv, 2020.
+> OST BGM by [Fluffclipse](https://soundcloud.com/fluffclipse)
 
-# Twirl Pixel Members
+> [Godot Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager) by nathanhoad
 
-- envyniv; (Pretty Much Anything™℠®©, etc.)
-- David Kvistorf (davidkvis99/Fluffclipse); (Music, Writing)
+--------------------------------------------------------------------------------
+
+# About the Game
+
+## Plot Synopsis
+
+The game takes place on a fictional island in the Bermuda Triangle, named Evrys (Temporary)
+
+Evrys is fractured in 10 cities: Nyx, Utopia, Basileus, Oneiros, Fantasia, Erimos, Tyche, Eirene, Xenos and Philomela.
+
+You start off in Utopia, in the protagonist's bedroom, witnessing the awakening of the protagonist, Kevin.
+
+He goes to Oneiros for some errands, and meets the Villainous clan featured throughout the whole game, The Actors.
+
+## Compendium
+
+A Collection of all Concept Art made for the game, and related descriptions.
+
+### The Main Cast
+
+#### Sarah
+
+![](doc_stuff/noel-sarah.gif "Dolly by Noel, Sarah's design")
+
+My Friend Noel had drawn some designs for LH and shared them on my discord server, This was amongst the ones chosen.
+
+#### Charlie
+
+![](doc_stuff/envy-charlie.png "Charlie by Envy") ![](doc_stuff/nv-charlie-rede.jpg "Charlie Redesign by Envy")
+
+Kid that likes tinkering and baseball.
+
+#### Quinton
+
+![](doc_stuff/envy-quinrede.png "Quinton's Redesign by Envy")
+
+The introvert.
+
+#### Kevin
+
+![](doc_stuff/nv-kevin.jpg "Kevin by Envy")
+
+The "..." guy.
+
+### Enemies
+
+#### Main Villain
+
+![](doc_stuff/nv-phi.png)
+
+The main villain of the game; Leader of The Actors. Name and origins unknown.
+
+#### Actor Grunt
+
+![](doc_stuff/nv-grunt.jpg)
+
+Low rank grunts, medieval clothing.
+
+#### ADOS
+
+![](doc_stuff/nv-ados.png)
+
+Scrapped main villain. Sentient AI.
+
+#### PSA-rachnid and Raggey Rancid
+
+![](doc_stuff/noel-tvarac&RagRan.png "T-Varacnid and Raggey Rancid by Noel")
+
+My Friend Noel had drawn some designs for LH and PSArachnid was chosen, leaving Raggey Rancid with no representation.
+
+An Abandoned TV, now a home of a specimen of the Great Longleg spider spieces, native to the Evrys island.
+
+### Locations
+
+#### Fantasia
+
+![](doc_stuff/david-fantasia.png)
+
+Fantasia.
+
+### Skills
+
+#### SunBurst
+
+Fire-Electric Skill. Feel the Sun's Surface bursting and zapping.
+
+#### SuperNova
+
+Light Skill. The power of a dying star.
+
+#### BlackHole
+
+Dark Skill. Immense gravity in an immensely tiny black spot.
+
+#### WormHole
+
+### Items
+
+### Misc
+
+![](doc_stuff/nv-titleBG.jpg "Title Screen BG draft by Envy")
+
+Early Title Screen BG draft; was supposed to have the Main Villain's hand holding the sun, and Kevin staring from the spot marked on the hill
+
+![](doc_stuff/nostyle-logo.png "Original logo") ![](doc_stuff/nv-scrappedlogo.png "Scrapped Logo")
+
+Scrapped Logos for the game.
+
+![](doc_stuff/nv-map.png "Original world map")
+
+Map generated with the use of some website, Basis for in-game one.
+
+--------------------------------------------------------------------------------
 
 # Footage
 
-dummy <!-- [![Early Indev](http://img.youtube.com/vi/2yaVttZoP04/0.jpg)](https://www.youtube.com/watch?v=2yaVttZoP04 "Early Indev") -->
+[![Early Indev](http://img.youtube.com/vi/dZG5bxYLYBU/0.jpg)](https://www.youtube.com/watch?v=dZG5bxYLYBU "Early Indev")
+
+[![Early Indev](http://img.youtube.com/vi/AxijdKje0OY/0.jpg)](https://www.youtube.com/watch?v=AxijdKje0OY "Early Indev")
 
 # TODO
 
-Estimated Completion Percentage: ![Pretty Much Nothing](https://progress-bar.dev/7?title=Nothing)
+Estimated Completion Percentage: ![Pretty Much Nothing](https://progress-bar.dev/11?title=Nothing)
 
-- [ ] Allow party composition changes
-- [ ] _Party members_, fix jittering ([potentially related to normalized vectors](https://youtu.be/fZ6bOERw03M?t=123)), replace `snakeTail` & `follower` with a proper signal based system
-- [ ] _Minigames_, implement
-- [X] _DiagBox.gd_, make it so punctuation slows down text flow
+- [ ] _Party_, allow composition changes
+- [ ] _Bella_, complete movement sprites
+- [ ] _Quinton_, complete movement sprites
+- [ ] _Charlie_, complete movement sprites
+- [ ] _Bella_, complete battle sprites
+- [ ] _Quinton_, complete battle sprites
+- [ ] _Charlie_, complete battle sprites
 - [ ] _Skills_, implement
-- [ ] _ModMan_, figure out why the !$%? it loads stuff into itemDB
+- [X] _Save Slot_, mod selection dropdown
+- [ ] _Settings_, make controller-friendly
+- [X] _Mods_, implement loader
+- [ ] _Save Menu_, fix copy functionality
+- [ ] _Minigames_, implement
+- [ ] _ScnChgTrigger_, implement on contact interact
+- [X] _ScnChgTrigger_, conditionally expose where on stage not null
+- [ ] _Settings_, add "Master" bus volume slider
+- [ ] _Photobooth_, replace setget with _get_property_list()
+- [ ] _NPC_, construct path
+- [ ] _Dialogue Box_, finish implementation (speed change)
+- [X] _Pause Menu_, overhaul
+- [X] _Player_, Change Sprinting to Slingshot Running
+- [X] _Audio_, move volume management to Buses
+- [X] _Player_, fix bad animation names
+- [X] _NPC_, conditionally expose properties
+- [X] _Save Menu_, fix Deleting save not giving focus back to plus button
+- [X] _Save System_, allow for more than 3 saves
+- [X] _Party members_, fix jittering ([related to normalized vectors](https://youtu.be/fZ6bOERw03M?t=123)), replace `snakeTail` & `follower` with a proper system
+- [X] _DiagBox.gd_, make it so punctuation slows down text flow
 - [X] _DiagBox.gd_, move to DialogueNodes spec
-- [ ] _Pause Menu_, clean up and finish
-- [X] _File Menu_, 3 saves
 - [X] _Splashscreen_, implement custom
 - [X] _Viewports_, replace `inbattle`, `inshop`, `indialog` with signals
-- [X] _Trailing Party Members/PlayerFollower.gd_, fix always playing walk anim
+- [X] _Party members_, fix always playing walk anim
 - [X] _FileMan_, offload all filechecks and loads to it
 - [X] _SaveFile_, move to Godot Resource (.res)
 - [X] _Controls_, make reboundable
@@ -52,45 +185,6 @@ Estimated Completion Percentage: ![Pretty Much Nothing](https://progress-bar.dev
 
 --------------------------------------------------------------------------------
 
-# Export Game/Build Custom Templates
-
-## Exporting the Game
-
-![Where to add custom templates](doc_stuff/custom_templates.png)
-
-After having acquired your custom templates (preferrably from the following steps), in the export screen, go to the Settings tab, and add the exec to `Release`
-
-_Please Note: if you plan on editing the export presets, I would suggest you do so through a text editor, or you may meet graphical glitches/incomprehensible characters in the editor_
-
-_Please Note 2: As obvious as it may sound, this has to be stated; PCKs and ZIPs exported from Linux WILL work on Windows, however the opposite is not true._
-
-## Compiling The Templates
-
-### Linux
-
-- download the godot 3.2.3-stable source code from [here](https://github.com/godotengine/godot/archive/3.2.3-stable.zip)
-
-- download `custom.py` from [here](https://github.com/envyniv/Project-Hope/raw/master/customtemplates/custom.py)
-
-- put custom.py in the godot source code folder
-
-- [make sure you've got compiling dependencies installed](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_x11.html)
-
-- - Optional: [Cross compiling for Windows](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_windows.html#cross-compiling-for-windows-from-other-operating-systems) (if not desired omit first two lines of the following `code block`)
-
-- - Optional: [Cross compiling for macOS](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_osx.html#cross-compiling-for-macos-from-linux) (not officially supported by me)
-
-- Execute the following commands:
-
-  ```
-  scons platform=windows target=release bits=64
-  strip bin/godot.windows.opt.64.exe
-  scons platform=x11 target=release bits=64
-  strip bin/godot.x11.opt.64
-  upx -9 bin/godot.windows.opt.64.exe
-  upx -9 bin/godot.x11.opt.64
-  ```
-
 # Special Thanks
 
 - Everyone in [my discord server](https://discord.gg/bNkDkHW) for being supportive
@@ -98,14 +192,6 @@ _Please Note 2: As obvious as it may sound, this has to be stated; PCKs and ZIPs
 - Gzillion/Newbie, Aléris (minor sprite work)
 - gotimo2 (separated player movement and animation)
 - Everyone from the [Godot Engine discord server](https://discord.gg/4JBkykG) for being cool
-
---------------------------------------------------------------------------------
-
-# About the game
-
-A collection of all .md files in the game's source folders, that i reunited in this section, for convinience.
-
-:thinking:
 
 --------------------------------------------------------------------------------
 

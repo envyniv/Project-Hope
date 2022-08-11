@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://materials/keyboard.tres" type="ButtonGroup" id=1]
+[ext_resource path="res://materials/ui/keyboard.tres" type="ButtonGroup" id=1]
 [ext_resource path="res://scripts/KeyboardButton.gd" type="Script" id=2]
+
 
 [node name="Button" type="Button"]
 margin_right = 9.0

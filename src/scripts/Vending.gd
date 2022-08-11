@@ -1,8 +1,6 @@
-extends StaticBody2D
+extends Interactable
 
-func can_interact(interactParent : Node) -> bool:
-    return interactParent is Player
+export(Resource) var seller
 
 func _interact(_interactParent : Node) -> void:
-    #FileMan.inShop=true
-    SceneManager.vending_up()
+    return

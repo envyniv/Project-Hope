@@ -1,40 +1,45 @@
 extends Camera2D
-var follow = null
+var follow            = null
 
-var _duration = 0.0
-var _period_in_ms = 0.0
-var _amplitude = 0.0
-var _timer = 0.0
+var _duration         = 0.0
+var _period_in_ms     = 0.0
+var _amplitude        = 0.0
+var _timer            = 0.0
 var _last_shook_timer = 0
-var _previous_x = 0.0
-var _previous_y = 0.0
-var _last_offset = Vector2(0, 0)
-signal set_limits
+var _previous_x       = 0.0
+var _previous_y       = 0.0
+var _last_offset      = Vector2(0, 0)
 
-func _ready():
+func _ready() -> void:
 # warning-ignore:return_value_discarded
-  SceneManager.connect("target_locked", self, "target_found")
-# warning-ignore:return_value_discarded
-  SceneManager.connect("fighting", self, "reduce_zoom")
-# warning-ignore:return_value_discarded
-  SceneManager.connect("fighting_over", self, "amplify")
-  emit_signal("set_limits")
+  SceneManager.connect("target_locked", self, "targetFound")
+  # warning-ignore:return_value_discarded
+  SceneManager.connect("register_camera_limits", self, "setCameraLimits")
+  # warning-ignore:return_value_discarded
+  SceneManager.connect("shake_camera", self, "shake")
+  return
 
-func reduce_zoom():
+func reduce_zoom() -> void:
   zoom=Vector2(1, 1)
+  return
 
-func amplify():
-  zoom=Vector2(0.5, 0.5)
+func amplify() -> void:
+  zoom = Vector2(0.5, 0.5)
+  return
 
-func target_found(target):
-  follow=target
+func targetFound(target) -> void:
+  for i in target.get_children():
+    if (i is Player):
+      follow=i
+  return
 
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
   if follow:
-      position = follow.position
+    position = follow.global_position
+  return
 
 # Shake with decreasing intensity while there's time remaining.
-func _process(delta):
+func _process(delta) -> void:
   # Only shake when there's shake time remaining.
   if _timer == 0:
     return
@@ -61,16 +66,29 @@ func _process(delta):
   if _timer <= 0:
     _timer = 0
     set_offset(get_offset() - _last_offset)
+  return
 
 # Kick off a new screenshake effect.
-func shake(duration, frequency, amplitude):
-    # Initialize variables.
-    _duration = duration
-    _timer = duration
-    _period_in_ms = 1.0 / frequency
-    _amplitude = amplitude
-    _previous_x = rand_range(-1.0, 1.0)
-    _previous_y = rand_range(-1.0, 1.0)
-    # Reset previous offset, if any.
-    set_offset(get_offset() - _last_offset)
-    _last_offset = Vector2(0, 0)
+func shake(duration, frequency, amplitude) -> void:
+  # Initialize variables.
+  _duration = duration
+  _timer = duration
+  _period_in_ms = 1.0 / frequency
+  _amplitude = amplitude
+  _previous_x = rand_range(-1.0, 1.0)
+  _previous_y = rand_range(-1.0, 1.0)
+  # Reset previous offset, if any.
+  set_offset(get_offset() - _last_offset)
+  _last_offset = Vector2(0, 0)
+  return
+
+func setCameraLimits(topleft : Vector2, bottomright : Vector2) -> void:
+  #warning-ignore:NARROWING_CONVERSION
+  limit_top    = topleft.y
+  # warning-ignore:NARROWING_CONVERSION
+  limit_left   = topleft.x
+  # warning-ignore:NARROWING_CONVERSION
+  limit_right  = bottomright.x
+  # warning-ignore:NARROWING_CONVERSION
+  limit_bottom = bottomright.y
+  return

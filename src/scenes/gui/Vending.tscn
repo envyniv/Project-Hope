@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Vending.gd" type="Script" id=1]
 [ext_resource path="res://assets/stages/vending.png" type="Texture" id=2]
+[ext_resource path="res://scenes/gui/ShopUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://materials/shaders/Interact.tres" type="Material" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.5185, 10 )
@@ -10,10 +12,19 @@ extents = Vector2( 17.5185, 10 )
 collision_layer = 5
 collision_mask = 5
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 4 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 9 )
 shape = SubResource( 1 )
+
+[node name="Breaker" type="Node" parent="."]
+
+[node name="BuyMenu" parent="Breaker" instance=ExtResource( 3 )]
+visible = false

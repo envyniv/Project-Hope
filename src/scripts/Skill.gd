@@ -1,8 +1,8 @@
 extends Resource
 class_name Skill
 export(String) var name
-export(String, MULTILINE) var Description
-export(int,0,10) var RequiredMana
+export(String) var Description
+export(int,0) var RequiredMana
 enum use {
   AIM,
   SELECT_TEAM

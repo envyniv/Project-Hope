@@ -1,28 +1,50 @@
-extends StaticBody2D
+tool
+extends Interactable
 
-export (String) var map
-var used := false
+export(Resource) var mapDefinition setget checktype
+export(Resource) var diag
 
-func _ready():
-  SceneManager.stage_ready(map)
+var player = null
+var _timestamp
 
-func can_interact(interactParent : Node) -> bool:
-  return interactParent is Player
+onready var anim = $Sprite/Curtain/AnimationPlayer
+
+func _ready() -> void:
+  # warning-ignore:return_value_discarded
+  SceneManager.connect("target_locked", self, "findPlayer")
+  SceneManager.stage_ready(mapDefinition)
+  return
 
 func _interact(_interactParent : Node) -> void:
-  #TODO: to do this changes are required in "res://scripts/gui/DiagBox.gd"
-  #the game now prompts you before saving, but we still need to check if the player replied yes or no.
-  #SceneManager.start_convo("save")
-  var image = get_viewport().get_texture().get_data()
-  if used:
-    return
-  FileMan.data.location=map
-  FileMan.data.preview=image
-  $Booth/Curtain/AnimationPlayer.play("photo")
-  used = true
-  collision_layer = collision_layer ^ 4
-  FileMan.data.position=SceneManager.head.position
-#  if SceneManager.start_convo("save-quit"):
-  FileMan.data.playtime+=(OS.get_unix_time()-FileMan.curtime)
+  _timestamp = OS.get_unix_time()
+  SceneManager.start_convo(diag, self)
+  return
 
+func findPlayer(party : Party) -> void:
+  for member in party.get_children():
+    if (member is Player):
+      player = member
+  return
+
+func checktype(given:Resource) -> void:
+  if given is MapDefinition:
+    mapDefinition = given
+  else:
+    print("Invalid resource provided.")
+  return
+
+func picture() -> void:
+  var image = get_viewport().get_texture().get_data()
+  var scene = PackedScene.new()
+  scene.pack(get_node("../.."))
+  FileMan.data.location = scene
+  FileMan.data.locationName = mapDefinition.localizedName
+  image.flip_y()
+  FileMan.data.preview  = image
+  anim.play("photo")
+  collision_layer = collision_layer ^ 4 #disables collision
+  FileMan.data.position = player.global_position
+  FileMan.data.playtime += ( OS.get_unix_time() - FileMan.curtime )
+  FileMan.curtime = OS.get_unix_time()
   FileMan.save_game()
+  return

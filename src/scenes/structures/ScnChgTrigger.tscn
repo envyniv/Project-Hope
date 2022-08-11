@@ -2,7 +2,11 @@
 
 [ext_resource path="res://scripts/ScnChgTrigger.gd" type="Script" id=1]
 
-[node name="Warp" type="StaticBody2D"]
+[node name="Warp" type="Area2D"]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 5
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+targetScene = null

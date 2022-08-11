@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit.ogg-075bf10a3c6274b14afd34b8b99d6728.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/battle/hit.ogg"
+dest_files=[ "res://.import/hit.ogg-075bf10a3c6274b14afd34b8b99d6728.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

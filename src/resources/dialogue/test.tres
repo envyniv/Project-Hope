@@ -1,0 +1,71 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+syntax_version = 2
+raw_text = "~ start
+Kevin: I've brought my loofa out today again...
+Kevin: And who's gonna stop me?
+set met_player += 1
+=> END"
+errors = [  ]
+titles = {
+"start": "1"
+}
+lines = {
+"0": {
+"next_id": "1",
+"text": "start",
+"type": "title"
+},
+"1": {
+"character": "Kevin",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "2",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "I've brought my loofa out today again...",
+"time": null,
+"translation_key": "I've brought my loofa out today again...",
+"type": "dialogue"
+},
+"2": {
+"character": "Kevin",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "And who's gonna stop me?",
+"time": null,
+"translation_key": "And who's gonna stop me?",
+"type": "dialogue"
+},
+"3": {
+"mutation": {
+"expression": [ {
+"type": "variable",
+"value": "met_player"
+}, {
+"type": "assignment",
+"value": "+="
+}, {
+"type": "number",
+"value": 1
+} ]
+},
+"next_id": "4",
+"type": "mutation"
+},
+"4": {
+"next_id": "end",
+"type": "goto"
+}
+}

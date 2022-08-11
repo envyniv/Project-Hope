@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Lifedef.gd" type="Script" id=1]
+[ext_resource path="res://characters/Kevin/growth.tres" type="Resource" id=2]
+[ext_resource path="res://characters/Quinton/quinton_ow.png" type="Texture" id=3]
+[ext_resource path="res://characters/Quinton/quinton_statbox.png" type="Texture" id=5]
+[ext_resource path="res://characters/Quinton/quinton_ui.png" type="Texture" id=6]
+
+[resource]
+script = ExtResource( 1 )
+overworld = ExtResource( 3 )
+inGui = ExtResource( 6 )
+StatBox = ExtResource( 5 )
+localizedName = "Quinton"
+canUseSkills = [  ]
+growthStats = ExtResource( 2 )
+max_health = 15
+max_mana = 10
+strength = 5
+max_defense = 5
+speed = 3
+luck = 0
+experience = 0

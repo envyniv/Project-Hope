@@ -1,0 +1,101 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+syntax_version = 2
+raw_text = ": You enter the shower, and turn on the tap.
+playSound()
+: Cold water gently pours on your skin.
+: You're initially startled... but get quickly used to the cold feeling.
+: Peaceful music plays in your head.
+: All status ailments removed."
+errors = [  ]
+titles = {
+}
+lines = {
+"0": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "1",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "You enter the shower, and turn on the tap.",
+"time": null,
+"translation_key": "You enter the shower, and turn on the tap.",
+"type": "dialogue"
+},
+"1": {
+"character": "",
+"inline_mutations": [  ],
+"next_id": "2",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "playSound()",
+"time": null,
+"translation_key": "playSound()",
+"type": "dialogue"
+},
+"2": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Cold water gently pours on your skin.",
+"time": null,
+"translation_key": "Cold water gently pours on your skin.",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "You're initially startled... but get quickly used to the cold feeling.",
+"time": null,
+"translation_key": "You're initially startled... but get quickly used to the cold feeling.",
+"type": "dialogue"
+},
+"4": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "5",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Peaceful music plays in your head.",
+"time": null,
+"translation_key": "Peaceful music plays in your head.",
+"type": "dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "All status ailments removed.",
+"time": null,
+"translation_key": "All status ailments removed.",
+"type": "dialogue"
+}
+}

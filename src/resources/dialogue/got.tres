@@ -1,0 +1,213 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+syntax_version = 2
+raw_text = "~ start
+if (data.itemsCollected % 3) == 0
+	=> Got1
+elif (data.itemsCollected % 2) == 0
+	=> Got2
+else
+	=> Got3
+
+~ Got1
+#requester.item [TR:tbae9d5536c]
+: You got {{item}} [TR:t11db46fbf6]
+=> END
+
+~ Got2
+: You found {{item}} [TR:tc6586e4e92]
+=> END
+
+~ Got3
+: You picked up {{item}} [TR:t7b2afa74e9]
+=> END"
+errors = [  ]
+titles = {
+"Got1": "10",
+"Got2": "14",
+"Got3": "18",
+"start": "1"
+}
+lines = {
+"0": {
+"next_id": "1",
+"text": "start",
+"type": "title"
+},
+"1": {
+"condition": {
+"expression": [ {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "data"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "itemsCollected"
+}, {
+"type": "operator",
+"value": "%"
+}, {
+"type": "number",
+"value": 3
+} ]
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 0
+} ]
+},
+"next_conditional_id": "3",
+"next_id": "2",
+"next_id_after": "end",
+"type": "condition"
+},
+"10": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "11",
+"pauses": {
+},
+"replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "item"
+} ],
+"value_in_text": "{{item}}"
+} ],
+"speeds": [  ],
+"text": "You got {{item}}",
+"time": null,
+"translation_key": "t11db46fbf6",
+"type": "dialogue"
+},
+"11": {
+"next_id": "end",
+"type": "goto"
+},
+"13": {
+"next_id": "14",
+"text": "Got2",
+"type": "title"
+},
+"14": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "15",
+"pauses": {
+},
+"replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "item"
+} ],
+"value_in_text": "{{item}}"
+} ],
+"speeds": [  ],
+"text": "You found {{item}}",
+"time": null,
+"translation_key": "tc6586e4e92",
+"type": "dialogue"
+},
+"15": {
+"next_id": "end",
+"type": "goto"
+},
+"17": {
+"next_id": "18",
+"text": "Got3",
+"type": "title"
+},
+"18": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "19",
+"pauses": {
+},
+"replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "item"
+} ],
+"value_in_text": "{{item}}"
+} ],
+"speeds": [  ],
+"text": "You picked up {{item}}",
+"time": null,
+"translation_key": "t7b2afa74e9",
+"type": "dialogue"
+},
+"19": {
+"next_id": "end",
+"type": "goto"
+},
+"2": {
+"next_id": "10",
+"parent_id": "1",
+"type": "goto"
+},
+"3": {
+"condition": {
+"expression": [ {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "data"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "itemsCollected"
+}, {
+"type": "operator",
+"value": "%"
+}, {
+"type": "number",
+"value": 2
+} ]
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 0
+} ]
+},
+"next_conditional_id": "5",
+"next_id": "4",
+"next_id_after": "end",
+"type": "condition"
+},
+"4": {
+"next_id": "14",
+"parent_id": "3",
+"type": "goto"
+},
+"5": {
+"next_conditional_id": "end",
+"next_id": "6",
+"next_id_after": "end",
+"type": "condition"
+},
+"6": {
+"next_id": "18",
+"parent_id": "5",
+"type": "goto"
+},
+"8": {
+"next_id": "10",
+"text": "Got1",
+"type": "title"
+}
+}

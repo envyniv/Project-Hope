@@ -5,7 +5,15 @@ src/assets/reference
 src/logs
 src/addons
 src/bin
-customtemplates/templates.zip
+src/settings.tres
+src/saves/*
+customtemplates/godot.x11.opt.64
+customtemplates/godot.x11.opt.32
+customtemplates/godot.windows.opt.64.exe
+customtemplates/godot.windows.opt.32.exe
 /*.*~
 /*.blend1
 /*.xcf
+
+!src/addons/dialogue_manager/*
+

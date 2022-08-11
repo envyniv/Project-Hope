@@ -5,11 +5,12 @@
 [resource]
 script = ExtResource( 1 )
 mods = [  ]
-sfxvol = 1.0
-bgmvol = 1.0
+mtrvol = 1.0
+sfxvol = 0.16
+bgmvol = 0.0
 txtspd = 0.1
 voice = true
-scale = 1
+scale = 2
 lang = "en"
 controls = {
 "keyboard": {

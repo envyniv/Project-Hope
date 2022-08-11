@@ -1,66 +1,75 @@
 extends AwareBase
 class_name PlayerFollower
 
+"""
 var curvefollow : Curve2D
-var followindex = 0
+var followindex := 0
 var followpoints
+"""
+var target
 
 onready var animPlayer = $AnimationPlayer
 onready var animTree   = $AnimationPlayer/AnimationTree
 onready var animState  = animTree.get("parameters/playback")
+onready var sprite     = $Sprite
 
-onready var following = get_parent()
-var prev_coord = Vector2.ZERO
-var prev_dir
+signal moving
 
-# Called when the node enters the scene tree for the first time.
+var following = null
+"""
 func _ready() -> void:
-  setup()
+  if get_parent() is Party:
+    get_parent().connect("playerPos_update", self, "add_snake_queue")
+  return
+"""
+func _physics_process(_delta) -> void:
+  animHndlr()
+  moveState()
   return
 
-func _physics_process(_delta) -> void:
-  if following && curvefollow:
-    if prev_coord != following.position:
-      prev_coord = following.position
-      curvefollow.add_point(following.position)
-  moveState()
-
+func targetSet(pos: Vector2, spd: int) -> void:
+  target = pos
+  moveSpeed = spd
   return
 
 func moveState() -> void:
-  if followpoints:
-    followpoints = curvefollow.get_baked_points()
-    var target = followpoints[followindex]
-    if position.distance_to(target) < 16:
+  """
+  if curvefollow: # if we even have anything to follow
+    followpoints = curvefollow.get_baked_points() #let's get all points we can go to
+    var target = followpoints[followindex] #let's follow the first point and go from there
+    if position.distance_to(target) > 18: #wait for the player to get a bit far
+      #vector math
+      movedir = target - position
+      motion = movedir.normalized() * moveSpeed
+      motion = move_and_slide(motion, Vector2(0, 0))
+    else:
       followindex += 1
       if followindex >= followpoints.size():
         followindex = 0
         curvefollow = null
         movedir = Vector2.ZERO
-      target = followpoints[followindex]
-      moveSpeed = 65
-    else: # this else was put to stop the walking animation from playing every frame, but causes janky motion
+  """
+  if target:
+    if position.distance_to(target) > 18:
       movedir = target - position
-      var multiplier = position.distance_to(target)
-      motion = movedir.normalized() * multiplier * 6
+      motion = movedir.normalized() * moveSpeed
       motion = move_and_slide(motion, Vector2(0, 0))
-      moveSpeed = 130
-  return
+      emit_signal("moving", position, moveSpeed)
+    else:
+      movedir = Vector2.ZERO
 
-func add_snake_queue(curve:Curve2D) -> void:
+  return
+"""
+func add_snake_queue(curve: Curve2D) -> void:
   curvefollow = curve
   return
-
+"""
 func animHndlr():
   animTree.set("parameters/run_Pose/blend_position", movedir)
   animTree.set("parameters/idle/blend_position", movedir)
   animTree.set("parameters/walk/blend_position", movedir)
   animTree.set("parameters/run/blend_position", movedir)
-  if state == THINK:
-    animPlayer.play("think")
-  elif state == STUN:
-    print("player stunned")
-  elif movedir != Vector2.ZERO:
+  if movedir != Vector2.ZERO:
     if moveSpeed > 65:
       animState.travel("run")
     else:
@@ -70,6 +79,8 @@ func animHndlr():
       animState.travel("run_Pose")
     else:
       animState.travel("idle")
+  return
 
 func setup() -> void:
+  sprite.texture = lifeform.overworld
   return

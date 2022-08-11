@@ -14,5 +14,5 @@ func _but_pre() -> void:
   #player.stream=load("res://sounds/fx/settings_end.ogg")
   #player.play()
   #yield(player, "finished")
-  SceneManager.change_scene("settings",0)
+  SceneManager.change_scene("title",0)
   return

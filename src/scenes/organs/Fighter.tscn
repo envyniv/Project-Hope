@@ -1,0 +1,252 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://assets/stages/shadowsmall.png" type="Texture" id=1]
+[ext_resource path="res://assets/characters/Kevin/kevin-clark.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Fighter.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=136]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 69 ]
+}
+
+[sub_resource type="Animation" id=137]
+resource_name = "attack_UP"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 69, 70, 69 ]
+}
+
+[sub_resource type="Animation" id=97]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 89, 90 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=106]
+animation = "idle_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=107]
+animation = "idle_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=108]
+animation = "idle_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=109]
+animation = "idle_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=110]
+animation = "idle_diagLeft.Down"
+
+[sub_resource type="AnimationNodeAnimation" id=111]
+animation = "idle_diagRight.Up"
+
+[sub_resource type="AnimationNodeAnimation" id=112]
+animation = "idle_diagRight.Down"
+
+[sub_resource type="AnimationNodeAnimation" id=113]
+animation = "idle_diagLeft.Up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=48]
+blend_point_0/node = SubResource( 106 )
+blend_point_0/pos = Vector2( -0.3, 0 )
+blend_point_1/node = SubResource( 107 )
+blend_point_1/pos = Vector2( 0.3, 0 )
+blend_point_2/node = SubResource( 108 )
+blend_point_2/pos = Vector2( 0, -0.3 )
+blend_point_3/node = SubResource( 109 )
+blend_point_3/pos = Vector2( 0, 0.3 )
+blend_point_4/node = SubResource( 110 )
+blend_point_4/pos = Vector2( -0.2, 0.2 )
+blend_point_5/node = SubResource( 111 )
+blend_point_5/pos = Vector2( 0.2, -0.2 )
+blend_point_6/node = SubResource( 112 )
+blend_point_6/pos = Vector2( 0.2, 0.2 )
+blend_point_7/node = SubResource( 113 )
+blend_point_7/pos = Vector2( -0.2, -0.2 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=114]
+animation = "run_linearRight"
+
+[sub_resource type="AnimationNodeAnimation" id=115]
+animation = "run_linearLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=116]
+animation = "run_linearDown"
+
+[sub_resource type="AnimationNodeAnimation" id=117]
+animation = "run_linearUp"
+
+[sub_resource type="AnimationNodeAnimation" id=118]
+animation = "run_diagLeft.Up"
+
+[sub_resource type="AnimationNodeAnimation" id=119]
+animation = "run_diagRight.Up"
+
+[sub_resource type="AnimationNodeAnimation" id=120]
+animation = "run_diagRight.Down"
+
+[sub_resource type="AnimationNodeAnimation" id=121]
+animation = "run_diagLeft.Down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=57]
+blend_point_0/node = SubResource( 114 )
+blend_point_0/pos = Vector2( 0.5, 0 )
+blend_point_1/node = SubResource( 115 )
+blend_point_1/pos = Vector2( -0.5, 0 )
+blend_point_2/node = SubResource( 116 )
+blend_point_2/pos = Vector2( 0, 0.5 )
+blend_point_3/node = SubResource( 117 )
+blend_point_3/pos = Vector2( 0, -0.5 )
+blend_point_4/node = SubResource( 118 )
+blend_point_4/pos = Vector2( -0.4, -0.4 )
+blend_point_5/node = SubResource( 119 )
+blend_point_5/pos = Vector2( 0.4, -0.4 )
+blend_point_6/node = SubResource( 120 )
+blend_point_6/pos = Vector2( 0.4, 0.4 )
+blend_point_7/node = SubResource( 121 )
+blend_point_7/pos = Vector2( -0.4, 0.4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=122]
+animation = "run_linearRight.Pose"
+
+[sub_resource type="AnimationNodeAnimation" id=123]
+animation = "run_linearDown.Pose"
+
+[sub_resource type="AnimationNodeAnimation" id=124]
+animation = "run_linearUp.Pose"
+
+[sub_resource type="AnimationNodeAnimation" id=125]
+animation = "run_linearLeft.Pose"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=62]
+blend_point_0/node = SubResource( 122 )
+blend_point_0/pos = Vector2( 0.1, 0 )
+blend_point_1/node = SubResource( 123 )
+blend_point_1/pos = Vector2( 0, 0.1 )
+blend_point_2/node = SubResource( 124 )
+blend_point_2/pos = Vector2( 0, -0.1 )
+blend_point_3/node = SubResource( 125 )
+blend_point_3/pos = Vector2( -0.1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=126]
+animation = "walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id=127]
+animation = "walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id=128]
+animation = "walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id=129]
+animation = "walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id=130]
+animation = "walk_diagLeft.Down"
+
+[sub_resource type="AnimationNodeAnimation" id=131]
+animation = "walk_diagLeft.Up"
+
+[sub_resource type="AnimationNodeAnimation" id=132]
+animation = "walk_diagRight.Up"
+
+[sub_resource type="AnimationNodeAnimation" id=133]
+animation = "walk_diagRight.Down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=71]
+blend_point_0/node = SubResource( 126 )
+blend_point_0/pos = Vector2( 0, -0.4 )
+blend_point_1/node = SubResource( 127 )
+blend_point_1/pos = Vector2( 0, 0.4 )
+blend_point_2/node = SubResource( 128 )
+blend_point_2/pos = Vector2( 0.4, 0 )
+blend_point_3/node = SubResource( 129 )
+blend_point_3/pos = Vector2( -0.4, 0 )
+blend_point_4/node = SubResource( 130 )
+blend_point_4/pos = Vector2( -0.3, 0.3 )
+blend_point_5/node = SubResource( 131 )
+blend_point_5/pos = Vector2( -0.3, -0.3 )
+blend_point_6/node = SubResource( 132 )
+blend_point_6/pos = Vector2( 0.3, -0.3 )
+blend_point_7/node = SubResource( 133 )
+blend_point_7/pos = Vector2( 0.3, 0.3 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+
+[sub_resource type="AnimationNodeStateMachine" id=134]
+states/idle/node = SubResource( 48 )
+states/idle/position = Vector2( 304.12, 77 )
+states/run/node = SubResource( 57 )
+states/run/position = Vector2( 455.12, 161 )
+states/run_Pose/node = SubResource( 62 )
+states/run_Pose/position = Vector2( 469.12, 77 )
+states/walk/node = SubResource( 71 )
+states/walk/position = Vector2( 304.12, 161 )
+transitions = [ "walk", "run", SubResource( 75 ) ]
+start_node = "idle"
+graph_offset = Vector2( 68.7359, 18.8016 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=135]
+
+[node name="Fighter" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Shadow" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( 0.25, 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( -0.2, -6.5 )
+hframes = 441
+frame = 69
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+anims/RESET = SubResource( 136 )
+anims/attack_UP = SubResource( 137 )
+anims/think = SubResource( 97 )
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+tree_root = SubResource( 134 )
+anim_player = NodePath("..")
+active = true
+process_mode = 0
+parameters/playback = SubResource( 135 )
+parameters/idle/blend_position = Vector2( 0, 0 )
+parameters/run/blend_position = Vector2( 0, 0 )
+parameters/run_Pose/blend_position = Vector2( 0, 0 )
+parameters/walk/blend_position = Vector2( 0, 0 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shortFire.ogg-06aab6f5bc240f90c67ef23d261ab2ec.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/battle/shortFire.ogg"
+dest_files=[ "res://.import/shortFire.ogg-06aab6f5bc240f90c67ef23d261ab2ec.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

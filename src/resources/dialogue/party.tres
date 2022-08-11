@@ -1,0 +1,89 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+syntax_version = 2
+raw_text = "~ start
+: {{lifeform.name}} joined your party! [TR:t2de20f4887]
+=> END
+
+~ party_leave
+: {{lifeform.name}} left your party. [TR:t292386672e]
+=> END"
+errors = [  ]
+titles = {
+"party_leave": "5",
+"start": "1"
+}
+lines = {
+"0": {
+"next_id": "1",
+"text": "start",
+"type": "title"
+},
+"1": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "2",
+"pauses": {
+},
+"replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "lifeform"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "name"
+} ],
+"value_in_text": "{{lifeform.name}}"
+} ],
+"speeds": [  ],
+"text": "{{lifeform.name}} joined your party!",
+"time": null,
+"translation_key": "t2de20f4887",
+"type": "dialogue"
+},
+"2": {
+"next_id": "end",
+"type": "goto"
+},
+"4": {
+"next_id": "5",
+"text": "party_leave",
+"type": "title"
+},
+"5": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "6",
+"pauses": {
+},
+"replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "lifeform"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "name"
+} ],
+"value_in_text": "{{lifeform.name}}"
+} ],
+"speeds": [  ],
+"text": "{{lifeform.name}} left your party.",
+"time": null,
+"translation_key": "t292386672e",
+"type": "dialogue"
+},
+"6": {
+"next_id": "end",
+"type": "goto"
+}
+}

@@ -11,9 +11,6 @@ margin_right = -360.0
 margin_bottom = -88.0
 rect_scale = Vector2( 2, 2 )
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HPContainer" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0

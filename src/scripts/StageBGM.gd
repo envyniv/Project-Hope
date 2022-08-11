@@ -1,49 +1,26 @@
 extends Node
 
-onready var anims=$AnimationPlayer
-onready var player=$AudioStreamPlayer
-const musfolder = "res://sounds/music/%s.ogg"
+onready var anims  = $AnimationPlayer
+onready var player = $AudioStreamPlayer
+# const musfolder = "res://sounds/music/%s.ogg"
 var BGM = {}
-func _ready():
-  var folder = Directory.new()
-  if folder.open("res://sounds/music") == OK:
-    BGM = {
-      "battle1" :  [load(musfolder % "bits"),      "Battle To Bits"],
-      "battle2" :  [load(musfolder % "crazy"),     "About To Get Crazy"],
-      "battle3" :  [load(musfolder % "enemy"),     "From The Enemy"],
-      "battle4" :  [load(musfolder % "hand"),      "What Has It Come To?"],
-      "battle5" :  [load(musfolder % "orchestra"), "Orchestrating A Fight"],
-      "battle6" :  [load(musfolder % "sounds"),    "Sounds Of Battle"],
-      "save" :     [load(musfolder % "save"),      "Time To Save"],
-      "winter" :   [load(musfolder % "winter"),    "New World"],
-      "sweet" :    [load(musfolder % "sweet"),     "Sweet Melody"],
-      "start" :    [load(musfolder % "start"),     "Start of a Story"],
-      "night" :    [load(musfolder % "night"),     "Prima Luna"],
-      "casino" :   [load(musfolder % "casino"),    "Lively Night"],
-      "fantasia" : [load(musfolder % "fantasia"),  "The Rumors Of Fantasia"],
-      "wild" :     [load(musfolder % "wild"),      "Lost in the wild"],
-      "luck" :     [load(musfolder % "luck"),      "Lucky to see you"],
-      "east" :     [load(musfolder % "east"),      "Time to see the East"],
-      "meteora" :  [load(musfolder % "save"),      "Time To Save"],
-      }
-  else: print("playing musicless")
 
-  player.volume_db=linear2db(FileMan.settings.bgmvol)
+func _ready():
+  # warning-ignore:return_value_discarded
+  SceneManager.connect("ready_stage", self, "play_anim")
 # warning-ignore:return_value_discarded
   $Timer.connect("timeout", self, "stop_anim")
-# warning-ignore:return_value_discarded
-  SceneManager.connect("ready_stage", self, "play_anim")
 
-func play_anim(map):
-  $ColorRect/Stage.text=map.capitalize()
-  $ColorRect/Music.text=BGM[map][1]
-  player.stream = BGM[map][0]
-  #stage.text = stagename
+func play_anim(map: Resource) -> void:
+  $ColorRect/Stage.text = map.localizedName
+  $ColorRect/Music.text = map.bgmName
+  player.stream = map.bgm
   anims.play("fade-in")
   player.play()
   $Timer.start()
+  return
 
-func stop_anim():
+func stop_anim() -> void:
   $Timer.stop()
   anims.play_backwards("fade-in")
-  pass
+  return

@@ -1,0 +1,323 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+syntax_version = 2
+raw_text = "~ start
+: Would you like to take a picture with your friends? [TR:t419e826c4d]
+- Yes [TR:te56c22df05]
+	: Great! taking picture in 3... 2... 1... [TR:t5d8cef9dee]
+	# mutation makes DialogueManager crash when in-line?
+	do picture()
+- No [TR:t16963e13c0]
+#if more than 30 mins [TR:t89fbba26db]
+if (_timestamp - curtime) > 1800
+	: You might want to take a break. [TR:t61ffd97284]
+# if more than an hour
+elif (_timestamp - curtime) > 3600
+	: You should probably take a break. [TR:t7ebd0c8a0e]
+# if less than 1,30h
+elif (_timestamp - curtime) < 5200 and (_timestamp - curtime) > 3600
+	: You oughta take a break. [TR:td48b078f64]
+# if more than 1,30h
+elif (_timestamp - curtime)>5200 and (_timestamp - curtime)<6000
+	: Look, I get it, trust me, I do, but you should really take a break. [TR:tad63aa84f8]
+	: I've already saved for you, so you can just leave and come back later, ight? [TR:t61abbe9c72]
+=> END"
+errors = [  ]
+titles = {
+"start": "1"
+}
+lines = {
+"0": {
+"next_id": "1",
+"text": "start",
+"type": "title"
+},
+"1": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "2",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Would you like to take a picture with your friends?",
+"time": null,
+"translation_key": "t419e826c4d",
+"type": "dialogue"
+},
+"11": {
+"condition": {
+"expression": [ {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "_timestamp"
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "variable",
+"value": "curtime"
+} ]
+}, {
+"type": "comparison",
+"value": ">"
+}, {
+"type": "number",
+"value": 3600
+} ]
+},
+"next_conditional_id": "14",
+"next_id": "12",
+"next_id_after": "20",
+"type": "condition"
+},
+"12": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "20",
+"parent_id": "11",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "You should probably take a break.",
+"time": null,
+"translation_key": "t7ebd0c8a0e",
+"type": "dialogue"
+},
+"14": {
+"condition": {
+"expression": [ {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "_timestamp"
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "variable",
+"value": "curtime"
+} ]
+}, {
+"type": "comparison",
+"value": "<"
+}, {
+"type": "number",
+"value": 5200
+}, {
+"type": "and_or",
+"value": "and"
+}, {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "_timestamp"
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "variable",
+"value": "curtime"
+} ]
+}, {
+"type": "comparison",
+"value": ">"
+}, {
+"type": "number",
+"value": 3600
+} ]
+},
+"next_conditional_id": "17",
+"next_id": "15",
+"next_id_after": "20",
+"type": "condition"
+},
+"15": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "20",
+"parent_id": "14",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "You oughta take a break.",
+"time": null,
+"translation_key": "td48b078f64",
+"type": "dialogue"
+},
+"17": {
+"condition": {
+"expression": [ {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "_timestamp"
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "variable",
+"value": "curtime"
+} ]
+}, {
+"type": "comparison",
+"value": ">"
+}, {
+"type": "number",
+"value": 5200
+}, {
+"type": "and_or",
+"value": "and"
+}, {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "_timestamp"
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "variable",
+"value": "curtime"
+} ]
+}, {
+"type": "comparison",
+"value": "<"
+}, {
+"type": "number",
+"value": 6000
+} ]
+},
+"next_conditional_id": "20",
+"next_id": "18",
+"next_id_after": "20",
+"type": "condition"
+},
+"18": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "19",
+"parent_id": "17",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Look, I get it, trust me, I do, but you should really take a break.",
+"time": null,
+"translation_key": "tad63aa84f8",
+"type": "dialogue"
+},
+"19": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "20",
+"parent_id": "17",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "I've already saved for you, so you can just leave and come back later, ight?",
+"time": null,
+"translation_key": "t61abbe9c72",
+"type": "dialogue"
+},
+"2": {
+"next_id": "3",
+"next_id_after": "8",
+"replacements": [  ],
+"responses": PoolStringArray( "2", "6" ),
+"text": "Yes",
+"translation_key": "te56c22df05",
+"type": "response"
+},
+"20": {
+"next_id": "end",
+"type": "goto"
+},
+"3": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "5",
+"parent_id": "2",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Great! taking picture in 3... 2... 1...",
+"time": null,
+"translation_key": "t5d8cef9dee",
+"type": "dialogue"
+},
+"5": {
+"mutation": {
+"args": [  ],
+"function": "picture"
+},
+"next_id": "8",
+"parent_id": "2",
+"type": "mutation"
+},
+"6": {
+"next_id": "8",
+"next_id_after": "8",
+"replacements": [  ],
+"text": "No",
+"translation_key": "t16963e13c0",
+"type": "response"
+},
+"8": {
+"condition": {
+"expression": [ {
+"type": "group",
+"value": [ {
+"type": "variable",
+"value": "_timestamp"
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "variable",
+"value": "curtime"
+} ]
+}, {
+"type": "comparison",
+"value": ">"
+}, {
+"type": "number",
+"value": 1800
+} ]
+},
+"next_conditional_id": "11",
+"next_id": "9",
+"next_id_after": "20",
+"type": "condition"
+},
+"9": {
+"character": "",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "20",
+"parent_id": "8",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "You might want to take a break.",
+"time": null,
+"translation_key": "t61ffd97284",
+"type": "dialogue"
+}
+}

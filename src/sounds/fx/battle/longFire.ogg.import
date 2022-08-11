@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/longFire.ogg-65b1ea5bd8a250b53a8d6b847fe56114.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/battle/longFire.ogg"
+dest_files=[ "res://.import/longFire.ogg-65b1ea5bd8a250b53a8d6b847fe56114.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

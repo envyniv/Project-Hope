@@ -1,7 +1,7 @@
 extends Control
 
-onready var namelabel = $"Panel/Name"
-onready var keyboardgrid = $"Panel/Keyboard"
+onready var namelabel      = $"Panel/Name"
+onready var keyboardgrid   = $"Panel/Keyboard"
 onready var KBSwitchButton = $Panel/Button
 var p = false
 
@@ -19,8 +19,8 @@ func _ready():
   return
 
 func type(cuspressed):
-  if namelabel.text.length()<15 :
-    namelabel.text+=cuspressed
+  if namelabel.text.length() < 15:
+    namelabel.text += cuspressed
     keyboardgrid.get_node("Button28").show()
   return
 
@@ -29,18 +29,21 @@ func type(cuspressed):
 
 func insBck():
   namelabel.text = namelabel.text.substr(0, namelabel.text.length()-1)
-  if namelabel.text.length()==0:
+  if namelabel.text.length() == 0:
     keyboardgrid.get_node("Button28").hide()
 
-func OK():
-  if !("ENVY/NIVAL" in namelabel.text):
-    FileMan.data.name=namelabel.text
-  #elif "DEBUG" in namelabel.text:
-  #  #the funky
-  else: #TODO: obfuscate
-    FileMan.data.name="[HELLO, THERE.]"
-    FileMan.data.kevin["-.-. --- -- ...--"]="[COULD YOU BE THE ONE LOOKING FOR THIS?]"
+func OK() -> void:
+  #if (namelabel.text == "DEBUG") && (OS.has_feature("editor")):
+  #  FileMan.data.location = load("res://scenes/stage/Meteora.tscn")
+  FileMan.data.name = namelabel.text
+  FileMan.data.resource_path = str(
+                             "res://saves/",
+                             namelabel.text,
+                             OS.get_unix_time(),
+                             ".tres"
+                            )
   SceneManager.change_scene("game")
+  return
 
 func _input(_event):
   if Input.is_action_just_pressed("ui_focus_next"):

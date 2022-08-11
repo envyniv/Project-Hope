@@ -1,93 +1,84 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/structures/CameraLimits.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/organs/Kevin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/gui/mapbg.png" type="Texture" id=2]
+[ext_resource path="res://scenes/organs/Party.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/structures/MapCityPos.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/stages/map.png" type="Texture" id=5]
+[ext_resource path="res://scenes/gui/ScrollingTextureRect.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 265, 179.5 )
 
 [node name="Stage" type="Node"]
 
-[node name="Map" type="StaticBody2D" parent="."]
+[node name="ScrollingTextureRect" parent="." instance=ExtResource( 6 )]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = -272.0
+margin_bottom = -32.0
+texture = ExtResource( 2 )
+scroll_velocity = Vector2( -32, -32 )
 
-[node name="Sprite" type="TextureRect" parent="Map"]
-margin_left = -259.0
-margin_top = -160.0
-margin_right = 308.0
-margin_bottom = 195.0
+[node name="Map" type="StaticBody2D" parent="."]
+position = Vector2( 358, 215 )
+
+[node name="Sprite" type="Sprite" parent="Map"]
+position = Vector2( 23, 17 )
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Picker" type="Position2D" parent="Map"]
+position = Vector2( 0, -15 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
 build_mode = 1
-polygon = PoolVector2Array( 21.102, 97.1071, 0.808685, 74.9261, -29.8672, 78.2296, -30.3392, 90.0281, -18.0688, 124.008, 72.0712, 133.918, 95.668, 102.298, 131.535, 98.051, 154.66, 163.178, 80.5661, 160.819, 78.6783, 154.212, 59.3289, 152.796, -21.8443, 148.548, -24.6759, 135.334, -76.6547, 129.97, -163.557, 88.7667, -220.492, 51.309, -212.252, -9.37242, -186.108, -47.3057, -154.489, -93.8078, -106.351, -114.573, -51.1344, -116.461, -30.3691, -106.55, 14.9369, -107.494, 79.1122, -77.7619, 117.811, -71.1548, 122.53, -78.2339, 120.171, -91.4481, 132.441, -115.045, 190.793, -119.498, 197.535, -91.7793, 181.054, -53.5725, 217.013, -35.5928, 238.739, 1.86488, 202.78, 46.065, 151.791, 85.8416, 111.676, 75.9309 )
+polygon = PoolVector2Array( 21.102, 97.1071, 0.808685, 74.9261, -29.8672, 78.2296, -30.3392, 90.0281, -11, 94, -18.0688, 124.008, 55, 125, 76, 133, 93, 107, 134, 102, 147, 156, 88, 165, 84, 154, 64, 149, 50, 166, -11, 151, -24.6759, 135.334, -116, 122, -163, 88, -211, 77, -228, 43, -212.252, -9.37242, -215, -34, -187, -36, -198, -102, -161, -90, -130, -118, -41, -113, 64, -103, 79.1122, -77.7619, 117.811, -71.1548, 122.53, -78.2339, 118, -94, 136, -118, 198, -122, 197, -59, 184, -49, 200, -39, 257, -37, 246.73, -20.2181, 250, 3, 216, 30, 185, 99, 111.676, 75.9309 )
 
 [node name="CameraLimits" parent="." instance=ExtResource( 1 )]
-
-[node name="TopLeft" parent="CameraLimits" index="0"]
-position = Vector2( -254.194, -167.583 )
-
-[node name="BottomRight" parent="CameraLimits" index="1"]
-position = Vector2( 320.872, 212.815 )
+position = Vector2( 370, 234.5 )
+shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
-
-[node name="Player" parent="YSort" instance=ExtResource( 2 )]
-
-[node name="Camera2D" parent="YSort/Player" instance=ExtResource( 3 )]
+position = Vector2( 358, 215 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Utopia" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -196.835, 28.9606 )
-location = "Utopia"
 
 [node name="Oneiros" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -145.163, 64.5965 )
-location = "Oneiros"
 
 [node name="Fantasia" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -139.078, -77.0566 )
-location = "Fantasia"
 
 [node name="Tyche" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 23.6422, -62.802 )
-location = "Tyche"
 
 [node name="Kassandra" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -64.9848, 6.6881 )
-location = "Kassandra"
 
 [node name="Basileus" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 50.4002, 22.7242 )
-location = "Basileus"
+position = Vector2( 37, 31 )
 
 [node name="Nyx" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 101.181, 140.826 )
-location = "Nyx"
 
 [node name="Erimos" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -8.84498, 64.874 )
-location = "Erimos"
 
 [node name="Hypnos" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 83.8272, 66.2104 )
-location = "Hypnos"
+position = Vector2( 99, 58 )
 
 [node name="Philomela" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 165.036, 43.4922 )
-location = "Philomela"
+position = Vector2( 169, 32 )
 
 [node name="Xenos" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 188.063, -41.1427 )
-location = "Xenos"
+position = Vector2( 164, -71 )
 
 [node name="Koine" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 102.137, -52.7242 )
-location = "Koine"
+position = Vector2( 120, -38 )
 
-[node name="Eirene" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 139.755, -95.0416 )
-location = "Eirene"
-
-[editable path="CameraLimits"]
+[node name="Party" parent="." instance=ExtResource( 3 )]

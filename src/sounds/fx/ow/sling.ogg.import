@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sling.ogg-d473d8652fa2f1f2fbdee806022e472e.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/ow/sling.ogg"
+dest_files=[ "res://.import/sling.ogg-d473d8652fa2f1f2fbdee806022e472e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

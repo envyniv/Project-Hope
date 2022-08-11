@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/critMagic.ogg-0360d6e51136f5bfa663ded896fb8b7e.oggstr"
+
+[deps]
+
+source_file="res://sounds/fx/battle/critMagic.ogg"
+dest_files=[ "res://.import/critMagic.ogg-0360d6e51136f5bfa663ded896fb8b7e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

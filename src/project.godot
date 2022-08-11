@@ -14,30 +14,75 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/AwareBase.gd"
 }, {
+"base": "CollisionShape2D",
+"class": "CameraLimits",
+"language": "GDScript",
+"path": "res://scripts/CameraLimits.gd"
+}, {
 "base": "Area2D",
 "class": "DamageBox",
 "language": "GDScript",
 "path": "res://scripts/DamageBox.gd"
 }, {
-"base": "PopupDialog",
-"class": "DialogueBox",
+"base": "Resource",
+"class": "DialogueResource",
 "language": "GDScript",
-"path": "res://addons/dialogue_nodes/objects/dialogueBox.gd"
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Fighter",
+"language": "GDScript",
+"path": "res://scripts/Fighter.gd"
+}, {
+"base": "Resource",
+"class": "GameMod",
+"language": "GDScript",
+"path": "res://scripts/Mod.gd"
+}, {
+"base": "Resource",
+"class": "GrowthStats",
+"language": "GDScript",
+"path": "res://scripts/GrowthStats.gd"
 }, {
 "base": "Area2D",
 "class": "HitBox",
 "language": "GDScript",
 "path": "res://scripts/HitBox.gd"
 }, {
+"base": "StaticBody2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://scripts/Interactable.gd"
+}, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
 "path": "res://scripts/Item.gd"
 }, {
+"base": "Resource",
+"class": "Lifeform",
+"language": "GDScript",
+"path": "res://scripts/Lifedef.gd"
+}, {
+"base": "Resource",
+"class": "MapDefinition",
+"language": "GDScript",
+"path": "res://scripts/mapDefinition.gd"
+}, {
+"base": "CheckBox",
+"class": "ModCheckBox",
+"language": "GDScript",
+"path": "res://scripts/gui/elements/ModCheck.gd"
+}, {
 "base": "PlayerFollower",
 "class": "NPC",
 "language": "GDScript",
 "path": "res://scripts/NPC.gd"
+}, {
+"base": "YSort",
+"class": "Party",
+"language": "GDScript",
+"path": "res://scripts/Party.gd"
 }, {
 "base": "AwareBase",
 "class": "Player",
@@ -48,11 +93,6 @@ _global_script_classes=[ {
 "class": "PlayerFollower",
 "language": "GDScript",
 "path": "res://scripts/PlayerFollower.gd"
-}, {
-"base": "RichTextEffect",
-"class": "RichTextWait",
-"language": "GDScript",
-"path": "res://addons/dialogue_nodes/objects/bbcodeWait.gd"
 }, {
 "base": "Resource",
 "class": "Save",
@@ -65,7 +105,12 @@ _global_script_classes=[ {
 "path": "res://scripts/gui/ScrollingTextureRect.gd"
 }, {
 "base": "Resource",
-"class": "Settings",
+"class": "Seller",
+"language": "GDScript",
+"path": "res://scripts/Seller.gd"
+}, {
+"base": "Resource",
+"class": "SettingsFile",
 "language": "GDScript",
 "path": "res://scripts/SettingsFile.gd"
 }, {
@@ -76,17 +121,26 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AwareBase": "",
+"CameraLimits": "",
 "DamageBox": "",
-"DialogueBox": "",
+"DialogueResource": "",
+"Fighter": "",
+"GameMod": "",
+"GrowthStats": "",
 "HitBox": "",
+"Interactable": "",
 "Item": "",
+"Lifeform": "",
+"MapDefinition": "",
+"ModCheckBox": "",
 "NPC": "",
+"Party": "",
 "Player": "",
 "PlayerFollower": "",
-"RichTextWait": "",
 "Save": "",
 "ScrollingTextureRect": "",
-"Settings": "",
+"Seller": "",
+"SettingsFile": "",
 "Skill": ""
 }
 
@@ -98,14 +152,19 @@ boot_splash/image="res://bootscreen.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
-config/AppVersion=Vector3( 2, 1, 22 )
+config/windows_native_icon="res://icon.ico"
+config/AppVersion=Vector3( 3, 7, 22 )
 config/rconAccess=false
+
+[audio]
+
+driver="ALSA"
 
 [autoload]
 
 FileMan="*res://scripts/FileMan.gd"
-ItemDatabase="*res://scripts/ItemDatabase.gd"
-SceneManager="*res://scenes/SceneManager.tscn"
+SceneManager="*res://scripts/SceneManager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [compression]
 
@@ -117,13 +176,16 @@ formats/gzip/compression_level=9
 
 window/size/width=720
 window/size/height=480
-mouse_cursor/custom_image="res://assets/gui/Cursor.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/BitmapFontMaker/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogue_nodes/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/BitmapFontMaker/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg" )
+
+[filesystem]
+
+import/fbx/use_fbx=false
 
 [importer_defaults]
 
@@ -239,7 +301,3 @@ defend={
 [locale]
 
 translations=PoolStringArray( "res://localization/lang.de.translation", "res://localization/lang.en.translation", "res://localization/lang.es.translation", "res://localization/lang.fr.translation", "res://localization/lang.it.translation" )
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

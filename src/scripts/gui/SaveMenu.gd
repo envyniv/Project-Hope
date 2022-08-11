@@ -1,24 +1,72 @@
 extends Control
 
-onready var vbox:=$"Panel/VBoxContainer"
-onready var slot1:=$"Panel/VBoxContainer/Slot1"
-onready var slot2:=$"Panel/VBoxContainer/Slot2"
-onready var slot3:=$"Panel/VBoxContainer/Slot3"
+export(NodePath) var popup
 
-func _ready():
-  slot1.get_node("TextureButton").focus_neighbour_bottom = NodePath("../../Slot2/TextureButton") #get_path_to(slot2.get_node("TextureButton"))
-  slot2.get_node("TextureButton").focus_neighbour_top    = NodePath("../../Slot1/TextureButton") #get_path_to(slot1.get_node("TextureButton"))
-  slot2.get_node("TextureButton").focus_neighbour_bottom = NodePath("../../Slot3/TextureButton") #get_path_to(slot3.get_node("TextureButton"))
-  slot3.get_node("TextureButton").focus_neighbour_top    = NodePath("../../Slot2/TextureButton") #get_path_to(slot2.get_node("TextureButton"))
-  slot1.get_node("TextureButton").grab_focus()
+export(PackedScene) var saveslot
+onready var vbox  := $Panel/Saves/VBoxContainer
+onready var nbut  := $Panel/Label/NewFile
 
-  var details = FileMan.return_saves_details()
-  $Player.volume_db=linear2db(FileMan.settings.bgmvol)
-  for i in vbox.get_children().size():
-    vbox.get_child(i).setup(TranslationServer.translate("saveEmpty"), "", 0, null, FileMan.get("path%s" % (i+1)))
-  $Player.play()
-  for i in details: #func setup(namesave, savelocation, amountTime, screenshot):
-    get("slot"+i).setup(details[i]["name"], details[i]["location"], details[i]["playtime"], details[i]["preview"], FileMan.get("path%s" % i))
-
+func _ready() -> void:
+  popup = get_node(popup)
+  #warning-ignore:RETURN_VALUE_DISCARDED
+  nbut.connect("pressed", self, "createNew")
+  #warning-ignore:RETURN_VALUE_DISCARDED
+  popup.connect("remove", self, "removeFile")
+  #warning-ignore:RETURN_VALUE_DISCARDED
+  popup.connect("copy", self, "update_list")
+  #var details       = FileMan.return_saves_details()
+  $Player.volume_db = linear2db(FileMan.settings.bgmvol)
+  list_saves()
   return
 
+func update_list() -> void:
+  clean_list()
+  list_saves()
+  return
+
+func clean_list() -> void:
+  for i in vbox.get_children():
+    i.queue_free()
+  return
+
+func list_saves() -> void:
+  for i in FileMan.saves:
+    var slot = saveslot.instance()
+    vbox.add_child(slot)
+    slot.pointing = i
+    slot.name = i.name
+    slot.texbut.connect("pressed", self, "_onSlotTexbut", [slot.pointing, slot.texbut.rect_global_position])
+    slot = null
+  if vbox.get_child_count():
+    vbox.get_child(0).texbut.grab_focus()
+  else:
+    nbut.grab_focus()
+  return
+
+func createNew() -> void:
+  nbut.hide()
+  var slot = saveslot.instance()
+  vbox.add_child(slot)
+  slot.pointing = Save.new()
+  slot.texbut.connect("pressed", self, "_onSlotTexbut", [slot.pointing, slot.texbut.rect_global_position])
+  slot.texbut.grab_focus()
+  return
+
+func _onSlotTexbut(save, butpos) -> void:
+  if save.name == Save.new().name:
+    SceneManager.change_scene("savewiz", 0)
+  else:
+    popup.pointing = save
+    popup.rect_position = butpos
+    popup.popup()
+  return
+
+func removeFile(name) -> void:
+  for i in vbox.get_children():
+    if i.name == name:
+      i.queue_free()
+  if vbox.get_child_count():
+    vbox.get_child(0).texbut.grab_focus()
+  else:
+    nbut.grab_focus()
+  return

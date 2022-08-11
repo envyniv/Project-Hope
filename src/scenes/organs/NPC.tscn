@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://characters/dummy.png" type="Texture" id=1]
+[ext_resource path="res://scripts/NPC.gd" type="Script" id=2]
+[ext_resource path="res://materials/shaders/Interact.tres" type="Material" id=3]
+[ext_resource path="res://assets/stages/shadowsmall.png" type="Texture" id=4]
+[ext_resource path="res://resources/dialogue/party.tres" type="Resource" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.96453, 4 )
+
+[sub_resource type="AnimationNodeStateMachine" id=2]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[node name="Dummy" type="KinematicBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 2 )
+partyDialogue = ExtResource( 5 )
+associatedDialogue = null
+walksAround = false
+EntityResource = null
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0, 8 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )
+offset = Vector2( 0.5, -8.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+tree_root = SubResource( 2 )
+anim_player = NodePath("..")
+parameters/playback = SubResource( 3 )

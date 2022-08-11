@@ -1,18 +1,24 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/gui/box-patch.png" type="Texture" id=1]
-[ext_resource path="res://materials/theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/gui/patches/box-patch.png" type="Texture" id=1]
+[ext_resource path="res://materials/ui/theme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/gui/elements/SaveMenuSlot.gd" type="Script" id=3]
-[ext_resource path="res://assets/gui/Cursor.png" type="Texture" id=4]
-[ext_resource path="res://materials/atlas.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/gui/deletesave.png" type="Texture" id=6]
-[ext_resource path="res://materials/stages.tres" type="DynamicFont" id=7]
-[ext_resource path="res://assets/gui/copysave.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui/buttons/Cursor.png" type="Texture" id=4]
+[ext_resource path="res://materials/fonts/atlas.tres" type="DynamicFont" id=5]
+[ext_resource path="res://materials/fonts/stages.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/gui/buttons/blank_button.png" type="Texture" id=9]
+[ext_resource path="res://assets/gui/buttons/Cursor-pressed.png" type="Texture" id=10]
 
-[node name="SlotContainer" type="NinePatchRect"]
-margin_right = 96.0
-margin_bottom = 16.0
-rect_scale = Vector2( 2, 2 )
+[node name="Container" type="Control"]
+margin_right = 117.0
+margin_bottom = 22.0
+script = ExtResource( 3 )
+
+[node name="SlotContainer" type="NinePatchRect" parent="."]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 85.0
+margin_bottom = 18.0
 theme = ExtResource( 2 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 24, 24 )
@@ -20,50 +26,47 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 9
 patch_margin_bottom = 8
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="SaveName" type="Label" parent="."]
-margin_left = 5.65179
-margin_top = 1.7079
-margin_right = 115.652
-margin_bottom = 17.7079
+[node name="SaveName" type="Label" parent="SlotContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 20.0002
+margin_bottom = 2.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 5 )
-text = "SaveFileOneMenu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "SaveFile"
 
-[node name="LocationName" type="Label" parent="."]
+[node name="LocationName" type="Label" parent="SlotContainer"]
+anchor_right = 1.0
+anchor_bottom = 0.952
 margin_left = 6.74683
 margin_top = 7.23597
-margin_right = 106.747
-margin_bottom = 23.236
+margin_right = 10.747
+margin_bottom = 8.004
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 7 )
 text = "LocationName"
 
-[node name="Playtime" type="Label" parent="."]
+[node name="Playtime" type="Label" parent="SlotContainer"]
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 53.3674
+margin_left = -42.6326
 margin_top = 6.71938
 margin_right = 20.3674
 margin_bottom = 6.71938
 rect_scale = Vector2( 0.5, 0.5 )
 text = "0:00"
 align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="GPanel" type="NinePatchRect" parent="."]
+[node name="PreviewPanel" type="NinePatchRect" parent="SlotContainer"]
+visible = false
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 84.0
+margin_left = -12.0
 margin_top = -2.0
 margin_right = 16.0
 margin_bottom = 2.0
@@ -73,67 +76,28 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 9
 patch_margin_bottom = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="SlotContainer/PreviewPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 88.5347
-margin_top = 1.80615
-margin_right = 352.534
-margin_bottom = 225.806
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 329.0
+margin_bottom = 221.0
 rect_scale = Vector2( 0.05, 0.05 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="SlotContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 7.0
 margin_top = 8.0
-margin_right = -57.0
+margin_right = -44.0
 margin_bottom = 22.0
 rect_scale = Vector2( -0.33, 0.33 )
-texture_focused = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+action_mode = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 4 )
 
-[node name="DeleteButton" type="TextureButton" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1.0
-margin_top = -1.0
-margin_right = -81.0
-margin_bottom = -1.0
-rect_scale = Vector2( 0.33, 0.33 )
-texture_normal = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Popup" type="ConfirmationDialog" parent="DeleteButton"]
-visible = true
-margin_left = 9.0
-margin_top = 9.0
-margin_right = 209.0
-margin_bottom = 84.0
-window_title = ""
-dialog_text = "menuSaveDeleteSurekkkkkk"
-dialog_autowrap = true
-
-[node name="CopyButton" type="TextureButton" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 78.0037
-margin_top = 1.63388
-margin_right = -1.99626
-margin_bottom = 1.63388
-rect_scale = Vector2( 0.33, 0.33 )
-texture_normal = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[connection signal="focus_entered" from="SlotContainer/TextureButton" to="." method="_on_TextureButton_focus_entered"]
+[connection signal="focus_exited" from="SlotContainer/TextureButton" to="." method="_on_TextureButton_focus_exited"]

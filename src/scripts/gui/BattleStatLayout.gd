@@ -1,32 +1,23 @@
 extends HBoxContainer
 
-onready var hpkev = $HPKevin
-onready var hpquin = $HPQuinton
-onready var hpcharlie = $HPCharlie
-onready var hpbella = $HPBella
+export(PackedScene) var hpConScene
 
-func _ready():
-  update()
+func _ready() -> void:
+  var err = update_party()
+  if err:
+    print("BattleStatLayout.gd: update(); something went REALLY wrong here.")
+  return
 
-#DONE: use FileMan.data as a resource, tempdata is obsolete, as now there are predefined saves
-#      as explained in SaveFile.gd
-#      also use signals to trigger this, don't just slam it into _process
-func update():
-  if "Kevin" in FileMan.data.party:
-    hpkev.show()
-  if "Quinton" in FileMan.data.party:
-    hpquin.show()
-  if "Charlie" in FileMan.data.party:
-    hpcharlie.show()
-  if "Bella" in FileMan.data.party:
-    hpbella.show()
-    
-  if FileMan.data.kevin != {}:
-      var kevindata = FileMan.data.kevin
-      hpkev.hp.max_value = kevindata["maxHP"]
-      hpkev.def.max_value = kevindata["maxDEF"]
-      hpkev.hp.value = kevindata["HP"]
-      hpkev.def.value = kevindata["DEF"]
-      hpkev.mana.value = kevindata["MANA"]
-      hpkev.mana.max_value = kevindata["maxMANA"]
-  pass
+func update_party() -> int:
+  #party lead
+  var p = hpConScene.instance()
+  add_child(p)
+  p.pointing = FileMan.data.lead
+  p.setup()
+  #TODO: validate code
+  for Lifeform in FileMan.data.partyRes:
+    var f = hpConScene.instance()
+    add_child(f)
+    f.pointing = Lifeform
+    f.setup()
+  return 0
