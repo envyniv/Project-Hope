@@ -1,95 +1,131 @@
-![Official Last Hope Logo](src/title.svg)
+![# Official Last Hope Logo](src/title.svg)
 
 --------------------------------------------------------------------------------
 
-_My take on an RPG. Not really inspired from anything._
+_SUNBURST - Run of the mill RPG with a somewhat unique battle system._
 
 [Website](https://envyniv.github.io/Project-Hope)
 
-> Coded in [Godot](https://godotengine.org/).
+--------------------------------------------------------------------------------
 
-> Font used is PX Sans by [teryor](https://github.com/teryror/pixel-fonts)
+# About the Game
 
-> Camera2D ScreenShake effect based on [eyeEmotion](https://godotengine.org/qa/user/eyeEmotion)'s script
+## Plot Synopsis
 
-> Logo(s) by [Davide Azzaretto/envyniv](https://github.com/envyniv)
+The game takes place on a fictional island in the Bermuda Triangle, named Evrys (Temporary)
 
-Davide Azzaretto/envyniv, 2020.
+Evrys is fractured in 10 cities: Nyx, Utopia, Basileus, Oneiros, Fantasia, Erimos, Tyche, Eirene, Xenos and Philomela.
 
-# Twirl Pixel Members
+You start off in Utopia, in the protagonist's bedroom, witnessing the awakening of the protagonist, Kevin.
 
-- envyniv; (Pretty Much Anything™℠®©, etc.)
-- David Kvistorf (davidkvis99/Fluffclipse); (Music, Writing)
+He goes to Oneiros for some errands, and meets the Villainous clan featured throughout the whole game, The Actors.
 
-# Footage
+## Compendium
 
-dummy <!-- [![Early Indev](http://img.youtube.com/vi/2yaVttZoP04/0.jpg)](https://www.youtube.com/watch?v=2yaVttZoP04 "Early Indev") -->
+A Collection of all Concept Art made for the game, and related descriptions.
 
-# TODO
+### The Main Cast
 
-Estimated Completion Percentage: ![Pretty Much Nothing](https://progress-bar.dev/7?title=Nothing)
+#### Sarah
 
-- [ ] Allow party composition changes
-- [ ] _Party members_, fix jittering ([potentially related to normalized vectors](https://youtu.be/fZ6bOERw03M?t=123)), replace `snakeTail` & `follower` with a proper signal based system
-- [ ] _Minigames_, implement
-- [X] _DiagBox.gd_, make it so punctuation slows down text flow
-- [ ] _Skills_, implement
-- [ ] _ModMan_, figure out why the !$%? it loads stuff into itemDB
-- [X] _DiagBox.gd_, move to DialogueNodes spec
-- [ ] _Pause Menu_, clean up and finish
-- [X] _File Menu_, 3 saves
-- [X] _Splashscreen_, implement custom
-- [X] _Viewports_, replace `inbattle`, `inshop`, `indialog` with signals
-- [X] _Trailing Party Members/PlayerFollower.gd_, fix always playing walk anim
-- [X] _FileMan_, offload all filechecks and loads to it
-- [X] _SaveFile_, move to Godot Resource (.res)
-- [X] _Controls_, make reboundable
-- [X] _Controls_, fix scene
-- [X] _Settings_, allow a bunch of customization options (Volume, Text spd, video scaling)
-- [X] _Settings_, make percentage labels follow slider puck
-- [X] _Player_, split code in AwareBase, PlayerFollower, Player
-- [X] _SaveFile_, add previews
+![](doc_stuff/noel-sarah.gif "Dolly by Noel, Sarah's design")
+
+My Friend Noel had drawn some designs for LH and shared them on my discord server, This was amongst the ones chosen.
+
+#### Charlie
+
+![](doc_stuff/envy-charlie.png "Charlie by Envy") ![](doc_stuff/nv-charlie-rede.jpg "Charlie Redesign by Envy")
+
+Kid that likes tinkering and baseball.
+
+#### Quinton
+
+![](doc_stuff/envy-quinrede.png "Quinton's Redesign by Envy")
+
+The introvert.
+
+#### Kevin
+
+![](doc_stuff/nv-kevin.jpg "Kevin by Envy")
+
+The "..." guy.
+
+### Enemies
+
+#### Main Villain
+
+![](doc_stuff/nv-phi.png)
+
+The main villain of the game; Leader of The Actors. Name and origins unknown.
+
+#### Actor Grunt
+
+![](doc_stuff/nv-grunt.jpg)
+
+Low rank grunts, medieval clothing.
+
+#### ADOS
+
+![](doc_stuff/nv-ados.png)
+
+Scrapped main villain. Sentient AI.
+
+#### PSA-rachnid and Raggey Rancid
+
+![](doc_stuff/noel-tvarac&RagRan.png "T-Varacnid and Raggey Rancid by Noel")
+
+My Friend Noel had drawn some designs for LH and PSArachnid was chosen, leaving Raggey Rancid with no representation.
+
+An Abandoned TV, now a home of a specimen of the Great Longleg spider spieces, native to the Evrys island.
+
+### Locations
+
+#### Fantasia
+
+![](doc_stuff/david-fantasia.png)
+
+Fantasia.
+
+### Skills
+
+#### SunBurst
+
+Fire-Electric Skill. Feel the Sun's Surface bursting and zapping.
+
+#### SuperNova
+
+Light Skill. The power of a dying star.
+
+#### BlackHole
+
+Dark Skill. Immense gravity in an immensely tiny black spot.
+
+#### WormHole
+
+### Items
+
+### Misc
+
+![](doc_stuff/nv-titleBG.jpg "Title Screen BG draft by Envy")
+
+Early Title Screen BG draft; was supposed to have the Main Villain's hand holding the sun, and Kevin staring from the spot marked on the hill
+
+![](doc_stuff/nostyle-logo.png "Original logo") ![](doc_stuff/nv-scrappedlogo.png "Scrapped Logo")
+
+Scrapped Logos for the game.
+
+![](doc_stuff/nv-map.png "Original world map")
+
+Map generated with the use of some website, Basis for in-game one.
 
 --------------------------------------------------------------------------------
 
-# Export Game/Build Custom Templates
+# Footage
 
-## Exporting the Game
+[![Early Indev](http://img.youtube.com/vi/dZG5bxYLYBU/0.jpg)](https://www.youtube.com/watch?v=dZG5bxYLYBU "Early Indev")
 
-![Where to add custom templates](doc_stuff/custom_templates.png)
+[![Early Indev](http://img.youtube.com/vi/AxijdKje0OY/0.jpg)](https://www.youtube.com/watch?v=AxijdKje0OY "Early Indev")
 
-After having acquired your custom templates (preferrably from the following steps), in the export screen, go to the Settings tab, and add the exec to `Release`
-
-_Please Note: if you plan on editing the export presets, I would suggest you do so through a text editor, or you may meet graphical glitches/incomprehensible characters in the editor_
-
-_Please Note 2: As obvious as it may sound, this has to be stated; PCKs and ZIPs exported from Linux WILL work on Windows, however the opposite is not true._
-
-## Compiling The Templates
-
-### Linux
-
-- download the godot 3.2.3-stable source code from [here](https://github.com/godotengine/godot/archive/3.2.3-stable.zip)
-
-- download `custom.py` from [here](https://github.com/envyniv/Project-Hope/raw/master/customtemplates/custom.py)
-
-- put custom.py in the godot source code folder
-
-- [make sure you've got compiling dependencies installed](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_x11.html)
-
-- - Optional: [Cross compiling for Windows](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_windows.html#cross-compiling-for-windows-from-other-operating-systems) (if not desired omit first two lines of the following `code block`)
-
-- - Optional: [Cross compiling for macOS](https://docs.godotengine.org/en/stable/development/compiling/compiling_for_osx.html#cross-compiling-for-macos-from-linux) (not officially supported by me)
-
-- Execute the following commands:
-
-  ```
-  scons platform=windows target=release bits=64
-  strip bin/godot.windows.opt.64.exe
-  scons platform=x11 target=release bits=64
-  strip bin/godot.x11.opt.64
-  upx -9 bin/godot.windows.opt.64.exe
-  upx -9 bin/godot.x11.opt.64
-  ```
 
 # Special Thanks
 
@@ -98,14 +134,6 @@ _Please Note 2: As obvious as it may sound, this has to be stated; PCKs and ZIPs
 - Gzillion/Newbie, Aléris (minor sprite work)
 - gotimo2 (separated player movement and animation)
 - Everyone from the [Godot Engine discord server](https://discord.gg/4JBkykG) for being cool
-
---------------------------------------------------------------------------------
-
-# About the game
-
-A collection of all .md files in the game's source folders, that i reunited in this section, for convinience.
-
-:thinking:
 
 --------------------------------------------------------------------------------
 
