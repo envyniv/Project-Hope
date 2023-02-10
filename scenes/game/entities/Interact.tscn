@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/entities/Interact.gd" type="Script" id=1]
+
+[node name="Interact" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+input_pickable = false
+gravity_vec = Vector2( 0, 0 )
+script = ExtResource( 1 )

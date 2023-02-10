@@ -1,0 +1,98 @@
+keys,en,it,de,fr,es,ja
+creditsAuthorL8n,Envy,Envy,DUMMY,DUMMY,DUMMY,DUMMY
+menuNew,New Game,Nuovo Gioco,DUMMY,DUMMY,DUMMY,DUMMY
+menuLoad,Load,Carica,DUMMY,DUMMY,DUMMY,DUMMY
+menuSet,Settings,Impostazioni,DUMMY,DUMMY,DUMMY,DUMMY
+menuQuit,End Game,Esci,DUMMY,DUMMY,DUMMY,DUMMY
+setVoice,Speaking Blip,Suono per ogni lettera,DUMMY,DUMMY,DUMMY,DUMMY
+setBGM,Music,Musica,DUMMY,DUMMY,DUMMY,DUMMY
+setSFX,Sound Effects,Effetti Sonori,DUMMY,DUMMY,DUMMY,DUMMY
+setMASTER,Master,Volume Generale,,,,
+setLang,Language,Lingua,DUMMY,DUMMY,DUMMY,DUMMY
+setMod,Mods,Mod,DUMMY,DUMMY,DUMMY,DUMMY
+setCntrl,Controls,Controlli,DUMMY,DUMMY,DUMMY,DUMMY
+setTip,Hover over buttons to read a description of their effects,Mantieni il cursore sulle impostazioni per leggerne una descrizione,DUMMY,DUMMY,DUMMY,DUMMY
+setTooltipCntrls,Bind controls,Imposta Controlli,DUMMY,DUMMY,DUMMY,DUMMY
+setTooltipReset,Reset SAVE DATA and SETTINGS,Riporta Salvataggi ed Impostazioni ai predefiniti,DUMMY,DUMMY,DUMMY,DUMMY
+setTooltipMenu,Back to menu,Torna al menu,DUMMY,DUMMY,DUMMY,DUMMY
+gameBuy,Buy,Compra,DUMMY,DUMMY,DUMMY,DUMMY
+gameSell,Sell,Vendi,DUMMY,DUMMY,DUMMY,DUMMY
+gameItems,Items,Oggetti,DUMMY,DUMMY,DUMMY,DUMMY
+gameEquip,Equipment,Equipaggiamento,DUMMY,DUMMY,DUMMY,DUMMY
+gameSkill,Skills,Abilità,DUMMY,DUMMY,DUMMY,DUMMY
+gameWhose,Whose?,Di Chi?,DUMMY,DUMMY,DUMMY,DUMMY
+gameOnWho,On Who?,Su Chi?,DUMMY,DUMMY,DUMMY,DUMMY
+itemHSandals,Hermes’ Sandals,Sandali di Ermete,DUMMY,DUMMY,DUMMY,DUMMY
+placeTartarus,Tartarus,Tartaro,DUMMY,DUMMY,DUMMY,DUMMY
+menuFileMenu,Please select a save slot.,Per favore seleziona un salvataggio,DUMMY,DUMMY,DUMMY,DUMMY
+menuYourNamePlease,"Your name, please.","Il tuo nome, per favore.",DUMMY,DUMMY,DUMMY,DUMMY
+menuFileDelete,You are about to delete your save file\nKeep in mind there is no going back.\nAre you sure?,Stai per cancellare un file di salvataggio\nRicorda che non puoi tornare indietro\nSei sicuro?,DUMMY,DUMMY,DUMMY,DUMMY
+looksLikeEnvynFuckedUp,"Please, report this.","Per favore, segnala questo errore",DUMMY,DUMMY,DUMMY,DUMMY
+setXscale,Scale,Dimensione,DUMMY,DUMMY,DUMMY,DUMMY
+setTxtSpd,Text Speed,Velocità testo,DUMMY,DUMMY,DUMMY,DUMMY
+setTxtSpdSlow,Slow,Lento,DUMMY,DUMMY,DUMMY,DUMMY
+setTxtSpdNormal,Normal,Normale,DUMMY,DUMMY,DUMMY,DUMMY
+setTxtSpdFast,Fast,Veloce,DUMMY,DUMMY,DUMMY,DUMMY
+errDiagMissingStr,"The dialogue named %s wasn't found!\nIf you've got nothing to do with this, please report!","Il dialogo %s non è presente\nSe non hai nulla a che fare, segnala questo errore!",DUMMY,DUMMY,DUMMY,DUMMY
+errDiagMissing,Dialogue file missing,File di dialogo non trovato,DUMMY,DUMMY,DUMMY,DUMMY
+keyAccept,"Accept, Skill Menu","Accetta, Menù Abilità",DUMMY,DUMMY,DUMMY,DUMMY
+keySelect,Item Menu,Menù Oggetti,DUMMY,DUMMY,DUMMY,DUMMY
+keyCancel,"Cancel, Attack","Annulla, Attacca",DUMMY,DUMMY,DUMMY,DUMMY
+keyDefend,Defend,Difendi,DUMMY,DUMMY,DUMMY,DUMMY
+keyUp,Move Upwards,Muoviti Sù,DUMMY,DUMMY,DUMMY,DUMMY
+keyDown,Move Downwards,Muoviti Giù,DUMMY,DUMMY,DUMMY,DUMMY
+keyLeft,Move to the Left,Muoviti a Sinistra,DUMMY,DUMMY,DUMMY,DUMMY
+keyRight,Move to the Right,Muoviti a Destra,DUMMY,DUMMY,DUMMY,DUMMY
+keySprint,Run,Corri,DUMMY,DUMMY,DUMMY,DUMMY
+keyNext,Next Party Member,Prossimo membro del gruppo,DUMMY,DUMMY,DUMMY,DUMMY
+gameParty,Friends,Amici,DUMMY,DUMMY,DUMMY,DUMMY
+itemHSandalsDesc,cool wings\nmake go fast :))),DUMMY,DUMMY,DUMMY,DUMMY,DUMMY
+itemThing,Precious Something,DUMMY,DUMMY,DUMMY,DUMMY,DUMMY
+itemThingDesc,Precious Something’s Description,DUMMY,DUMMY,DUMMY,DUMMY,DUMMY
+itemWater,Water,Acqua,DUMMY,DUMMY,DUMMY,DUMMY
+itemWaterDesc,It's quite refreshing.\nHeals 20HP.,Molto rinfrescante\nCura 20PV,DUMMY,DUMMY,DUMMY,DUMMY
+mapMeteora,Debug Room,Stanza Debug,DUMMY,DUMMY,DUMMY,デバッグルーム
+itemKey,Key,Chiave,DUMMY,DUMMY,DUMMY,DUMMY
+itemdescKey,It's a key.\nIt tastes metal-ly.\nDoes absolutely nothing,Una chiave.\nSa di metallo\nNon fa assolutamente nulla.,DUMMY,DUMMY,DUMMY,DUMMY
+errDataMissingStr,Make sure there's a copy of '%s.zip' in the game folder\nand that the executable and it share the same filename,Assicurati ci sia un file nominato ‘%s.zip’ nella cartella di gioco\ne che l’eseguibile ed esso condividano lo stesso nome.,DUMMY,DUMMY,DUMMY,DUMMY
+errDataMissing,Missing Game Data!,Dati di gioco mancanti!,DUMMY,DUMMY,DUMMY,DUMMY
+statHP,HP,PV,DUMMY,DUMMY,DUMMY,DUMMY
+statDEF,DEF,DIF,DUMMY,DUMMY,DUMMY,DUMMY
+statEXP,EXP,ESP,DUMMY,DUMMY,DUMMY,DUMMY
+statMANA,MANA,MANA,DUMMY,DUMMY,DUMMY,DUMMY
+Kevin,Kevin,Kevin,Kevin,Kevin,Kevin,ケビン
+Quinton,Quinton,Quinton,Quinton,Quinton,Quinton,クィントン
+Bella,Bella,Bella,Bella,Bella,Bella,ベラー
+Charlie,Charlie,Charlie,Charlie,Charlie,Charlie,チャーリー
+statxMANA,Max. MANA,MANA max.,DUMMY,DUMMY,DUMMY,DUMMY
+statLUC,LUCK,FORT.,DUMMY,DUMMY,DUMMY,DUMMY
+statATK,ATK,ATT.,DUMMY,DUMMY,DUMMY,DUMMY
+statEVA,EVA,VEL.,DUMMY,DUMMY,DUMMY,DUMMY
+tooltipSWizKeyboard,to switch to/from Keyboard mode,per passare alla/dalla Tastiera,DUMMY,DUMMY,DUMMY,DUMMY
+saveEmpty,Empty,Vuoto,DUMMY,DUMMY,DUMMY,DUMMY
+langQMark,?,?,?,?,?,？
+langComma,",",",",",",",",",",、
+langFullStop,.,.,.,.,.,。
+creditsLastUpdate,1650189373,1646058417,1646058417,1646058417,1646058417,1646058417
+t419e826c4d,Would you like to take a picture with your friends?,,,,,
+te56c22df05,Yes,,,,,
+t5d8cef9dee,Great! taking picture in 3... 2... 1...,,,,,
+t16963e13c0,No,,,,,
+t61ffd97284,You might want to take a break.,,,,,
+t7ebd0c8a0e,You should probably take a break.,,,,,
+td48b078f64,You oughta take a break.,,,,,
+tad63aa84f8,You should really take a break.,,,,,
+t61abbe9c72,"I've already saved for you, so you can just leave and come back later, ‘ight?",,,,,
+errDataExistsStr,"A Save of the same name already exists.\nIn the future having multiple saves with the same name may be allowed,\nBut it is still bad practice, management wise.\nPlease refrain from naming two saves the same way.","Un file di salvataggio dallo stesso nome è gia presente.\nIn futuro è possibile che sia permesso avere più file di salvataggio omonimi,\nMa sarebbe in ogni caso sconsigliabile, per motivi di organizzazione.\nPer favore evita di nominare due file di salvataggio nella stessa maniera.",,,,
+errDataExists,Savefile already exists!,File di salvataggio già esistente!,,,,
+errInvalidModFormatStr,"One or more currently loaded mods have their declaration file formatted incorrectly.\nTo avoid further issues, they’ve been disabled.\nReport this error.\n%s",,,,,
+errInvalidModFormat,Mod Declaration(s) Invalid,,,,,
+err,Error,Errore,,,,
+menuGame,Game,Gioca,,,,
+menuDelete,Erase,Elimina,,,,
+menuCopy,Copy,Copia,,,,
+t11db46fbf6,You got {{item.get_name()}},,,,,
+tc6586e4e92,You found {{item.get_name()}},,,,,
+t7b2afa74e9,You picked up {{item.get_name()}},,,,,
+t2de20f4887,{{lifeform.get_name()}} joined your party!,{{lifeform.get_name()}} fa ora parte della squadra!,,,,
+t292386672e,{{lifeform.get_name()}} left your party.,{{lifeform.get_name()}} non fa più parte della squadra.,,,,

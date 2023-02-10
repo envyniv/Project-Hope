@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/maps/Vending.gd" type="Script" id=1]
+[ext_resource path="res://assets/stages/vending.png" type="Texture" id=2]
+[ext_resource path="res://resources/shaders/Interact.tres" type="Material" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.5185, 10 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 9 )
+shape = SubResource( 1 )

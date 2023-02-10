@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/luck.ogg-fa232d479b1c6f7e8e8ec7b92d7d27d8.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/luck.ogg"
+dest_files=[ "res://.import/luck.ogg-fa232d479b1c6f7e8e8ec7b92d7d27d8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

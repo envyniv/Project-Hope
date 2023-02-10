@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/casino.ogg-cc7c3aaea166f65e87c64ccf1b30a246.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/casino.ogg"
+dest_files=[ "res://.import/casino.ogg-cc7c3aaea166f65e87c64ccf1b30a246.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

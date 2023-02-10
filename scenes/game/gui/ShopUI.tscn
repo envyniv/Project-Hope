@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/gui/patches/box-patch.png" type="Texture" id=6]
+[ext_resource path="res://resources/ui/theme.tres" type="Theme" id=7]
+
+[node name="Menu" type="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = 54.0
+margin_right = -641.0
+margin_bottom = -394.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 7 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 24, 24 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="."]
+margin_left = 41.0
+margin_top = 8.0
+margin_right = 98.0
+margin_bottom = 24.0
+size_flags_horizontal = 10
+text = "999,999 G"
+
+[node name="itemDesc" type="NinePatchRect" parent="."]
+margin_left = 112.0
+margin_top = -17.0
+margin_right = 366.0
+margin_bottom = 51.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 24, 24 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="itemDesc"]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 246.0
+margin_bottom = 59.0
+text = "Long before time had a name, the first spinjitsu master created ninjago with his massive balls"
+autowrap = true
+
+[node name="itemDesc2" type="NinePatchRect" parent="."]
+margin_left = 19.0
+margin_top = 52.0
+margin_right = 106.0
+margin_bottom = 166.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 24, 24 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="itemDesc2"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 107.0
+margin_bottom = 78.0
+text = "i can't add items in the editor so i'm using a label fuck you"
+autowrap = true
+
+[node name="itemDesc3" type="NinePatchRect" parent="."]
+margin_left = 230.0
+margin_top = 61.0
+margin_right = 366.0
+margin_bottom = 205.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 24, 24 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="itemDesc3"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 124.0
+margin_bottom = 115.0
+text = "stats go here ahgasjuoasuifgbdkjhasdbajksgjh"
+autowrap = true

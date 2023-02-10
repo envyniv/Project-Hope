@@ -1,0 +1,72 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 0
+syntax_version = 2
+raw_text = ": You enter the shower, and turn on the tap.
+playSound()
+: Cold water gently pours on your skin.
+: You're initially startled... but get quickly used to the cold feeling.
+: You hum a familiar tune.
+: Healed up, All status ailments removed."
+errors = [  ]
+titles = {
+}
+lines = {
+"0": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "1",
+"replacements": [  ],
+"text": "You enter the shower, and turn on the tap.",
+"translation_key": "You enter the shower, and turn on the tap.",
+"type": "dialogue"
+},
+"1": {
+"character": "",
+"next_id": "2",
+"replacements": [  ],
+"text": "playSound()",
+"translation_key": "playSound()",
+"type": "dialogue"
+},
+"2": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "Cold water gently pours on your skin.",
+"translation_key": "Cold water gently pours on your skin.",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "4",
+"replacements": [  ],
+"text": "You're initially startled... but get quickly used to the cold feeling.",
+"translation_key": "You're initially startled... but get quickly used to the cold feeling.",
+"type": "dialogue"
+},
+"4": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "5",
+"replacements": [  ],
+"text": "You hum a familiar tune.",
+"translation_key": "You hum a familiar tune.",
+"type": "dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Healed up, All status ailments removed.",
+"translation_key": "Healed up, All status ailments removed.",
+"type": "dialogue"
+}
+}

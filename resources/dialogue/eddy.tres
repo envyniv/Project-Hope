@@ -1,0 +1,66 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 0
+syntax_version = 2
+raw_text = "~ start
+
+Sarah: Why go to such extremes! Just to destroy the sun!
+Masked Man: If... humanity[pause] really has to destroy itself[pause][play_slightturn()], then I'd rather do it myself.[play_eyeglint()]
+Masked Man: Starting.[pause] with.[pause] You.
+[battle_trigger()]
+
+=> END"
+errors = [  ]
+titles = {
+"start": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "start",
+"type": "title"
+},
+"2": {
+"character": "Sarah",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "Why go to such extremes! Just to destroy the sun!",
+"translation_key": "Why go to such extremes! Just to destroy the sun!",
+"type": "dialogue"
+},
+"3": {
+"character": "Masked Man",
+"character_replacements": [  ],
+"next_id": "4",
+"replacements": [  ],
+"text": "If... humanity[pause] really has to destroy itself[pause][play_slightturn()], then I'd rather do it myself.[play_eyeglint()]",
+"translation_key": "If... humanity[pause] really has to destroy itself[pause][play_slightturn()], then I'd rather do it myself.[play_eyeglint()]",
+"type": "dialogue"
+},
+"4": {
+"character": "Masked Man",
+"character_replacements": [  ],
+"next_id": "5",
+"replacements": [  ],
+"text": "Starting.[pause] with.[pause] You.",
+"translation_key": "Starting.[pause] with.[pause] You.",
+"type": "dialogue"
+},
+"5": {
+"character": "",
+"next_id": "7",
+"replacements": [  ],
+"text": "[battle_trigger()]",
+"translation_key": "[battle_trigger()]",
+"type": "dialogue"
+},
+"7": {
+"next_id": "end",
+"type": "goto"
+}
+}

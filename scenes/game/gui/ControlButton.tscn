@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/gui/elements/ControlButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/ui/theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/gui/buttons/keyboard-key.png" type="Texture" id=4]
+
+[node name="Button" type="Button"]
+margin_left = 7.10461
+margin_top = -0.00556183
+margin_right = 19.1046
+margin_bottom = 15.9944
+theme = ExtResource( 3 )
+toggle_mode = true
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_right = 4.0
+margin_bottom = 3.0
+texture = ExtResource( 4 )
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,19 +1,20 @@
-src/.import/
-src/*.translation
-src/sounds/music/*
-src/assets/reference
-src/logs
-src/addons
-src/bin
-src/settings.tres
-src/saves/*
+.import/
+.mono/
+*.translation
+sounds/music/*
+assets/reference
+logs/
+addons/
+bin/
+settings.tres
+saves/*
 customtemplates/godot.x11.opt.64
 customtemplates/godot.x11.opt.32
 customtemplates/godot.windows.opt.64.exe
 customtemplates/godot.windows.opt.32.exe
-/*.*~
-/*.blend1
-/*.xcf
+**/*.*~
+**/*.blend1
+**/*.xcf
 
 !src/addons/dialogue_manager/*
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sweet.ogg-cd6aaef121e6385eceff4119cd62d1b8.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/sweet.ogg"
+dest_files=[ "res://.import/sweet.ogg-cd6aaef121e6385eceff4119cd62d1b8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

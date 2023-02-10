@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/gui/patches/box-patch.png" type="Texture" id=1]
+[ext_resource path="res://scripts/gui/MenuMore.gd" type="Script" id=2]
+[ext_resource path="res://scenes/game/gui/MenuMoreMemberContainer.tscn" type="PackedScene" id=3]
+
+[node name="MenuMore" type="NinePatchRect"]
+margin_right = 122.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 24, 24 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+script = ExtResource( 2 )
+memberInfo = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 15.0
+margin_top = -7.0
+margin_right = 228.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "gameWhose"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 7.0
+margin_right = -7.0
+margin_bottom = -6.0
+rect_clip_content = true
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}

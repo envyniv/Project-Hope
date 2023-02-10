@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://logo_vertical_monochrome_dark.svg" type="Texture" id=1]
+[ext_resource path="res://scripts/BootScrn.gd" type="Script" id=3]
+[ext_resource path="res://assets/people/godette.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 7 )
+region = Rect2( 42, 0, 21, 34 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Godette:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 42, 0, 21, 34 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Godette:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 372, 188 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "boot"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Godette:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1.1, 1.5, 2, 2.3, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 42, 0, 21, 34 ), Rect2( 63, 0, 21, 34 ), Rect2( 42, 0, 21, 34 ), Rect2( 63, 0, 21, 34 ), Rect2( 42, 0, 21, 34 ), Rect2( 21, 0, 21, 34 ), Rect2( 0, 0, 21, 34 ), Rect2( 21, 0, 21, 34 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Godette:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 372, 188 ), Vector2( 170, 188 ) ]
+}
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.141176, 0.141176, 0.141176, 1 )
+
+[node name="Godette" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 372.0
+margin_top = 188.0
+margin_right = 6513.0
+margin_bottom = 4302.0
+texture = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+anims/RESET = SubResource( 3 )
+anims/boot = SubResource( 4 )
+
+[node name="Sprite" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 133.0
+margin_top = 63.0
+margin_right = 396.0
+margin_bottom = 536.0
+rect_scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 1 )
